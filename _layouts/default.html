@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="{{ page.language }}">
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+    <meta charset="UTF-8">
+    <title>{{ page.title }}</title>
+    {% seo %}
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:url" content="https://k2hr3.antpick.ax/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ page.title }}" />
+    <meta property="og:description" content="{{ page.short_desc }}" />
+    <meta property="og:image" content="https://k2hr3.antpick.ax/images/top_k2hr3.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="fb:app_id" content="370841410172961" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/styleiconfont.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name"><span class="antpickax-icon-font-logo"></span>{{ site.github.repository_name }}</h1>
+      <h2 class="project-tagline">{{ page.short_desc }}</h2>
+      <a href="{{ site.url }}{{ site.baseurl }}/{{ page.lang_opp_file }}" class="btn">{{ page.lang_opp_word }}</a>
+    </section>
+    <section class="main-content">
+      <h3 class="sns-buttons">
+        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="K2HR3 is extended RBAC system +SERVICE" data-hashtags="antpickax,k2hr3,rbac,iam-role" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fk2hr3.antpick.ax&layout=button&size=small&mobile_iframe=true&width=61&height=20&appId" width="61" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+      </h3>
+
+      {{ content }}
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><img border="0" src="images/antpickax_32x32.png" width="32" height="32" alt="AntPickax"><a href="{{ site.url }}{{ site.baseurl }}/">{{ site.github.repository_name }}</a> is maintained by <a href="https://www.yahoo.co.jp">Yahoo! JAPAN</a>.</span>
+        <span class="site-footer-owner">Copyright(C) <script type="text/javascript">document.write(new Date().getFullYear());</script> Yahoo Japan Corporation.</span>
+      </footer>
+    </section>
+  </body>
+</html>
