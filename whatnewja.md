@@ -14,10 +14,10 @@ next_string: Detail
 ---
 
 # What's new
-## 2019年2月XX日 K2HR3 ベータ版公開
+## 2019年3月6日 K2HR3 ベータ版公開
 K2HR3 ベータ版（Version 0.9.0）のソースコードをGithub.comで公開しました。  
 また、npmパッケージを[こちら](https://www.npmjs.com/org/antpickax)で公開しました。  
 今後、OpenStack以外のIaaSへの対応と、関連パッケージの更新などを行っていきます。
 
 ## K2HR3の紹介（Yahoo! JAPAN Tech Blog）
-K2HR3の[紹介記事](introduceja.html)を[Yahoo! JAPAN Tech Blog](https://techblog.yahoo.co.jp/architecture/............./)に寄稿しました。
+K2HR3の[紹介記事](introduceja.html)を[Yahoo! JAPAN Tech Blog](https://techblog.yahoo.co.jp/cloud/k2hr3_intro/)に寄稿しました。
