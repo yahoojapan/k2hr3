@@ -1,5 +1,9 @@
 K2HR3
 -----
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/yahoojapan/k2hr3/master/LICENSE)
+[![GitHub forks](https://img.shields.io/github/forks/yahoojapan/k2hr3.svg)](https://github.com/yahoojapan/k2hr3/network)
+[![GitHub stars](https://img.shields.io/github/stars/yahoojapan/k2hr3.svg)](https://github.com/yahoojapan/k2hr3/stargazers)
+[![GitHub issues](https://img.shields.io/github/issues/yahoojapan/k2hr3.svg)](https://github.com/yahoojapan/k2hr3/issues)
 
 ## **K2HR3** - **K2H**dkc based **R**esource and **R**oles and policy **R**ules
 
