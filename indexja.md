@@ -17,6 +17,7 @@ arrow_link_tools: <a href="toolsja.html" class="link-title"><span class="arrow-b
 ---
 
 # **K2HR3**
+
 **K2HR3** (**K2H**dkc based **R**esource and **R**oles and policy **R**ules) は、Yahoo! JAPANオリジナルの **RBAC** (**R**ole **B**ased **A**ccess **C**ontrol) システムのひとつです。  
 **K2HR3** は、**RBAC** としての機能を、**IaaS**（Infrastructure as a Service）である [**OpenStack**](https://www.openstack.org/) と連携して動作し、また**RBAC**を利用する上で便利な機能を提供します。  
 
