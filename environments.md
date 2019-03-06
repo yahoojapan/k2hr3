@@ -507,7 +507,7 @@ Here are the default configuration values and the descriptions.
     "userdata": "\
 #include\n\
 {{= %K2HR3_API_HOST_URI% }}/v1/userdata/{{= %K2HR3_USERDATA_INCLUDE_PATH% }}\n\
-"                                                   // UserDataのURL
+"                                                   // UserData URL
 }
 ```
 
