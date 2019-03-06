@@ -1,0 +1,12 @@
+[submodule "k2hr3_api"]
+	path = k2hr3_api
+	url = https://github.com/yahoojapan/k2hr3_api.git
+[submodule "k2hr3_app"]
+	path = k2hr3_app
+	url = https://github.com/yahoojapan/k2hr3_app.git
+[submodule "k2hr3_osnl"]
+	path = k2hr3_osnl
+	url = https://github.com/yahoojapan/k2hr3_osnl.git
+[submodule "k2hr3_utils"]
+	path = k2hr3_utils
+	url = https://github.com/yahoojapan/k2hr3_utils.git
