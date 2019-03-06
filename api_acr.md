@@ -24,7 +24,7 @@ The ACR API internally adds **acr_role**, **acr_policy**, and the resources owne
 
 ## Resource in service
 
-The service owner provides a resource as a service to the service members. The resource value is a external url(VERIFY URL) or a static JSON object. Adding a new resource to the service means that the owner starts providing the resource to the service member. When the servie owner defines the resource, the ACR API requires a token without an explicit scope of authorization or a tenant-scoped token. See the [Usage +SERVICE](usage_service.md) page for the resource details. 
+The service owner provides a resource as a service to the service members. The resource value is a external url(VERIFY URL) or a static JSON object. Adding a new resource to the service means that the owner starts providing the resource to the service member. When the service owner defines the resource, the ACR API requires a token without an explicit scope of authorization or a tenant-scoped token. See the [Usage +SERVICE](usage_service.md) page for the resource details. 
 
 Before providing a new resource to a tenant as a service member, the service owner must add the tenant to the service member. . Here is the flow to add a resource to the service.
 - Firstly a client requests the POST API. Then, the POST API generates a tenant-scoped token from the given token. 
@@ -89,7 +89,7 @@ Adds a tenant as a service member to the service by creating the **yrn:yahoo:_se
 
 K2HR3 ACR API internally adds **acr_role**, **acr_policy**, and the resources owned by the service owner to the service member.
 
-The service owner provides a resource as a service to the service members. The resource value is a external url(VERIFY URL) or a static JSON object. Adding a new resource to the service means that the owner starts providing the resource to the service member. When the servie owner defines the resource, the ACR API requires a token without an explicit scope of authorization or a tenant-scoped token. See the [Usage +SERVICE](usage_service.md) page for the resource details. 
+The service owner provides a resource as a service to the service members. The resource value is a external url(VERIFY URL) or a static JSON object. Adding a new resource to the service means that the owner starts providing the resource to the service member. When the service owner defines the resource, the ACR API requires a token without an explicit scope of authorization or a tenant-scoped token. See the [Usage +SERVICE](usage_service.md) page for the resource details. 
 
 ### Endpoint(URL)
 http(s)://_API SERVER:PORT_/v1/acr/_service name_  
@@ -133,7 +133,7 @@ An error message if the result if false
 ## GET
 Shows credential details and gets available resources. 
 
-To show credential details, clients must authenticate before making a request, which means a token is required. The GET API is for service owners who configure the external url(VERIFY URL) to define a dynamic resource. The POST/PUT API invokes the GET API to associate a member with a service only if the serivce owner optionally configure the external url(VERIFY URL). The process takes two steps. At first, The POST/PUT API internally reaches the external url(VERIFY URL) with a valid token only during the read request. Then, the program on the service owner side will validate the token and get the user information identified by the token by invoking the GET API. 
+To show credential details, clients must authenticate before making a request, which means a token is required. The GET API is for service owners who configure the external url(VERIFY URL) to define a dynamic resource. The POST/PUT API invokes the GET API to associate a member with a service only if the service owner optionally configure the external url(VERIFY URL). The process takes two steps. At first, The POST/PUT API internally reaches the external url(VERIFY URL) with a valid token only during the read request. Then, the program on the service owner side will validate the token and get the user information identified by the token by invoking the GET API. 
 
 To get available resources, the GET API requires an IP address and a K2RH3 ROLE name to determine whether a request should be allowed using Role Based Access Control. The request is tokenless. The GET API is for service owners to delegate authorization and authentication of their system to K2HR3. Delegating authorization and authentication simplifies the service member's API usage. A service member usually need two steps to use the service owner's system. Firstly, a service member obtains a token by using K2HR3 Token API. Secondary it sends a request with the token to a service owner's system. If service owners implements their system by using the GET API, service members don't need to authenticate before making a request because service owners will delegate authentication and authorization to K2HR3. Note that in this case, service owners must installs the K2HR3 ROLE associated with each IP addresses optionally including port numbers. If a service member's host is a member of multiple K2HR3 ROLE, the service member should pass the K2HR3 ROLE name it want to be authorized.
 

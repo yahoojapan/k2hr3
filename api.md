@@ -20,7 +20,7 @@ This page provides general information of K2HR3 REST API. K2HR3 REST API is a K2
 * Provides interfaces for internal subsystems to communicate with each other
   * K2HR3 Web application, Web servers and K2HR3 OpenStack Notification Listener consume K2HR3 REST API to cooperate with each other.
 * Provides interfaces for the outside world for cloud orchestration
-  * +SERVICE functionality for service owner's systems. They invokes K2HR3 REST API to validate service members and create thier resources to their systems.
+  * +SERVICE functionality for service owner's systems. They invokes K2HR3 REST API to validate service members and create their resources to their systems.
   * [cloud-init](https://cloudinit.readthedocs.io/en/latest/index.html), which is a script to initialize an instance, is an example. It invokes K2HR3 REST API to configure the instance as it boots into the cloud system and integrates itself with K2HR3.
 
 ## Token
