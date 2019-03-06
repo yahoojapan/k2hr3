@@ -46,6 +46,12 @@ arrow_link_tools: <a href="toolsja.html" class="link-title"><span class="arrow-b
 ## {{ page.arrow_link_developer }}
 **K2HR3** システムの変更・機能追加するための情報を[開発者](developerja.html)向けに説明します。  
 また、**K2HR3** システムを利用するために必要となるブラウザにロードされるJavaScriptのビルド方法についても説明します。  
+**K2HR3** のソースコード一式は、**GitHub**で公開されています。  
+- [K2HR3](https://github.com/yahoojapan/k2hr3)
+- [K2HR3 Web Application](https://github.com/yahoojapan/k2hr3_app)
+- [K2HR3 REST API](https://github.com/yahoojapan/k2hr3_api)
+- [K2HR3 OpenStack Notification Listener](https://github.com/yahoojapan/k2hr3_osnl)
+- [K2HR3 Utilities](https://github.com/yahoojapan/k2hr3_utils)
 
 ## {{ page.arrow_link_environments }}
 **K2HR3** システムが使用する[環境変数・設定](environmentsja.html)について説明します。

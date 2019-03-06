@@ -45,7 +45,13 @@ How to [setup](setup.html) **K2HR3** system.
 
 ## {{ page.arrow_link_developer }}
 Detailed description of the programming interface provided by **K2HR3** system for [developer](developer.html)s.
-And explained how to build JavaScript loaded in the browser to use **K2HR3** system.
+And explained how to build JavaScript loaded in the browser to use **K2HR3** system.  
+All source code related to the **K2HR3** system is published on **GitHub**.  
+- [K2HR3](https://github.com/yahoojapan/k2hr3)
+- [K2HR3 Web Application](https://github.com/yahoojapan/k2hr3_app)
+- [K2HR3 REST API](https://github.com/yahoojapan/k2hr3_api)
+- [K2HR3 OpenStack Notification Listener](https://github.com/yahoojapan/k2hr3_osnl)
+- [K2HR3 Utilities](https://github.com/yahoojapan/k2hr3_utils)
 
 ## {{ page.arrow_link_environments }}
 Description of [Environment and Settings](environments.html) variables used by **K2HR3** system to load.
