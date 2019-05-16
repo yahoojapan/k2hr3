@@ -39,7 +39,8 @@ The explanation of the detailed [Feature](feature.html) of **K2HR3** system.
 [Detail](detail.html) of **K2HR3** system.
 
 ## {{ page.arrow_link_usage }}
-How to [use](usage.html) **K2HR3** system for your systems.
+How to [use](usage.html) **K2HR3** system for your systems.  
+You can experience the operation of **K2HR3 Web Application** with [K2HR3 demonstration](https://demo.k2hr3.antpick.ax/).
 
 ## {{ page.arrow_link_setup }}
 How to [setup](setup.html) **K2HR3** system.

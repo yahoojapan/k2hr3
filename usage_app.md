@@ -35,3 +35,8 @@ About [Common Usage](usage_app_common.html) for K2HR3 Web Application is describ
 ## SERVICE Usage
 [SERVICE Usage](usage_app_service.html) for K2HR3 Web Application is described about how to operate SERVICE data.
 
+## Demonstration site
+You can experience the **K2HR3 Web Application** on [K2HR3 Demonstration](https://demo.k2hr3.antpick.ax/).  
+You can learn the operation of **ROLE**, **POLICY-RULE**, **RESOURCE** and **SERVICE** provided by the K2HR3 system.  
+- You can not save the data operated on this site.
+- To sign in on this site, please use USER NAME(**demo**) and PASS PHRASE(empty).

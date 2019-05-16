@@ -40,6 +40,7 @@ arrow_link_tools: <a href="toolsja.html" class="link-title"><span class="arrow-b
 
 ## {{ page.arrow_link_usage }}
 **K2HR3** システムの[使い方](usageja.html)について説明します。  
+[K2HR3 デモンストレーション](https://demo.k2hr3.antpick.ax/indexja.html)で **K2HR3 Webアプリケーション** の操作を体験できます。  
 
 ## {{ page.arrow_link_setup }}
 **K2HR3** システムの[セットアップ](setupja.html)方法について説明します。  

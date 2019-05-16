@@ -38,6 +38,10 @@ In order to operate **ROLE**, **POLICY-RULE**, **RESOURCE** and **SERVICE**, **U
 
 ![K2HR3 Usage - Application overview](images/usage_top_app_overview.png)
 
+## Demonstration site
+You can experience the **K2HR3 Web Application** on [K2HR3 Demonstration](https://demo.k2hr3.antpick.ax/).  
+You can learn the operation of **ROLE**, **POLICY-RULE**, **RESOURCE** and **SERVICE** provided by the K2HR3 system.  
+
 # REST API Usage
 The [REST API Usage](api.html) page provides information about **K2HR3 REST API** that every **USER** can define and use **ROLE**, **POLICY-RULE**, **RESOURCE** and **SERVICE**.  
 See the [REST API Usage](api.html) page for details.
