@@ -35,6 +35,10 @@ K2HR3システムのコントロールパネルとして、ユーザ（USER）�
 
 ![K2HR3 Usage - Application overview](images/usage_top_app_overview.png)
 
+## デモンストレーションサイト
+[K2HR3 デモンストレーション](https://demo.k2hr3.antpick.ax/indexja.html) で **K2HR3 Webアプリケーション** の体験ができます。  
+K2HR3システムが提供するロール（ROLE）、ポリシー/ルール（POLICY）、リソース（RESOURCE）、サービス（SERVICE）の操作を学ぶことができます。  
+
 # REST APIの利用
 K2HR3の、ロール（ROLE）、ポリシー/ルール（POLICY）、リソース（RESOURCE）、サービス（SERVICE）等の操作・設定を REST APIから行えます。  
 このK2HR3システムが提供する[K2HR3 REST API](apija.html)を説明します。  
