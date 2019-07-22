@@ -14,6 +14,9 @@ next_string: Detail
 ---
 
 # What's new
+## 2019年7月17日 Open Source Summit Japan に出展
+[Open Source Summit Japan](https://events.linuxfoundation.jp/events/open-source-summit-japan-2019/) にて、K2HR3を展示しました。
+
 ## 2019年3月6日 K2HR3 ベータ版公開
 K2HR3 ベータ版（Version 0.9.0）のソースコードをGithub.comで公開しました。  
 また、npmパッケージを[こちら](https://www.npmjs.com/org/antpickax)で公開しました。  

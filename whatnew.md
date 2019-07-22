@@ -15,6 +15,9 @@ next_string: Detail
 
 # What's new
 
+## [17 Jul 2019] We ran a booth at Open Source Summit Japan
+We ran a booth at [Open Source Summit Japan](https://events.linuxfoundation.jp/events/open-source-summit-japan-2019/).
+
 ## [06 Mar 2019] K2HR3 Beta Release Version 0.9.0
 
 K2HR3 Beta Release Version(0.9.0), all source code released on Github.com and released the npm package [here](https://www.npmjs.com/org/antpickax).
