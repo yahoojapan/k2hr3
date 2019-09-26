@@ -14,8 +14,8 @@ next_string: Detail
 ---
 
 # What's new
-## [26 Sep 2019] K2HR3 Beta Release Version 0.9.1
-K2HR3 Beta Release Version(0.9.1) cooperating with kubernetes, all source code released on Github.com and released the npm package [here](https://www.npmjs.com/org/antpickax).  
+## [26 Sep 2019] K2HR3 new beta release for kubernetes
+K2HR3 new beta release(k2hr3_app Version 0.9.3 / k2hr3_api Version 0.9.2) is cooperating with kubernetes, all source code released on Github.com and released the npm package [here](https://www.npmjs.com/org/antpickax).  
 We will continue to support IaaS other than OpenStack and update related packages.
 
 ## [17 Jul 2019] We ran a booth at Open Source Summit Japan

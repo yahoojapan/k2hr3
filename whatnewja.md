@@ -14,8 +14,8 @@ next_string: Detail
 ---
 
 # What's new
-## 2019年9月26日 K2HR3 ベータ版0.9.1公開
-kubernetesに対応したK2HR3 ベータ版（Version 0.9.1）のソースコードをGithub.comで公開しました。  
+## 2019年9月26日 K2HR3 kubernetes対応版公開
+kubernetesに対応したK2HR3 ベータ版（k2hr3_app Version 0.9.3 / k2hr3_api Version 0.9.2）のソースコードをGithub.comで公開しました。  
 また、npmパッケージを[こちら](https://www.npmjs.com/org/antpickax)で公開しました。
 
 ## 2019年7月17日 Open Source Summit Japan に出展
