@@ -19,7 +19,8 @@ arrow_link_tools: <a href="tools.html" class="link-title"><span class="arrow-bas
 # **K2HR3**
 
 **K2HR3** (**K2H**dkc based **R**esource and **R**oles and policy **R**ules) is one of extended **RBAC** (**R**ole **B**ased **A**ccess **C**ontrol) system.  
-**K2HR3** works as **RBAC** in cooperation with [**OpenStack**](https://www.openstack.org/) which is one of **IaaS**(Infrastructure as a Service), and also provides useful functions for using **RBAC**.  
+**K2HR3** works as **RBAC** in conjunction with **IaaS**(Infrastructure as a Service) and provides convenient functions for using **RBAC** To do.  
+Currently available **IaaS**(Infrastructure as a Service) is [**OpenStack**](https://www.openstack.org/) and [**kubernetes**](https://kubernetes.io/ja/).  
 
 **K2HR3** gathers common management information for the cloud, and is built **K2HASH**, **K2HASH TRANSACTION PLUGIN**, **CHMPX** and **K2HDKC** components.  
 **K2HR3** is one of [AntPickax](https://antpick.ax/)'s open source product by Yahoo! JAPAN.
@@ -53,6 +54,7 @@ All source code related to the **K2HR3** system is published on **GitHub**.
 - [K2HR3 Web Application](https://github.com/yahoojapan/k2hr3_app)
 - [K2HR3 REST API](https://github.com/yahoojapan/k2hr3_api)
 - [K2HR3 OpenStack Notification Listener](https://github.com/yahoojapan/k2hr3_osnl)
+- [K2HR3 Container Registration Sidecar](https://github.com/yahoojapan/k2hr3_sidecar)
 - [K2HR3 Utilities](https://github.com/yahoojapan/k2hr3_utils)
 
 ## {{ page.arrow_link_environments }}

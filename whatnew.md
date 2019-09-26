@@ -14,13 +14,15 @@ next_string: Detail
 ---
 
 # What's new
+## [26 Sep 2019] K2HR3 Beta Release Version 0.9.1
+K2HR3 Beta Release Version(0.9.1) cooperating with kubernetes, all source code released on Github.com and released the npm package [here](https://www.npmjs.com/org/antpickax).  
+We will continue to support IaaS other than OpenStack and update related packages.
 
 ## [17 Jul 2019] We ran a booth at Open Source Summit Japan
 We ran a booth at [Open Source Summit Japan](https://events.linuxfoundation.jp/events/open-source-summit-japan-2019/).
 
 ## [06 Mar 2019] K2HR3 Beta Release Version 0.9.0
-
-K2HR3 Beta Release Version(0.9.0), all source code released on Github.com and released the npm package [here](https://www.npmjs.com/org/antpickax).
+K2HR3 Beta Release Version(0.9.0), all source code released on Github.com and released the npm package [here](https://www.npmjs.com/org/antpickax).  
 We will continue to support IaaS other than OpenStack and update related packages.
 
 ## Introduction of K2HR3 (Yahoo! JAPAN Tech Blog)

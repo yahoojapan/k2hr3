@@ -43,9 +43,19 @@ next_string: Developer
 * [DevStack](https://docs.openstack.org/devstack/latest/)
   * 最新版のOpenStackをテストと開発のために構築するため場合は、こちらをおすすめします。
 
+### kubernetes 設定
+
+ここでは、kubernetesの構築に関して、参考サイトを紹介します。
+
+* **minikube**を使って簡単なテスト環境を構築する場合は[こちら](https://kubernetes.io/ja/docs/tutorials/hello-minikube/)を参照してください。  
+minikubeを利用する場合には、適切にproxyの設定を行ってください。
+* **kubeadm**を使って構築する場合は[こちら](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/#)を参照してください。
+* **Rancher**を使って構築する場合は[こちら](https://rancher.com/)を参照してください。
+
 ### K2HR3 設定
 
-ここでは、K2HR3のサブシステム全てを一括で設定する方法を説明しています。
+ここでは、K2HR3のサブシステム全てを一括で設定する方法を説明しています。  
+_以下のドキュメントは、OpenStackと連携する環境を構築するための内容です。kubernetesのみと連携する場合には、特に以下のOpenStackのための作業は必要ありません。_
 
 設定用プログラム（cluster.sh）に次の情報を与えて起動すると、設定が完了します。
 

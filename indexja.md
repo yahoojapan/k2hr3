@@ -19,7 +19,8 @@ arrow_link_tools: <a href="toolsja.html" class="link-title"><span class="arrow-b
 # **K2HR3**
 
 **K2HR3** (**K2H**dkc based **R**esource and **R**oles and policy **R**ules) は、Yahoo! JAPANオリジナルの **RBAC** (**R**ole **B**ased **A**ccess **C**ontrol) システムのひとつです。  
-**K2HR3** は、**RBAC** としての機能を、**IaaS**（Infrastructure as a Service）である [**OpenStack**](https://www.openstack.org/) と連携して動作し、また**RBAC**を利用する上で便利な機能を提供します。  
+**K2HR3** は、**RBAC** としての機能を、**IaaS**（Infrastructure as a Service）と連携して動作し、**RBAC**を利用する上で便利な機能を提供します。  
+現在、連携可能な **IaaS**（Infrastructure as a Service）は、[**OpenStack**](https://www.openstack.org/) と[**kubernetes**](https://kubernetes.io/ja/)です。
 
 **K2HR3** は、Yahoo! JAPANが公開している **K2HASH**、 **K2HASH TRANSACTION PLUGIN**、 **CHMPX**、 **K2HDKC** 等を使って構築されています。    
 **K2HR3** は、Yahoo! JAPANがオープンソースとして公開するプロダクト [AntPickax](https://antpick.ax/indexja.html) のひとつです。
@@ -53,6 +54,7 @@ arrow_link_tools: <a href="toolsja.html" class="link-title"><span class="arrow-b
 - [K2HR3 Web Application](https://github.com/yahoojapan/k2hr3_app)
 - [K2HR3 REST API](https://github.com/yahoojapan/k2hr3_api)
 - [K2HR3 OpenStack Notification Listener](https://github.com/yahoojapan/k2hr3_osnl)
+- [K2HR3 Container Registration Sidecar](https://github.com/yahoojapan/k2hr3_sidecar)
 - [K2HR3 Utilities](https://github.com/yahoojapan/k2hr3_utils)
 
 ## {{ page.arrow_link_environments }}

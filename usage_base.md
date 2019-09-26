@@ -153,9 +153,9 @@ Register the IP address and the **Auxiliary Information(AUX)** of the **HOST** t
 _Please refer to [Auxiliary Information(AUX)](detail_various.html) for AUX._  
 
 #### Automatic registration
-When cooperating with IaaS(OpenStack) and automatically registering/deleting **ROLE member HOST**, manually registering **HOST** with IP address is **unnecessary**.  
-This is because IP addresses are automatically registered/deleted when they are worked with IaaS(OpenStack).  
-If you do not work with IaaS(OpenStack) or do not use it, please use manual registration of IP address.  
+When cooperating with IaaS(OpenStack or kubernetes) and automatically registering/deleting **ROLE member HOST**, manually registering **HOST** with IP address is **unnecessary**.  
+This is because IP addresses are automatically registered/deleted when they are worked with IaaS(OpenStack and kubernetes).  
+If you do not work with IaaS(OpenStack and kubernetes) or not use automatically registration, please use manual registration of IP address.  
 
 ### POLICIES
 Please list **POLICY-RULE** which defines access method to **RESOURCE** accessed by **ROLE** member's **HOST**.  
@@ -226,40 +226,61 @@ You can register HOST in any of the following.
 
 _Please refer to [Auxiliary Information(AUX)](detail_various.html) for AUX. Please leave it empty here._  
 
-## Automatic host registration to ROLE
+## Automatic host registration to ROLE by OpenStack
 After determining the unit/definition of ROLE, create a ROLE like a manual.  
 We do not register HOST of members in ROLE.  
-It starts Virtual Machine with IaaS(OpenStack) and it is registered automatically.  
+You starts Virtual Machine with OpenStack and it is registered automatically.  
 
 #### (3'-1) Select TENANT
 #### (3'-2) Register ROLE in TENANT
 #### (3'-3) Get **USER DATA SCRIPT** of ROLE
 When using the [K2HR3 Web Application](usage_app.html), select ROLE and display the **Selected Path Information** dialog.  
-Copy (click the button) **USER DATA SCRIPT** in this dialog.
+Click the **Creating a new role token(expire) and registration code** button of the **ROLE TOKEN** item in this dialog or click the **Manage role tokens** button to open the **Manage Role Tokens** dialog page from the **Role Token / Registration code** dialog page.
 #### (3'-4) Create Virtual Machine with OpenStack
 Start up the instance(Virtual Machine) with OpenStack.  
 To start an instance from OpenStack's Dashboard(horizon), specify **USER DATA SCRIPT** in **after creating** in the instance setting dialog.  
-The **USER DATA SCRIPT** can be obtained from **Selected Path Information** dialog of ROLE.  
+The **USER DATA SCRIPT** can be obtained by selecting **User Data Script for OpenStack** on the **Role Token / Registration code** dialog page.
 When using the openstack command(CLI), specify the user data script with the **-user-data** option.  
 _Depending on the version of OpenStack, screens, wordings, etc. may differ._
 #### (3'-5) Automatically registered after Virtual Machine is started
 When the instance(Virtual Machine) starts up, the instance is automatically registered to the member of ROLE.
+
+## Automatic host registration to ROLE by kubernetes
+After determining the unit/definition of ROLE, create a ROLE like a manual.  
+We do not register HOST of members in ROLE.  
+You starts Pods(Containers) by kubernetes and it is registered automatically.  
+
+#### (3''-1) Select TENANT
+#### (3''-2) Register ROLE in TENANT
+#### (3''-3) Get **USER DATA SCRIPT** of ROLE
+When using the [K2HR3 Web Application](usage_app.html), select ROLE and display the **Selected Path Information** dialog.  
+Click the **Creating a new role token(expire) and registration code** button of the **ROLE TOKEN** item in this dialog or click the **Manage role tokens** button to open the **Manage Role Tokens** dialog page from the **Role Token / Registration code** dialog page.
+#### (3''-4) Create Pods(Containers) by kubernetes
+Runs Pods(containers) by kubernetes.
+- Before running, select **Secret Yaml for kubernetes** on the **Role Token / Registration code** dialog page and get the **Secret.yml** template.
+- Check the obtained **Secret.yml**, modify it appropriately, and register **Secret** to kubernetes. (This is a one-time operation for the same ROLE.)
+- Next, select **Sidecar Yaml for kubernetes** and get a template for **Sidecar.yml**.
+- Check the **Sidecar.yml** you have obtained, modify as appropriate, and incorporate it into your yaml for Pods(Containers).
+- Start Pods(Containers) with your yaml incorporating **Sidecar.yml**.
+#### (3''-5) Automatically registered after Pods(Conatiners) are started
+When each Pod(Container) starts, these Pods(Containers) for the member of the target ROLE is automatically registered as a HOST.
 
 ## Manual HOST deleted from ROLE
 You can manually delete HOST from ROLE members.  
 When using the [K2HR3 Web Application](usage_app.html), you can delete it manually by specifying the HOST registered in the ROLE member.  
 Please manually register in order to re-register the same HOST after deleting auto registered HOST.
 
-## Automatic deletion by K2HR3 OpenStack Notification Listener
-HOST registered automatically for ROLE members can be automatically deleted.  
-[K2HR3 OpenStack Notification Listener](detail_osnl.html) is running, it is automatically deleted in cooperation with IaaS(OpenStack).  
+## Automatic deletion HOST
+### Automatic deletion by K2HR3 OpenStack Notification Listener
+HOST registered automatically by OpenStack for ROLE members can be automatically deleted.  
+[K2HR3 OpenStack Notification Listener](detail_osnl.html) is running, it is automatically deleted in cooperation with OpenStack.  
 
 #### (4-1) Delete Instance(Virtual Machine) with OpenStack
 #### (4-2) K2HR3 OpenStack Notification Listener detects deletion
 [K2HR3 OpenStack Notification Listener](detail_osnl.html) receives notification via OpenStack's RabbitMQ and checks whether the deleted instance is registered in K2HR3.  
 If it is a registered HOST, it will be deleted automatically from members of ROLE that registered this HOST.  
 
-## Automatic detection by Watcher
+### Automatic detection by Watcher for OpenStack
 HOST registered automatically for ROLE members can be automatically deleted.  
 Even if [K2HR3 OpenStack Notification Listener](detail_osnl.html) can not be started, instead of starting K2HR3 [Watcher](tools.html), you can automatically delete HOST.  
 This [Watcher](tools.html) periodically queries IaaS(OpenStack) for the presence of automatically registered HOST, detects that it has been deleted, and automatically deletes it from the ROLE member.  
@@ -269,3 +290,9 @@ This [Watcher](tools.html) periodically queries IaaS(OpenStack) for the presence
 [Watcher](tools.html)'s regular OpenStack inquiry will detect deletion of target HOST.  
 It automatically deletes the detected HOST from the registered ROLE member.  
 
+### Automatic deletion synchronized with kubernetes orchestration
+kubernetes can automatically delete a HOST that is a member of a registered ROLE.  
+
+#### (4''-1) Delete Pods(Containers) by kubernetes
+#### (4''-2) Sidecar provided by K2HR3 is automatically deleted from the HOST
+If the Pod(Container) has Sidecar.yml set normally, it will be automatically deleted from HOST in conjunction with the deletion of the Pod(Container) by kubernetes.

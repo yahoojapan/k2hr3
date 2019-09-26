@@ -17,8 +17,9 @@ next_string: App Resource
 This section explains how to operate **TENANT** using the **K2HR3 Web Application**.
 
 ### About TENANT
-The K2HR3 system cooperates with **IaaS(OpenStack etc)**.  
-**TENANT** of the K2HR3 system refers to the tenant(or project) to which the user(USER) of IaaS(OpenStack) belongs.
+The K2HR3 system can operate in conjunction with **OpenStack** or other any **user authentication systems**.  
+When cooperated with OpenStack, the K2HR3 **TENANT** refers to the tenant(or project) to which the USER belongs in OpenStack.  
+When using other user authentication system, it refers to the **group**(scoped group) to which the USER belongs in that authentication system.
 
 # Selection of TENANT
 After signing in with the **K2HR3 Web Application**, the following screen will be displayed.  

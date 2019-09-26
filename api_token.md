@@ -61,7 +61,7 @@ x-auth-token: U=<Unscoped User Token>
 ```
 
 - tenant name  
-A tenant(OpenStack project) name(required when creating a scoped user token)
+A tenant name(required when creating a scoped user token)
 - user name  
 A user name
 - passwd  
@@ -114,7 +114,7 @@ x-auth-token: U=<Unscoped User Token>
 ### URL Arguments
 #### With Credential
 - tenantname=_tenant name_  
-A tenant(OpenStack project) name(required when creating a scoped user token)
+A tenant name(required when creating a scoped user token)
 - username=_user name_  
 A user name
 - password=_pass phrase_  
@@ -122,7 +122,7 @@ A password
 
 #### With unscoped user token
 - tenantname=_tenant name_  
-A tenant(OpenStack project) name
+A tenant name
 
 ### Response status
 200、40x

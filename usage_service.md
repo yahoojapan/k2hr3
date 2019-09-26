@@ -44,7 +44,7 @@ And **+SERVICE** makes it easy for **USER** to manage and operate functions and 
 
 #### Benefits of OWNER
 Normally in the K2HR3 system, when providing **RESOURCE**, USER need to manage the **HOST** of the **ROLE member** accessing the **RESOURCE**.  
-This task can be done easily if RESOURCE and ROLE are owned by the **same TENANT**.(Due to cooperation between IaaS(OpenStack))  
+This task can be done easily if RESOURCE and ROLE are owned by the **same TENANT**.(Due to cooperation between IaaS(OpenStack or kubernetes))  
 However, if RESOURCE and ROLE are owned by **different TENANTs**, coordination between **OWNER** and **MEMBER** becomes **difficult**.  
 In particular, if OWNER want to provide **different RESOURCE** for each MEMBER, it becomes more difficult.  
 

@@ -43,6 +43,8 @@ The 'k2hr3' repository consists of the following submodules.
   * a repository for Web server
 * k2hr3_osnl
   * a repository for K2HR3 OpenStack Notification Listener
+* k2hr3_sidecar
+  * kubernetes Pod Sidecar docker image repository for automatically registoration/deletion Pods(Containers) from kubernetes
 * k2hr3_utils
   * a repository for utilities
 
@@ -168,7 +170,7 @@ k2hr3_api repository is a repository for K2HR3 Web server.
 
 This chapter instructs how to build a 'k2hr3_osnl' package and test it in your local development environment.
 
-k2hr3_api repository is a repository for K2HR3 OpenStack Notification Listener.
+k2hr3_osnl repository is a repository for K2HR3 OpenStack Notification Listener.
 
 
 1. Fork the [https://github.com/yahoojapan/k2hr3_osnl](https://github.com/yahoojapan/k2hr3_osnl) repository in GitHub.
@@ -188,7 +190,7 @@ k2hr3_api repository is a repository for K2HR3 OpenStack Notification Listener.
     $ pipenv shell
     ```
     
-4. Create a branch for local development::
+4. Create a branch for local development
 
     ```
     (k2hr3_osnl) $ git checkout -b my-first-contribution
@@ -200,7 +202,7 @@ k2hr3_api repository is a repository for K2HR3 OpenStack Notification Listener.
     (k2hr3_osnl) $ make lint test
     ```
 
-6. Commit your code changes and push your branch to GitHub when you change codes::
+6. Commit your code changes and push your branch to GitHub when you change codes
 
     ```
     (k2hr3_osnl) $ git add .
@@ -211,6 +213,58 @@ k2hr3_api repository is a repository for K2HR3 OpenStack Notification Listener.
 7. Submit a pull request through the GitHub website when you change codes.
 
 
+
+
+
+## The k2hr3_sidecar repository
+This chapter instructs how to build a 'k2hr3_sidecar' docker image and test it in your local development environment.
+
+k2hr3_sidecar repository is a repository for managing Sidecar docker images required to automatically register and delete Pods(Conatainers) from kubernetes.
+
+1. Fork the [https://github.com/yahoojapan/k2hr3_sidecar](https://github.com/yahoojapan/k2hr3_sidecar) repository in GitHub.
+
+2. Clone your forked repository locally.
+
+    ```
+    $ git clone https://github.com/YOUR-USERNAME/k2hr3_sidecar.git
+    ```
+
+3. install dependent packages to your local development environment.
+
+    ```
+    $ cd k2hr3_osnl/
+    $ pip3 install pipenv
+    $ python3 -m pipenv install -dev --python /path/to/python3
+    $ pipenv shell
+    ```
+    
+
+3. Install docker in the local environment using the following method.
+- [Get Docker Engine - Community for Debian](https://docs.docker.com/install/linux/docker-ce/debian/)
+- [Install Docker Desktop for Mac](https://docs.docker.com/docker-for-mac/install/)
+- [Install Docker Desktop on Windows](https://docs.docker.com/docker-for-windows/install/)
+
+4. Create a branch for local development::
+    ```
+    (k2hr3_sidecar) $ git checkout -b my-first-contribution
+    ```
+
+5. Create a sidecar docker image and check it::
+
+    ```
+    (k2hr3_sidecar) $ sudo docker build --tag antpickax/k2hr3.sidecar:0.1 .
+    (k2hr3_sidecar) $ sudo docker run -i -t antpickax/k2hr3.sidecar:0.1 /bin/sh
+    ```
+
+6. Commit your code changes and push your branch to GitHub when you change codes
+
+    ```
+    (k2hr3_sidecar) $ git add .
+    (k2hr3_sidecar) $ git commit -m "Short description of your changes."
+    (k2hr3_sidecar) $ git push origin my-first-contribution
+    ```
+    
+7. Submit a pull request through the GitHub website when you change codes.
 
 ## The k2hr3_utils repository
 

@@ -18,24 +18,47 @@ This section explains detailed specification of K2HR3 and description of K2HR3 s
 You can refer to [Overview](home.html) and [Feature](feature.html) before this section.
 
 # USER and TENANT
-The figure below shows **USER** and **TENANT** defined by the K2HR3 system and the IaaS(OpenStack etc) which the K2HR3 system cooperates with.  
+
+
+The K2HR3 system does not manage **USER** and **TENANT**, but uses a user management system linked to the K2HR3 system.  
+For example, if K2HR3 system cooperates with OpenStack, it uses OpenStack users and tenants(or projects) as K2HR3 **USER** and **TENANT**.  
+For user management systems other than OpenStack, prepare additional programs that correspond to individual user management systems, set them in the K2HR3 system, and define them as K2HR3 **USER** and **TENANT**.  
+
+## Cooperating with OpenStack
+The figure below shows **USER** and **TENANT** defined by the K2HR3 system and the OpenStack which the K2HR3 system cooperates with.  
 
 ![K2HR3 Detail - USER/TENANT](images/detail_user_tenant.png)
 
-## USER and Sginin
+### USER and Sginin
 The K2HR3 system defines the user of K2HR3 as **USER**.  
 
 **USER** is the same as the user of IaaS(OpenStack) that the K2HR3 system cooperates with.  
-By working with IaaS(OpenStack), the K2HR3 system uses the user who signs in existing OpenStack as **USER** of K2HR3.  
+By working with OpenStack, the K2HR3 system uses the user who signs in existing OpenStack as **USER** of K2HR3.  
 
 When a user signs in to the K2HR3 system, the K2HR3 system delegates user authentication to the OpenStack Identity service(Keystone).  
 Therefore, users of the OpenStack Identity service(Keystone) can use the K2HR3 system immediately.  
 
-## TENANT
-**TENANT** of K2HR3 system is the same as the tenant(or project) of IaaS(OpenStack) that works with the K2HR3 system.  
-The K2HR3 system operates synchronizing the tenant(or project) information of IaaS(OpenStack).  
+### TENANT
+**TENANT** of K2HR3 system is the same as the tenant(or project) of OpenStack that works with the K2HR3 system.  
+The K2HR3 system operates synchronizing the tenant(or project) information of OpenStack.  
 
 Therefore, the **USER** of the K2HR3 system is automatically linked to **TENANT** which is the OpenStack tenant(or project) managed by the OpenStack OpenStack Identity service(Keystone).  
+
+## Authentication system other than OpenStack
+If K2HR3 system cooperates with authentication system other than OpenStack, prepare the code to access your user authentication system and configure it into the K2HR3 system.  
+_For kubernetes(when not using OpenStack), refer to this contents._
+
+### Preparation
+You need to prepare a code to access your user authentication system.  
+You can see the example code in [k2hr3_app/routes/lib/userValidateCredential.js](https://github.com/yahoojapan/k2hr3_app/blob/master/routes/lib/userValidateCredential.js) or [k2hr3_app/routes/lib/userValidateDebug.js](https://github.com/yahoojapan/k2hr3_app/blob/master/routes/lib/userValidateDebug.js).
+
+### Setting
+Copy the created dedicated code in the **routes/lib** directory where you extracted [K2HR3 Web Application](usage_app.html) (k2hr3_app).
+Next, write this file name(without the extension **.js**) to **'validator'** element described in the **conf** file in the **config** directory.
+
+### Operation
+You can log in(sign in) from the [K2HR3 Web Application](usage_app.html) login(Siginin) dialog using the above settings.  
+_This document will be expanded in the future._
 
 # ROLE and POLICY-RULE and RESOURCE
 The relationship between **ROLE**, **POLICY-RULE** and **RESOURCE** defined by the K2HR3 system is shown in the following figure.  
@@ -48,11 +71,11 @@ The relationship between **ROLE**, **POLICY-RULE** and **RESOURCE** defined by t
 **ROLE** is associated with **TENANT** to which **USER** belongs, and is managed separately by **TENANT**.  
 
 **ROLE** is a definition of a group, and it is data for managing members accessing **RESOURCE**.  
-This **ROLE** member is a host(**HOST**) that accesses the K2HR3 system [REST API](api.html) server, and is a host by on-premises and a virtual computing(Virtual Machine) managed by IaaS(OpenStack, etc.).  
+This **ROLE** member is a host(**HOST**) that accesses the K2HR3 system [REST API](api.html) server, and is a host by on-premises and a virtual computing(Virtual Machine) and Podd(Conatiners) managed by IaaS(OpenStack, kubernetes).  
 The IP address(and etc) information of the host(**HOST**) is registered as a member of **ROLE**.  
 
-**ROLE** member registration can be automatically registered in conjunction with launch of IaaS(OpenStack) Virtual Machine which the K2HR3 system cooperates with.  
-The **ROLE** member's ***HOST** is automatically deleted from the **ROLE** in conjunction with the deletion of Virtual Machine by IaaS(OpenStack).
+**ROLE** member registration can be automatically registered in conjunction with launch of OpenStack Virtual Machine or kubernetes Pods(Containers) which the K2HR3 system cooperates with.  
+The **ROLE** member's ***HOST** is automatically deleted from the **ROLE** in conjunction with the deletion of Virtual Machine of OpenStack or Pods(Containers) of kubernetes.
 In addition, **USER** can manually register/delete **ROLE** member's HOST using the [K2HR3 Web Application](usage_app.html).
 
 ## POLICY-RULE
@@ -109,8 +132,8 @@ Therefore, **OWNER** manages registration of **RESOURCE** to be provided, contro
 **MEMBER** manages the **ROLE** accessing the provided **RESOURCE** and manages the **HOST** of the **ROLE member**.  
 
 # Collaboration with IaaS
-The K2HR3 system works in cooperation with IaaS(Infrastructure as a Service).  
-_Currently, [**OpenStack**](https://www.openstack.org/) is available as IaaS for K2HR3 system._  
+The K2HR3 system works in cooperation with OpenStack or kubernetes as IaaS(Infrastructure as a Service).  
+_In the case of kubernetes, cooperation with the user authentication system provided to kubernetes is required._  
 
 The K2HR3 system links **USER** and **TENANT** for K2HR3 system with IaaS.  
 Matching IaaS users/tenants(or projects) and **USER**/**TENANT** makes it easy to introduce the K2HR3 system into existing IaaS systems.  
@@ -118,9 +141,8 @@ Matching IaaS users/tenants(or projects) and **USER**/**TENANT** makes it easy t
 And the K2HR3 system can automatically register/delete **ROLE** members by working with IaaS.  
 Automatic registration and deletion of **ROLE** members will be explained below.  
 
-_The following section describes cooperation with [**OpenStack**](https://www.openstack.org/) currently supported as IaaS._  
-
 ## Automatically register to ROLE members
+### OpenStack
 The K2HR3 system automatically adds the instance to the **ROLE member** as the **HOST** by starting the OpenStack instance(Virtual Machine).  
 This automatic registration process is implemented by using **User Data Script**(USER DATA SCRIPT) specified when OpenStack instance(Virtual Machine) is started up.  
 
@@ -128,7 +150,13 @@ This **User Data Script** is small text data that can be obtained by accessing t
 **USER** can acquire **User Data Script** from [K2HR3 Web Application](usage_app.html) by explicitly specifying the **ROLE** which **USER** wants to add instance(**HOST**) to start.  
 Pass the acquired **User Data Script** as a parameter for starting OpenStack instance(Virtual Machine).  
 
+### kubernetes
+In the case of kubernetes, when you start the Pods, specify the **Secret** setting and **Sidecar** to Pods and start it.  
+The **yaml example code** for **Secret** and **Sidecar** can be obtained from the [K2HR3 Web Application](usage_app.html).  
+Reflect the obtained yaml sample code to the yaml at the time of startup, and start the Pods.
+
 ## Automatically delete from ROLE members
+### OpenStack
 The K2HR3 system automatically deletes the instance(**HOST**) which is deleted by the OpenStack from the **ROLE member**.  
 If the target instance(**HOST**) is created in OpenStack and automatically registered as a member in **ROLE**, **USER** can be automatically deleted from the **ROLE member** by deleting the instance(Virtual Machine) on OpenStack.  
 
@@ -136,7 +164,11 @@ This function is implemented by [**K2HR3 OpenStack Notification Listener**](deta
 **USER** can use this automatic deletion function by starting the [K2HR3 OpenStack Notification Listener](detail_osnl.html) program provided by K2HR3.  
 About this program, please refer to [K2HR3 OpenStack Notification Listener](detail_osnl.html).  
 
-## Regular check and removal from ROLE members
+### kubernetes
+In the case of kubernetes, in the same way as with OpenStack, in conjunction with the deletion of a Pods(Containers), the Pods(Containers) can be automatically deleted from the **ROLE member**.  
+If the target Pod(Container) is cooperated by the K2HR3 system and is automatically registered, it is automatically deleted from the member simply by deleting the Pod(Container).
+
+## Regular check and removal from ROLE members for OpenStack
 Even if **USER** can not use [K2HR3 OpenStack Notification Listener](detail_osnl.html) program, **USER** can automatically delete that host(**HOST**) from the **ROLE member**.  
 For this purpose, **USER** can launch the [**Watcher**](tools.html) program contained in the K2HR3 system.  
 
@@ -146,10 +178,16 @@ Even if **USER** can not start [K2HR3 OpenStack Notification Listener](detail_os
 
 About this program, please refer to [Watcher](tools.html).  
 
-## Automatically registration/deletion with OpenStack
+## Automatically registration/deletion
+### OpenStack
 The outline diagram of automatic registration and deletion of OpenStack and ROLE members is shown below.  
 
 ![K2HR3 Detail - OpenStack Orchestration](images/detail_orchestration.png)
+
+### kubernetes
+The outline diagram of automatic registration and deletion of kubernetes and ROLE members is shown below.  
+
+![K2HR3 Detail - kubernetes Registration/Deletion](images/detail_k8s_orchestration.png)
 
 # K2HR3 System Overview
 A schematic diagram of the K2HR3 system is shown below.  
@@ -195,7 +233,7 @@ For **K2HDKC** of distributed KVS, please see [**K2HDKC**](https://k2hdkc.antpic
 
 ## K2HR3 OpenStack Notification Listener
 This server is the server running the [**K2HR3 OpenStack Notification Listener**](detail_osnl.html) program.  
-This program uses OpenStack as IaaS and automatically deletes target instances(**HOST**) from **ROLE members** in conjunction with deletion of instance(**HOST**) on OpenStack.  
+This program uses OpenStack and automatically deletes target instances(**HOST**) from **ROLE members** in conjunction with deletion of instance(**HOST**) on OpenStack.  
 
 For details on how to use this program, please see [K2HR3 OpenStack Notification Listener](detail_osnl.html).  
 

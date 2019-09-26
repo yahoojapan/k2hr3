@@ -24,16 +24,18 @@ This page provides general information of K2HR3 REST API. K2HR3 REST API is a K2
   * [cloud-init](https://cloudinit.readthedocs.io/en/latest/index.html), which is a script to initialize an instance, is an example. It invokes K2HR3 REST API to configure the instance as it boots into the cloud system and integrates itself with K2HR3.
 
 ## Token
-
-This chapter describes a token, which is a string that represents the authenticated identity of an OpenStack user or a K2HR3 ROLE member.
+This chapter describes a token, which is a string that represents the authenticated identity of an **USER**(OpenStack users or other any user authentication system users) or a K2HR3 ROLE member.
 
 K2HR3 REST API accepts tokenless requests and requests with a token for usability. Clients must send requests with necessary parameters in right places correctly, so that K2HR3 REST API identify the type of a request. See each API page for details.
 
 ### Token Types
 
-This section describes the two token types; USER TOKEN and ROLE TOKEN.
+This section describes the two token types; USER TOKEN and ROLE TOKEN.  
 
-USER TOKEN is a token that represents the authenticated identity of an OpenStack user. The K2HR3 TOKEN API generates this type of token for a authenticated user. A token is scoped to K2HR3 TENANT, which is a nearly equal OpenStack project, or unscoped. K2HR3 REST APIs find this type of token to determine the access authority scope of each operation to the target resources by the authenticated user.
+USER TOKEN is a token that represents the authenticated identity of an OpenStack user or other any user authentication system user.
+The K2HR3 TOKEN API generates this type of token for a authenticated user.
+A token is scoped to K2HR3 TENANT, which is a nearly equal OpenStack project, or unscoped.
+K2HR3 REST APIs find this type of token to determine the access authority scope of each operation to the target resources by the authenticated user.  
 
 ROLE TOKEN is a token that represents the authenticated identity of a K2HR3 ROLE member. The K2HR3 ROLE API generates this type of token. K2HR3 REST APIs use this type of token to determine the access authority scope of each operation to the target resources by the K2HR3 ROLE member.
 
@@ -81,7 +83,7 @@ The purpose of the POLICY API is to define and list ACLs associated with K2HR3 R
 
 ### [SERVICE API](api_service.html)
 
-The purpose of the SERVICE API is for a K2HR3 TENANT(or OpenStack project) to create, show details, update, and delete a information of the K2HR3 SERVICEs of the K2HR3 TENANT. Therefore, each method requires a token scoped to a K2HR3 TENANT scoped token. See the [+SERVICE Usage](usage_service.html) page for the K2HR3 SERVICE details.
+The purpose of the SERVICE API is for a K2HR3 TENANT(as same as OpenStack tenant(or project) when cooperated with OpenStack) to create, show details, update, and delete a information of the K2HR3 SERVICEs of the K2HR3 TENANT. Therefore, each method requires a token scoped to a K2HR3 TENANT scoped token. See the [+SERVICE Usage](usage_service.html) page for the K2HR3 SERVICE details.
 
 ### [ACR(ACCESS CROSS ROLE) API](api_acr.html)
 

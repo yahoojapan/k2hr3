@@ -50,8 +50,9 @@ _It will be defined in the future._
 
 #### < tenant >
 This is a part for uniquely identifying **TENANT**, and **TENANT ID** is set as a value.  
-In collaboration with IaaS(OpenStack) of K2HR3 system, **TENANT** of K2HR3 system is the same as tenant(or project) of IaaS(OpenStack).  
-That is **TENANT ID** is the same as the ID of the tenant(or project) of IaaS(OpenStack).  
+K2HR3 system user authentication can cooperate with OpenStack or other any user authentication systems.  
+When cooperated with OpenStack, the K2HR3 system **TENANT** is the same as the OpenStack tenant(or project).  
+In this case, that is **TENANT ID** is the same as the ID of the tenant(or project) of OpenStack.  
  
 When specifying data not related to **TENANT** by **YRN Path**, the value of this part is **empty**.  
 
@@ -96,7 +97,7 @@ In that case, the K2HR3 system can add **Auxiliary Information(AUX)** to **HOST*
 Currently, the **Auxiliary Information(AUX)** that **USER** can specify is only the **PORT** element.  
 
 ### Collaboration with IaaS(OpenStack)
-The K2HR3 system can register and delete the **ROLE member**'s **HOST** with IaaS(OpenStack).  
+The K2HR3 system can register and delete the **ROLE member**'s **HOST** with IaaS(OpenStack or kubernetes).  
 When using this collaboration function, the elements **CUK**, **EXTRA** are added to the **Auxiliary Information(AUX)** of the registered **HOST**.  
 _Please do not use these element directly._  
 

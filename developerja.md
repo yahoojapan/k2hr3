@@ -30,6 +30,8 @@ k2hr3レポジトリは、次のサブモジュールから構成されていま
   * APPサーバ用レポジトリ
 * k2hr3_osnl
   * OpenStack通知リスナー用レポジトリ
+* k2hr3_sidecar
+  * kubernetesからの自動登録・削除用Sidecar Containerのためのdockerイメージレポジトリ
 * k2hr3_utils
   * 運用/開発ツールなど各種ツール用レポジトリ
 
@@ -195,6 +197,47 @@ k2hr3_osnlレポジトリは、OpenStack通知リスナー用のレポジトリ�
     
 7. コード変更があれば、ぜひプルリクエストを投げてみてください！
 
+## k2hr3_sidecarレポジトリ
+
+この章では、k2hr3_sidecarレポジトリの内容を説明します。
+
+k2hr3_sidecarレポジトリは、kubernetesからPods（Conatainers）を自動登録・削除をするために必要となるSidecar dockerイメージを管理するレポジトリです。
+
+1. Github上で [https://github.com/yahoojapan/k2hr3_sidecar](https://github.com/yahoojapan/k2hr3_sidecar)をforkします
+
+2. レポジトリをcloneします
+
+    ```
+    $ git clone https://github.com/YOUR-USERNAME/k2hr3_sidecar.git
+    ```
+
+3. ローカル環境にdockerを以下の方法などでインストールします  
+- [Get Docker Engine - Community for Debian](https://docs.docker.com/install/linux/docker-ce/debian/)
+- [Install Docker Desktop for Mac](https://docs.docker.com/docker-for-mac/install/)
+- [Install Docker Desktop on Windows](https://docs.docker.com/docker-for-windows/install/)
+
+4. ブランチを作り、必要でしたら、コード変更して見てください
+
+    ```
+    (k2hr3_sidecar) $ git checkout -b my-first-contribution
+    ```
+
+5. dockerイメージを作成し、中身を確認します
+
+    ```
+    (k2hr3_sidecar) $ sudo docker build --tag antpickax/k2hr3.sidecar:0.1 .
+    (k2hr3_sidecar) $ sudo docker run -i -t antpickax/k2hr3.sidecar:0.1 /bin/sh
+    ```
+
+6. コード変更があれば、commitして、push します
+
+    ```
+    (k2hr3_sidecar) $ git add .
+    (k2hr3_sidecar) $ git commit -m "Short description of your changes."
+    (k2hr3_sidecar) $ git push origin my-first-contribution
+    ```
+    
+7. コード変更があれば、ぜひプルリクエストを投げてみてください！
 
 ## k2hr3_utilsレポジトリ
 
