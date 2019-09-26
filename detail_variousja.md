@@ -48,9 +48,9 @@ _将来的には定義される予定です。_
 
 #### < tenant >
 テナント（TENANT）を一意に識別するためのパーツであり、テナント（TENANT）の**ID**となります。  
-K2HR3システムは、IaaS（OpenStack）と連携します。
-よって、K2HR3システムのテナント（TENANT）は、IaaS（OpenStack）のテナント（もしくはプロジェクト）と同じです。  
-つまり、テナント（TENANT）の**ID**は、IaaS（OpenStack）のテナント（もしくはプロジェクト）のIDと同じになります。  
+K2HR3システムのユーザ認証は、OpenStackもしくはその他のユーザ認証システムと連携できます。  
+OpenStackと連携している場合、K2HR3システムのテナント（TENANT）は、OpenStackのテナント（もしくはプロジェクト）と同じです。  
+この場合、テナント（TENANT）の**ID**は、OpenStackのテナント（もしくはプロジェクト）のIDと同じになります。  
 テナント（TENANT）に関係しないデータをYRNパスで指定する場合、このパーツの値は**空**となります。
 
 #### < type >
@@ -93,7 +93,7 @@ K2HR3システムにおいて、この**Yahoo Resource Names (YRN)**は、デー
 現在、自由にユーザ（USER）が利用できる付属情報（AUX）は、**PORT**要素のみになります。
 
 ### IaaS（OpenStack）連携
-K2HR3システムは、ロール（ROLE）メンバーのホスト（HOST）の登録・削除をIaaS(OpenStack)と連携し、自動で実行できます。  
+K2HR3システムは、ロール（ROLE）メンバーのホスト（HOST）の登録・削除をIaaS(OpenStackもしくはkubernetes)と連携し、自動で実行できます。  
 この機能を利用した場合、登録されるホスト（HOST）の付属情報（AUX）に、**CUK**、**EXTRA**という要素が付与されます。  
 この要素は、直接設定することは避けてください。
 

@@ -14,8 +14,7 @@ next_string:
 ---
 
 # USERDATA API
-
-K2HR3 REST APIのIaaS（OpenStack）用のUSER DATA SCRIPTに関連するAPI群です。
+K2HR3 REST APIのOpenStack連携用のUSER DATA SCRIPTに関連するAPI群です。
 
 ## GET（Userdata）
 OpenStack インスタンス起動時にCloud-Initが利用するUserdataを取得します。  

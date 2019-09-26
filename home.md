@@ -37,9 +37,7 @@ This information(RESOURCE) is accessed from the group(ROLE) handling it.
 
 Currently, AWS( [Amazon Web Services](https://aws.amazon.com/) ) IAM( [AWS Identity and Access Management](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) ) is famous for the cloud world as a system to manage and control the RESOURCE.  
 
-We made **K2HR3** system with the purpose of providing an RBAC system that can cooperate with IaaS([OpenStack](https://www.openstack.org/), etc), can be used in environments other than AWS, and can easily use it.  
-
-Now, **K2HR3** can work with [OpenStack](https://www.openstack.org/) and control access to RESOURCE.
+We made **K2HR3** system with the purpose of providing an RBAC system that can cooperate with IaaS( [OpenStack](https://www.openstack.org/), [kubernetes](https://kubernetes.io/) ), can be used in environments other than AWS, and can easily use it.  
 
 **K2HR3** will **eliminate unique authentication system**(ex. authentication by token) to get RESOURCE, and will reduce the work of building the user's system.  
 

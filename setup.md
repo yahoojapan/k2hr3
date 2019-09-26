@@ -61,10 +61,19 @@ OpenStack is required for K2HR3 system. If you have no OpenStack environment, se
 * [DevStack](https://docs.openstack.org/devstack/latest/)
   * This guide shows you how to get started with the latest OpenStack services.
 
+### kubernetes installation
+
+This section describes kubernetes installation.
+
+* If you build kubernetes by [**minikube**](https://kubernetes.io/docs/tutorials/hello-minikube/) for simple test.  
+When you are using minikube, set the proxy appropriately.
+* If you build kubernetes by [**kubeadm**](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/#).
+* If you build kubernetes by [**Rancher**](https://rancher.com/).
 
 ### K2HR3 installation
 
-This section instructs how to install all K2HR3 subsystems by executing only one command, 'cluster.sh'.
+This section instructs how to install all K2HR3 subsystems by executing only one command, 'cluster.sh'.  
+_The following documents are for building an environment that links with OpenStack. When linking with kubernetes only, the following work for OpenStack is not required._  
 
 Running 'cluster.sh' with the following parameters will complete installation.
 

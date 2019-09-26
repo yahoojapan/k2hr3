@@ -45,7 +45,7 @@ Also, if you are planning to use a server that can distribute settings(configura
 
 
 #### Listing HOSTs
-When running an instance(Virtual Machine) using IaaS(OpenStack), HOST constituting the system of USER changes dynamically.  
+If the HOST is started as an instance or Pods(Containers) using IaaS(OpenStack or kubernetes), the HOST changes dynamically.  
 In an environment where orchestration and autoscaling are automatically performed by IaaS, it is **difficult** to intervene processing **by USER**.  
 If a program(application) or system needs a **list of HOST**, it is necessary to automatically capture the change of this environment.
 As explained above, the K2HR3 system makes it possible to **dynamically enumerate this list of HOSTs** to be challenged.
@@ -67,7 +67,7 @@ The K2HR3 system can **safely manage keys** and **control access to that key as 
 ![K2HR3 Usage Other - Key](images/usage_other_key.png)
 
 In the above figure, OWNER can **exchange keys without consideration to MEMBER**, if the program(application) or the system detects change of the key and can reread the key.  
-Although USER can provide a system for distributing/updating keys, it is **difficult** to provide a system that supports RBAC function and supports IaaS(OpenStack), like the +SERVICE feature supports OWNER and MEMBER.  
+Although USER can provide a system for distributing/updating keys, it is **difficult** to provide a system that supports RBAC function and supports IaaS(OpenStack and kubernetes), like the +SERVICE feature supports OWNER and MEMBER.  
 
 USER can reduce the cost and build a safe system by using K2HR3 system which these are already implemented and can easily provide.  
 

@@ -37,9 +37,9 @@ Please enter your **user name** and **passphrase** in the displayed dialog and s
 ![K2HR3 Usage Application - Signin](images/usage_app_signin.png)
 
 ### About USER
-The K2HR3 system works in cooperation with **IaaS(OpenStack etc)**.  
-The **USER** of K2HR3 system is the same as the user of **IaaS(OpenStack etc)**.  
-To sign in, use the **user name** and **passphrase** of **IaaS(OpenStack etc)** that is cooperated with the K2HR3 system.  
+The K2HR3 system can operate in conjunction with **OpenStack** or **other any user authentication systems**.  
+A K2HR3 **USER** is an OpenStack user or other any user authentication system user.  
+To sign in, use a passphrase with a user from OpenStack or other any user authentication system with which the K2HR3 system is cooperated.
 
 ## Sign out
 To sign out from the **K2HR3 Web Application**, click ![K2HR3 Signin Button](images/button_signout.png) button in the upper right.  

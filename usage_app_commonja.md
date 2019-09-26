@@ -37,9 +37,9 @@ K2HR3 Webアプリケーションにサインインするには、右上のロ�
 ![K2HR3 Usage Application - Signin](images/usage_app_signin.png)
 
 ### ユーザ（USER）について
-K2HR3システムは、IaaS（OpenStack）と連携して動作します。  
-K2HR3のユーザ（USER）は、IaaS（OpenStack）のユーザを意味しています。  
-サインインするには、K2HR3システムが連携しているIaaS（OpenStack）のユーザとパスフレーズを使ってください。
+K2HR3システムは、OpenStackもしくは他のユーザ認証システムと連携して動作できます。  
+K2HR3のユーザ（USER）は、OpenStackのユーザ、もしくは他のユーザ認証システムのユーザを意味しています。  
+サインインするには、K2HR3システムが連携しているOpenStackもしくは他のユーザ認証システムのユーザとパスフレーズを使ってください。
 
 ## サインアウト
 K2HR3 Webアプリケーションからサインアウトするには、右上の![K2HR3 Signin Button](images/button_signout.png)ボタンをクリックします。  

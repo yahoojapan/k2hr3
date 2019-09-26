@@ -25,7 +25,9 @@ The K2HR3 system defines "WHO(**ROLE**) access to WHAT(**RESOURCE**) controlled 
 ### TENANT
 **TENANT** is a group of users who use the K2HR3 system.  
 The K2HR3 system is designed to work with IaaS(Infrastructure as a Service).  
-Currently, [OpenStack](https://www.openstack.org/) can be used as IaaS working with K2HR3 system, then K2HR3's **TENANT** matches OpenStack tenant(or project).	  
+K2HR3 system can work together IaaS like [OpenStack](https://www.openstack.org/) and [kubernetes](https://kubernetes.io/).  
+If you use [OpenStack](https://www.openstack.org/), K2HR3's **TENANT** matches OpenStack tenant(or project).  
+In the case of [kubernetes](https://kubernetes.io/), it is necessary to link with the user management system used in the kubernetes system.  
 
 The **ROLE**, **RESOURCE**, **POLICY-RULE**, and **SERVICE** described below are data belonging to the **TENANT**.  
 A user of K2HR3 system belongs to some TENANT and can edit the data of those TENANT.  
@@ -39,7 +41,7 @@ And the users can also include other ROLEs in ROLE.
 In this way, the user can create a minimum unit **ROLE** according to the role and define a large unit **ROLE** containing these **ROLE**s.  
 And you can define flexible **ROLE** according to accessed **RESOURCE** by using this **ROLE** registration function.  
 
-The K2HR3 system automatically registers/deletes members(IP address, etc) to ROLE by working with IaaS(OpenStack, etc).  
+The K2HR3 system automatically registers/deletes members(IP address, etc) to ROLE by working with IaaS([OpenStack](https://www.openstack.org/), [kubernetes](https://kubernetes.io/)).  
 K2HR3 user can register automatically as **ROLE** member by simply starting a Virtual Machine or Container with IaaS already in use.  
 
 ### RESOURCE
@@ -120,16 +122,15 @@ OWNER can freely change the RESOURCE being provided/registered to SERVICE MEMBER
 
 ## Collaboration with IaaS
 The K2HR3 system works in cooperation with IaaS(Infrastructure as a Service).  
-_Currently, [**OpenStack**](https://www.openstack.org/) is available as IaaS for K2HR3 system._  
+_Currently, [**OpenStack**](https://www.openstack.org/) and [**kubernetes**](https://kubernetes.io/) are available as IaaS for K2HR3 system._  
 
-By collaborating with **OpenStack**, the K2HR3 system cooperates with instance startup/deletion of the OpenStack **Virtual Machine** and automatically registers/deletes it as a member of **ROLE**.  
+By collaborating with [**OpenStack**](https://www.openstack.org/) and [**kubernetes**](https://kubernetes.io/), the K2HR3 system cooperates with instance startup/deletion of the OpenStack **Virtual Machine** or kubernetes **Pod(Container)** and automatically registers/deletes those as a member of **ROLE**.  
 
-The cooperation between the K2HR3 system and OpenStack is **loosely coupled** and it can be easily installed in the existing OpenStack system which you are using.  
-And you can use RBAC of K2HR3 system with the same OpenStack operation as before.  
+The link between K2HR3 system and IaaS([OpenStack](https://www.openstack.org/) and [kubernetes](https://kubernetes.io/)) is **loosely coupled** and can be installed without affecting the existing [OpenStack](https://www.openstack.org/) and [kubernetes](https://kubernetes.io/) system.  
+And you can use RBAC of K2HR3 system with the same OpenStack and kubernetes operation as before.  
 
 ![K2HR3 Feature IaaS(overview)](images/feature_iaas.png)
 
-The user of the K2HR3 system only prepares **ROLE** before starting/creating the instance by [OpenStack](https://www.openstack.org/).  
+The user of the K2HR3 system only prepares **ROLE** before starting/creating the instance or Pod(container) by [OpenStack](https://www.openstack.org/) or [kubernetes](https://kubernetes.io/).  
 And just by starting/creating an instance, the instance is automatically registered to that **ROLE**.  
 Even if you deleted an instance, it will be deleted automatically from **ROLE** just like when registering.
-

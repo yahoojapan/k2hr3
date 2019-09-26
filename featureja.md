@@ -23,7 +23,9 @@ K2HR3は、誰が（**WHO**）何を（**WHAT**）どのように（**HOW**）�
 
 ### テナント（TENANT）
 **テナント**（**TENANT**）とは、K2HR3を利用するユーザの属するグループです。  
-K2HR3はIaaS（OpenStackなど）と連携を前提としており、この**テナント**（TENANT）はOpenStackのテナントと合致しています。  
+K2HR3システムは、[OpenStack](https://www.openstack.org/)や[kubernetes](https://kubernetes.io/ja/)などのIaaSと連携できます。  
+[OpenStack](https://www.openstack.org/)を使用する場合、K2HR3の**テナント**（TENANT）はOpenStackテナント（またはプロジェクト）と一致します。  
+[kubernetes](https://kubernetes.io/ja/)の場合、kubernetesシステムで使用されているユーザー管理システムとリンクする必要があります。  
 
 以下で説明するロール（ROLE）、リソース（RESOURCE）、ポリシー/ルール（POLICY）、サービス（SERVICE）のすべては、**テナント**（TENANT）に属するデータです。  
 K2HR3のユーザは、いずれかの**テナント**（TENANT）に属する前提であり、属した**テナント**（TENANT）のデータを編集できます。
@@ -37,7 +39,7 @@ K2HR3システムでの **ロール**（**ROLE**）とは、上述の **誰が**
 これにより、役割に応じた**ロール**（ROLE）の定義を行い、複数の**ロール**（ROLE）を合成した別の**ロール**（ROLE）を定義することができます。  
 以上の柔軟な**ロール**（ROLE）登録により、アクセスをする**リソース**（RESOURCE）に応じ、柔軟な**ロール**（ROLE）の定義を提供します。  
 
-**ロール**（ROLE）へのメンバー（ホスト情報）登録/削除は、IaaS（OpenStackなど）と連携し、自動的に行うことができます。  
+**ロール**（ROLE）へのメンバー（ホスト情報）登録/削除は、IaaS（[OpenStack](https://www.openstack.org/)、[kubernetes](https://kubernetes.io/ja/)）と連携し、自動的に行うことができます。  
 これにより、K2HR3利用者は既存のIaaSで仮想HOST（Container）を登録する操作を行うだけで、自動的にK2HR3の**ロール**（ROLE）へのメンバー（ホスト情報）登録ができます。
 
 ### リソース（RESOURCE）とは
@@ -105,9 +107,9 @@ K2HR3では、以下の条件を整えることにより運用コストを低減
 後は、所有側（OWNER）は利用側（MEMBER）に応じた**リソース**（RESOURCE）を設定するだけであり、利用側（MEMBER）も**ロール**（ROLE）の登録情報を自由に設定できます。  
 **+サービス**（+SERVICE）機能により、所有側（OWNER）、利用側（MEMBER）の権限を分離し、管理できます。  
 
-## IaaS（OpenStack）連携
-K2HR3は、**IaaS**である **OpenStack** と連携します。  
-**OpenStack** と連携することにより、その仮想コンピューター（**Virtual Machine(VM)**）のインスタンス起動（作成）/削除と連動し、起動/削除したインスタンスを**ロール**（ROLE）のメンバーに**自動で登録/削除**できます。  
+## IaaS（OpenStack、kubernetes）連携
+K2HR3は、**IaaS**である [**OpenStack**](https://www.openstack.org/) および [**kubernetes**](https://kubernetes.io/ja/) と連携できます。  
+[**OpenStack**](https://www.openstack.org/) および [**kubernetes**](https://kubernetes.io/ja/) と連携することにより、その仮想コンピューター（**Virtual Machine(VM)**）のインスタンスや、ポッド/コンテナー（**Pod** / **Container**）の起動（作成）/削除と連動し、起動/削除したインスタンスおよびコンテナーを**ロール**（ROLE）のメンバーに**自動で登録/削除**できます。  
 
 **ロール**（ROLE）のメンバーに**自動で登録/削除**できることにより、既存のインスタンスの起動（作成）/削除の手順のままK2HR3システムを導入することができます。  
 

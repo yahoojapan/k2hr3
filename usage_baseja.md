@@ -139,7 +139,7 @@ IPアドレスとそのホストの付属情報（AUX）を一緒に登録しま
 _詳細は[付属情報（AUX）](detail_variousja.html)を参照してください。_
 
 #### 補足
-IaaS（OpenStack）と連携したロール（ROLE）メンバーの自動登録・削除を行う場合、手動によるIPアドレスでのホスト（HOST）登録は **不要** です。  
+IaaS（OpenStackもしくはkubernetes）と連携したロール（ROLE）メンバーの自動登録・削除を行う場合、手動によるIPアドレスでのホスト（HOST）登録は **不要** です。  
 連携をしている場合、IPアドレスは自動で登録・削除が行われるためです。  
 自動登録・削除以外で登録が必要となる場合（OpenStack以外の実機の場合など）に利用してください。
 
@@ -204,24 +204,44 @@ _自動での登録のみを実施する場合には、この項目はスキッ�
 
 _詳細は[付属情報（AUX）](detail_variousja.html)を参照してください。ここでは、空のままで登録してください。_  
 
-## ロール（ROLE）への自動ホスト（HOST）登録
+## OpenStackによるロール（ROLE）への自動ホスト（HOST）登録
 ロール（ROLE）の単位・定義を決めたら、手動と同様にその単位・定義に従ってロール（ROLE）を作成します。  
 ロール（ROLE）へのメンバーのホスト（HOST）の登録は行いません。  
-IaaS（OpenStack）で仮想コンピューティング（Virtual Machine）を作成し、自動で登録をします。  
+OpenStackで仮想コンピューティング（Virtual Machine）を作成し、自動で登録をします。  
 
 #### (3'-1) テナント（TENANT）を選択
 #### (3'-2) テナント（TENANT）にロール（ROLE）を追加
 #### (3'-3) ロール（ROLE）の**USER DATA SCRIPT**を取得
-[K2HR3 Web Application](usage_appja.html)を利用している前提で、目的のロール（ROLE）を選択した状態で、 **Selected Path Information** ダイアログを表示させます。  
-このダイアログの中にある **USER DATA SCRIPT** をコピー（ボタンをクリック）します。
+[K2HR3 Web Application](usage_appja.html)を利用している前提で、目的のロール（ROLE）を選択した状態で、 **パス情報** ダイアログを表示させます。  
+このダイアログの中にある **ロールトークン** 項目の **ロールトークン新規作成（有効期限付き）・登録用コード表示**ボタンをクリックするか、**ロールトークンの管理**をクリックし、**ロールトークン管理**ダイアログページから**ロールトークン / 登録用コード**ダイアログページを開きます。
 #### (3'-4) OpenStackで仮想コンピューティングを作成
 OpenStackでインスタンス（仮想コンピューティング）を起動します。  
 OpenStackのDashboard（horizon）から起動する場合、インスタンスの設定において、`作成後`の項目にて、ユーザデータスクリプトを指定します。  
-ユーザデータスクリプトは、前項目でコピーしたテキストデータをそのまま貼り付けます。  
+ユーザデータスクリプトは、**ロールトークン / 登録用コード**ダイアログページにて、**User Data Script for OpenStack**を選択し、取得することができます。
 openstackコマンド（CLI）を使う場合には、**--user-data** オプションでユーザデータスクリプトを指定します。  
 _OpenStackのバージョンに依存して画面、文言など異なることがあります。_
 #### (3'-5) 仮想コンピューティング起動後に自動登録される
 OpenStackでインスタンス（仮想コンピューティング）が起動すると、自動的に目的のロール（ROLE）のメンバーに作成したインスタンスがホスト（HOST）として登録されます。
+
+## kubernetesによるロール（ROLE）への自動ホスト（HOST）登録
+ロール（ROLE）の単位・定義を決めたら、手動と同様にその単位・定義に従ってロール（ROLE）を作成します。  
+ロール（ROLE）へのメンバーのホスト（HOST）の登録は行いません。  
+kubernetesでポッド/コンテナー（Pods/Containers）を起動し、自動で登録をします。  
+
+#### (3''-1) テナント（TENANT）を選択
+#### (3''-2) テナント（TENANT）にロール（ROLE）を追加
+#### (3''-3) ロール（ROLE）の**Secret.yml**および**Sidecar.yml**のひな形を取得
+[K2HR3 Web Application](usage_appja.html)を利用している前提で、目的のロール（ROLE）を選択した状態で、 **パス情報** ダイアログを表示させます。  
+このダイアログの中にある **ロールトークン** 項目の **ロールトークン新規作成（有効期限付き）・登録用コード表示**ボタンをクリックするか、**ロールトークンの管理**をクリックし、**ロールトークン管理**ダイアログページから**ロールトークン / 登録用コード**ダイアログページを開きます。
+#### (3''-4) kubernetesからポッド/コンテナー（Pods/Containers）を作成
+kubernetesからポッド/コンテナー（Pods/Containers）を起動します。  
+- この起動の前に、**ロールトークン / 登録用コード**ダイアログページにて、**Secret Yaml for kubernetes**を選択し、**Secret.yml**のひな形を取得します。
+- 取得した**Secret.yml**を確認し、適宜修正をして、kubernetesに**Secret**を登録します。（これは同じロールに対して1度だけの作業です。）
+- 次に、**Sidecar Yaml for kubernetes**を選択し、**Sidecar.yml**のひな形を取得します。
+- 取得した**Sidecar.yml**を確認し、適宜修正をし、あなたのyamlに組み込んでください。
+- **Sidecar.yml**を組み込んだyamlで、ポッド/コンテナー（Pods/Containers）を起動してください。
+#### (3''-5) ポッド/コンテナー（Pods/Containers）起動後に自動登録される
+各々のポッド/コンテナー（Pods/Containers）が起動すると、自動的に目的のロール（ROLE）のメンバーに作成したポッド/コンテナー（Pod/Container）がホスト（HOST）として登録されます。
 
 ## ロール（ROLE）から手動ホスト（HOST）削除
 ロール（ROLE）からメンバーであるホスト（HOST）を手動で削除してみます。  
@@ -229,9 +249,10 @@ OpenStackでインスタンス（仮想コンピューティング）が起動�
 
 自動登録したホスト（HOST）を削除した後で、そのホスト（HOST）を再登録するには手動登録をしてください。  
 
-## K2HR3 OpenStack Notification Listenerによる自動削除
-自動登録されたロール（ROLE）のメンバーであるホスト（HOST）を自動削除できます。  
-K2HR3システムの [K2HR3 OpenStack Notification Listener](detail_osnlja.html) を起動している場合、IaaS（OpenStack）と連携して自動削除できます。  
+## ホスト（HOST）の自動削除
+### K2HR3 OpenStack Notification Listenerによる自動削除
+OpenStackにより、自動登録されたロール（ROLE）のメンバーであるホスト（HOST）を自動削除できます。  
+K2HR3システムの [K2HR3 OpenStack Notification Listener](detail_osnlja.html) を起動している場合、OpenStackと連携して自動削除できます。  
 
 #### (4-1) OpenStackで仮想コンピューティングを削除
 OpenStackでインスタンス（仮想コンピューティング）を削除します。
@@ -239,8 +260,8 @@ OpenStackでインスタンス（仮想コンピューティング）を削除�
 [K2HR3 OpenStack Notification Listener](detail_osnlja.html)は、OpenStackのRabbitMQを通して通知を受け取り、削除されたインスタンスがK2HR3に登録されているか確認します。  
 登録されているホスト（HOST）である場合、このホスト（HOST）を登録しているロール（ROLE）のメンバーから自動的に削除します。
 
-## Watcherによる検知・自動削除
-自動登録されたロール（ROLE）のメンバーであるホスト（HOST）の起動を確認し、自動削除できます。  
+### Watcherによる検知・自動削除
+OpenStackにより自動登録されたロール（ROLE）のメンバーであるホスト（HOST）の起動を確認し、自動削除できます。  
 K2HR3システムの [K2HR3 OpenStack Notification Listener](detail_osnlja.html) を起動できない場合でも、K2HR3 [Watcher](toolsja.html) を起動し、自動削除機能を代替できます。  
 この[Watcher](toolsja.html)は、自動登録されたホスト（HOST）の存在をIaaS（OpenStack）に定期的に問い合わせ、削除されたことを検知し、自動的にロール（ROLE）から削除します。
 
@@ -250,3 +271,10 @@ OpenStackでインスタンス（仮想コンピューティング）を削除�
 [Watcher](toolsja.html)の定期的なOpenStackへの問い合わせにより、対象のホスト（HOST）の削除を検知します。  
 検知されたホスト（HOST）を登録しているロール（ROLE）のメンバーから自動的に削除します。
 
+### kubernetesのオーケストレーションに同期した自動削除
+kubernetesにより自動登録されたロール（ROLE）のメンバーであるホスト（HOST）は自動削除できます。  
+
+#### (4''-1) kubernetesによりポッド/コンテナー（Pods/Containers）を削除
+kubernetesにより、ポッド/コンテナー（Pods/Containers）が削除されます。
+#### (4''-2) K2HR3が提供したSidecarが自動的にホスト（HOST）から削除
+正常にSidecar.ymlが設定されているポッド/コンテナー（Pod/Container）の場合、kubernetesによるポッド/コンテナー（Pod/Container）の削除に連動して、ホスト（HOST）からそれらが自動削除されます。  

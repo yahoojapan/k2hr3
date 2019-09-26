@@ -37,9 +37,7 @@ K2HR3の利用者は、自由に定義したリソースへアクセスするグ
 
 このリソースを管理し、制御するシステムとして、AWS（[Amazon Web Services](https://aws.amazon.com/)）のIAM（[AWS Identity and Access Management](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html)）などが先導しています。  
 
-**IaaS**（OpenStackなど）と**連携**し、AWS以外の環境で利用でき、**簡単に利用できるRBACシステム**を提供することを目的として、K2HR3は作成されました。  
-
-現時点で、**K2HR3はOpenStackと連携**し、リソースに対するアクセス制御ができます。  
+**IaaS**（[OpenStack](https://www.openstack.org/)、[kubernetes](https://kubernetes.io/ja/)）と**連携**し、AWS以外の環境で利用でき、**簡単に利用できるRBACシステム**を提供することを目的として、K2HR3は作成されました。  
 
 そして、K2HR3を利用すれば、**トークン（TOKEN）などの認証・認可を不要**とし、ユーザのシステム開発・構築を簡単にしきます。  
 

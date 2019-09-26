@@ -14,8 +14,11 @@ next_string:
 ---
 
 # USERDATA API
-
-This page describes K2HR3 USER DATA API. The purpose of the USER DATA API is to provide USER DATA, which user defined data to customize a cloud instance, to [cloud-init](https://cloudinit.readthedocs.io/en/latest/) that initializes OpenStack instances. [cloud-init](https://cloudinit.readthedocs.io/en/latest/) reads the user data defined by K2HR3 by calling this K2HR3 USER DATA API. The content contains two types of data, a config file for [cloud-init](https://cloudinit.readthedocs.io/en/latest/) and a shell script. [cloud-init](https://cloudinit.readthedocs.io/en/latest/) runs the shell script to pass the instance meta data(primarily including the unique id and the IP address) by using K2HR3 ROLE API. See the [Detail](detail.html) page for K2HR3's collaboration with OpenStack.
+This page describes K2HR3 USER DATA API for OpenStack as IaaS.
+The purpose of the USER DATA API is to provide USER DATA, which user defined data to customize a cloud instance, to [cloud-init](https://cloudinit.readthedocs.io/en/latest/) that initializes OpenStack instances.
+[cloud-init](https://cloudinit.readthedocs.io/en/latest/) reads the user data defined by K2HR3 by calling this K2HR3 USER DATA API. The content contains two types of data, a config file for [cloud-init](https://cloudinit.readthedocs.io/en/latest/) and a shell script.
+[cloud-init](https://cloudinit.readthedocs.io/en/latest/) runs the shell script to pass the instance meta data(primarily including the unique id and the IP address) by using K2HR3 ROLE API.
+See the [Detail](detail.html) page for K2HR3's collaboration with OpenStack.
 
 ## GET（Userdata）
 Provides a [User-Data Script](https://cloudinit.readthedocs.io/en/latest/topics/format.html#user-data-script), which will be acted upon by [cloud-init](https://cloudinit.readthedocs.io/en/latest/). A successful response also contains a [Cloud Config Data](https://cloudinit.readthedocs.io/en/latest/topics/format.html#cloud-config-data).
