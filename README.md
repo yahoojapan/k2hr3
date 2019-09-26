@@ -11,7 +11,7 @@ K2HR3
 
 ## K2HR3 system overview
 **K2HR3** (**K2H**dkc based **R**esource and **R**oles and policy **R**ules) is one of extended **RBAC** (**R**ole **B**ased **A**ccess **C**ontrol) system.  
-K2HR3 works as RBAC in cooperation with **OpenStack** which is one of **IaaS**(Infrastructure as a Service), and also provides useful functions for using RBAC.  
+K2HR3 works as RBAC in cooperation with **OpenStack** and **kubernetes** which is one of **IaaS**(Infrastructure as a Service), and also provides useful functions for using RBAC.  
 
 K2HR3 is a system that defines and controls **HOW**(policy Rule), **WHO**(Role), **WHAT**(Resource), as RBAC.  
 Users of K2HR3 can define **Role**(WHO) groups to access freely defined **Resource**(WHAT) and control access by **policy Rule**(HOW).  
@@ -69,6 +69,12 @@ You can test the K2HR3 system in this environment.
 
 **How to use K2HR3 Utilities** is explained in [K2HR3 Setup](https://k2hr3.antpick.ax/setup.html).
 
+### K2HR3 Container Registration Sidecar
+**K2HR3 Container Registration Sidecar** is a sidecar docker image for container registration to K2HR3 systems.  
+This is a repository for creating docker images and publishing it on dockerhub.  
+If you use the K2HR3 system to register a container, you can use the K2HR3 Web Application and get yaml to register a Sidecar that uses this image.  
+You can start sidecar using the obtained yaml from K2HR3 Web Application.  
+
 ## Documents
 [K2HR3 Document](https://k2hr3.antpick.ax/index.html)  
 [K2HR3 Web Application Usage](https://k2hr3.antpick.ax/usage_app.html)  
@@ -91,6 +97,7 @@ You can test the K2HR3 system in this environment.
 [K2HR3 REST API repository](https://github.com/yahoojapan/k2hr3_api)  
 [K2HR3 OpenStack Notification Listener](https://github.com/yahoojapan/k2hr3_osnl)  
 [K2HR3 Utilities](https://github.com/yahoojapan/k2hr3_utils)  
+[K2HR3 Container Registration Sidecar](https://github.com/yahoojapan/k2hr3_sidecar)  
 
 [k2hdkc](https://github.com/yahoojapan/k2hdkc)  
 [k2hash](https://github.com/yahoojapan/k2hash)  
@@ -98,9 +105,10 @@ You can test the K2HR3 system in this environment.
 [k2hash transaction plugin](https://github.com/yahoojapan/k2htp_dtor)  
 
 ## Packages
-[k2hr3-app(npm packages)]()  
-[k2hr3-api(npm packages)]()  
-[k2hr3-osnl(python packages)]()  
+[k2hr3-app(npm packages)](https://www.npmjs.com/package/k2hr3-app)  
+[k2hr3-api(npm packages)](https://www.npmjs.com/package/k2hr3-api)  
+[k2hr3-osnl(python packages)](https://pypi.org/project/k2hr3-osnl/)  
+[k2hr3.sidecar(dockerhub)](https://hub.docker.com/r/antpickax/k2hr3.sidecar)  
 
 ### License
 This software is released under the MIT License, see the license file.
