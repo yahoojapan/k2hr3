@@ -14,6 +14,12 @@ next_string: Detail
 ---
 
 # What's new
+## 2019年10月11日 バージョンアップ（Nodejs 12対応）
+K2HR3 ベータ版（k2hr3_app Version 0.9.4 / k2hr3_api Version 0.9.3）のソースコードをGithub.comで公開しました。  
+npmパッケージを[こちら](https://www.npmjs.com/org/antpickax)で公開しました。
+このバージョンは、Nodejs 12に対応し、Nodejs 6はサポートから除外しました。  
+また、不具合の修正と、@material-ui 4.x.xに対応しました。
+
 ## 2019年9月26日 K2HR3 kubernetes対応版公開
 kubernetesに対応したK2HR3 ベータ版（k2hr3_app Version 0.9.3 / k2hr3_api Version 0.9.2）のソースコードをGithub.comで公開しました。  
 また、npmパッケージを[こちら](https://www.npmjs.com/org/antpickax)で公開しました。
