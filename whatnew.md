@@ -14,6 +14,11 @@ next_string: Detail
 ---
 
 # What's new
+## [11 Oct 2019] K2HR3 new beta release (Compatible with Nodejs 12)
+K2HR3 new beta release(k2hr3_app Version 0.9.4 / k2hr3_api Version 0.9.3) is cooperating with kubernetes, all source code released on Github.com and released the npm package [here](https://www.npmjs.com/org/antpickax).  
+This version corresponds to Nodejs 12, and Nodejs 6 has been excluded from support.  
+Also, bug fixes and support for @material-ui 4.x.x.
+
 ## [26 Sep 2019] K2HR3 new beta release for kubernetes
 K2HR3 new beta release(k2hr3_app Version 0.9.3 / k2hr3_api Version 0.9.2) is cooperating with kubernetes, all source code released on Github.com and released the npm package [here](https://www.npmjs.com/org/antpickax).  
 We will continue to support IaaS other than OpenStack and update related packages.

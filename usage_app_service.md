@@ -35,23 +35,64 @@ After clicking the button, a dialog for registering SERVICE is displayed.
 ![K2HR3 Usage Application - Service Owner Create Dialog](images/usage_app_service_owner_add.png)
 
 Enter the **SERVICE name** and the **RESOURCE** provided by **SERVICE** in the displayed dialog and click the ![K2HR3 OK Button](images/button_ok.png) button to register **SERVICE**.  
-You can register **static RESOURCE** or **dynamic RESOURCE** to SERVICE's **RESOURCE**.  
+You can register **static RESOURCE** or **dynamic RESOURCE** (VERIFY URL) to SERVICE's **RESOURCE**.  
 
 After clicking the button, a dialog for registering SERVICE is displayed.  
-- TENANT for SERVICE owner  
+
+### TENANT for SERVICE owner  
 The **TENANT name** for registering SERVICE **OWNER** is displayed.
-- CREATE SERVICE  
+
+### CREATE SERVICE
 Enter the name of the SERVICE to be registered.
-- VERIFY URL or STATIC RESOURCE  
-Enter **RESOURCE** of SERVICE.  
-When you register **static RESOURCE**, specify RESOURCE in the **JSON string(JavaScript Object)**.  
-Alternatively you register **dynamic RESOURCE**, specify **VERIFY URL**.  
+![K2HR3 Usage Application - Input Service Name](images/usage_app_service_owner_add2.png)
+
+### SERVICE RESOURCES  
+Enter the RESOURCE data of the SERVICE.  
+When registering a **static RESOURCE**, select **STATIC RESOURCE OBJECT**.  
+When registering a **dynamic RESOURCE**, specify the **VERIFY URL**.  
+Depending on the selection of SERVICE RESOURCES, the input operation will differ as described below.
+
+#### dynamic RESOURCE(VERIFY URL)
+When **VERIFY URL** is selected, the following parts are displayed in the dialog.  
+![K2HR3 Usage Application - Input Verify Url](images/usage_app_service_owner_add_verify.png)  
+Enter **URL** in the text input area.  
+This **VERIFY URL** is the URL to the REST API prepared by the SERVICE OWNER.
+
+#### static RESOURCE
+When **STATIC RESOURCE OBJECT** is selected, the following parts are displayed in the dialog.  
+![K2HR3 Usage Application - Service Owner Create Dialog](images/usage_app_service_owner_add_res.png)  
+
+A **static RESOURCE** can describe multiple normal RESOURCE.  
+In the above dialog, the resources to be registered RESOURCE are listed and displayed.  
+
+To add a new RESOURCE, click Add new RESOURCE button ![K2HR3 Create new static service resource](images/button_token_new.png).  
+Click RESOUCE edit button ![K2HR3 Edit static service resource](images/button_edit.png) to edit the registered RESOURCE.  
+When registering and editing a new RESOURCE, move to the screen(dialog) described later and edit it individually.  
+To delete the registered RESOURCE, click the RESOUCE edit button ![K2HR3 Delete static service resource](images/button_token_del.png).  
+
 How to register the contents of JSON string for RESOURCE, please refer to [**+SERVICE Usage**](usage_service.html).  
 
+### dialog for RESOURCE new creation and edit
+After selecting a **static RESOURCE**, when editing each RESOURCE or creating a new RESOURCE, the following screen will appear.  
+![K2HR3 Usage Application - Input one service static resource](images/usage_app_service_owner_edit_res.png)  
+
+On this screen, enter individual RESOURCE elements.  
+Input items are the same as normal RESOURCE, and the following items can be input.
+- STATIC RESOURCE NAME  
+Please enter a name for this RESOURCE.  
+A static RESOURCE can have multiple RESOURCEs, so specify a unique name.  
+When cooperating with SERVICE MEMBER, these RESOURCEs are deployed to SERVICE MEMBER.
+- Valid period(Second: Unset is allowed)  
+When cooperating with SERVICE MEMBER, you can specify the expiration date of this RESOURCE.  
+Specify the expiration date after cooperating in seconds.  
+If not specified, it will never expire(default).
+- KEYS(Key Value)  
+You can specify multiple combinations of KEY and VALUE for this RESOURCE.
+
+## Editing of SERVICE by OWNER
 SERVICE registered as OWNER can be confirmed by expanding **SERVICE** in the **left tree**.  
 OWNER's SERVICE item in left tree has the ![K2HR3 SERVICE OWNER](images/button_service_owner.png) **icon** is displayed next to its  name.  
 
-## Editing of SERVICE by OWNER
 OWNER can edit the contents of registered SERVICE.  
 First, you need to select SERVICE name under [SERVICE] item in left tree for editing the contents of already registered **SERVICE**.  
 After selection, the data of the **SERVICE** is displayed in the main area of **K2HR3 Web Application**.  
@@ -63,12 +104,18 @@ You click the ![K2HR3 CANCEL Button](images/button_cancel.png) button for discar
 ![K2HR3 Usage Application - Service Owner Page](images/usage_app_service_owner_all.png)
 
 After selecting SERVICE name, the following items displayed in the main area.  
-- VERIFY URL or STATIC JSON OBJECT STRING  
-The RESOURCE data of SERVICE is displayed.  
-If you  edit **static RESOURCE**, specify RESOURCE in the **JSON string(JavaScript Object)**.  
-Alternatively you edit **dynamic RESOURCE**, specify **VERIFY URL**.  
-How to register the contents of JSON string for RESOURCE, please refer to [**+SERVICE Usage**](usage_service.html).  
-- TENANTS  
+
+### SERVICE RESOURCES  
+SERVICE RESOURCE is displayed.  
+**Static RESOURCE** and **dynamic RESOURCE** (VERIFY URL) are selected.  
+The above image is a case of SERVICE RESOURCE with VERIFY URL selected as dynamic RESOURCE.  
+When static RESOURCE is selected, the following screen is displayed.  
+
+![K2HR3 Usage Application - Service Owner Page 2](images/usage_app_service_owner_all2.png)
+
+The operations on these screens are the same as the SERVICE registration dialog described above.
+
+### TENANTS  
 TENANT registered as MEMBER of SERVICE is enumerated in this item.  
 You can add and delete MEMBER's TENANT.  
 You need to specify MEMBER's TENANT with **[YRN](detail_various.html) full path**.  

@@ -35,21 +35,60 @@ K2HR3 Webアプリケーションでのサービス（SERVICE）操作の説明�
 
 表示されたダイアログにサービス（SERVICE）名と、サービス（SERVICE）のリソース（RESOURCE）を入力し、 ![K2HR3 OK Button](images/button_ok.png)  ボタンをクリックすれば、サービス（SERVICE）が登録されます。  
 サービス（SERVICE）のリソース（RESOURCE）は、静的リソース（RESOURCE）もしくは動的リソース（RESOURCE）としてVERIFY URLを入力します。  
-ダイアログに表示される項目とその内容を以下に示します。  
-- TENANT for SERVICE owner  
-サービス（SERVICE）を登録する所有側（OWNER）のテナント（TENANT）名が表示されます。
-- CREATE SERVICE  
-登録するサービス（SERVICE）名を入力します。
-- VERIFY URL or STATIC RESOURCE  
-サービス（SERVICE）のリソース（RESOURCE）を入力します。  
-静的リソース（RESOURCE）を登録する場合、JSON文字列でリソース（RESOURCE）を指定します。  
-動的リソース（RESOURCE）を登録する場合、VERIFY URLを指定します。  
-登録するリソース（RESOURCE）のJSON文字列の内容については、[**+サービス**（**+SERVICE**）機能の使い方](usage_serviceja.html)を参照してください。
+ダイアログに表示される項目とその内容を以下に示します。
 
+### TENANT for SERVICE owner
+サービス（SERVICE）を登録する所有側（OWNER）のテナント（TENANT）名が表示されます。
+### CREATE SERVICE
+登録するサービス（SERVICE）名を入力します。  
+![K2HR3 Usage Application - Input Service Name](images/usage_app_service_owner_add2.png)
+
+### SERVICE RESOURCES  
+サービス（SERVICE）のリソース（RESOURCE）を入力します。
+静的リソース（RESOURCE）を登録する場合、STATIC RESOURCE OBJECTを選択してください。
+動的リソース（RESOURCE）を登録する場合、VERIFY URLを指定します。
+SERVICE RESOURCESの選択に応じて以下で説明するように入力操作が異なります。
+
+#### 動的リソース（RESOURCE）
+VERIFY URLをを選択した場合、以下の画面（ダイアログ）を表示します。  
+![K2HR3 Usage Application - Input Verify Url](images/usage_app_service_owner_add_verify.png)  
+テキスト入力エリアに、動的リソース（RESOURCE）を返すための **URL** を入力してください。  
+このVERIFY URLは、SERVICE所有者側で準備するREST APIへのURLです。
+
+#### 静的リソース（RESOURCE）
+STATIC RESOURCE OBJECTを選択した場合、以下の画面（ダイアログ）を表示します。  
+![K2HR3 Usage Application - Service Owner Create Dialog](images/usage_app_service_owner_add_res.png)  
+
+静的リソース（RESOURCE）は、通常のリソース（RESOURCE）を複数記述できます。  
+上記ダイアログでは、登録するリソース（RESOURCE）が列挙されて表示されています。  
+新規にリソース（RESOURCE）を追加するには、新規リソース（RESOURCE）追加ボタン ![K2HR3 Create new static service resource](images/button_token_new.png)をクリックしてください。  
+既に登録したリソース（RESOURCE）を編集するには、リソース（RESOUCE）編集ボタン ![K2HR3 Edit static service resource](images/button_edit.png)をクリックしてください。  
+新規リソース（RESOURCE）登録、編集を行う場合には、後述する画面（ダイアログ）に遷移し、個別に編集をします。  
+登録したリソース（RESOURCE）を削除するには、リソース（RESOUCE）削除ボタン ![K2HR3 Delete static service resource](images/button_token_del.png)をクリックしてください。  
+
+静的リソース（RESOURCE）の詳細は、[**+サービス**（**+SERVICE**）機能の使い方](usage_serviceja.html)を参照してください。  
+
+### リソース（RESOURCE）新規作成・編集ダイアログ画面
+静的リソース（RESOURCE）を選択した後、個々のリソース（RESOURCE）を編集、もしくは新規リソース（RESOURCE）作成するとき、以下の画面に遷移します。  
+![K2HR3 Usage Application - Input one service static resource](images/usage_app_service_owner_edit_res.png)  
+
+この画面で、個々のリソース（RESOURCE）の要素を入力します。  
+入力項目は、通常のリソース（RESOURCE）も同じであり、以下の項目を入力できます。
+- 静的リソース名  
+このリソース（RESOURCE）の名前を入力してください。  
+静的リソース（RESOURCE）は、複数のリソース（RESOURCE）であり、重複しない名前を指定してください。  
+SERVICE利用側（MEMBER）と連携したとき、SERVICE利用側（MEMBER）側にこれらのリソース（RESOURCE）が展開されます。
+- 有効期間（秒：未入力可）
+SERVICE利用側（MEMBER）と連携したとき、このリソース（RESOURCE）の有効期限を指定できます。  
+連携後の有効期限を秒で指定します。  
+未指定の場合には、無期限（デフォルト）となります。
+- KEYS（キー/値）
+このリソース（RESOURCE）の持つキー（KEY）と値（VALUE）の組み合わせを複数指定できます。
+
+## 登録したサービス（SERVICE）の編集
 所有者（OWNER）として登録したサービス（SERVICE）は、左側ツリーの**SERVICE**を展開することで確認できます。  
 所有者（OWNER）であるサービス（SERVICE）の場合には、サービス（SERVICE）名の横に ![K2HR3 SERVICE OWNER](images/button_service_owner.png)  アイコンが表示されます。  
 
-## 登録したサービス（SERVICE）の編集
 所有者（OWNER）として登録したサービス（SERVICE）の内容を編集できます。  
 まず、所有者（OWNER）であるサービス（SERVICE）を左側ツリーで選択します。  
 選択後、メインの画面エリアに所有者（OWNER）が管理できるサービス（SERVICE）の情報が表示されます。  
@@ -60,12 +99,18 @@ K2HR3 Webアプリケーションでのサービス（SERVICE）操作の説明�
 ![K2HR3 Usage Application - Service Owner Page](images/usage_app_service_owner_all.png)
 
 所有者（OWNER）のサービス（SERVICE）選択後のメインの画面エリアに表示される項目について説明します。
-- VERIFY URL or STATIC JSON OBJECT STRING  
-サービス（SERVICE）のリソース（RESOURCE）が表示されます。  
-静的リソース（RESOURCE）を入力する場合、JSON文字列でリソース（RESOURCE）を指定します。  
-動的リソース（RESOURCE）を入力する場合、VERIFY URLを指定します。  
-リソース（RESOURCE）のJSON文字列の内容については、[**+サービス**（**+SERVICE**）機能の使い方](usage_serviceja.html)を参照してください。
-- TENANTS  
+
+### SERVICE RESOURCES  
+サービス（SERVICE）のリソース（RESOURCE）を表示しています。  
+静的リソース（RESOURCE）、動的リソース（RESOURCE）であるVERIFY URLが選択されています。  
+上記のイメージは、動的リソース（RESOURCE）であるVERIFY URLが選択されたサービス（SERVICE）の場合です。  
+静的リソース（RESOURCE）が選択されている場合には、以下のような画面が表示されます。  
+
+![K2HR3 Usage Application - Service Owner Page 2](images/usage_app_service_owner_all2.png)  
+
+これらの画面の操作は上述したサービス（SERVICE）登録のダイアログと同じです。  
+
+### TENANTS  
 サービス（SERVICE）の利用側（MEMBER）として登録されているテナント（TENANT）が列挙されます。  
 テナント（TENANT）を追加・削除することができます。  
 追加する場合には、テナント（TENANT）を**[YRN](detail_variousja.html)フルパス**で指定してください。
