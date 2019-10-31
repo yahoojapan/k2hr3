@@ -14,6 +14,9 @@ next_string: Detail
 ---
 
 # What's new
+## [31 Oct 2019] K2HR3 new beta release
+K2HR3 new beta release(k2hr3_app Version 0.9.6 / k2hr3_api Version 0.9.4) is updated dependencies to latest version and fixed bugs, all source code released on Github.com and released the npm package [here](https://www.npmjs.com/org/antpickax).  
+
 ## [15 Oct 2019] K2HR3 new beta release (updated @material-ui dependency)
 K2HR3 new beta release(k2hr3_app Version 0.9.5) is updated @material-ui dependency to latest version, all source code released on Github.com and released the npm package [here](https://www.npmjs.com/org/antpickax).  
 

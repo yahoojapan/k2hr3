@@ -14,6 +14,11 @@ next_string: Detail
 ---
 
 # What's new
+## 2019年10月31日 バージョンアップ
+K2HR3 ベータ版（k2hr3_app Version 0.9.6 / k2hr3_api Version 0.9.4）のソースコードをGithub.comで公開しました。  
+npmパッケージを[こちら](https://www.npmjs.com/org/antpickax)で公開しました。  
+このバージョンは、依存関係の更新、不具合の修正です。
+
 ## 2019年10月15日 バージョンアップ（@material-ui）
 K2HR3 ベータ版（k2hr3_app Version 0.9.5）のソースコードをGithub.comで公開しました。  
 npmパッケージを[こちら](https://www.npmjs.com/org/antpickax)で公開しました。  
