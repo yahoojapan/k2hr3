@@ -110,16 +110,42 @@ When analyzing the template, the **K2HR3 Template Engine** permanently uses the 
 A variable has one of the following forms.  
 ```
 %variable%
-%var_array%[0]
-%var_object%{'key'}
+%var_array%[0] or %var_array%['0'] 
+%var_object%{'key'} or %var_object%['key']
 ```
-_Currently, multi-level array and objects are not supported._  
-
 You can freely define variables in templates.  
 Alternatively, you can specify **the [YRN](detail_various.html) path of RESOURCE, ROLE registered in the K2HR3 system, and use the data set for these as variables**.  
 ```
 %yrn:yahoo:yjcore:::resource:k2hr3api_res%
 ```
+
+### Array and object elements
+Specify '[...]' or '{...}' to access array and object elements.  
+In the case of an array, the position number can be specified as a numerical value or character string in '[...]'.  
+```
+%var_array%[0]
+%var_array%['0']
+```
+In the case of an object, you can access it by specifying the key name as a character string in '{...}' or '[...]'.  
+```
+%var_object%{'key'}
+%var_object%['key']
+```
+
+### Number of array and object elements
+The number of elements in arrays and objects can be obtained using '.length' or '.size', '.count'.  
+The following example displays the number of elements in the %var_array% array variable.  
+{% raw %}```
+{{= %var_array%.length }}
+```{% endraw %}
+
+### Limit
+Multi-level arrays and objects are not supported.  
+But accessing multiple arrays and objects can be achieved by preparing and accessing temporary variables as shown below.  
+{% raw %}```
+{{ %tmparray% = %multiarray%[2] }}
+{{= %tmparray%[0] }}
+```{% endraw %}
 
 ## Syntax
 The control syntax available for the **K2HR3 Template Engine** is shown below.  
@@ -157,11 +183,28 @@ It is a control syntax consisting of **for, done**.
     display if %variable% is 0 or 1.
 {{ done }}
 ```{% endraw %}
+If the variable is an array (object), you can use '.length' to define the maximum number of loops.  
+{% raw %}```
+{{ for %variable% = 0 ; %variable% < %var_array%.length ; ++%variable% }}
+    Output all array elements by %variable% .length.
+    {{= %var_array%[%variable%] }}
+{{ done }}
+```{% endraw %}
 - foreach  
 It is a control syntax consisting of **foreach, done**.  
+If you specify an array for the variable, you can get the elements of the array directly.  
 {% raw %}```
 {{ foreach %subvar% in %variable% }}
-    %variable% must be array, and display all elements.
+    If %variable% is an array, the elements of the array are output.
+    {{= %subvar% }}
+{{ done }}
+```{% endraw %}
+If you specify an object, you can get the key name of the element.  
+{% raw %}```
+{{ foreach %subvar% in %variable% }}
+    If %variable% is an object, you can get the key name of the object.
+    {{= %subvar% }}
+    {{= %variable%{%subvar%} }}
 {{ done }}
 ```{% endraw %}
 - break  
@@ -177,10 +220,6 @@ The loop of the control syntax returns to the loop condition without executing t
 
 ## Operator
 Enumerate available operators. Conditional operators are mainly used as conditional statements of control syntax.  
-
-
-
-
 - Assignment(=)  
 {% raw %}```
 {{ %variable_00% = %variable_01% }}
@@ -266,6 +305,7 @@ The result of expanding the following template is "20".
 ```{% endraw %}
 
 # Samples
+## Samples(Basics)
 The sample template character string (multiple lines) is shown below.  
 {% raw %}```
 {{#!k2hr3template }}
@@ -301,3 +341,91 @@ Example of template expansion.
 That 's all.
 ```{% endraw %}
 
+## Samples(expanding **ROLE** member **HOST**)
+**ROLE** has the **HOST** information as its member.  
+The **HOST** information can be used as a variable in the template which is using **K2HR3 Template Engine**.  
+The following is an example of a template that expands **HOST** information included in a **ROLE**.  
+{% raw %}```
+{{#!k2hr3template }}
+{{ foreach %host_key% in %yrn:yahoo:::mytenant:role:myrole/hosts/ip% }}
+    {{ %one_host% = %yrn:yahoo:::mytenant:role:myrole/hosts/ip%{%host_key%} }}
+    {{= %one_host%{'host'} }}
+    {{= %one_host%{'port'} }}
+{{ done }}
+```{% endraw %}
+In the above example, the IP addresses in **ROLE** which are register by the K2HR3 application etc are displayed as the information of those **HOST**.  
+The **HOST** information always includes **'host'** and **'port'**(**0** for any).  
+If VirtualMachine and Pod(container) are automatically registered to **ROLE** from Openstack and kubernetes, there are some keys in addition to the above.  
+The following sample shows the individual **HOST** information for **ROLE** in like a JSON format.  
+{% raw %}```
+'yrn:yahoo:::mytenant:role:myrole/hosts/ip': {
+    '127.0.0.1,0,': {                                  <--- case of normal registration
+        'host':   '127.0.0.1'
+        'port':   0,
+        'extra':  null,
+        'cuk':    null
+    },
+    '127.0.0.2,0,': {                                  <--- case of automatically from openstack
+        'host':   '127.0.0.2'
+        'port':   0,
+        'extra':  'openstack-auto-v1',
+        'cuk':    null
+    },
+    '127.0.0.3,0,cuk-xxxxxxxxxxxxxxx': {               <--- case of automatically from kubernetes
+        'host':                '127.0.0.3'
+        'port':                0,
+        'extra':               'k8s-auto-v1',
+        'cuk':                 'cuk-xxxxxxxxxxxxxxx',
+        'k8s_namespace':       'namespace'
+        'k8s_service_account': 'sa'
+        'k8s_node_name':       'nodename'
+        'k8s_node_ip':         '127.0.0.3'
+        'k8s_pod_name':        'podname'
+        'k8s_pod_id':          'pod-id-yyyyyyyyyyyy'
+        'k8s_pod_ip':          '192.0.0.3'
+        'k8s_container_id':    'container-id-zzzzzz'
+    },
+    ...
+}
+```{% endraw %}
+Please refer to the sample above.  
+That way, you can distinguish regular registration, Openstack registration, and kubernetes registration from the elements of the **HOST** information.  
+Any of the following variable names can be used to indicate **HOST** information of **ROLE**.  
+{% raw %}```
+1) Only IP address
+   %yrn:<provider(domain)>:<service>:<region>:<tenant>:role:<role name>/hosts/ip%
+
+2) Only hostname(FQDN)
+   %yrn:<provider(domain)>:<service>:<region>:<tenant>:role:<role name>/hosts/name%
+
+3) IP address and hostname(FQDN)
+   %yrn:<provider(domain)>:<service>:<region>:<tenant>:role:<role name>/hosts/all%
+```{% endraw %}
+These variables are defined every **ROLE**.  
+So you can use them from the template when you need them to unpack that information.  
+
+### About expansion of **HOST** information
+Here, it is assumed that a list of **HOST** registered in a specific **ROLE** is obtained and used in your application.  
+For example, the application needs to access an IP address registered in **ROLE** and expects to be able to dynamically generate a list of that IP address from the K2HR3 system.  
+To achieve this, do the following:  
+- Register the template in **RESOURCE**.
+- Create **ROLE** and **POLICY-RULE** and set them to be accessible to **RESOURCE**.
+- Register **HOST** in **ROLE**.
+- By getting **RESOURCE**, the template is expanded and you can get the list of **HOST** of **ROLE**.
+
+The sample template is shown below.
+{% raw %}```
+{{ %host_no% = 0 }}
+{{ foreach %host_key% in %yrn:yahoo:::mytenant:role:myrole/hosts/all% }}
+    {{ %one_host% = %yrn:yahoo:::mytenant:role:myrole/hosts/all%{%host_key%} }}
+    Host[{{= %host_no% }}] = {{= %one_host%{'host'} }}:{{= %one_host%{'port'} }}
+    {{ ++%host_no% }}
+{{ done }}
+```{% endraw %}
+The following is a sample of the above template expanded.  
+{% raw %}```
+    Host[0] = abc.example.com:0
+    Host[1] = 127.0.0.1:0
+```{% endraw %}
+
+As mentioned above, **ROLE** dynamic **HOST** information can be expanded as a part of **RESOURCE** using a template.
