@@ -296,7 +296,8 @@ Here are the default configuration values and the descriptions.
     },
     "k2hdkc": {
         "config": "/etc/k2hdkc/slave.ini",                     // chmpx-slave configuration file path
-        "port": 8031                                           // chmpx-slave port
+        "port": 8031,                                          // chmpx-slave port
+        "cuk": null                                            // chmpx-slave CUK string
     },
     "multiproc": true,                                         // True if multiple node processes are up
     "scheme": "https",                                         // HTTP Protocol(http or https)

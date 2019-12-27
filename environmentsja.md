@@ -266,7 +266,8 @@ APIサーバーの設定ファイルの項目を説明します。APIサーバ�
     },
     "k2hdkc": {
         "config": "/etc/k2hdkc/slave.ini",                     // chmpx-slaveの設定ファイル名
-        "port": 8031                                           // chmpx-slaveのサービスポート番号
+        "port": 8031,                                          // chmpx-slaveのサービスポート番号
+        "cuk": null                                            // chmpx-slaveのCUK文字列
     },
     "multiproc": true,                                         // 複数プロセス起動の有無
     "scheme": "https",                                         // APIサーバープロトコル（http/https)
