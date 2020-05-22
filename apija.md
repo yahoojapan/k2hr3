@@ -79,3 +79,6 @@ K2HR3 REST APIの+サービス（+SERVICE）機能で利用するACR(ACCESS CROS
 ### [USERDATA API](api_userdataja.html)
 K2HR3 REST APIのUSER DATA SCRIPTに関連するAPI群です。
 
+### [EXTDATA API](api_extdataja.html)
+K2HR3 REST APIのEXT(RA) DATA SCRIPTに関連するAPI群です。
+

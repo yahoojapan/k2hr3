@@ -9,8 +9,8 @@ prev_url: api_acrja.html
 prev_string: ACR API
 top_url: apija.html
 top_string: REST API
-next_url: 
-next_string: 
+next_url: api_extdataja.html
+next_string: EXTDATA API
 ---
 
 # USERDATA API

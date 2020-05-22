@@ -93,4 +93,6 @@ The purpose of the ACR API is to provide the +SERVICE functionality. See the [Se
 
 The purpose of the USER DATA API is to provide USER DATA, which user defined data to customize a cloud instance, to [cloud-init](https://cloudinit.readthedocs.io/en/latest/) that initializes OpenStack instances. [cloud-init](https://cloudinit.readthedocs.io/en/latest/) reads the user data defined by K2HR3 by calling this K2HR3 USER DATA API. The content contains two types of data, a config file for [cloud-init](https://cloudinit.readthedocs.io/en/latest/) and a shell script. [cloud-init](https://cloudinit.readthedocs.io/en/latest/) runs the shell script to pass the instance meta data(primarily including the unique id and the IP address) by using K2HR3 ROLE API. See the [Detail](detail.html) page for K2HR3's collaboration with OpenStack.
 
+### [EXTDATA API](api_extdata.html)
+The purpose of EXT(RA) DATA API is to obtain data(script) including ROLE name, ROLE TOKEN, etc. dynamically by using an arbitrary user-defined template. The USER DATA API is dedicated to [cloud-init](https://cloudinit.readthedocs.io/en/latest/), but this API can return similar content as user-defined. This allows you to dynamically return the K2HR3 information needed for any system.
 

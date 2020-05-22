@@ -139,8 +139,8 @@ _新規作成された直後、作成されたロール（ROLE）トークンは
 ロール（ROLE）トークンが作成された日時と、その有効期限が表示されます。
 
 #### 登録用コード
-このロール（ROLE）トークンを使用したIaaS（OpenStack、kubernetes）への自動登録用コードの情報を表示します。  
-表示する自動登録用コードは、IaaS（OpenStack、kubernetes）に応じて以下の種類があります。  
+このロール（ROLE）トークンを使用したIaaS（OpenStack、kubernetes）への自動登録用コードの情報、およびユーザ定義のCustom Registration Code（CRC）の内容を表示します。  
+組み込みの表示する自動登録用コードは、IaaS（OpenStack、kubernetes）に応じて以下の種類があります。  
 
 ![K2HR3 Usage Application - Select registration codes](images/usage_app_role_reg_select.png)
 
@@ -157,6 +157,8 @@ kubernetesのPods（Containers）を自動登録する場合、K2HR3システム
 この**Sidecar**を登録するためのテンプレートとなる**Yaml**を表示します。  
 このYamlを環境に合わせて加工し、**Sidecar**を起動してください。  
 この利用方法は、後述します。
+
+上記に加えて、Custom Registration Code（CRC）を設定している場合、すべてのCustom Registration Code（CRC）の設定内容（複数）が同様に表示されます。
 
 ### OpenStack - USER DATA SCRIPTの使い方
 OpenStackの仮想コンピューティング（Virtual Machine）をロール（ROLE）のメンバーとして自動登録する方法を説明します。  
