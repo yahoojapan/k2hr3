@@ -323,6 +323,14 @@ Here are the default configuration values and the descriptions.
         "algorithm": "aes-256-cbc",                            // Encryption algorithm 
         "passphrase": "k2hr3_regpass"                          // passphrase to decrypt encrypted userdata
     },
+    "extdata": {                                               // Settings for Extdata API
+        "dummy": {                                             // One of Sub URI under Extdata API(/v1/extdata/dummy)
+            "baseuri":     "https://localhost",                // BaseURL of ExtData API
+            "template":    "config/extdata-dummy.sh.templ",    // The template file path to extdata
+            "useragent":   "dummy-client",                     // Allowed User-Agent
+            "contenttype": "text/x-shellscript"                // Content-Type in response
+        }
+    },
     "k2hr3admin": {
         "tenant": "admintenant",                               // Tenant(or Project) name of K2HR3 administrator
         "delhostrole": "delhostrole"                           // A role name of Admin Tenant that can delete hosts from K2HDKC
@@ -493,7 +501,6 @@ Here are the default configuration values and the descriptions.
         "initialRotation": true                     // See https://github.com/iccicci/rotating-file-stream/blob/master/README.md#initialrotation
     },
 
-
     "apischeme": "http",                            // API Server protocol(http/https)
     "apihost": "localhost",                         // API server hostname
     "apiport": 3001,                                // API server port
@@ -505,10 +512,16 @@ Here are the default configuration values and the descriptions.
         }
     ],
 
-    "userdata": "\
+    "userdata": "\                                  // UserData URL
 #include\n\
 {{= %K2HR3_API_HOST_URI% }}/v1/userdata/{{= %K2HR3_USERDATA_INCLUDE_PATH% }}\n\
-"                                                   // UserData URL
+",
+    "crcobj": {                                     // Settings for Custom Registration Code(CRC)
+        "custom registration code 1": {             // One of CRC data
+            "crc_key_1":    "crc_value_1",          // One element for CRC data(key-value)
+            "crc_key_2":    "crc_value_2",          // One element for CRC data(key-value)
+        }
+    }
 }
 ```
 

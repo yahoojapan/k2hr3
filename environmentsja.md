@@ -293,6 +293,14 @@ APIサーバーの設定ファイルの項目を説明します。APIサーバ�
         "algorithm": "aes-256-cbc",                            // 暗号アルゴリズム名
         "passphrase": "k2hr3_regpass"                          // 暗号化パスフレーズ
     },
+    "extdata": {                                               // Extdata取得API関連設定
+        "dummy": {                                             // Extdata取得サブURIパス(/v1/extdata/dummy)
+            "baseuri":     "https://localhost",                // APIエンドポイントの基本パス
+            "template":    "config/extdata-dummy.sh.templ",    // Extdataテンプレートファイル名
+            "useragent":   "dummy-client",                     // 許可User-Agent
+            "contenttype": "text/x-shellscript"                // ExtdataレスポンスContent-Type
+        }
+    },
     "k2hr3admin": {
         "tenant": "admintenant",                               // テナント(プロジェクト)名
         "delhostrole": "delhostrole"                           // ホスト削除用サーバ用のロール名
@@ -455,7 +463,6 @@ $ sudo systemctl restart k2hr3-api.service
         "initialRotation": true                     // ローテーション期間以降の初回起動時におけるローテーション実行の有無
     },
 
-
     "apischeme": "http",                            // APIサーバープロトコル(http/https)
     "apihost": "localhost",                         // APIサーバー名
     "apiport": 3001,                                // APIサーバーポート
@@ -467,10 +474,16 @@ $ sudo systemctl restart k2hr3-api.service
         }
     ],
 
-    "userdata": "\
+    "userdata": "\                                  // UserDataのURL
 #include\n\
 {{= %K2HR3_API_HOST_URI% }}/v1/userdata/{{= %K2HR3_USERDATA_INCLUDE_PATH% }}\n\
-"                                                   // UserDataのURL
+",
+    "crcobj": {                                     // Custom Registration Code(CRC) 設定
+        "custom registration code 1": {             // CRCデータセット
+            "crc_key_1":    "crc_value_1",          // CRCデータ（キーバリュー）
+            "crc_key_2":    "crc_value_2",          // CRCデータ（キーバリュー）
+        }
+    }
 }
 ```
 

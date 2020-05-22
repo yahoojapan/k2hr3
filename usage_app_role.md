@@ -142,7 +142,7 @@ For details, please refer to [K2HR3 REST API](api.html).
 The date and time when the ROLE TOKEN was created and its expiration date are displayed.
 
 #### Registration code
-Displays information on the automatic registration code for IaaS(OpenStack and kubernetes) using this ROLE TOKEN.  
+Displays information on the automatic registration code for IaaS(OpenStack and kubernetes) using this ROLE TOKEN, and Custom Registration Code(CRC) specified by user.  
 There are the following types of automatic registration codes to be displayed according to IaaS(OpenStack and kubernetes).  
 
 ![K2HR3 Usage Application - Select registration codes](images/usage_app_role_reg_select.png)
@@ -160,6 +160,8 @@ When registering kubernetes Pods(Containers) automatically, the K2HR3 system run
 The **Yaml** contents is displayed as a template to register this **Sidecar**.  
 You can modify this yaml template according to the environment and start **Sidecar**.  
 _This usage is described below._
+
+In addition to the above, if a Custom Registration Code(CRC) has been set in configuration, all Custom Registration Code(CRC) will be displayed as well.
 
 ### How to use USER DATA SCRIPT for OpenStack
 This section describes how to automatically register an OpenStack Virtual Machine(VM) as a ROLE member.  
