@@ -94,11 +94,13 @@ Gzip圧縮された場合とTextの場合は共に内容は同じです。（Gzi
 #/bin/sh
 
 ROLE_NAME={{= %K2HR3_ROLE_NAME% }}
+ROLE_TENANT={{= %K2HR3_ROLE_TENANT% }}
 ROLE_TOKEN={{= %K2HR3_ROLE_TOKEN% }}
 K2HR3_API_HOST={{= %K2HR3_API_HOST_URI% }}
 ERROR_MSG={{= %K2HR3_ERROR_MSG% }}
 
 echo "ROLE_NAME:      ${ROLE_NAME}"
+echo "ROLE_TENANT:    ${ROLE_TENANT}"
 echo "ROLE_TOKEN:     ${ROLE_TOKEN}"
 echo "K2HR3_API_HOST: ${K2HR3_API_HOST}"
 echo "ERROR_MSG:      ${ERROR_MSG}"
@@ -109,11 +111,13 @@ exit 0
 ##### 例：レスポンス
 ```
 ROLE_NAME=yrn:yahoo:::mytenant:role:myrole
+ROLE_TENANT=yrn:yahoo:::mytenant
 ROLE_TOKEN=9b7754271286ee8dd68fc7996937f72d788b81b28c071333ded449b2d824636b
 K2HR3_API_HOST=https://localhost:3000
 ERROR_MSG=null
 
 echo "ROLE_NAME:      ${ROLE_NAME}"
+echo "ROLE_TENANT:    ${ROLE_TENANT}"
 echo "ROLE_TOKEN:     ${ROLE_TOKEN}"
 echo "K2HR3_API_HOST: ${K2HR3_API_HOST}"
 echo "ERROR_MSG:      ${ERROR_MSG}"
