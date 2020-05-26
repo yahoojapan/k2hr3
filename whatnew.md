@@ -14,7 +14,10 @@ next_string: Detail
 ---
 
 # What's new
-## [19, 21 Nov 2019] K2HR3 new beta release
+## [26 May 2020] K2HR3 new beta release
+K2HR3 new beta release(k2hr3_api Version 0.9.8) is added EXTDATA REST API's template keywards, all source code released on Github.com and released the npm package [here](https://www.npmjs.com/org/antpickax).  
+
+## [19, 21 May 2020] K2HR3 new beta release
 K2HR3 new beta release(k2hr3_api Version 0.9.7 and k2hr3_app Version 0.9.7) is added EXTDATA REST API and Custom Registration Code(CRC), all source code released on Github.com and released the npm package [here](https://www.npmjs.com/org/antpickax).  
 
 ## [11 Nov 2019] K2HR3 new beta release

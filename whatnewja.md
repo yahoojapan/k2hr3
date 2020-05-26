@@ -14,6 +14,11 @@ next_string: Detail
 ---
 
 # What's new
+## 2020年5月26日 バージョンアップ
+K2HR3 ベータ版（k2hr3_api Version 0.9.8）のソースコードをGithub.comで公開しました。  
+npmパッケージを[こちら](https://www.npmjs.com/org/antpickax)で公開しました。  
+このバージョンは、EXTDATA REST APIで置換できるキーワードの追加を行っています。
+
 ## 2020年5月19/21日 バージョンアップ
 K2HR3 ベータ版（k2hr3_api Version 0.9.7、k2hr3_app Version 0.9.7）のソースコードをGithub.comで公開しました。  
 npmパッケージを[こちら](https://www.npmjs.com/org/antpickax)で公開しました。  
