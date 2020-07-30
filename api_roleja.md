@@ -159,6 +159,7 @@ x-auth-token: R=<Role Token>
         port:            <port number>
         cuk:             <container unique key: reserved>
         extra:           <extra string data>
+        tag:             <tag string data>
     }
     clear_hostname:      <true/false>
     clear_ips:           <true/false>
@@ -207,6 +208,8 @@ kubernetesのPodからの登録の場合は、登録用に計算されたCUK文�
 現在、登録種別を指定します。この値を直接指定することはほとんどありません。  
 OpenStackのVirtualMachineの登録の場合には、**openstack-auto-v1**を指定してください。  
 kubernetesのPodからの登録の場合には、**k8s-auto-v1**を指定します。それ以外の場合には未指定もしくはnullを指定します。
+- tag  
+任意の文字列を設定できます。  
 - clear_hostname  
 既存hostnameの情報をすべてクリアすることを指示します。
 - clear_ips  
@@ -276,6 +279,8 @@ kubernetesのPodからの登録の場合は、登録用に計算されたCUK文�
 現在、登録種別を指定します。この値を直接指定することはほとんどありません。  
 OpenStackのVirtualMachineの登録の場合には、**openstack-auto-v1**を指定してください。  
 kubernetesのPodからの登録の場合には、**k8s-auto-v1**を指定します。それ以外の場合には未指定もしくはnullを指定します。
+- tag  
+任意の文字列を設定できます。  
 
 #### Role Token
 - port=_port number_  
@@ -289,6 +294,8 @@ kubernetesのPodからの登録の場合は、登録用に計算されたCUK文�
 現在、登録種別を指定します。この値を直接指定することはほとんどありません。  
 OpenStackのVirtualMachineの登録の場合には、**openstack-auto-v1**を指定してください。  
 kubernetesのPodからの登録の場合には、**k8s-auto-v1**を指定します。それ以外の場合には未指定もしくはnullを指定します。
+- tag  
+任意の文字列を設定できます。  
 
 ### 注意
 すでに存在しているhostname/IPアドレスと同じホスト（HOST）を異なるポートで指定した場合には、以下の動作に注意してください。

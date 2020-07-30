@@ -167,6 +167,7 @@ One request body includes only one host.
         port:            <port number>
         cuk:             <container unique key: reserved>
         extra:           <extra string data>
+        tag:             <tag string data>
     }
     clear_hostname:      <true/false>
     clear_ips:           <true/false>
@@ -220,6 +221,8 @@ One request body includes multiple hosts.
   - Specify **openstack-auto-v1** when registering OpenStack VirtualMachine.
   - Specify **k8s-auto-v1** for kubernetes pod registration.
   - undefined or null value is acceptable.
+- tag  
+  - tag is an arbitrary character string and can be omitted.
 - clear_hostname  
   - True if delete all hostnames.
 - clear_ips  
@@ -293,6 +296,8 @@ x-auth-token: R=<Role Token>
   - Specify **openstack-auto-v1** when registering OpenStack VirtualMachine.
   - Specify **k8s-auto-v1** for kubernetes pod registration.
   - undefined or null value is acceptable.
+- tag  
+  - tag is an arbitrary character string and can be omitted.
 
 #### Role Token
 
@@ -309,6 +314,8 @@ x-auth-token: R=<Role Token>
   - Specify **openstack-auto-v1** when registering OpenStack VirtualMachine.
   - Specify **k8s-auto-v1** for kubernetes pod registration.
   - undefined or null value is acceptable.
+- tag  
+  - tag is an arbitrary character string and can be omitted.
 
 ### Note
 
