@@ -18,9 +18,11 @@ K2HR3 REST APIのトークン（TOKEN）に関連するAPI群です。
 
 ## POST
 #### Unscoped User Tokenの生成
-ユーザ（USER）の Credential 情報を指定して、Unscoped User Tokenを生成します。
+ユーザ（USER）の Credential 情報を指定して、Unscoped User Tokenを生成します。  
+OpenStackと連携している場合は、OpenStack（Identity）の発行するUnscoped Token（Id）もしくはScoped Token（Id）を指定して、Unscoped User Tokenを生成することができます。
 #### Scoped User Tokenの生成
-ユーザ（USER）の Credential 情報もしくは、Unscoped User Tokenを指定し、テナント（TENANT）の権限を持つ Scoped User Tokenを生成します。
+ユーザ（USER）の Credential 情報もしくは、Unscoped User Tokenを指定し、テナント（TENANT）の権限を持つ Scoped User Tokenを生成します。  
+OpenStackと連携している場合は、OpenStack（Identity）の発行するUnscoped Token（Id）もしくはScoped Token（Id）を指定して、Scoped User Tokenを生成することができます。
 
 ### Endpoint(URL)
 http(s)://_API SERVER:PORT_/v1/user/tokens
@@ -34,6 +36,12 @@ Content-Type: application/json
 ```
 Content-Type: application/json
 x-auth-token: U=<Unscoped User Token>
+```
+
+#### OpenStack (Un)scoped Token（Id）指定時
+```
+Content-Type: application/json
+x-auth-token: U=<OpenStack (Un)scoped Token（Id）>
 ```
 
 ### Request Body
@@ -50,6 +58,19 @@ x-auth-token: U=<Unscoped User Token>
 }
 ```
 #### Unscoped User Token指定時
+```
+{
+    auth: {
+        tenantName:      <tenant name>,
+    }
+}
+```
+#### OpenStack (Un)scoped Token（Id）指定してUnscoped User Token生成時
+```
+なし
+```
+
+#### OpenStack (Un)scoped Token（Id）指定してScoped User Token生成時
 ```
 {
     auth: {
@@ -90,9 +111,11 @@ Unscoped もしくは Scoped User Token文字列を返します。
 
 ## PUT
 #### Unscoped User Tokenの生成  
-ユーザ（USER）の Credential 情報を指定して、Unscoped User Tokenを生成します。
+ユーザ（USER）の Credential 情報を指定して、Unscoped User Tokenを生成します。  
+OpenStackと連携している場合は、OpenStack（Identity）の発行するUnscoped Token（Id）もしくはScoped Token（Id）を指定して、Unscoped User Tokenを生成することができます。
 #### Scoped User Tokenの生成  
-ユーザ（USER）の Credential 情報もしくは、Unscoped User Tokenを指定し、テナント（TENANT）権限を持つ Scoped User Tokenを生成します。
+ユーザ（USER）の Credential 情報もしくは、Unscoped User Tokenを指定し、テナント（TENANT）権限を持つ Scoped User Tokenを生成します。  
+OpenStackと連携している場合は、OpenStack（Identity）の発行するUnscoped Token（Id）もしくはScoped Token（Id）を指定して、Scoped User Tokenを生成することができます。
 
 ### Endpoint(URL)
 http(s)://_API SERVER:PORT_/v1/user/tokens?_urlarg_
@@ -108,6 +131,12 @@ Content-Type: application/json
 x-auth-token: U=<Unscoped User Token>
 ```
 
+#### OpenStack (Un)scoped Token（Id）指定時
+```
+Content-Type: application/json
+x-auth-token: U=<OpenStack (Un)scoped Token（Id）>
+```
+
 ### URL Arguments
 #### Credential時
 - tenantname=_tenant name_  
@@ -118,6 +147,13 @@ Scoped User Tokenを生成する場合には、テナント（TENANT）名を指
 パスフレーズを指定します。（認証モジュールに依存します。）
 
 #### Unscoped User Token指定時
+- tenantname=_tenant name_  
+テナント（TENANT）名を指定します。
+
+#### OpenStack (Un)scoped Token（Id）指定してUnscoped User Token生成時
+なし
+
+#### OpenStack (Un)scoped Token（Id）指定してScoped User Token生成時
 - tenantname=_tenant name_  
 テナント（TENANT）名を指定します。
 
