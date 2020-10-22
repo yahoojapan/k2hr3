@@ -15,8 +15,9 @@ next_string: Developer
 
 # Quick Start
 
-This page provides information about quickly bringing up a complete K2HR3 system in a Linux host.
+This page provides information about quickly bringing up a complete K2HR3 system in a Linux host.  
 
+If you want to easily build and try a minimal K2HR3 system, see [Build a Trial Environment](setup_trial.html).  
 
 ## System requirements
 
