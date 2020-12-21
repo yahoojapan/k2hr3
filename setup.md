@@ -24,14 +24,16 @@ If you want to easily build and try a minimal K2HR3 system, see [Build a Trial E
 K2HR3 currently depends on the following software.
 
 * Linux
-  * Debian-9, Fedora-28(29), CentOS-7, Ubuntu-18.04
+  * Debian buster and Stretch
+  * Fedora 32, 31 and 30
+  * CentOS 7 and 8
+  * Ubuntu 16.04, 18.04, and 20.04
 * OpenStack
-  * We have tested K2HR3 with OpenStack Rocky.
+  * Ussuri
 * Node.js
-  * Node.js 4.x or higher
+  * Node.js 10.x, 12.x and 14.x
 * Python
-  * Python 3.5 or higher
-  
+  * Python 3.6 and 3.8 
 
 ## K2HR3 System Overview
 
