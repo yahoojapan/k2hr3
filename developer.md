@@ -22,13 +22,16 @@ This page provides information about local development of each subsystem and con
 K2HR3 currently depends on the following software.
 
 * Linux
-  * Debian-9, Fedora-28(29), CentOS-7, Ubuntu-18.04
+  * Debian buster and Stretch
+  * Fedora 32, 31 and 30
+  * CentOS 7 and 8
+  * Ubuntu 16.04, 18.04, and 20.04
 * OpenStack
-  * We have tested K2HR3 with OpenStack Rocky.
+  * Ussuri
 * Node.js
-  * Node.js 4.x or higher
+  * Node.js 10.x, 12.x and 14.x
 * Python
-  * Python 3.5 or higher
+  * Python 3.6 and 3.8
   
 
 ## K2HR3 Repositories structure
@@ -67,7 +70,7 @@ k2hr3_api repository is a repository for K2HR3 API server.
 
 3. install dependent packages to your local development environment. To build a k2hr3_api package, *k2hdkc* shared library and the header files are required.
    
-    For Debian(Stretch) or Ubuntu(Bionic Beaver) users, run the following commands::
+    For recent Debian-based Linux distributions users, follow the steps below::
     ```
     $ sudo apt-get update -y
     $ sudo apt-get install curl -y
@@ -82,7 +85,15 @@ k2hr3_api repository is a repository for K2HR3 API server.
     $ scl enable devtoolset-7 bash
     ```
 
-    For Fedora28 or CentOS7 users, run the following commands::
+    For users who use supported Fedora other than latest version, follow the steps below::
+    ```
+    $ sudo dnf makecache
+    $ sudo dnf install curl -y
+    $ curl -s https://packagecloud.io/install/repositories/antpickax/stable/script.rpm.sh | sudo bash
+    $ sudo dnf install k2hdkc-devel
+    ```
+
+    For other recent RPM-based Linux distributions users, follow the steps below::
     ```
     $ sudo yum makecache
     $ sudo yum install curl -y

@@ -55,7 +55,7 @@ k2hr3_apiレポジトリは、APIサーバー用レポジトリです。
 3. ローカル環境に必要なパッケージをインストールします。
     パッケージのビルドには、**k2hdkc** のライブラリとヘッダファイルが必要となります。
    
-    Debian(Stretch) / Ubuntu(Bionic Beaver)をお使いの場合は次のように実行してください。
+    最近のDebianベースLinuxの利用者は、以下の手順に従ってください。
     ```
     $ sudo apt-get update -y
     $ sudo apt-get install curl -y
@@ -70,7 +70,15 @@ k2hr3_apiレポジトリは、APIサーバー用レポジトリです。
     $ scl enable devtoolset-7 bash
     ```
 
-    Fedora28 / CentOS7.xをお使いの場合は次のように実行してください。
+    Fedoraの利用者は、以下の手順に従ってください。
+    ```
+    $ sudo dnf makecache
+    $ sudo dnf install curl -y
+    $ curl -s https://packagecloud.io/install/repositories/antpickax/stable/script.rpm.sh | sudo bash
+    $ sudo dnf install k2hdkc-devel
+    ```
+
+    その他最近のRPMベースのLinuxの場合は、以下の手順に従ってください。
     ```
     $ sudo yum makecache
     $ sudo yum install curl -y

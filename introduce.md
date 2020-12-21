@@ -103,10 +103,17 @@ As a RBAC system, K2HR3 in cloud environments has unique features that enable de
 ## Future of K2HR3
 
 The current version of K2HR3 is 0.9.0. It is still in the beta stage. Give us feedback or submit a pull request through the [GitHub website](https://github.com/yahoojapan/k2hr3) for a stable version. We have currently tested K2HR3-0.9.0 on the following environments:
-- OS  
-Debian 9, Fedora 28(29), CentOS 7, Ubuntu 18.04
-- IaaS  
-OpenStack Rocky
+* Linux
+  * Debian buster and Stretch
+  * Fedora 32, 31 and 30
+  * CentOS 7 and 8
+  * Ubuntu 16.04, 18.04, and 20.04
+* OpenStack
+  * Ussuri
+* Node.js
+  * Node.js 10.x, 12.x and 14.x
+* Python
+  * Python 3.6 and 3.8
 
 We also want your request for comments on the future K2HR3. We will improve the current **+SERVICE** and the other features. For example, we have a plan to support [Kubernetes](https://kubernetes.io/) to manage containers as a member of a role. We also plan to provide developers and service administrators with a simple way to start K2HR3 cluster. 
 
