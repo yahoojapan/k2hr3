@@ -29,7 +29,7 @@ The figure below shows **USER** and **TENANT** defined by the K2HR3 system and t
 
 ![K2HR3 Detail - USER/TENANT](images/detail_user_tenant.png)
 
-### USER and Sginin
+### USER and SignIn
 The K2HR3 system defines the user of K2HR3 as **USER**.  
 
 **USER** is the same as the user of IaaS(OpenStack) that the K2HR3 system cooperates with.  
