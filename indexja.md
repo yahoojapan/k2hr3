@@ -56,6 +56,7 @@ arrow_link_tools: <a href="toolsja.html" class="link-title"><span class="arrow-b
 - [K2HR3 OpenStack Notification Listener](https://github.com/yahoojapan/k2hr3_osnl)
 - [K2HR3 Container Registration Sidecar](https://github.com/yahoojapan/k2hr3_sidecar)
 - [K2HR3 Utilities](https://github.com/yahoojapan/k2hr3_utils)
+- [K2HR3 Get Resource](https://github.com/yahoojapan/k2hr3_get_resource)
 
 ## {{ page.arrow_link_environments }}
 **K2HR3** システムが使用する[環境変数・設定](environmentsja.html)について説明します。

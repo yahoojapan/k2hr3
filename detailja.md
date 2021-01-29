@@ -180,6 +180,13 @@ kubernetesにおけるロール（ROLE）メンバーの自動登録・削除に
 
 ![K2HR3 Detail - kubernetes Registration/Deletion](images/detail_k8s_orchestration.png)
 
+## OpenStackにおける自動登録・削除時のその他の処理
+OpenStackの場合、ロール（ROLE）メンバーの自動登録・削除するために、**User Data Script**を指定します。  
+このUser Data Scriptは、自動登録のときに、パッケージのインストールとSystemdサービスの起動を行うことができます。  
+また、削除するときに、Systemdサービスの停止を行うことができます。  
+この設定は、リソース（RESOURCE）データで指定することができます。  
+詳しくは、[その他の使い方](usage_otherja.html) を参照してください。  
+
 # K2HR3システム
 K2HR3システムの全体概要図を以下に示します。  
 
@@ -232,6 +239,12 @@ Watcherは、USERがK2HR3 OpenStack Notification Listenerを利用できない�
 
 このプログラムの使い方については、[Watcher](toolsja.html)を参照してください。  
 K2HR3 Watcherのソースコードは、[k2hr3_api Githubリポジトリ](https://github.com/yahoojapan/k2hr3_api)にあり、[k2hr3 Githubリポジトリ](https://github.com/yahoojapan/k2hr3)のサブモジュールとして登録されています。  
+
+## K2HR3 Get Resource
+K2HR3 Get Resourceは、K2HR3システムにアクセスするホスト（HOST）で動作させるSystemdサービスです。  
+
+このプログラムはユーティリティであり、ホスト（HOST）の登録されているロール（ROLE）に対応したリソース（RESOURCE）データを定期的に取得できます。  
+K2HR3 Get Resourceのソースコードは、[k2hr3_get_resource Githubリポジトリ](https://github.com/yahoojapan/k2hr3_get_resource)にあり、[k2hr3 Githubリポジトリ](https://github.com/yahoojapan/k2hr3)のサブモジュールとして登録されています。  
 
 # 詳細（その他）
 上述以外のK2HR3システムの共通の仕様、その他の詳細について、[詳細（その他）](detail_variousja.html)で説明します。
