@@ -189,6 +189,13 @@ The outline diagram of automatic registration and deletion of kubernetes and ROL
 
 ![K2HR3 Detail - kubernetes Registration/Deletion](images/detail_k8s_orchestration.png)
 
+## Other processing at the time of automatic registration/deletion in OpenStack
+For OpenStack, specify **User Data Script** to automatically register/delete ROLE members.  
+This User Data Script can install packages and start Systemd services during auto-registration.  
+You can also stop the Systemd service when you remove it.  
+This setting can be specified in the RESOURCE data.  
+For more information, see [Other Usage](usage_otherja.html).
+
 # K2HR3 System Overview
 A schematic diagram of the K2HR3 system is shown below.  
 
@@ -246,6 +253,11 @@ For details on how to use this program, please see [Watcher](tools.html).
 
 The source code of **Watcher** is in [k2hr3_api Github repository](https://github.com/yahoojapan/k2hr3_api), and it is registered as a submodule in [k2hr3 Github repository](https://github.com/yahoojapan/k2hr3).  
 
+## K2HR3 Get Resource
+**K2HR3 Get Resource** is a Systemd service that runs on the HOST that accesses the K2HR3 system.  
+
+This program is a utility that can periodically acquire RESOURCE data corresponding to the registered ROLE of the HOST.  
+The source code of **K2HR3 Get Resource** is in [k2hr3_get_resource Github repository](https://github.com/yahoojapan/k2hr3_get_resource), and it is registered as a submodule in [k2hr3 Github repository](https://github.com/yahoojapan/k2hr3).  
+
 # Various details
 Common specifications and other details of the K2HR3 system other than the above are explained in [**Various Details**](detail_various.html).
-

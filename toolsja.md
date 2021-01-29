@@ -67,7 +67,6 @@ Option:  --production           : Set 'production' to NODE_ENV environment
 * -os または --oneshot
   * IPアドレス削除処理を一回だけ実行する。
 
-
 ### devcluster
 
 ここでは、**devcluster** の用途と使い方を説明します。
@@ -121,6 +120,112 @@ usage : cluster.sh [-d] [-f file] [-o file] [-p file] [-h] [-t url] [-v]
 * -v
   * バージョンを表示します。
   
+
+### K2HR3 Get Resource
+
+ここでは、**K2HR3 Get Resource** の用途と使い方を説明しています。
+
+**K2HR3 Get Resource**は、仮想コンピューティング（Virtual Machine）がOpenStackのUser Data Scriptを使って起動され、ロール（ROLE）に自動登録された環境で利用できます。  
+**K2HR3 Get Resource**は、仮想コンピューティング（Virtual Machine）が登録されているロール（ROLE）に対応したリソース（RESOURCE）を定期的に取得する **Systemdサービス** です。  
+これを使うことで、定期的にリソース（RESOURCE）データを取得し、ファイルなどに出力することができます。  
+
+例えば、リソース（RESOURCE）は、[K2HR3テンプレートエンジン](usage_templateja.html)を使った動的なデータを設定できます。  
+この動的なデータが変化する環境において、**K2HR3 Get Resource**を使うことで、リソース（RESOURCE）データを更新できます。  
+
+#### インストール
+**K2HR3 Get Resource**は、ロール（ROLE）に登録されている仮想コンピューティング（Virtual Machine）で利用できます。  
+
+**K2HR3 Get Resource**は、packagecloud.io で [k2hr3-get-resource](https://packagecloud.io/app/antpickax/stable/search?q=k2hr3-get-resource)パッケージで提供されています。  
+ホスト（HOST）のOSに応じたパッケージをインストールしてください。  
+パッケージが提供されていないOSの場合は、[開発者](developerja.html)で説明している方法でパッケージを作成できます。  
+
+#### 起動・停止
+**K2HR3 Get Resource**は、**Systemdサービス**としてインストールされますので、以下の手順で起動できます。  
+なお、このパッケージは、インストール直後は**Disable**のSystemd timerサービスとなっています。  
+```
+$ sudo systemctl enable k2hr3-get-resource.timer
+$ sudo systemctl start k2hr3-get-resource.timer
+```  
+停止する場合は、以下の手順で停止できます。  
+```
+$ sudo systemctl stop k2hr3-get-resource.timer
+```
+
+#### リソース（RESOURCE）
+**K2HR3 Get Resource**が取得するリソース（RESOURCE）は、ロール（ROLE）に対応したYRNパスのリソース（RESOURCE）です。  
+例えば、ロール（ROLE）が以下のYRNパスだとします。  
+```
+yrn:yahoo:::mytenant:role:myhosts
+```  
+この場合、以下のYRNパスのリソース（RESOURCE）を取得します。
+```
+yrn:yahoo:::mytenant:resoruce:myhosts
+```
+
+#### カスタマイズ
+**K2HR3 Get Resource**は、以下に説明するファイルをインストール・参照します。
+
+##### /etc/antpickax/k2hr3-get-resource-helper.conf
+このファイルは、**K2HR3 Get Resource**の設定ファイルであり、パッケージでインストールされます。  
+以下のキーワードの値を設定して、**K2HR3 Get Resource**の動作を変更することができます。
+
+- PIDDIR  
+K2HR3 Get Resource関連プロセスのプロセスIDを保管するディレクトリを指定します。  
+デフォルトは、`/var/run/antpickax`です。
+
+- SERVICE_PIDFILE  
+K2HR3 Get Resource関連プロセスのプロセスIDを保管するファイル名を指定します。  
+デフォルトは、`k2hr3-get-resource-hlper.pid`です。
+
+- LOGDIR  
+K2HR3 Get Resource関連プロセスのログを格納するディレクトリを指定します。  
+デフォルトでは、`journald`にログ管理を任せています。
+
+- SCRIPT_LOGFILE  
+K2HR3 Get Resource関連プロセスのログを保管するファイル名を指定します。  
+デフォルトでは、`journald`にログ管理を任せています。
+
+- RESOURCE_PATH  
+K2HR3 Get Resourceが取得するリソース（RESOURCE）のYRNパスを指定します。  
+デフォルトは、この値は未指定であり、上述したようにロール（ROLE）に対応したリソース（RESOURCE）のYRNパスです。
+
+- OUTPUT_DIR  
+K2HR3 Get Resourceが取得したリソース（RESOURCE）データの出力先ディレクトリを指定します。  
+デフォルトは、`/etc/antpickax`です。
+
+- OUTPUT_FILE  
+K2HR3 Get Resourceが取得したリソース（RESOURCE）データの出力先ファイル名を指定します。  
+デフォルトは、リソース（RESOURCE）のYPNパスの最後の部分パスです。
+
+- USE_DAEMON  
+K2HR3 Get Resourceを`daemon`として起動するか否かを設定します。`daemon`として起動した場合、Systemd タイマーサービスが停止された場合、出力ファイルを削除します。  
+デフォルトは、`true`です。
+
+##### /etc/antpickax/override.conf
+このファイルは、**K2HR3 Get Resource**が参照する設定ファイルの一つであり、`k2hr3-get-resource-helper.conf`と同じキーワードを設定できます。  
+ただし、同じキーワードが`k2hr3-get-resource-helper.conf`と競合する場合は、`override.conf`の値が優先されます。  
+
+キーワードの指定が、`k2hr3-get-resource-helper.conf`とは異なり、以下のいずれかの方法で値を指定します。
+
+**書式1**  
+```
+[customize configuration file path]:[keyword] = value
+```
+カスタマイズコンフィグレーションファイルのパスとキーワードを指定して、値を直接設定する書式です。  
+例えば、以下のように指定します。  
+```
+/etc/antpickax/k2hr3-get-resource-helper.conf:OUTPUT_DIR = /tmp
+```
+
+**書式2**  
+```
+[customize configuration file path]:[keyword] = [customize configuration file path]:[keyword]
+```  
+カスタマイズコンフィグレーションファイルのパスとキーワードを指定して、値を他のコンフィグレーションファイルで設定する書式です。  
+例えば、以下のように指定します。  
+```
+/etc/antpickax/k2hr3-get-resource-helper.conf:LOGDIR = /etc/antpickax/other.conf:LOGDIR
+```
 
 ## その他のツール
 

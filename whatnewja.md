@@ -14,6 +14,10 @@ next_string: Detail
 ---
 
 # What's new
+## 2021年1月28日
+K2HR3 ベータ版の各コンポーネントが更新され、Github.comで公開しました。  
+[k2hr3_get_resource](https://github.com/yahoojapan/k2hr3_get_resource) が追加され、ソースコードをGithub.comで公開しました。  
+
 ## 2020年5月26日 バージョンアップ
 K2HR3 ベータ版（k2hr3_api Version 0.9.8）のソースコードをGithub.comで公開しました。  
 npmパッケージを[こちら](https://www.npmjs.com/org/antpickax)で公開しました。  

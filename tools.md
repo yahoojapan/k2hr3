@@ -114,7 +114,112 @@ usage : cluster.sh [-d] [-f file] [-o file] [-p file] [-h] [-t url] [-v]
   
 * -v
   * Shows the script version
-  
+
+
+### K2HR3 Get Resource
+Explains the usage and usage of **K2HR3 Get Resource**.
+
+**K2HR3 Get Resource** can be used in an environment where virtual computing(Virtual Machine) is started using User Data Script(for OpenStack) and automatically registered in the ROLE.  
+**K2HR3 Get Resource** is a **Systemd service** that periodically acquires the RESOURCE corresponding to the ROLE in which the virtual computing(Virtual Machine) is registered.  
+By using this, you can periodically acquire RESOURCE data and output it to a file or the like.  
+
+For example, the RESOURCE can be populated with dynamic data using the [K2HR3 Template Engine](usage_template.html).  
+In this dynamic data changing environment, **K2HR3 Get Resource** can be used to update RESOURCE data.  
+
+#### Install
+**K2HR3 Get Resource** is available for virtual computing(Virtual Machine) registered in the ROLE.  
+
+**K2HR3 Get Resource** is provided in the [k2hr3-get-resource](https://packagecloud.io/app/antpickax/stable/search?q=k2hr3-get-resource) package on `packagecloud.io`.  
+Install the package according to the OS of the HOST.  
+For operating systems for which packages are not provided, you can create packages as described in [Developer](developer.html).  
+
+#### Start/Stop
+**K2HR3 Get Resource** is installed as **Systemd Timer Service**, so you can start it by following the steps below.  
+Immediately after installation, this Systemd timer service is a **Disabled**.  
+```
+$ sudo systemctl enable k2hr3-get-resource.timer
+$ sudo systemctl start k2hr3-get-resource.timer
+```  
+Follow the procedure below to stop it.  
+```
+$ sudo systemctl stop k2hr3-get-resource.timer
+```
+
+#### RESOURCE
+The RESOURCE acquired by **K2HR3 Get Resource** is the RESOURCE of the YRN path corresponding to the ROLE.  
+For example, suppose the ROLE is the following YRN path.  
+```
+yrn:yahoo:::mytenant:role:myhosts
+```  
+In this case, use the RESOURCE of the following YRN path.  
+```
+yrn:yahoo:::mytenant:resoruce:myhosts
+```
+
+#### Customizing
+**K2HR3 Get Resource** installs and references the files described below.  
+
+##### /etc/antpickax/k2hr3-get-resource-helper.conf
+This file is the **K2HR3 Get Resource** configuration file and is installed as a package.  
+You can change the behavior of **K2HR3 Get Resource** by setting the values of the following keywords.  
+
+- PIDDIR  
+K2HR3 Get Resource specifies the directory where the process IDs of related processes are stored.  
+The default is `/var/run/antpickax`.
+
+- SERVICE_PIDFILE  
+K2HR3 Get Resource specify the file name to store the process ID of the related process.  
+The default is `k2hr3-get-resource-hlper.pid`.
+
+- LOGDIR  
+K2HR3 Get Resource specifies the directory for storing related process logs.  
+By default, `journald` is responsible for log management.
+
+- SCRIPT_LOGFILE  
+K2HR3 Get Resource specifies the file name to store the log of related processes.  
+By default, `journald` is responsible for log management.
+
+- RESOURCE_PATH  
+Specify the YRN path of the RESOURCE acquired by K2HR3 Get Resource.  
+By default, this value is unspecified and is the YRN path of the RESOURCE corresponding to the ROLE as described above.
+
+- OUTPUT_DIR  
+Specifies the output destination directory for the RESOURCE data acquired by K2HR3 Get Resource.  
+The default is `/etc/antpickax`.
+
+- OUTPUT_FILE  
+Specify the output destination file name of the RESOURCE data acquired by K2HR3 Get Resource.  
+The default is the last partial path of the RESOURCE YPN path.
+
+- USE_DAEMON  
+Set whether to start K2HR3 Get Resource as `daemon`. When started as `daemon`, it deletes the output file if the Systemd timer service is stopped.  
+The default is `true`.
+
+##### /etc/antpickax/override.conf
+This file is one of the configuration files referenced by **K2HR3 Get Resource**, and you can set the same keywords as `k2hr3-get-resource-helper.conf`.  
+However, if the same keyword conflicts with `k2hr3-get-resource-helper.conf`, the value of `override.conf` takes precedence.  
+
+The keyword specification is different from `k2hr3-get-resource-helper.conf`, and the value is specified by one of the following methods.
+
+**Format 1**  
+```
+[customize configuration file path]:[keyword] = value
+```  
+This is a format to set the value directly by specifying the path and keyword of the customized configuration file.  
+For example, specify as follows.  
+```
+/etc/antpickax/k2hr3-get-resource-helper.conf:OUTPUT_DIR = /tmp
+```  
+
+**Format 2**  
+```
+[customize configuration file path]:[keyword] = [customize configuration file path]:[keyword]
+```  
+This is a format to specify the path and keyword of the customized configuration file and set the value in another configuration file.  
+For example, specify as follows.  
+```
+/etc/antpickax/k2hr3-get-resource-helper.conf:LOGDIR = /etc/antpickax/other.conf:LOGDIR
+```
 
 ## Other tools
 

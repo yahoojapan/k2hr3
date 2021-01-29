@@ -284,4 +284,58 @@ k2hr3_sidecarレポジトリは、kubernetesからPods（Conatainers）を自動
     
 6. コード変更があれば、ぜひプルリクエストを投げてみてください！
 
+## k2hr3_ge_resource レポジトリ
 
+この章では、k2hr3_get_resource レポジトリの内容とソースコードのビルド＆テスト方法を説明しています。
+
+k2hr3_get_resource レポジトリは、ロール（ROLE）に登録されているホスト（HOST）から、リソース（RESOURCE）データを定期的に取得するための **Systemdサービス** です。
+
+1. Github上で [https://github.com/yahoojapan/k2hr3_get_resource](https://github.com/yahoojapan/k2hr3_get_resource)をforkします
+
+2. レポジトリをcloneします
+
+    ```
+    $ git clone https://github.com/YOUR-USERNAME/k2hr3_get_resource.git
+    ```
+
+3. ブランチを作り、必要でしたら、コード変更して見てください
+
+    ```
+    $ cd k2hr3_get_resource
+    $ git checkout -b my-first-contribution
+    ```
+
+4. ローカル環境に必要なパッケージをインストールします
+
+    ```
+    [Ubuntu/Debian]
+    $ sudo apt-get install git autoconf autotools-dev make dh-make dh-systemd fakeroot dpkg-dev devscripts pkg-config ruby-dev rubygems rubygems-integration procps
+    
+    [CentOS/Fedora]
+    $ sudo yum install autoconf automake gcc-c++ make pkgconfig redhat-rpm-config rpm-build procps
+    ```
+
+5. ビルドし、パッケージを作成します。
+
+    ```
+    $ ./autogen.sh
+    $ ./configure
+    $ make
+    $ make check
+    
+    [Ubuntu/Debian]
+    $ ./buildutil/debian_build.sh
+    
+    [CentOS/Fedora]
+    $ ./buildutil/rpm_build.sh
+    ```
+
+6. コード変更があれば、commitして、push します
+
+    ```
+    $ git add .
+    $ git commit -m "Short description of your changes."
+    $ git push origin my-first-contribution
+    ```
+    
+7. コード変更があれば、ぜひプルリクエストを投げてみてください！

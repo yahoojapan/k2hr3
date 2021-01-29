@@ -14,6 +14,10 @@ next_string: Detail
 ---
 
 # What's new
+## [28 Jan 2021] K2HR3 new beta release
+Each component of K2HR3 Beta has been updated and published on Github.com.  
+Primarily, [k2hr3_get_resource](https://github.com/yahoojapan/k2hr3_get_resource) has been added and the source code has been published on Github.com.
+
 ## [26 May 2020] K2HR3 new beta release
 K2HR3 new beta release(k2hr3_api Version 0.9.8) is added EXTDATA REST API's template keywards, all source code released on Github.com and released the npm package [here](https://www.npmjs.com/org/antpickax).  
 

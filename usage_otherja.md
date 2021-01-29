@@ -63,6 +63,34 @@ IaaS（OpenStack、kubernetes）などを使いインスタンスやポッド/�
 鍵の配布・更新などのシステムを別途準備することも可能ですが、+サービス（+SERVICE）機能のように連携機能・RBAC機能を同時に持ち、IaaS（OpenStackやkubernetes）にも連動するように準備するのはコストがかかります。  
 これらとの連携・RBAC・連動が可能なK2HR3システムを使うことで、コストの低減・安全な導入ができます。
 
+## 自動登録・削除時の追加処理
+OpenStackで仮想コンピューティング（Virtual Machine）の自動登録・削除をするとき、パッケージのインストールと、Systemdサービスの開始・停止ができます。
+
+### OpenStackにおける自動登録時の処理
+OpenStackで仮想コンピューティング（Virtual Machine）の自動登録を行うとき、同時にパッケージのインストールと、Systemdサービスの開始ができます。  
+この処理を行うためには、仮想コンピューティング（Virtual Machine）を登録するロール（ROLE）に対応したリソース（RESOURCE）にパッケージ名、Systemdサービス名を指定しておきます。  
+
+例えば、登録先のロール（ROLE）が以下のYRNパスだとします。  
+```
+yrn:yahoo:::mytenant:role:myhosts
+```
+この場合、以下のYRNパスのリソース（RESOURCE）のKEYSデータにパッケージ名、Systemdサービス名を列挙できます。
+```
+yrn:yahoo:::mytenant:resoruce:myhosts
+```
+- k2hr3-init-packages  
+このキー（KEY）の値に、インストールするパッケージ名を列挙します。（セパレーターは、`,`で指定します。）
+- k2hr3-init-packagecloud-packages  
+このキー（KEY）の値に、[packagecloud.io](https://packagecloud.io/antpickax/stable)にあるAntPickaxの提供するパッケージをインストールする場合は、パッケージ名を列挙します。（セパレーターは、`,`で指定します。）
+- k2hr3-init-systemd-packages  
+このキー（KEY）の値に、開始したいSystemdサービス名を列挙します。
+
+### OpenStackにおける自動削除時の処理
+OpenStackで仮想コンピューティング（Virtual Machine）の削除を行うとき、同時にSystemdサービスの停止ができます。  
+この処理を行うためには、仮想コンピューティング（Virtual Machine）をが登録されているロール（ROLE）に対応したリソース（RESOURCE）にSystemdサービス名を指定しておきます。  
+
+リソース（RESOURCE）のKEYSデータは、登録時と同じ `k2hr3-init-systemd-packages` が使われます。  
+つまり、登録時に起動したSystemdサービスは、削除時に自動的に停止できます。
+
 ## その他の事例
 今後もこのドキュメントに事例を追加していきます。
-

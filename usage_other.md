@@ -71,6 +71,35 @@ Although USER can provide a system for distributing/updating keys, it is **diffi
 
 USER can reduce the cost and build a safe system by using K2HR3 system which these are already implemented and can easily provide.  
 
+## Additional processing at automatic registration/deletion
+When automatically registering/deleting virtual computing(Virtual Machine) with OpenStack, you can install packages and start/stop Systemd services.
+
+### Processing at automatic registration in OpenStack
+When auto-registering a virtual computing(Virtual Machine) with OpenStack, you can install packages and start Systemd services at the same time.  
+To perform this process, specify the package name and Systemd service name in the RESOURCE corresponding to the ROLE that registers the virtual computing(Virtual Machine).  
+
+For example, suppose the registration destination ROLE is the following YRN path.  
+```
+yrn:yahoo:::mytenant:role:myhosts
+```
+In this case, the package name and Systemd service name can be set in the KEYS data of the RESOURCE of the following YRN path.
+```
+yrn:yahoo:::mytenant:resoruce:myhosts
+```
+- k2hr3-init-packages  
+List the name of the package to be installed in the value of this key.(The separator is specified by `,`.)
+- k2hr3-init-packagecloud-packages  
+If you want to install the package provided by AntPickax at [packagecloud.io](https://packagecloud.io/antpickax/stable), enumerate the package name in the value of this KEY.
+- k2hr3-init-systemd-packages  
+List the Systemd service name you want to start in the value of this KEY.
+
+### Processing at automatic deletion in OpenStack
+When you delete a virtual computing(Virtual Machine) in OpenStack, you can stop the Systemd service at the same time.  
+To perform this process, specify the Systemd service name in the RESOURCE corresponding to the ROLE in which the virtual computing(Virtual Machine) is registered.  
+
+For the KEYS data of the RESOURCE, the same `k2hr3-init-systemd-packages` as at the time of registration is used.  
+In other words, Systemd services that started during registration can be automatically stopped when deleted.  
+
 ## Other examples
 We will continue to add cases to this document in the future.
 
