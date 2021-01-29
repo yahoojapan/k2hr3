@@ -75,12 +75,18 @@ This is a repository for creating docker images and publishing it on dockerhub.
 If you use the K2HR3 system to register a container, you can use the K2HR3 Web Application and get yaml to register a Sidecar that uses this image.  
 You can start sidecar using the obtained yaml from K2HR3 Web Application.  
 
+### K2HR3 Get Resource
+**K2HR3 Get Resource** can be used in an environment where virtual computing(Virtual Machine) is started using User Data Script(for OpenStack) and automatically registered in the ROLE.  
+**K2HR3 Get Resource** is a **Systemd timer service** that periodically acquires the RESOURCE corresponding to the ROLE in which the virtual computing(Virtual Machine) is registered.  
+By using this, you can periodically acquire RESOURCE data and output it to a file or the like.  
+
 ## Documents
 [K2HR3 Document](https://k2hr3.antpick.ax/index.html)  
 [K2HR3 Web Application Usage](https://k2hr3.antpick.ax/usage_app.html)  
 [K2HR3 REST API Usage](https://k2hr3.antpick.ax/api.html)  
 [K2HR3 OpenStack Notification Listener Usage](https://k2hr3.antpick.ax/detail_osnl.html)  
 [K2HR3 Watcher Usage](https://k2hr3.antpick.ax/tools.html)  
+[K2HR3 Get Resource Usage](https://k2hr3.antpick.ax/tools.html)  
 [K2HR3 Utilities for Setup](https://k2hr3.antpick.ax/setup.html)  
 [K2HR3 Demonstration](https://demo.k2hr3.antpick.ax/)
 
@@ -98,6 +104,7 @@ You can start sidecar using the obtained yaml from K2HR3 Web Application.
 [K2HR3 OpenStack Notification Listener](https://github.com/yahoojapan/k2hr3_osnl)  
 [K2HR3 Utilities](https://github.com/yahoojapan/k2hr3_utils)  
 [K2HR3 Container Registration Sidecar](https://github.com/yahoojapan/k2hr3_sidecar)  
+[K2HR3 Get Resource](https://github.com/yahoojapan/k2hr3_get_resource)  
 
 [k2hdkc](https://github.com/yahoojapan/k2hdkc)  
 [k2hash](https://github.com/yahoojapan/k2hash)  
@@ -109,6 +116,7 @@ You can start sidecar using the obtained yaml from K2HR3 Web Application.
 [k2hr3-api(npm packages)](https://www.npmjs.com/package/k2hr3-api)  
 [k2hr3-osnl(python packages)](https://pypi.org/project/k2hr3-osnl/)  
 [k2hr3.sidecar(dockerhub)](https://hub.docker.com/r/antpickax/k2hr3.sidecar)  
+[k2hr3-get-resource(packages)](https://packagecloud.io/app/antpickax/stable/search?q=k2hr3-get-resource)  
 
 ### License
 This software is released under the MIT License, see the license file.

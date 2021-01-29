@@ -13,3 +13,6 @@
 [submodule "k2hr3_sidecar"]
 	path = k2hr3_sidecar
 	url = https://github.com/yahoojapan/k2hr3_sidecar.git
+[submodule "k2hr3_get_resource"]
+	path = k2hr3_get_resource
+	url = https://github.com/yahoojapan/k2hr3_get_resource.git
