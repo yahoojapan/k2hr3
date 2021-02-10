@@ -13,7 +13,7 @@ next_url:
 next_string: 
 ---
 
-# USERDATA API
+# EXTDATA API
 This page describes K2HR3 EXTRA DATA API.  
 
 This API is an API that expands the template defined by the user and returns the expanded data.  
