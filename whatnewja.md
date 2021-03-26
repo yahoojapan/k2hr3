@@ -14,6 +14,13 @@ next_string: Detail
 ---
 
 # What's new
+## 2021年3月26日
+K2HR3 の各コンポーネントが正式版 (Version 1.0.0以降) として更新されました。
+
+## 2021年3月22日
+K2HR3 CLI (Version 1.0.0) のソースコードをGithub.comで公開しました。  
+[k2hr3_cli](https://github.com/yahoojapan/k2hr3_cli) が追加され、ソースコードをGithub.comで公開しました。  
+
 ## 2021年1月28日
 K2HR3 ベータ版の各コンポーネントが更新され、Github.comで公開しました。  
 [k2hr3_get_resource](https://github.com/yahoojapan/k2hr3_get_resource) が追加され、ソースコードをGithub.comで公開しました。  
