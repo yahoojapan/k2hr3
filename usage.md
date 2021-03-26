@@ -46,6 +46,10 @@ You can learn the operation of **ROLE**, **POLICY-RULE**, **RESOURCE** and **SER
 The [REST API Usage](api.html) page provides information about **K2HR3 REST API** that every **USER** can define and use **ROLE**, **POLICY-RULE**, **RESOURCE** and **SERVICE**.  
 See the [REST API Usage](api.html) page for details.
 
+# Command Line Interface(CLI) Usage
+The [Command Line Interface Usage](cli.html) page provides information about **K2HR3 Command Line Interface(CLI)** that every **USER** can define and use **ROLE**, **POLICY-RULE**, **RESOURCE** and **SERVICE**.  
+See the [Command Line Interface Usage](clii.html) page for details.
+
 # How to access RESOURCE as RBAC
 K2HR3 provides **RBAC**(**R**ole **B**ased **A**ccess **C**ontrol) system that controls access from **ROLE** to **RESOURCE** with **POLICY-RULE**.  
 **USER** defines **RESOURCE**, defines the access method as **POLICY-RULE**, and registers the access source **HOST** to be permitted as a **ROLE member**.  

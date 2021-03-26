@@ -52,6 +52,7 @@ And explained how to build JavaScript loaded in the browser to use **K2HR3** sys
 All source code related to the **K2HR3** system is published on **GitHub**.  
 - [K2HR3](https://github.com/yahoojapan/k2hr3)
 - [K2HR3 Web Application](https://github.com/yahoojapan/k2hr3_app)
+- [K2HR3 Command Line Interface](https://github.com/yahoojapan/k2hr3_cli)
 - [K2HR3 REST API](https://github.com/yahoojapan/k2hr3_api)
 - [K2HR3 OpenStack Notification Listener](https://github.com/yahoojapan/k2hr3_osnl)
 - [K2HR3 Container Registration Sidecar](https://github.com/yahoojapan/k2hr3_sidecar)
