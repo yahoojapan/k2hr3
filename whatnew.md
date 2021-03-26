@@ -14,6 +14,13 @@ next_string: Detail
 ---
 
 # What's new
+## [26 Mar 2021] K2HR3 components updated
+Each component of K2HR3 has been updated to the official version(Version 1.0.0 or later).
+
+## [22 Mar 2021] K2HR3 CLI released
+The source code of K2HR3 CLI (Version 1.0.0) has been released on Github.com.  
+[k2hr3_cli](https://github.com/yahoojapan/k2hr3_cli) has been added and the source code has been released on Github.com.
+
 ## [28 Jan 2021] K2HR3 new beta release
 Each component of K2HR3 Beta has been updated and published on Github.com.  
 Primarily, [k2hr3_get_resource](https://github.com/yahoojapan/k2hr3_get_resource) has been added and the source code has been published on Github.com.
