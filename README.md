@@ -43,6 +43,10 @@ You can access the [demonstration site](https://demo.k2hr3.antpick.ax/) of K2HR3
 You can learn about Resource, Roles, policy Rules and SERVICE provided by K2HR3 on this site now.  
 The data operated on this site can not be saved.  
 
+### K2HR3 Command Line Interface
+**K2HR3 Command Line Interface**(CLI) provides an interface that allows you to operate the [K2HR3 REST API](api.html) provided by K2HR3 from the command line.  
+It provides the same function as [K2HR3 Web Application](usage_appja.html) for manipulating the data of the K2HR3 system as a **Command Line Interface**(CLI).
+
 ### K2HR3 REST API
 **K2HR3 REST API** provides for manipulating data such as **ROLE**, **POLICY RULE**, **RESOURCE** and **SERVICE** stored in the K2HR3 Data Server([k2hdkc](https://github.com/yahoojapan/k2hdkc)).  
 
@@ -83,6 +87,7 @@ By using this, you can periodically acquire RESOURCE data and output it to a fil
 ## Documents
 [K2HR3 Document](https://k2hr3.antpick.ax/index.html)  
 [K2HR3 Web Application Usage](https://k2hr3.antpick.ax/usage_app.html)  
+[K2HR3 Command Line Interface Usage](https://k2hr3.antpick.ax/cli.html)  
 [K2HR3 REST API Usage](https://k2hr3.antpick.ax/api.html)  
 [K2HR3 OpenStack Notification Listener Usage](https://k2hr3.antpick.ax/detail_osnl.html)  
 [K2HR3 Watcher Usage](https://k2hr3.antpick.ax/tools.html)  
@@ -100,6 +105,7 @@ By using this, you can periodically acquire RESOURCE data and output it to a fil
 ## Repositories
 [K2HR3 main repository](https://github.com/yahoojapan/k2hr3)  
 [K2HR3 Web Application repository](https://github.com/yahoojapan/k2hr3_app)  
+[K2HR3 Command Line Interface repository](https://github.com/yahoojapan/k2hr3_cli)  
 [K2HR3 REST API repository](https://github.com/yahoojapan/k2hr3_api)  
 [K2HR3 OpenStack Notification Listener](https://github.com/yahoojapan/k2hr3_osnl)  
 [K2HR3 Utilities](https://github.com/yahoojapan/k2hr3_utils)  
@@ -114,6 +120,7 @@ By using this, you can periodically acquire RESOURCE data and output it to a fil
 ## Packages
 [k2hr3-app(npm packages)](https://www.npmjs.com/package/k2hr3-app)  
 [k2hr3-api(npm packages)](https://www.npmjs.com/package/k2hr3-api)  
+[k2hr3-cli(packages)](https://packagecloud.io/app/antpickax/stable/search?q=k2hr3-cli)  
 [k2hr3-osnl(python packages)](https://pypi.org/project/k2hr3-osnl/)  
 [k2hr3.sidecar(dockerhub)](https://hub.docker.com/r/antpickax/k2hr3.sidecar)  
 [k2hr3-get-resource(packages)](https://packagecloud.io/app/antpickax/stable/search?q=k2hr3-get-resource)  
