@@ -316,9 +316,9 @@ The following example shows the *devcluster* tool.
     
 6. Submit a pull request through the GitHub website when you change codes.
 
-## The k2hr3_ge_resource repository
+## The k2hr3_get_resource repository
 
-This chapter instructs how to build a 'k2hr3_ge_resource' package and test it in your local development environment.
+This chapter instructs how to build a 'k2hr3_get_resource' package and test it in your local development environment.
 
 The k2hr3_get_resource repository is a **Systemd service** for periodically retrieving RESOURCE data from a HOST registered in a ROLE members.
 k2hr3_ge_resource repository is a repository for K2HR3 Get Resource.
@@ -370,5 +370,62 @@ k2hr3_ge_resource repository is a repository for K2HR3 Get Resource.
     $ git commit -m "Short description of your changes."
     $ git push origin my-first-contribution
     ```
+
+7. Submit a pull request through the GitHub website when you change codes.
+
+## The k2hr3_cli repository
+
+This chapter instructs how to build a 'k2hr3_cli' package and test it in your local development environment.
+
+The k2hr3_cli repository is a Command Line Interface(CLI) program that uses the K2HR3 REST API.  
+Users can use this K2HR3 Command Line Interface(CLI) to perform the same operations as the K2HR3 Web Application from the command line.  
+
+1. Fork the [https://github.com/yahoojapan/k2hr3_cli](https://github.com/yahoojapan/k2hr3_cli) repository in GitHub.
+
+2. Clone your forked repository locally.
+
+    ```
+    $ git clone https://github.com/YOUR-USERNAME/k2hr3_cli.git
+    ```
     
+3. Create a branch for local development
+
+    ```
+    $ cd k2hr3_cli
+    $ git checkout -b my-first-contribution
+    ```
+
+4. Install the required packages in your local environment
+
+    ```
+    [Ubuntu/Debian]
+    $ sudo apt-get install git autoconf autotools-dev make dh-make fakeroot dpkg-dev devscripts pkg-config ruby-dev rubygems rubygems-integration procps shellcheck
+    
+    [CentOS/Fedora]
+    $ sudo yum install git autoconf automake gcc-c++ make pkgconfig redhat-rpm-config rpm-build ruby-devel rubygems procps
+    ```
+
+5. Build and create the package
+
+    ```
+    $ ./autogen.sh
+    $ ./configure
+    $ make build
+    $ make check
+    
+    [Ubuntu/Debian]
+    $ ./buildutil/debian_build.sh
+    
+    [CentOS/Fedora]
+    $ ./buildutil/rpm_build.sh
+    ```
+
+6. Commit your code changes and push your branch to GitHub when you change codes::
+
+    ```
+    $ git add .
+    $ git commit -m "Short description of your changes."
+    $ git push origin my-first-contribution
+    ```
+
 7. Submit a pull request through the GitHub website when you change codes.

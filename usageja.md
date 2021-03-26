@@ -43,6 +43,10 @@ K2HR3システムが提供するロール（ROLE）、ポリシー/ルール（P
 K2HR3の、ロール（ROLE）、ポリシー/ルール（POLICY）、リソース（RESOURCE）、サービス（SERVICE）等の操作・設定を REST APIから行えます。  
 このK2HR3システムが提供する[K2HR3 REST API](apija.html)を説明します。  
 
+# Command Line Interface(CLI) の利用
+K2HR3の、ロール（ROLE）、ポリシー/ルール（POLICY）、リソース（RESOURCE）、サービス（SERVICE）等の操作・設定を Command Line Interface(CLI)から行えます。  
+このK2HR3が提供する[Command Line Interface(CLI)](clija.html)を説明します。  
+
 # 主機能 RBAC の使い方
 K2HR3システムを使うことで、リソース（RESOURCE）へのロール（ROLE）ベースのアクセス制御 **RBAC**（**R**ole **B**ased **A**ccess **C**ontrol）ができます。  
 このリソース（RESOURCE）に対してロール（ROLE）がアクセスし、その制御をRBACとして提供することがK2HR3システムの主機能です。  

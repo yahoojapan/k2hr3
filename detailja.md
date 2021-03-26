@@ -246,6 +246,11 @@ K2HR3 Get Resourceは、K2HR3システムにアクセスするホスト（HOST�
 このプログラムはユーティリティであり、ホスト（HOST）の登録されているロール（ROLE）に対応したリソース（RESOURCE）データを定期的に取得できます。  
 K2HR3 Get Resourceのソースコードは、[k2hr3_get_resource Githubリポジトリ](https://github.com/yahoojapan/k2hr3_get_resource)にあり、[k2hr3 Githubリポジトリ](https://github.com/yahoojapan/k2hr3)のサブモジュールとして登録されています。  
 
+## K2HR3 Command Line Interface(CLI)
+**K2HR3 Command Line Interface(CLI)**は、K2HR3 REST APIを操作するCommand Line Interface(CLI)です。  
+これは、K2HR3 REST APIにアクセス可能な任意のホスト（HOST）で動作できます。  
+ユーザが、K2HR3 Web Applicationから操作することと同じ操作がコマンドラインで実行きます。
+
 # 詳細（その他）
 上述以外のK2HR3システムの共通の仕様、その他の詳細について、[詳細（その他）](detail_variousja.html)で説明します。
 

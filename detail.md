@@ -259,5 +259,10 @@ The source code of **Watcher** is in [k2hr3_api Github repository](https://githu
 This program is a utility that can periodically acquire RESOURCE data corresponding to the registered ROLE of the HOST.  
 The source code of **K2HR3 Get Resource** is in [k2hr3_get_resource Github repository](https://github.com/yahoojapan/k2hr3_get_resource), and it is registered as a submodule in [k2hr3 Github repository](https://github.com/yahoojapan/k2hr3).  
 
+## K2HR3 Command Line Interface(CLI)
+The **K2HR3 Command Line Interface(CLI)** is a Command Line Interface(CLI) that operates the K2HR3 REST API.  
+It can run on any HOST that has access to the K2HR3 REST API.  
+The same operations that users can perform from the K2HR3 Web Application can be performed on the command line.  
+
 # Various details
 Common specifications and other details of the K2HR3 system other than the above are explained in [**Various Details**](detail_various.html).

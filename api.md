@@ -9,8 +9,8 @@ prev_url: usage_app.html
 prev_string: Web Application
 top_url: usage.html
 top_string: Usage
-next_url: usage_rbac.html
-next_string: RBAC Usage
+next_url: cli.html
+next_string: Command Line Interface
 ---
 
 # K2HR3 REST API

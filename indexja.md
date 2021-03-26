@@ -52,6 +52,7 @@ arrow_link_tools: <a href="toolsja.html" class="link-title"><span class="arrow-b
 **K2HR3** のソースコード一式は、**GitHub**で公開されています。  
 - [K2HR3](https://github.com/yahoojapan/k2hr3)
 - [K2HR3 Web Application](https://github.com/yahoojapan/k2hr3_app)
+- [K2HR3 Command Line Interface](https://github.com/yahoojapan/k2hr3_cli)
 - [K2HR3 REST API](https://github.com/yahoojapan/k2hr3_api)
 - [K2HR3 OpenStack Notification Listener](https://github.com/yahoojapan/k2hr3_osnl)
 - [K2HR3 Container Registration Sidecar](https://github.com/yahoojapan/k2hr3_sidecar)

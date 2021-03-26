@@ -339,3 +339,60 @@ k2hr3_get_resource レポジトリは、ロール（ROLE）に登録されてい
     ```
     
 7. コード変更があれば、ぜひプルリクエストを投げてみてください！
+
+## k2hr3_cli レポジトリ
+
+この章では、k2hr3_cli レポジトリの内容とソースコードのビルド＆テスト方法を説明しています。
+
+k2hr3_cli レポジトリは、K2HR3 REST APIを使う Command Line Interface(CLI) プログラムです。  
+ユーザは、このK2HR3 Command Line Interface(CLI)を使い、K2HR3 Web Applicationと同じ操作をコマンドラインから実行できます。  
+
+1. Github上で [https://github.com/yahoojapan/k2hr3_cli](https://github.com/yahoojapan/k2hr3_cli)をforkします
+
+2. レポジトリをcloneします
+
+    ```
+    $ git clone https://github.com/YOUR-USERNAME/k2hr3_cli.git
+    ```
+
+3. ブランチを作り、必要でしたら、コード変更して見てください
+
+    ```
+    $ cd k2hr3_cli
+    $ git checkout -b my-first-contribution
+    ```
+
+4. ローカル環境に必要なパッケージをインストールします
+
+    ```
+    [Ubuntu/Debian]
+    $ sudo apt-get install git autoconf autotools-dev make dh-make fakeroot dpkg-dev devscripts pkg-config ruby-dev rubygems rubygems-integration procps shellcheck
+    
+    [CentOS/Fedora]
+    $ sudo yum install git autoconf automake gcc-c++ make pkgconfig redhat-rpm-config rpm-build ruby-devel rubygems procps
+    ```
+
+5. ビルドし、パッケージを作成します。
+
+    ```
+    $ ./autogen.sh
+    $ ./configure
+    $ make build
+    $ make check
+    
+    [Ubuntu/Debian]
+    $ ./buildutil/debian_build.sh
+    
+    [CentOS/Fedora]
+    $ ./buildutil/rpm_build.sh
+    ```
+
+6. コード変更があれば、commitして、push します
+
+    ```
+    $ git add .
+    $ git commit -m "Short description of your changes."
+    $ git push origin my-first-contribution
+    ```
+    
+7. コード変更があれば、ぜひプルリクエストを投げてみてください！
