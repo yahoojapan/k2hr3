@@ -16,3 +16,6 @@
 [submodule "k2hr3_get_resource"]
 	path = k2hr3_get_resource
 	url = https://github.com/yahoojapan/k2hr3_get_resource.git
+[submodule "k2hr3_cli"]
+	path = k2hr3_cli
+	url = https://github.com/yahoojapan/k2hr3_cli.git
