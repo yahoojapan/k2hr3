@@ -32,9 +32,21 @@ _In the above screen, USER has not signed in yet._
 ## Sign in
 To sign in to the **K2HR3 Web Application**, click ![K2HR3 Signin Button](images/button_signin.png) button in the upper right.  
 As the menu is displayed, select **Sign in** menu item.  
+
+If user authentication for the K2HR3 system is set to credential, the dialog shown below is displayed.  
+If it is set to use other user authentication, it will behave according to that setting.  
+
 Please enter your **user name** and **passphrase** in the displayed dialog and sign in.  
 
 ![K2HR3 Usage Application - Signin](images/usage_app_signin.png)
+
+## User Account Information
+After signing in to the **K2HR3 Web Application**, you can view your account information.  
+You can view the your account information as shown below.  
+
+![K2HR3 Usage Application - User Account Information](images/usage_app_user_account.png)
+
+This dialog displays the `Username` and the your `Unscoped Token`.
 
 ### About USER
 The K2HR3 system can operate in conjunction with **OpenStack** or **other any user authentication systems**.  
