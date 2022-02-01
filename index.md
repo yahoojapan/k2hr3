@@ -41,10 +41,25 @@ The explanation of the detailed [Feature](feature.html) of **K2HR3** system.
 
 ## {{ page.arrow_link_usage }}
 How to [use](usage.html) **K2HR3** system for your systems.  
-You can experience the operation of **K2HR3 Web Application** with [K2HR3 demonstration](https://demo.k2hr3.antpick.ax/).
+The following items are explained.  
+- [Basic Usage](usage_base.html)
+- [Web Application Usage](usage_app.html)
+- [Demonstration site](https://demo.k2hr3.antpick.ax/index.html)  
+You can experience the operation of **K2HR3 Web Application**.
+- [REST API Usage](api.html)
+- [How to access RESOURCE as RBAC](usage_rbac.html)
+- [+SERVICE Usage](usage_service.html)
+- [K2HR3 Template](usage_template.html)
+- [Command Line Interface(CLI) Usage](cli.html)
+- [Other Usage](usage_other.html)
 
 ## {{ page.arrow_link_setup }}
-How to [setup](setup.html) **K2HR3** system.
+How to [setup](setup.html) **K2HR3** system.  
+There are the following setup methods.  
+
+- [Build a Trial Environment](setup_trial.html) (on the OpenStack)
+- [Installation step by step](setup_manualja.html)
+- [Integrated installation](setup_integrate.html)
 
 ## {{ page.arrow_link_developer }}
 Detailed description of the programming interface provided by **K2HR3** system for [developer](developer.html)s.

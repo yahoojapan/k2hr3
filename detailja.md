@@ -247,9 +247,10 @@ K2HR3 Get Resourceは、K2HR3システムにアクセスするホスト（HOST�
 K2HR3 Get Resourceのソースコードは、[k2hr3_get_resource Githubリポジトリ](https://github.com/yahoojapan/k2hr3_get_resource)にあり、[k2hr3 Githubリポジトリ](https://github.com/yahoojapan/k2hr3)のサブモジュールとして登録されています。  
 
 ## K2HR3 Command Line Interface(CLI)
-**K2HR3 Command Line Interface(CLI)**は、K2HR3 REST APIを操作するCommand Line Interface(CLI)です。  
+[K2HR3 Command Line Interface(CLI)](https://k2hr3.antpick.ax/clija.html)は、K2HR3 REST APIを操作するCommand Line Interface(CLI)です。  
 これは、K2HR3 REST APIにアクセス可能な任意のホスト（HOST）で動作できます。  
 ユーザが、K2HR3 Web Applicationから操作することと同じ操作がコマンドラインで実行きます。
+K2HR3 Command Line Interface(CLI)のソースコードは、[k2hr3_cli Githubリポジトリ](https://github.com/yahoojapan/k2hr3_cli)にあり、[k2hr3 Githubリポジトリ](https://github.com/yahoojapan/k2hr3)のサブモジュールとして登録されています。  
 
 # 詳細（その他）
 上述以外のK2HR3システムの共通の仕様、その他の詳細について、[詳細（その他）](detail_variousja.html)で説明します。

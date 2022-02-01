@@ -5,12 +5,12 @@ title: Template Engine
 short_desc: K2Hdkc based Resource and Roles and policy Rules
 lang_opp_file: usage_templateja.html
 lang_opp_word: To Japanese
-prev_url: 
-prev_string: 
+prev_url: usage_service.html
+prev_string: Service Usage
 top_url: usage_base.html
 top_string: Basic Usage
-next_url: 
-next_string: 
+next_url: cli.html
+next_string: Command Line Interface
 ---
 
 # K2HR3 Template Engine

@@ -5,12 +5,12 @@ title: Command Line Interface
 short_desc: K2Hdkc based Resource and Roles and policy Rules
 lang_opp_file: cli.html
 lang_opp_word: To English
-prev_url: apija.html
-prev_string: REST API
+prev_url: usage_templateja.html
+prev_string: Template Engine
 top_url: usageja.html
 top_string: Usage
-next_url: usage_rbacja.html
-next_string: RBAC Usage
+next_url: usage_otherja.html
+next_string: Usage Other
 ---
 
 # Command Line Interface (CLI)

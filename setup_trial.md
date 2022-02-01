@@ -9,13 +9,13 @@ prev_url:
 prev_string: 
 top_url: setup.html
 top_string: Setup
-next_url: 
-next_string: 
+next_url: setup_manual.html
+next_string: Installation step by step
 ---
 
 # Build a trial environment
 Describes how to build an environment for easily trying out the K2HR3 system.  
-By following the steps below, you can start the processes that make up the core of the K2HR3 system on one host(or `Virtual Machine`) and build a trial environment.  
+By following the steps below, you can start the processes that make up the core of the K2HR3 system on one host(or [OpenStack](https://www.openstack.org/) `Virtual Machine`) and build a trial environment.  
 
 ## Required environment
 An OpenStack system that works with the K2HR3 system is required.  

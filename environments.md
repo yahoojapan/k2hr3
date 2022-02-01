@@ -19,56 +19,53 @@ This page provides information about environment variables and settings in K2HR3
 
 The followings describes environment variables in K2HR3 system.
 
-## Environment variables in API server
+## Environment variables in REST API server
 
-This chapter describes environment variables in K2HR3 API server.
+This chapter describes environment variables in K2HR3 REST API server.
 
 ### HOME
 
-This variable specifies the home directory of user who executes the 'k2hr3-api' Node.js process, which is a HTTP server daemon process in API server. The default value is */home/k2hr3* when you install API server by using *devcluster*.
-
+This variable specifies the home directory of user who executes the 'k2hr3-api' Node.js process, which is a HTTP server daemon process in REST API server. The default value is */home/k2hr3* when you install REST API server by using *devcluster*.
 
 ### NODE_CONFIG_DIR
 
-This variable specifies the path where the configuration files of k2hr3-api Node.js module, which is a main module of API server, are installed. The default value is */home/k2hr3/etc/k2hr3-api* when you install API server by using *devcluster*.
-
+This variable specifies the path where the configuration files of k2hr3-api Node.js module, which is a main module of REST API server, are installed. The default value is */home/k2hr3/etc/k2hr3-api* when you install REST API server by using *devcluster*.
 
 ### NODE_DEBUG
 
 This variable specifies the log priority of 'k2hr3-api' Node.js process. These are valid values::
 
 * LOGLEVEL_DBG
-  * Use this setting to print verbose logs of API server process.
+  * Use this setting to print verbose logs of REST API server process.
 * LOGLEVEL_MSG
-  * Use this setting to print informative logs of API server process.
+  * Use this setting to print informative logs of REST API server process.
 * LOGLEVEL_WAN
-  * Use this setting to print warning logs of API server process.
+  * Use this setting to print warning logs of REST API server process.
 * LOGLEVEL_ERR(default)
-  * Use this setting to print error logs of API server process.
+  * Use this setting to print error logs of REST API server process.
 * LOGLEVEL_SLT　
   * Use this setting to print no logs.
-
 
 ### NODE_ENV
 
 This variable specifies the environment where the Node.js process runs. These are valid values::
 
 * development
-  * Use this setting when you run the API server Node.js process for development purpose.
+  * Use this setting when you run the REST API server Node.js process for development purpose.
 * production
-  * Use this setting when you run the API server Node.js process in production environment.
+  * Use this setting when you run the REST API server Node.js process in production environment.
 
-The default value is *development* when you install Web server by using *devcluster*.
+The default value is *development* when you install Web Application server by using *devcluster*.
 
 ### Tips: Applies environment variables to processes by using systemd
 
-This section instructs how to apply environment variables when starting a process by using [systemd](https://www.freedesktop.org/wiki/Software/systemd/). Settings of [systemd](https://www.freedesktop.org/wiki/Software/systemd/) are not always necessary. If you would like to control each API server process as a systemd service, this tips will help you.
+This section instructs how to apply environment variables when starting a process by using [systemd](https://www.freedesktop.org/wiki/Software/systemd/). Settings of [systemd](https://www.freedesktop.org/wiki/Software/systemd/) are not always necessary. If you would like to control each REST API server process as a systemd service, this tips will help you.
 
 [systemd](https://www.freedesktop.org/wiki/Software/systemd/) is a service manager for Linux that controls userspace processes. It brings up userspace processes in configured order during booting a Linux installation. After starting up processes, it tries to keep them up. On shutdown, systemd terminates all the other processes.
 
-Use [Environment variables](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#Environment) in [systemd.unit](https://www.freedesktop.org/software/systemd/man/systemd.unit.html) configuration to apply environment variables for API server processes.
+Use [Environment variables](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#Environment) in [systemd.unit](https://www.freedesktop.org/software/systemd/man/systemd.unit.html) configuration to apply environment variables for REST API server processes.
 
-The [systemd.unit](https://www.freedesktop.org/software/systemd/man/systemd.unit.html) for the 'k2hr3-api' service, which serves HTTP service in API server, will be installed in /etc/systemd/system/k2hr3-api.service when you install API server by using *devcluster*. Here is an example of [systemd.unit](https://www.freedesktop.org/software/systemd/man/systemd.unit.html) of the 'k2hr3-api' service. Note that the order to start up a service is important. The 'k2hr3-api' service must starts after the 'chmpx-slave' service, which forwards requests from HTTP server processes to Data server.
+The [systemd.unit](https://www.freedesktop.org/software/systemd/man/systemd.unit.html) for the 'k2hr3-api' service, which serves HTTP service in REST API server, will be installed in /etc/systemd/system/k2hr3-api.service when you install REST API server by using *devcluster*. Here is an example of [systemd.unit](https://www.freedesktop.org/software/systemd/man/systemd.unit.html) of the 'k2hr3-api' service. Note that the order to start up a service is important. The 'k2hr3-api' service must starts after the 'chmpx-slave' service, which forwards requests from HTTP server processes to Data server.
 ```
 [Unit]
 Description=k2hr3-api
@@ -97,39 +94,38 @@ $ sudo systemctl daemon-reload
 $ sudo systemctl restart k2hr3-api.service
 ```
 
-## Web server
+## Web Application server
 
-This chapter describes environment variables in K2HR3 Web server.
+This chapter describes environment variables in K2HR3 Web Application server.
 
 ### HOME
 
-This variable specifies the home directory of user who executes the 'k2hr3-app' Node.js process, which is a HTTP server daemon process in Web server. The default value is */home/k2hr3* when you install Web server by using *devcluster*.
+This variable specifies the home directory of user who executes the 'k2hr3-app' Node.js process, which is a HTTP server daemon process in Web Application server. The default value is */home/k2hr3* when you install Web Application server by using *devcluster*.
 
 ### NODE_CONFIG_DIR
 
-This variable specifies the path where the configuration files of k2hr3-app Node.js module, which is a main module of Web server, are installed. The default value is */home/k2hr3/etc/k2hr3-app* when you install Web server by using *devcluster*.
+This variable specifies the path where the configuration files of k2hr3-app Node.js module, which is a main module of Web Application server, are installed. The default value is */home/k2hr3/etc/k2hr3-app* when you install Web Application server by using *devcluster*.
 
 ### NODE_ENV
 
 This variable specifies the environment where the Node.js process runs. These are valid values::
 
 * development
-  * Use this setting when you run the Web server Node.js process for development purpose.
+  * Use this setting when you run the Web Application server Node.js process for development purpose.
 * production
-  * Use this setting when you run the Web server Node.js process in production environment.
+  * Use this setting when you run the Web Application server Node.js process in production environment.
 
-The default value is *development* when you install Web server by using *devcluster*.
-
+The default value is *development* when you install Web Application server by using *devcluster*.
 
 ### Tips: Applies environment variables to processes by using systemd
 
-This section instructs how to apply environment variables when starting a process by using [systemd](https://www.freedesktop.org/wiki/Software/systemd/). Settings of [systemd](https://www.freedesktop.org/wiki/Software/systemd/) are not always necessary. If you would like to control each Web server process as a systemd service, this tips will help you.
+This section instructs how to apply environment variables when starting a process by using [systemd](https://www.freedesktop.org/wiki/Software/systemd/). Settings of [systemd](https://www.freedesktop.org/wiki/Software/systemd/) are not always necessary. If you would like to control each Web Application server process as a systemd service, this tips will help you.
 
 [systemd](https://www.freedesktop.org/wiki/Software/systemd/) is a service manager for Linux that controls userspace processes. It brings up userspace processes in configured order during booting a Linux installation. After starting up processes, it tries to keep them up. On shutdown, systemd terminates all the other processes.
 
-Use [Environment variables](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#Environment) in [systemd.unit](https://www.freedesktop.org/software/systemd/man/systemd.unit.html) configuration to apply environment variables for Web server processes.
+Use [Environment variables](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#Environment) in [systemd.unit](https://www.freedesktop.org/software/systemd/man/systemd.unit.html) configuration to apply environment variables for Web Application server processes.
 
-The [systemd.unit](https://www.freedesktop.org/software/systemd/man/systemd.unit.html) for the 'k2hr3-app' service, which serves HTTP service in Web server, will be installed in /etc/systemd/system/k2hr3-app.service when you install Web server by using *devcluster*. Here is an example of [systemd.unit](https://www.freedesktop.org/software/systemd/man/systemd.unit.html) of the 'k2hr3-app' service. The 'k2hr3-app' service must run after the [Network](https://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/) is up.
+The [systemd.unit](https://www.freedesktop.org/software/systemd/man/systemd.unit.html) for the 'k2hr3-app' service, which serves HTTP service in Web Application server, will be installed in /etc/systemd/system/k2hr3-app.service when you install Web Application server by using *devcluster*. Here is an example of [systemd.unit](https://www.freedesktop.org/software/systemd/man/systemd.unit.html) of the 'k2hr3-app' service. The 'k2hr3-app' service must run after the [Network](https://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/) is up.
 
 ```
 [Unit]
@@ -192,10 +188,9 @@ SSL                             = no
 ...
 ```
 
-
 ### Tips: Controls processes by using systemd
 
-This section instructs how to control processes by using [systemd](https://www.freedesktop.org/wiki/Software/systemd/). Settings of [systemd](https://www.freedesktop.org/wiki/Software/systemd/) are not always necessary. If you would like to control each Web server process as a systemd service, this tips will help you.
+This section instructs how to control processes by using [systemd](https://www.freedesktop.org/wiki/Software/systemd/). Settings of [systemd](https://www.freedesktop.org/wiki/Software/systemd/) are not always necessary. If you would like to control each Web Application server process as a systemd service, this tips will help you.
 
 [systemd](https://www.freedesktop.org/wiki/Software/systemd/) is a service manager for Linux that controls userspace processes. It brings up userspace processes in configured order during booting a Linux installation. After starting up processes, it tries to keep them up. On shutdown, systemd terminates all the other processes.
 
@@ -254,11 +249,11 @@ $ sudo systemctl daemon-reload
 $ sudo systemctl restart k2hdkc.service
 ```
 
-## API Server
+## REST API Server
 
-This chapter describes settings of processes in API server.
+This chapter describes settings of processes in REST API server.
 
-The following three kinds of processes are up and running in API server.
+The following three kinds of processes are up and running in REST API server.
 
 * HTTP server
   * The HTTP server is implemented by [Node.js](https://nodejs.org/).
@@ -280,7 +275,6 @@ This section describes settings for HTTP Server.
   * See [npm config module 'File Load Order'](https://github.com/lorenwest/node-config/wiki/Configuration-Files#file-load-order) for details.
 * TLDR, create a 'local.json' file as your own configuration file.
 * Then, copy the default.json and your own configuration file to */home/k2hr3/etc/k2hr3-api* directory.
-
 
 Here are the default configuration values and the descriptions.
 
@@ -396,10 +390,9 @@ The *type* of *chkipconfig* setting determines the Watcher behavior.
 * NoCheck
   * Watcher does nothing.
 
-
 ### Tips: Controls processes by using systemd
 
-This section instructs how to control processes by using [systemd](https://www.freedesktop.org/wiki/Software/systemd/). Settings of [systemd](https://www.freedesktop.org/wiki/Software/systemd/) are not always necessary. If you would like to control each API server process as a systemd service, this tips will help you.
+This section instructs how to control processes by using [systemd](https://www.freedesktop.org/wiki/Software/systemd/). Settings of [systemd](https://www.freedesktop.org/wiki/Software/systemd/) are not always necessary. If you would like to control each REST API server process as a systemd service, this tips will help you.
 
 [systemd](https://www.freedesktop.org/wiki/Software/systemd/) is a service manager for Linux that controls userspace processes. It brings up userspace processes in configured order during booting a Linux installation. After starting up processes, it tries to keep them up. On shutdown, systemd terminates all the other processes.
 
@@ -459,24 +452,21 @@ $ sudo systemctl daemon-reload
 $ sudo systemctl restart k2hr3-api.service
 ```
 
+## Web Application server
 
-## Web server
-
-
-This chapter describes Web server settings.
+This chapter describes Web Application server settings.
 
 ### HTTP Server settings
 
 This section describes settings for HTTP Server.
 
-* Web server is implemented by [Node.js](https://nodejs.org/).
+* Web Application server is implemented by [Node.js](https://nodejs.org/).
 * *devcluster* will install configuration files to */home/k2hr3/node_modules/k2hr3-app/config*
 * 'default.json' contains all setting items with default values. Your own setting items should be saved in your own configuration file like 'local.json'. 
   * Your settings will overwrite the default ones.
   * See [npm config module 'File Load Order'](https://github.com/lorenwest/node-config/wiki/Configuration-Files#file-load-order) for details.
 * TLDR, create a 'local.json' file as your own configuration file.
 * Then, copy the default.json and your own configuration file to */home/k2hr3/etc/k2hr3-app* directory.
-
 
 Here are the default configuration values and the descriptions.
 
@@ -527,11 +517,11 @@ Here are the default configuration values and the descriptions.
 
 ### Tips: Controls processes by using systemd
 
-This section instructs how to control processes by using [systemd](https://www.freedesktop.org/wiki/Software/systemd/). Settings of [systemd](https://www.freedesktop.org/wiki/Software/systemd/) are not always necessary. If you would like to control each Web server process as a systemd service, this tips will help you.
+This section instructs how to control processes by using [systemd](https://www.freedesktop.org/wiki/Software/systemd/). Settings of [systemd](https://www.freedesktop.org/wiki/Software/systemd/) are not always necessary. If you would like to control each Web Application server process as a systemd service, this tips will help you.
 
 [systemd](https://www.freedesktop.org/wiki/Software/systemd/) is a service manager for Linux that controls userspace processes. It brings up userspace processes in configured order during booting a Linux installation. After starting up processes, it tries to keep them up. On shutdown, systemd terminates all the other processes.
 
-The [systemd.unit](https://www.freedesktop.org/software/systemd/man/systemd.unit.html) for the 'k2hr3-app' service, which serves HTTP service in Web server, will be installed in /etc/systemd/system/k2hr3-app.service when you install Web server by using *devcluster*. Here is an example of [systemd.unit](https://www.freedesktop.org/software/systemd/man/systemd.unit.html) of the 'k2hr3-app' service. The 'k2hr3-app' service must run after the [Network](https://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/) is up.
+The [systemd.unit](https://www.freedesktop.org/software/systemd/man/systemd.unit.html) for the 'k2hr3-app' service, which serves HTTP service in Web Application server, will be installed in /etc/systemd/system/k2hr3-app.service when you install Web Application server by using *devcluster*. Here is an example of [systemd.unit](https://www.freedesktop.org/software/systemd/man/systemd.unit.html) of the 'k2hr3-app' service. The 'k2hr3-app' service must run after the [Network](https://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/) is up.
 
 ```
 [Unit]
@@ -559,7 +549,6 @@ To apply these settings to [systemd](https://www.freedesktop.org/wiki/Software/s
 $ sudo systemctl daemon-reload
 $ sudo systemctl restart k2hr3-app.service
 ```
-
 
 ## K2HR3 OpenStack Notification Listener
 
@@ -596,9 +585,7 @@ allow_self_signed_cert = False                        # Determines whether API s
 requeue_on_error = False                              # Determines whether consumers can requeue the processing message on error
 ```
 
-
 ### Reference: Notification message format and settings
-
 
 This section describes notification message formats generated by [OpenStack](https://www.openstack.org/).
 
@@ -680,7 +667,6 @@ exchange = nova
 ```
 
 See [Notifications in Nova](https://docs.openstack.org/nova/latest/reference/notifications.html#existing-versioned-notifications) for notifications emit by [OpenStack nova](https://docs.openstack.org/nova/latest/).
-
 
 ### Tips: Control processes by using systemd
 

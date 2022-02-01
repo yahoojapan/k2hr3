@@ -5,12 +5,12 @@ title: RBAC Usage
 short_desc: K2Hdkc based Resource and Roles and policy Rules
 lang_opp_file: usage_rbacja.html
 lang_opp_word: To Japanese
-prev_url: cli.html
-prev_string: Command Line Interface
+prev_url: api.html
+prev_string: REST API
 top_url: usage.html
 top_string: Usage
-next_url: usage_other.html
-next_string: Usage Other
+next_url: usage_service.html
+next_string: Service Usage
 ---
 
 # **RBAC**(**R**ole **B**ased **A**ccess **C**ontrol) Usage

@@ -41,10 +41,24 @@ arrow_link_tools: <a href="toolsja.html" class="link-title"><span class="arrow-b
 
 ## {{ page.arrow_link_usage }}
 **K2HR3** システムの[使い方](usageja.html)について説明します。  
-[K2HR3 デモンストレーション](https://demo.k2hr3.antpick.ax/indexja.html)で **K2HR3 Webアプリケーション** の操作を体験できます。  
+以下の項目について説明します。  
+- [基本的な使い方](usage_baseja.html)
+- [ブラウザからの操作](usage_appja.html)
+- [デモンストレーションサイト](https://demo.k2hr3.antpick.ax/indexja.html)  
+**K2HR3 Webアプリケーション** の操作を体験できます。
+- [REST APIの利用](apija.html)
+- [RBAC の使い方](usage_rbacja.html)
+- [+サービス（+SERVICE）機能の使い方](usage_serviceja.html)
+- [K2HR3テンプレート](usage_templateja.html)
+- [Command Line Interface(CLI) の利用](clija.html)
+- [その他の使い方](usage_otherja.html)
 
 ## {{ page.arrow_link_setup }}
 **K2HR3** システムの[セットアップ](setupja.html)方法について説明します。  
+環境に応じて、以下のセットアップ方法があります。  
+- [試用環境の構築](setup_trialja.html)
+- K2HR3 サブシステムを[手動セットアップ](setup_manualja.html)
+- K2HR3 システムを[統合セットアップ](setup_integrateja.html)
 
 ## {{ page.arrow_link_developer }}
 **K2HR3** システムの変更・機能追加するための情報を[開発者](developerja.html)向けに説明します。  

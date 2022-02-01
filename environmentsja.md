@@ -19,9 +19,9 @@ next_string: Tools
 
 K2HR3システムの中で使われている環境変数を説明しています。
 
-## APIサーバー
+## REST APIサーバー
 
-この章は、APIサーバで使われている環境変数を説明しています。
+この章は、REST APIサーバで使われている環境変数を説明しています。
 
 ### HOME
 
@@ -63,7 +63,6 @@ NODE_ENV環境変数は、nodeプロセスの動作環境として表す環境�
 
 **devcluster** を使って、K2HR3を構築した場合は、 **development** がデフォルト値となっています。
 
-
 ### 補足：systemd使用時の環境変数の指定について
 
 ここでは、[systemd](https://www.freedesktop.org/wiki/Software/systemd/)を使ってプロセスを起動する場合の環境変数の指定方法について説明しています。
@@ -72,9 +71,9 @@ NODE_ENV環境変数は、nodeプロセスの動作環境として表す環境�
 
 [systemd](https://www.freedesktop.org/wiki/Software/systemd/)の設定は、必須ではありません。OS起動（または終了）時に、自動的にプロセスを起動（または停止）したい場合は、次のように設定しておくこともできます。
 
-[systemd](https://www.freedesktop.org/wiki/Software/systemd/) を使って APIサーバを起動する場合は、 [systemd](https://www.freedesktop.org/wiki/Software/systemd/)の設定ファイルの[Environment変数](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#Environment)に、環境変数を指定します。
+[systemd](https://www.freedesktop.org/wiki/Software/systemd/) を使って REST APIサーバを起動する場合は、 [systemd](https://www.freedesktop.org/wiki/Software/systemd/)の設定ファイルの[Environment変数](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#Environment)に、環境変数を指定します。
 
-**devcluster** を使って、APIサーバを構築した場合は、 APIサーバのsystemd設定ファイルは、/etc/systemd/system/k2hr3-api.service にインストールされます。
+**devcluster** を使って、REST APIサーバを構築した場合は、 REST APIサーバのsystemd設定ファイルは、/etc/systemd/system/k2hr3-api.service にインストールされます。
 
 /etc/systemd/system/k2hr3-api.service の環境変数をエディタなどで更新し、次のように実行すると、環境変数がプロセスに反映されます。
 
@@ -83,9 +82,9 @@ $ sudo systemctl daemon-reload
 $ sudo systemctl restart k2hr3-api.service
 ```
 
-## Webサーバー
+## Web Applicationサーバー
 
-この章は、Webサーバーで使われている環境変数を説明しています。
+この章は、Web Applicationサーバーで使われている環境変数を説明しています。
 
 ### HOME
 
@@ -110,7 +109,6 @@ NODE_ENV環境変数は、nodeプロセスの動作環境として表す環境�
 
 **devcluster** を使って、K2HR3を構築した場合は、 **development** がデフォルト値となっています。
 
-
 ### 補足：systemd使用時の環境変数の指定について
 
 ここでは、[systemd](https://www.freedesktop.org/wiki/Software/systemd/)を使ってプロセスを起動する場合の環境変数の指定方法について説明しています。
@@ -119,9 +117,9 @@ NODE_ENV環境変数は、nodeプロセスの動作環境として表す環境�
 
 [systemd](https://www.freedesktop.org/wiki/Software/systemd/)の設定は、必須ではありません。OS起動（または終了）時に、自動的にプロセスを起動（または停止）したい場合は、次のように設定しておくこともできます。
 
-[systemd](https://www.freedesktop.org/wiki/Software/systemd/) を使って Webサーバを起動する場合は、 [systemd](https://www.freedesktop.org/wiki/Software/systemd/)の設定ファイルの[Environment変数](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#Environment)に、環境変数を指定します。
+[systemd](https://www.freedesktop.org/wiki/Software/systemd/) を使って Web Applicationサーバを起動する場合は、 [systemd](https://www.freedesktop.org/wiki/Software/systemd/)の設定ファイルの[Environment変数](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#Environment)に、環境変数を指定します。
 
-**devcluster** を使って、Webサーバを構築した場合は、 Webサーバのsystemdの設定ファイルは、/etc/systemd/system/k2hr3-app.service にインストールされます。
+**devcluster** を使って、Web Applicationサーバを構築した場合は、 Web Applicationサーバのsystemdの設定ファイルは、/etc/systemd/system/k2hr3-app.service にインストールされます。
 
 /etc/systemd/system/k2hr3-app.service の環境変数をエディタなどで更新し、次のように実行すると、環境変数がプロセスに反映されます。
 
@@ -226,11 +224,11 @@ $ sudo systemctl daemon-reload
 $ sudo systemctl restart k2hdkc.service
 ```
 
-## APIサーバー
+## REST APIサーバー
 
-この章は、APIサーバで動作するプロセスとその設定ファイルについて説明しています。
+この章は、REST APIサーバで動作するプロセスとその設定ファイルについて説明しています。
 
-APIサーバーの設定ファイルの項目を説明します。APIサーバーには、次の三つのプロセスが起動します。
+REST APIサーバーの設定ファイルの項目を説明します。REST APIサーバーには、次の三つのプロセスが起動します。
 
 * HTTPサーバープロセス
   * HTTPサーバーは、[Node.js](https://nodejs.org/)で実装されています。
@@ -368,10 +366,9 @@ Watcher には、以下のタイプを指定できます。
 * NoCheckタイプ
   * このタイプが指定された場合には、Watcherは何も処理をしません。
 
-
 ### 補足：サービスマネージャ(systemd)の設定
 
-この章は、[systemd](https://www.freedesktop.org/wiki/Software/systemd/)を使ってAPIサーバーの各プロセスを制御する方法を説明しています。
+この章は、[systemd](https://www.freedesktop.org/wiki/Software/systemd/)を使ってREST APIサーバーの各プロセスを制御する方法を説明しています。
 
 [systemd](https://www.freedesktop.org/wiki/Software/systemd/) は、OS起動または終了時に、常駐プロセスの起動・停止を制御することができる、OS付属のサービスマネージャーです。
 
@@ -430,11 +427,11 @@ $ sudo systemctl daemon-reload
 $ sudo systemctl restart k2hr3-api.service
 ```
 
-## Webサーバーの設定
+## Web Applicationサーバーの設定
 
-この章は、Webサーバの設定ファイルについて説明しています。
+この章は、Web Applicationサーバの設定ファイルについて説明しています。
 
-* Webサーバーは、[Node.js](https://nodejs.org/)で実装されています。
+* Web Applicationサーバーは、[Node.js](https://nodejs.org/)で実装されています。
 * 設定ファイルは、 /home/k2hr3/node_modules/k2hr3-app/config の下にインストールされます。
 * default.json ファイルの設定項目の中から、変更したい項目のみを抜き出して、自分専用のファイル(local.jsonなど)に保存してお使いください。
 * 自分専用のファイル名は、[configモジュールのルール](https://github.com/lorenwest/node-config/wiki/Configuration-Files#file-load-order) にしたがって作成してください。
@@ -489,7 +486,7 @@ $ sudo systemctl restart k2hr3-api.service
 
 ### 補足：サービスマネージャ(systemd)の設定
 
-ここでは、[systemd](https://www.freedesktop.org/wiki/Software/systemd/)を使ってWebサーバーの各プロセスを制御する方法を説明しています。
+ここでは、[systemd](https://www.freedesktop.org/wiki/Software/systemd/)を使ってWeb Applicationサーバーの各プロセスを制御する方法を説明しています。
 
 [systemd](https://www.freedesktop.org/wiki/Software/systemd/) は、OS起動または終了時に、常駐プロセスの起動・停止を制御することができる、OS付属のサービスマネージャーです。
 
@@ -521,7 +518,6 @@ WantedBy=multi-user.target
 $ sudo systemctl daemon-reload
 $ sudo systemctl restart k2hr3-app.service
 ```
-
 
 ## K2HR3 OpenStack Notification Listener
 

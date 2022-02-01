@@ -5,8 +5,8 @@ title: Usage Other
 short_desc: K2Hdkc based Resource and Roles and policy Rules
 lang_opp_file: usage_otherja.html
 lang_opp_word: To Japanese
-prev_url: usage_rbac.html
-prev_string: RBAC Usage
+prev_url: cli.html
+prev_string: Command Line Interface
 top_url: usage.html
 top_string: Usage
 next_url: 
