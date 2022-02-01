@@ -17,26 +17,73 @@ next_string: Environments/Settings
 
 このページは、K2HR3 システムの変更・機能追加するための情報を説明しています。
 
-
 ## レポジトリの構成
 
 ここでは、githubのk2hr3レポジトリについて説明しています。
 
 k2hr3レポジトリは、次のサブモジュールから構成されています。
 
-* k2hr3_api
-  * APIサーバー用レポジトリ
-* k2hr3_app
-  * APPサーバ用レポジトリ
-* k2hr3_osnl
-  * OpenStack通知リスナー用レポジトリ
-* k2hr3_sidecar
-  * kubernetesからの自動登録・削除用Sidecar Containerのためのdockerイメージレポジトリ
-* k2hr3_utils
-  * 運用/開発ツールなど各種ツール用レポジトリ
+- k2hr3_app
+  - Web Application レポジトリ
+- k2hr3_api
+  - REST API レポジトリ
+- k2hr3_osnl
+  - OpenStack通知リスナー用レポジトリ
+- k2hr3_sidecar
+  - kubernetesからの自動登録・削除用Sidecar Containerのためのdockerイメージレポジトリ
+- k2hr3_utils
+  - 運用/開発ツールなど各種ツール用レポジトリ
+- k2hr3_get_resource 
+  - リソース（RESOURCE）取得のための Systemdサービス 用レポジトリ
+- k2hr3_cli
+  - Command Line Interface(CLI) 用のレポジトリ
+
 
 後段では、各レポジトリについて説明しています。
 
+## k2hr3_appレポジトリ
+
+この章では、k2hr3_appレポジトリの内容とソースコードのビルド＆テスト方法を説明しています。
+
+k2hr3_appレポジトリは、APPサーバ用レポジトリです。
+
+1. Github上で [https://github.com/yahoojapan/k2hr3_app](https://github.com/yahoojapan/k2hr3_app)をforkします
+
+2. レポジトリをcloneします
+
+    ```
+    $ git clone https://github.com/YOUR-USERNAME/k2hr3_app.git
+    ```
+
+3. ローカル環境に必要なパッケージをインストールします
+
+    ```
+    $ cd k2hr3_app/
+    $ npm install
+    ```
+    
+4. ブランチを作り、必要でしたら、コード変更して見てください
+
+    ```
+    $ git checkout -b my-first-contribution
+    ```
+
+5. コードの書式チェックとプログラムのテストをします
+
+    ```
+    $ npm run build
+    $ npm run test
+    ```
+
+6. コード変更があれば、commitして、push します
+
+    ```
+    $ git add .
+    $ git commit -m "Short description of your changes."
+    $ git push origin my-first-contribution
+    ```
+    
+7. コード変更があれば、ぜひプルリクエストを投げてみてください！
 
 ## k2hr3_apiレポジトリ
 
@@ -106,52 +153,6 @@ k2hr3_apiレポジトリは、APIサーバー用レポジトリです。
     ```
 
 6. コード変更があれば、commitして、push します
-    ```
-    $ git add .
-    $ git commit -m "Short description of your changes."
-    $ git push origin my-first-contribution
-    ```
-    
-7. コード変更があれば、ぜひプルリクエストを投げてみてください！
-
-
-
-## k2hr3_appレポジトリ
-
-この章では、k2hr3_appレポジトリの内容とソースコードのビルド＆テスト方法を説明しています。
-
-k2hr3_appレポジトリは、APPサーバ用レポジトリです。
-
-1. Github上で [https://github.com/yahoojapan/k2hr3_app](https://github.com/yahoojapan/k2hr3_app)をforkします
-
-2. レポジトリをcloneします
-
-    ```
-    $ git clone https://github.com/YOUR-USERNAME/k2hr3_app.git
-    ```
-
-3. ローカル環境に必要なパッケージをインストールします
-
-    ```
-    $ cd k2hr3_app/
-    $ npm install
-    ```
-    
-4. ブランチを作り、必要でしたら、コード変更して見てください
-
-    ```
-    $ git checkout -b my-first-contribution
-    ```
-
-5. コードの書式チェックとプログラムのテストをします
-
-    ```
-    $ npm run build
-    $ npm run test
-    ```
-
-6. コード変更があれば、commitして、push します
-
     ```
     $ git add .
     $ git commit -m "Short description of your changes."
@@ -284,7 +285,7 @@ k2hr3_sidecarレポジトリは、kubernetesからPods（Conatainers）を自動
     
 6. コード変更があれば、ぜひプルリクエストを投げてみてください！
 
-## k2hr3_ge_resource レポジトリ
+## k2hr3_get_resource レポジトリ
 
 この章では、k2hr3_get_resource レポジトリの内容とソースコードのビルド＆テスト方法を説明しています。
 

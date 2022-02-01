@@ -9,13 +9,13 @@ prev_url:
 prev_string: 
 top_url: setupja.html
 top_string: Setup
-next_url: 
-next_string: 
+next_url: setup_manualja.html
+next_string: Installation step by step
 ---
 
 # 試用環境
 K2HR3システムを簡単に試用するための環境の構築について説明します。  
-以下の手順により、K2HR3システムの基幹を構成するプロセスを一つのホスト（もしくは`Virtual Machine`）で起動し、試用環境を構築することができます。  
+以下の手順により、K2HR3システムの基幹を構成するプロセスを一つのホスト（もしくは[OpenStack](https://www.openstack.org/) の`Virtual Machine`）で起動し、試用環境を構築することができます。  
 
 ## 実行環境
 K2HR3システムが連携するOpenStackシステムが必要となります。  

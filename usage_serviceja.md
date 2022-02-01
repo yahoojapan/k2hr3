@@ -5,12 +5,12 @@ title: Service Usage
 short_desc: K2Hdkc based Resource and Roles and policy Rules
 lang_opp_file: usage_service.html
 lang_opp_word: To English
-prev_url: usage_baseja.html
-prev_string: Basic Usage
+prev_url: usage_rbacja.html
+prev_string: RBAC Usage
 top_url: usageja.html
 top_string: Usage
-next_url: usage_appja.html
-next_string: Web Application
+next_url: usage_templateja.html
+next_string: Template Engine
 ---
 
 # **+サービス**（**+SERVICE**）機能の使い方

@@ -9,8 +9,8 @@ prev_url:
 prev_string: 
 top_url: usageja.html
 top_string: Usage
-next_url: usage_service.html
-next_string: Service Usage
+next_url: usage_app.html
+next_string: Web Application
 ---
 
 # Basic Usage

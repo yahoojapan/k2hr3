@@ -17,46 +17,33 @@ next_string: Environments/Settings
 
 This page provides information about local development of each subsystem and contribution to it.
 
-## System requirements
-
-K2HR3 currently depends on the following software.
-
-* Linux
-  * Debian buster and Stretch
-  * Fedora 32, 31 and 30
-  * CentOS 7 and 8
-  * Ubuntu 16.04, 18.04, and 20.04
-* OpenStack
-  * Ussuri
-* Node.js
-  * Node.js 10.x, 12.x and 14.x
-* Python
-  * Python 3.6 and 3.8
-  
-
 ## K2HR3 Repositories structure
 
-This chapter describes the 'k2hr3' repository on GitHub.
+This chapter describes the `k2hr3` repository on GitHub.
 
-The 'k2hr3' repository consists of the following submodules.
+The `k2hr3` repository consists of the following submodules.
 
-* k2hr3_api
-  * a repository for API server
-* k2hr3_app
-  * a repository for Web server
-* k2hr3_osnl
-  * a repository for K2HR3 OpenStack Notification Listener
-* k2hr3_sidecar
-  * kubernetes Pod Sidecar docker image repository for automatically registoration/deletion Pods(Containers) from kubernetes
-* k2hr3_utils
-  * a repository for utilities
+- k2hr3_app
+  - a repository for Web Application server
+- k2hr3_api
+  - a repository for REST API server
+- k2hr3_osnl
+  - a repository for K2HR3 OpenStack Notification Listener
+- k2hr3_sidecar
+  - kubernetes Pod Sidecar docker image repository for automatically registoration/deletion Pods(Containers) from kubernetes
+- k2hr3_utils
+  - a repository for utilities
+- k2hr3_get_resource
+  - a repository for a `Systemd` service for retrieving RESOURCE
+- k2hr3_cli
+  - a repository for Command Line Interface(CLI)
 
 The latter part of this page will describe how to build packages in these repositories and test them.
 
 
 ## The k2hr3_api repository
 
-This chapter instructs how to build a 'k2hr3_api' package and test it in your local development environment.
+This chapter instructs how to build a `k2hr3_api` package and test it in your local development environment.
 
 k2hr3_api repository is a repository for K2HR3 API server.
 
@@ -78,7 +65,7 @@ k2hr3_api repository is a repository for K2HR3 API server.
     $ sudo apt-get install k2hdkc-dev
     ```
 
-    For CentOS users, runt the following commands. To compile a Node.js for 'k2hdkc', you need install the [devtoolset](https://www.softwarecollections.org/en/scls/rhscl/devtoolset-7/) package::
+    For CentOS users, runt the following commands. To compile a Node.js for `k2hdkc`, you need install the [devtoolset](https://www.softwarecollections.org/en/scls/rhscl/devtoolset-7/) package::
     ```
     $ sudo yum install centos-release-scl
     $ sudo yum install devtoolset-7
@@ -133,7 +120,7 @@ k2hr3_api repository is a repository for K2HR3 API server.
 
 ## The k2hr3_app repository
 
-This chapter instructs how to build a 'k2hr3_app' package and test it in your local development environment.
+This chapter instructs how to build a `k2hr3_app` package and test it in your local development environment.
 
 k2hr3_api repository is a repository for K2HR3 Web server.
 
@@ -179,7 +166,7 @@ k2hr3_api repository is a repository for K2HR3 Web server.
 
 ## The k2hr3_osnl repository
 
-This chapter instructs how to build a 'k2hr3_osnl' package and test it in your local development environment.
+This chapter instructs how to build a `k2hr3_osnl` package and test it in your local development environment.
 
 k2hr3_osnl repository is a repository for K2HR3 OpenStack Notification Listener.
 
@@ -228,7 +215,7 @@ k2hr3_osnl repository is a repository for K2HR3 OpenStack Notification Listener.
 
 
 ## The k2hr3_sidecar repository
-This chapter instructs how to build a 'k2hr3_sidecar' docker image and test it in your local development environment.
+This chapter instructs how to build a `k2hr3_sidecar` docker image and test it in your local development environment.
 
 k2hr3_sidecar repository is a repository for managing Sidecar docker images required to automatically register and delete Pods(Conatainers) from kubernetes.
 
@@ -300,7 +287,7 @@ The following example shows the *devcluster* tool.
     $ git checkout -b my-first-contribution
     ```
 
-4. The following command start installing 'K2HR3' subsystems with debug mode. When you change codes locally, make sure the installation finishes correctly.
+4. The following command start installing `K2HR3` subsystems with debug mode. When you change codes locally, make sure the installation finishes correctly.
 
     ```
     $ sh cluster.sh -d
@@ -318,7 +305,7 @@ The following example shows the *devcluster* tool.
 
 ## The k2hr3_get_resource repository
 
-This chapter instructs how to build a 'k2hr3_get_resource' package and test it in your local development environment.
+This chapter instructs how to build a `k2hr3_get_resource` package and test it in your local development environment.
 
 The k2hr3_get_resource repository is a **Systemd service** for periodically retrieving RESOURCE data from a HOST registered in a ROLE members.
 k2hr3_ge_resource repository is a repository for K2HR3 Get Resource.
@@ -375,7 +362,7 @@ k2hr3_ge_resource repository is a repository for K2HR3 Get Resource.
 
 ## The k2hr3_cli repository
 
-This chapter instructs how to build a 'k2hr3_cli' package and test it in your local development environment.
+This chapter instructs how to build a `k2hr3_cli` package and test it in your local development environment.
 
 The k2hr3_cli repository is a Command Line Interface(CLI) program that uses the K2HR3 REST API.  
 Users can use this K2HR3 Command Line Interface(CLI) to perform the same operations as the K2HR3 Web Application from the command line.  
