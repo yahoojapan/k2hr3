@@ -84,11 +84,17 @@ You can start sidecar using the obtained yaml from K2HR3 Web Application.
 **K2HR3 Get Resource** is a **Systemd timer service** that periodically acquires the RESOURCE corresponding to the ROLE in which the virtual computing(Virtual Machine) is registered.  
 By using this, you can periodically acquire RESOURCE data and output it to a file or the like.  
 
+### K2HR3 Helm Chart
+**K2HR3 Helm Chart** is a **Helm Chart** for building a K2HR3 system using [Helm(The package manager for Kubernetes)](https://helm.sh/) in a kubernetes environment.  
+By using this **Helm Chart**, you can easily build a K2HR3 system in a kubernetes environment.  
+This can be used to build a K2HR3 system before using the [K2HDKC Helm Chart](https://dbaas.k2hdkc.antpick.ax/usage_helm_chart.html) to build a [K2HDKC DBaaS](https://dbaas.k2hdkc.antpick.ax/index.html) in a kubernetes environment.  
+
 ## Documents
 [K2HR3 Document](https://k2hr3.antpick.ax/index.html)  
 [K2HR3 Web Application Usage](https://k2hr3.antpick.ax/usage_app.html)  
 [K2HR3 Command Line Interface Usage](https://k2hr3.antpick.ax/cli.html)  
 [K2HR3 REST API Usage](https://k2hr3.antpick.ax/api.html)  
+[K2HR3 Helm Chart Usage](https://k2hr3.antpick.ax/helm_chart.html)  
 [K2HR3 OpenStack Notification Listener Usage](https://k2hr3.antpick.ax/detail_osnl.html)  
 [K2HR3 Watcher Usage](https://k2hr3.antpick.ax/tools.html)  
 [K2HR3 Get Resource Usage](https://k2hr3.antpick.ax/tools.html)  
@@ -107,6 +113,7 @@ By using this, you can periodically acquire RESOURCE data and output it to a fil
 [K2HR3 Web Application repository](https://github.com/yahoojapan/k2hr3_app)  
 [K2HR3 Command Line Interface repository](https://github.com/yahoojapan/k2hr3_cli)  
 [K2HR3 REST API repository](https://github.com/yahoojapan/k2hr3_api)  
+[K2HR3 Helm Chart repository](https://github.com/yahoojapan/k2hr3_helm_chart)  
 [K2HR3 OpenStack Notification Listener](https://github.com/yahoojapan/k2hr3_osnl)  
 [K2HR3 Utilities](https://github.com/yahoojapan/k2hr3_utils)  
 [K2HR3 Container Registration Sidecar](https://github.com/yahoojapan/k2hr3_sidecar)  
@@ -121,6 +128,7 @@ By using this, you can periodically acquire RESOURCE data and output it to a fil
 [k2hr3-app(npm packages)](https://www.npmjs.com/package/k2hr3-app)  
 [k2hr3-api(npm packages)](https://www.npmjs.com/package/k2hr3-api)  
 [k2hr3-cli(packages)](https://packagecloud.io/app/antpickax/stable/search?q=k2hr3-cli)  
+[k2hr3 helm chart(artifact hub)](https://artifacthub.io/packages/helm/k2hr3/k2hr3)
 [k2hr3-osnl(python packages)](https://pypi.org/project/k2hr3-osnl/)  
 [k2hr3.sidecar(dockerhub)](https://hub.docker.com/r/antpickax/k2hr3.sidecar)  
 [k2hr3-get-resource(packages)](https://packagecloud.io/app/antpickax/stable/search?q=k2hr3-get-resource)  
