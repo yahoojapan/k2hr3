@@ -51,6 +51,7 @@ arrow_link_tools: <a href="toolsja.html" class="link-title"><span class="arrow-b
 - [+サービス（+SERVICE）機能の使い方](usage_serviceja.html)
 - [K2HR3テンプレート](usage_templateja.html)
 - [Command Line Interface(CLI) の利用](clija.html)
+- [Helm Chart の利用](helm_chartja.html)
 - [その他の使い方](usage_otherja.html)
 
 ## {{ page.arrow_link_setup }}
@@ -59,6 +60,7 @@ arrow_link_tools: <a href="toolsja.html" class="link-title"><span class="arrow-b
 - [試用環境の構築](setup_trialja.html)
 - K2HR3 サブシステムを[手動セットアップ](setup_manualja.html)
 - K2HR3 システムを[統合セットアップ](setup_integrateja.html)
+- K2HR3 システムを[Helmを使ってセットアップ](setup_helm_chartja.html)
 
 ## {{ page.arrow_link_developer }}
 **K2HR3** システムの変更・機能追加するための情報を[開発者](developerja.html)向けに説明します。  
@@ -72,6 +74,7 @@ arrow_link_tools: <a href="toolsja.html" class="link-title"><span class="arrow-b
 - [K2HR3 Container Registration Sidecar](https://github.com/yahoojapan/k2hr3_sidecar)
 - [K2HR3 Utilities](https://github.com/yahoojapan/k2hr3_utils)
 - [K2HR3 Get Resource](https://github.com/yahoojapan/k2hr3_get_resource)
+- [K2HR3 Helm Chart](https://github.com/yahoojapan/k2hr3_helm_chart)
 
 ## {{ page.arrow_link_environments }}
 **K2HR3** システムが使用する[環境変数・設定](environmentsja.html)について説明します。

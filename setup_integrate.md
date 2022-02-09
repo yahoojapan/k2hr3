@@ -9,8 +9,8 @@ prev_url: setup_manual.html
 prev_string: Installation step by step
 top_url: setup.html
 top_string: Setup
-next_url: 
-next_string: 
+next_url: setup_helm_chart.html
+next_string: Setup by Helm
 ---
 
 # Integrated installation

@@ -9,8 +9,8 @@ prev_url: usage_templateja.html
 prev_string: Template Engine
 top_url: usageja.html
 top_string: Usage
-next_url: usage_otherja.html
-next_string: Usage Other
+next_url: helm_chartja.html
+next_string: Helm Chart
 ---
 
 # Command Line Interface (CLI)
