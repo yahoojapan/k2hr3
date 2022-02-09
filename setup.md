@@ -36,3 +36,6 @@ The K2HR3 system consists of some subsystems.
 You can setup each subsystem step by step.  
 - [Integrated installation](setup_integrate.html)  
 You can setup a K2HR3 system that contains all the K2HR3 subsystems at once.
+- [Setup by Helm](setup_helm_chart.html)  
+You can setup K2HR3 system using [Helm(The package manager for Kubernetes)](https://helm.sh/).  
+You can easily set up the K2HR3 system in a kubernetes environment.

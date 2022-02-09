@@ -252,6 +252,12 @@ K2HR3 Get Resourceのソースコードは、[k2hr3_get_resource Githubリポジ
 ユーザが、K2HR3 Web Applicationから操作することと同じ操作がコマンドラインで実行きます。
 K2HR3 Command Line Interface(CLI)のソースコードは、[k2hr3_cli Githubリポジトリ](https://github.com/yahoojapan/k2hr3_cli)にあり、[k2hr3 Githubリポジトリ](https://github.com/yahoojapan/k2hr3)のサブモジュールとして登録されています。  
 
+## K2HR3 Helm Chart
+[K2HR3 Helm Chart](https://k2hr3.antpick.ax/helm_chartja.html)は、kubernetes環境に [Helm](https://helm.sh/ja/)（Kubernetes用パッケージマネージャー） を使ってK2HR3システムを構築するための **Helm Chart** です。  
+この **Helm Chart** を使うことで、kubernetes環境に簡単にK2HR3システムの構築ができます。  
+kubernetes環境に[K2HDKC DBaaS](https://dbaas.k2hdkc.antpick.ax/indexja.html) を構築をする [K2HDKC Helm Chart](https://dbaas.k2hdkc.antpick.ax/usage_helm_chartja.html)を使う前に、K2HR3システムを構築するために使用できます。  
+K2HR3 Helm Chartのソースコードは、[k2hr3_helm_chart Githubリポジトリ](https://github.com/yahoojapan/k2hr3_helm_chart)にあり、[Artifact Hub](https://artifacthub.io/packages/helm/k2hr3/k2hr3)でHelmリポジトリが公開されています。  
+
 # 詳細（その他）
 上述以外のK2HR3システムの共通の仕様、その他の詳細について、[詳細（その他）](detail_variousja.html)で説明します。
 

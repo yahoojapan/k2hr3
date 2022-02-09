@@ -9,8 +9,8 @@ prev_url: setup_manualja.html
 prev_string: Installation step by step
 top_url: setupja.html
 top_string: Setup
-next_url: 
-next_string: 
+next_url: setup_helm_chartja.html
+next_string: Setup by Helm
 ---
 
 # 統合セットアップ

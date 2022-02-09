@@ -265,5 +265,11 @@ It can run on any HOST that has access to the K2HR3 REST API.
 The same operations that users can perform from the K2HR3 Web Application can be performed on the command line.  
 The source code of **K2HR3 Command Line Interface(CLI)** is in [k2hr3_cli Github repository](https://github.com/yahoojapan/k2hr3_cli), and it is registered as a submodule in [k2hr3 Github repository](https://github.com/yahoojapan/k2hr3).  
 
+## K2HR3 Helm Chart
+[K2HR3 Helm Chart](https://k2hr3.antpick.ax/helm_chart.html) is a **Helm Chart** for building a K2HR3 system using [Helm(The package manager for Kubernetes)](https://helm.sh/) in a kubernetes environment.  
+By using this **Helm Chart**, you can easily build a K2HR3 system in a kubernetes environment.  
+This can be used to build a K2HR3 system before using the [K2HDKC Helm Chart](https://dbaas.k2hdkc.antpick.ax/usage_helm_chart.html) to build a [K2HDKC DBaaS](https://dbaas.k2hdkc.antpick.ax/index.html) in a kubernetes environment.  
+The source code of **K2HR3 Helm Chart** is in [k2hr3_helm_chart Github repository](https://github.com/yahoojapan/k2hr3_helm_chart), and it is published as a repository at [Artifact Hub](https://artifacthub.io/packages/helm/k2hr3/k2hr3).  
+
 # Various details
 Common specifications and other details of the K2HR3 system other than the above are explained in [**Various Details**](detail_various.html).

@@ -14,6 +14,11 @@ next_string: Detail
 ---
 
 # What's new
+## 2022年2月9日
+K2HR3 Helm Chart (Version 1.0.0) のソースコードをGithub.comで、Helm ChartをArtifact Hubで公開しました。  
+[k2hr3_helm_chart](https://github.com/yahoojapan/k2hr3_helm_chart) が追加され、ソースコードをGithub.comで公開しました。  
+[Artifact Hub - K2HR3(Helm Chart)](https://artifacthub.io/packages/helm/k2hr3/k2hr3)で、Helmリポジトリを公開しました。  
+
 ## 2021年3月26日
 K2HR3 の各コンポーネントが正式版 (Version 1.0.0以降) として更新されました。
 

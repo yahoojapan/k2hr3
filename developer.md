@@ -37,9 +37,10 @@ The `k2hr3` repository consists of the following submodules.
   - a repository for a `Systemd` service for retrieving RESOURCE
 - k2hr3_cli
   - a repository for Command Line Interface(CLI)
+- k2hr3_helm_chart
+  - a repository for Helm Chart
 
 The latter part of this page will describe how to build packages in these repositories and test them.
-
 
 ## The k2hr3_api repository
 
@@ -405,6 +406,53 @@ Users can use this K2HR3 Command Line Interface(CLI) to perform the same operati
     
     [CentOS/Fedora]
     $ ./buildutil/rpm_build.sh
+    ```
+
+6. Commit your code changes and push your branch to GitHub when you change codes::
+
+    ```
+    $ git add .
+    $ git commit -m "Short description of your changes."
+    $ git push origin my-first-contribution
+    ```
+
+7. Submit a pull request through the GitHub website when you change codes.
+
+## The k2hr3_helm_chart repository
+
+This chapter instructs how to test a `k2hr3_helm_chart` package in your local development environment.
+
+The k2hr3_helm_chart repository is one of Helm Chart for K2HR3 system.  
+Users can use this K2HR3 Helm Chart to install(build) a K2HR3 system in a kubernetes environment.  
+
+1. Fork the [https://github.com/yahoojapan/k2hr3_helm_chart](https://github.com/yahoojapan/k2hr3_helm_chart) repository in GitHub.
+
+2. Clone your forked repository locally.
+
+    ```
+    $ git clone https://github.com/YOUR-USERNAME/k2hr3_helm_chart.git
+    ```
+    
+3. Create a branch for local development
+
+    ```
+    $ cd k2hr3_helm_chart
+    $ git checkout -b my-first-contribution
+    ```
+
+4. Install the Helm in your local environment
+
+    ```
+    $ curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+    ```
+
+5. Test the Helm Chart and run a pseudo-install to see it
+
+    ```
+    $ cd ..
+    $ helm template my-k2hr3 ./k2hr3_helm_chart <options...>
+    
+    $ helm install my-k2hr3 ./k2hr3_helm_chart <options...> --debug --dry-run
     ```
 
 6. Commit your code changes and push your branch to GitHub when you change codes::

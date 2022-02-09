@@ -5,8 +5,8 @@ title: Usage Other
 short_desc: K2Hdkc based Resource and Roles and policy Rules
 lang_opp_file: usage_other.html
 lang_opp_word: To English
-prev_url: clija.html
-prev_string: Command Line Interface
+prev_url: helm_chartja.html
+prev_string: Helm Chart
 top_url: usageja.html
 top_string: Usage
 next_url: 

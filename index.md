@@ -51,6 +51,7 @@ You can experience the operation of **K2HR3 Web Application**.
 - [+SERVICE Usage](usage_service.html)
 - [K2HR3 Template](usage_template.html)
 - [Command Line Interface(CLI) Usage](cli.html)
+- [Use Helm Chart](helm_chart.html)
 - [Other Usage](usage_other.html)
 
 ## {{ page.arrow_link_setup }}
@@ -60,6 +61,7 @@ There are the following setup methods.
 - [Build a Trial Environment](setup_trial.html) (on the OpenStack)
 - [Installation step by step](setup_manualja.html)
 - [Integrated installation](setup_integrate.html)
+- [Setup by Helm](setup_helm_chart.html)
 
 ## {{ page.arrow_link_developer }}
 Detailed description of the programming interface provided by **K2HR3** system for [developer](developer.html)s.
@@ -73,6 +75,7 @@ All source code related to the **K2HR3** system is published on **GitHub**.
 - [K2HR3 Container Registration Sidecar](https://github.com/yahoojapan/k2hr3_sidecar)
 - [K2HR3 Utilities](https://github.com/yahoojapan/k2hr3_utils)
 - [K2HR3 Get Resource](https://github.com/yahoojapan/k2hr3_get_resource)
+- [K2HR3 Helm Chart](https://github.com/yahoojapan/k2hr3_helm_chart)
 
 ## {{ page.arrow_link_environments }}
 Description of [Environment and Settings](environments.html) variables used by **K2HR3** system to load.

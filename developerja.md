@@ -17,39 +17,41 @@ next_string: Environments/Settings
 
 このページは、K2HR3 システムの変更・機能追加するための情報を説明しています。
 
-## レポジトリの構成
+## リポジトリの構成
 
-ここでは、githubのk2hr3レポジトリについて説明しています。
+ここでは、githubのk2hr3リポジトリについて説明しています。
 
-k2hr3レポジトリは、次のサブモジュールから構成されています。
+k2hr3リポジトリは、次のサブモジュールから構成されています。
 
 - k2hr3_app
-  - Web Application レポジトリ
+  - Web Application リポジトリ
 - k2hr3_api
-  - REST API レポジトリ
+  - REST API リポジトリ
 - k2hr3_osnl
-  - OpenStack通知リスナー用レポジトリ
+  - OpenStack通知リスナー用リポジトリ
 - k2hr3_sidecar
-  - kubernetesからの自動登録・削除用Sidecar Containerのためのdockerイメージレポジトリ
+  - kubernetesからの自動登録・削除用Sidecar Containerのためのdockerイメージリポジトリ
 - k2hr3_utils
-  - 運用/開発ツールなど各種ツール用レポジトリ
+  - 運用/開発ツールなど各種ツール用リポジトリ
 - k2hr3_get_resource 
-  - リソース（RESOURCE）取得のための Systemdサービス 用レポジトリ
+  - リソース（RESOURCE）取得のための Systemdサービス 用リポジトリ
 - k2hr3_cli
-  - Command Line Interface(CLI) 用のレポジトリ
+  - Command Line Interface(CLI) 用のリポジトリ
+- k2hr3_helm_chart
+  - Helm Chart 用のリポジトリ
 
 
-後段では、各レポジトリについて説明しています。
+後段では、各リポジトリについて説明しています。
 
-## k2hr3_appレポジトリ
+## k2hr3_appリポジトリ
 
-この章では、k2hr3_appレポジトリの内容とソースコードのビルド＆テスト方法を説明しています。
+この章では、k2hr3_appリポジトリの内容とソースコードのビルド＆テスト方法を説明しています。
 
-k2hr3_appレポジトリは、APPサーバ用レポジトリです。
+k2hr3_appリポジトリは、APPサーバ用リポジトリです。
 
 1. Github上で [https://github.com/yahoojapan/k2hr3_app](https://github.com/yahoojapan/k2hr3_app)をforkします
 
-2. レポジトリをcloneします
+2. リポジトリをcloneします
 
     ```
     $ git clone https://github.com/YOUR-USERNAME/k2hr3_app.git
@@ -85,15 +87,15 @@ k2hr3_appレポジトリは、APPサーバ用レポジトリです。
     
 7. コード変更があれば、ぜひプルリクエストを投げてみてください！
 
-## k2hr3_apiレポジトリ
+## k2hr3_apiリポジトリ
 
-この章では、k2hr3_apiレポジトリの内容とソースコードのビルド＆テスト方法を説明しています。
+この章では、k2hr3_apiリポジトリの内容とソースコードのビルド＆テスト方法を説明しています。
 
-k2hr3_apiレポジトリは、APIサーバー用レポジトリです。
+k2hr3_apiリポジトリは、APIサーバー用リポジトリです。
 
 1. Github上で [https://github.com/yahoojapan/k2hr3_api](https://github.com/yahoojapan/k2hr3_api)をforkします
 
-2. レポジトリをcloneします
+2. リポジトリをcloneします
 
     ```
     $ git clone https://github.com/YOUR-USERNAME/k2hr3_api.git
@@ -161,15 +163,15 @@ k2hr3_apiレポジトリは、APIサーバー用レポジトリです。
     
 7. コード変更があれば、ぜひプルリクエストを投げてみてください！
 
-## k2hr3_osnlレポジトリ
+## k2hr3_osnlリポジトリ
 
-この章では、k2hr3_osnlレポジトリの内容とソースコードのビルド＆テスト方法を説明しています。
+この章では、k2hr3_osnlリポジトリの内容とソースコードのビルド＆テスト方法を説明しています。
 
-k2hr3_osnlレポジトリは、OpenStack通知リスナー用のレポジトリです。
+k2hr3_osnlリポジトリは、OpenStack通知リスナー用のリポジトリです。
 
 1. Github上で [https://github.com/yahoojapan/k2hr3_osnl](https://github.com/yahoojapan/k2hr3_osnl)をforkします
 
-2. レポジトリをcloneします
+2. リポジトリをcloneします
 
     ```
     $ git clone https://github.com/YOUR-USERNAME/k2hr3_osnl.git
@@ -206,15 +208,15 @@ k2hr3_osnlレポジトリは、OpenStack通知リスナー用のレポジトリ�
     
 7. コード変更があれば、ぜひプルリクエストを投げてみてください！
 
-## k2hr3_sidecarレポジトリ
+## k2hr3_sidecarリポジトリ
 
-この章では、k2hr3_sidecarレポジトリの内容を説明します。
+この章では、k2hr3_sidecarリポジトリの内容を説明します。
 
-k2hr3_sidecarレポジトリは、kubernetesからPods（Conatainers）を自動登録・削除をするために必要となるSidecar dockerイメージを管理するレポジトリです。
+k2hr3_sidecarリポジトリは、kubernetesからPods（Conatainers）を自動登録・削除をするために必要となるSidecar dockerイメージを管理するリポジトリです。
 
 1. Github上で [https://github.com/yahoojapan/k2hr3_sidecar](https://github.com/yahoojapan/k2hr3_sidecar)をforkします
 
-2. レポジトリをcloneします
+2. リポジトリをcloneします
 
     ```
     $ git clone https://github.com/YOUR-USERNAME/k2hr3_sidecar.git
@@ -248,15 +250,15 @@ k2hr3_sidecarレポジトリは、kubernetesからPods（Conatainers）を自動
     
 7. コード変更があれば、ぜひプルリクエストを投げてみてください！
 
-## k2hr3_utilsレポジトリ
+## k2hr3_utilsリポジトリ
 
-この章では、k2hr3_utilsレポジトリの内容とソースコードのビルド＆テスト方法を説明しています。
+この章では、k2hr3_utilsリポジトリの内容とソースコードのビルド＆テスト方法を説明しています。
 
-このレポジトリは、運用/開発ツールなど各種ツール用のレポジトリです。ここでは、`devcluster`を例にして説明します。
+このリポジトリは、運用/開発ツールなど各種ツール用のリポジトリです。ここでは、`devcluster`を例にして説明します。
 
 1. Github上で [https://github.com/yahoojapan/k2hr3_utils](https://github.com/yahoojapan/k2hr3_utils)をforkします
 
-2. レポジトリをcloneします
+2. リポジトリをcloneします
 
     ```
     $ git clone https://github.com/YOUR-USERNAME/k2hr3_utils.git
@@ -285,15 +287,15 @@ k2hr3_sidecarレポジトリは、kubernetesからPods（Conatainers）を自動
     
 6. コード変更があれば、ぜひプルリクエストを投げてみてください！
 
-## k2hr3_get_resource レポジトリ
+## k2hr3_get_resource リポジトリ
 
-この章では、k2hr3_get_resource レポジトリの内容とソースコードのビルド＆テスト方法を説明しています。
+この章では、k2hr3_get_resource リポジトリの内容とソースコードのビルド＆テスト方法を説明しています。
 
-k2hr3_get_resource レポジトリは、ロール（ROLE）に登録されているホスト（HOST）から、リソース（RESOURCE）データを定期的に取得するための **Systemdサービス** です。
+k2hr3_get_resource リポジトリは、ロール（ROLE）に登録されているホスト（HOST）から、リソース（RESOURCE）データを定期的に取得するための **Systemdサービス** です。
 
 1. Github上で [https://github.com/yahoojapan/k2hr3_get_resource](https://github.com/yahoojapan/k2hr3_get_resource)をforkします
 
-2. レポジトリをcloneします
+2. リポジトリをcloneします
 
     ```
     $ git clone https://github.com/YOUR-USERNAME/k2hr3_get_resource.git
@@ -341,16 +343,16 @@ k2hr3_get_resource レポジトリは、ロール（ROLE）に登録されてい
     
 7. コード変更があれば、ぜひプルリクエストを投げてみてください！
 
-## k2hr3_cli レポジトリ
+## k2hr3_cli リポジトリ
 
-この章では、k2hr3_cli レポジトリの内容とソースコードのビルド＆テスト方法を説明しています。
+この章では、k2hr3_cli リポジトリの内容とソースコードのビルド＆テスト方法を説明しています。
 
-k2hr3_cli レポジトリは、K2HR3 REST APIを使う Command Line Interface(CLI) プログラムです。  
+k2hr3_cli リポジトリは、K2HR3 REST APIを使う Command Line Interface(CLI) プログラムです。  
 ユーザは、このK2HR3 Command Line Interface(CLI)を使い、K2HR3 Web Applicationと同じ操作をコマンドラインから実行できます。  
 
 1. Github上で [https://github.com/yahoojapan/k2hr3_cli](https://github.com/yahoojapan/k2hr3_cli)をforkします
 
-2. レポジトリをcloneします
+2. リポジトリをcloneします
 
     ```
     $ git clone https://github.com/YOUR-USERNAME/k2hr3_cli.git
@@ -386,6 +388,53 @@ k2hr3_cli レポジトリは、K2HR3 REST APIを使う Command Line Interface(CL
     
     [CentOS/Fedora]
     $ ./buildutil/rpm_build.sh
+    ```
+
+6. コード変更があれば、commitして、push します
+
+    ```
+    $ git add .
+    $ git commit -m "Short description of your changes."
+    $ git push origin my-first-contribution
+    ```
+    
+7. コード変更があれば、ぜひプルリクエストを投げてみてください！
+
+## k2hr3_helm_chart リポジトリ
+
+この章では、k2hr3_helm_chart リポジトリの内容とソースコードのテスト方法を説明しています。
+
+k2hr3_helm_chart は、K2HR3 Helm Chartのリポジトリです。  
+ユーザは、このK2HR3 Helm Chartを使い、kubernetes環境にK2HR3システムをインストール（構築）できます。  
+
+1. Github上で [https://github.com/yahoojapan/k2hr3_helm_chart](https://github.com/yahoojapan/k2hr3_helm_chart)をforkします
+
+2. リポジトリをcloneします
+
+    ```
+    $ git clone https://github.com/YOUR-USERNAME/k2hr3_helm_chart.git
+    ```
+
+3. ブランチを作り、必要でしたら、コード変更して見てください
+
+    ```
+    $ cd k2hr3_helm_chart
+    $ git checkout -b my-first-contribution
+    ```
+
+4. ローカル環境にHelmをインストールします
+
+    ```
+    $ curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+    ```
+
+5. Helm Chartをテスト、疑似インストールを実行して、確認できます。
+
+    ```
+    $ cd ..
+    $ helm template my-k2hr3 ./k2hr3_helm_chart <options...>
+    
+    $ helm install my-k2hr3 ./k2hr3_helm_chart <options...> --debug --dry-run
     ```
 
 6. コード変更があれば、commitして、push します

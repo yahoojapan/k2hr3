@@ -14,6 +14,11 @@ next_string: Detail
 ---
 
 # What's new
+## [9 Feb 2022] K2HR3 Helm Chart released
+The source code of K2HR3 Helm Chart (Version 1.0.0) has been released on Github.com.  
+[k2hr3_helm_chart](https://github.com/yahoojapan/k2hr3_helm_chart) has been added and the source code has been released on Github.com.  
+The Helm repository for K2HR3 has been published on [Artifact Hub - K2HR3(Helm Chart)](https://artifacthub.io/packages/helm/k2hr3/k2hr3).  
+
 ## [26 Mar 2021] K2HR3 components updated
 Each component of K2HR3 has been updated to the official version(Version 1.0.0 or later).
 
