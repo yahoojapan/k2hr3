@@ -271,5 +271,9 @@ By using this **Helm Chart**, you can easily build a K2HR3 system in a kubernete
 This can be used to build a K2HR3 system before using the [K2HDKC Helm Chart](https://dbaas.k2hdkc.antpick.ax/usage_helm_chart.html) to build a [K2HDKC DBaaS](https://dbaas.k2hdkc.antpick.ax/index.html) in a kubernetes environment.  
 The source code of **K2HR3 Helm Chart** is in [k2hr3_helm_chart Github repository](https://github.com/yahoojapan/k2hr3_helm_chart), and it is published as a repository at [Artifact Hub](https://artifacthub.io/packages/helm/k2hr3/k2hr3).  
 
+### RANCHER
+[K2HR3 Helm Chart](https://k2hr3.antpick.ax/helm_chart.html)は、[RANCHER](https://rancher.com/)に対応しています。  
+You can use [K2HR3 Helm Chart](https://k2hr3.antpick.ax/helm_chart.html) from [RANCHER](https://rancher.com/) by registering [K2HR3 Helm Chart](https://k2hr3.antpick.ax/helm_chart.html) as a repository in [RANCHER](https://rancher.com/).  
+
 # Various details
 Common specifications and other details of the K2HR3 system other than the above are explained in [**Various Details**](detail_various.html).

@@ -9,8 +9,8 @@ prev_url: cli.html
 prev_string: Command Line Interface
 top_url: usage.html
 top_string: Usage
-next_url: usage_other.html
-next_string: Usage Other
+next_url: rancher_helm_chart.html
+next_string: RANCHER Helm Chart
 ---
 
 # Helm Chart
@@ -25,6 +25,11 @@ You can easily install a K2HR3 system in a kubernetes environment by using **K2H
 You can install a K2HR3 system easily, by using the `Helm command` and loading the **K2HR3 Helm Chart** published in [Artifact Hub](https://artifacthub.io/packages/helm/k2hr3/k2hr3) as a repository.  
 
 The source code of K2HR3 Helm Chart is published in [k2hr3_helm_chart -Github](https://github.com/yahoojapan/k2hr3_helm_chart).　　
+
+### RANCHER
+The [K2HR3 Helm Chart](rancher_helm_chart.html) is used as **RANCHER Helm Chart**.  
+You can easily build up a K2HR3 system by registering it in the [RANCHER](https://rancher.com/) repository.  
+Please refer to [K2HR3 Helm Chart with RANCHER](rancher_helm_chart.html) for how to use from [RANCHER](https://rancher.com/).  
 
 ## About Helm
 The K2HR3 Helm Chart is one of **Helm Chart** used by [Helm (The package manager for Kubernetes)](https://helm.sh/).  

@@ -52,6 +52,7 @@ arrow_link_tools: <a href="toolsja.html" class="link-title"><span class="arrow-b
 - [K2HR3テンプレート](usage_templateja.html)
 - [Command Line Interface(CLI) の利用](clija.html)
 - [Helm Chart の利用](helm_chartja.html)
+- [RANCHER Helm Chartとしての利用](rancher_helm_chartja.html)
 - [その他の使い方](usage_otherja.html)
 
 ## {{ page.arrow_link_setup }}

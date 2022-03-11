@@ -5,8 +5,8 @@ title: Usage Other
 short_desc: K2Hdkc based Resource and Roles and policy Rules
 lang_opp_file: usage_otherja.html
 lang_opp_word: To Japanese
-prev_url: helm_chart.html
-prev_string: Helm Chart
+prev_url: rancher_helm_chart.html
+prev_string: RANCHER Helm Chart
 top_url: usage.html
 top_string: Usage
 next_url: 

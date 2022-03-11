@@ -54,6 +54,18 @@ K2HR3システムは、動的なリソース（RESOURCE）を定義すること�
 K2HR3の、ロール（ROLE）、ポリシー/ルール（POLICY）、リソース（RESOURCE）、サービス（SERVICE）等の操作・設定を Command Line Interface(CLI)から行えます。  
 このK2HR3が提供する[Command Line Interface(CLI)](clija.html)を説明します。  
 
+# Command Line Interface(CLI) の利用
+K2HR3の、ロール（ROLE）、ポリシー/ルール（POLICY）、リソース（RESOURCE）、サービス（SERVICE）等の操作・設定を Command Line Interface(CLI)から行えます。  
+このK2HR3が提供する[Command Line Interface(CLI)](clija.html)を説明します。  
+
+# Helm Chart の利用
+K2HR3システムを **Helm Chart** を使って構築できます。  
+[K2HR3 Helm Chart](helm_chartja.html)は、[kubernetes](https://kubernetes.io/ja/)環境に [Helm](https://helm.sh/ja/)（Kubernetes用パッケージマネージャー） を使って **K2HR3システム** を構築するための **Helm Chart** です。  
+
+## RANCHER対応
+[K2HR3 Helm Chart](rancher_helm_chartja.html)は、**RANCHER Helm Chart** としても利用でき、[RANCHER](https://www.rancher.co.jp/)のリポジトリに登録できます。  
+[RANCHER](https://www.rancher.co.jp/)から[K2HR3 Helm Chart](rancher_helm_chartja.html)を使い K2HR3システムを簡単に構築できます。  
+
 # その他の使い方
 上記以外のK2HR3システムの[使い方や事例](usage_otherja.html)などを説明します。
 

@@ -56,6 +56,14 @@ The description and usage of **TEMPLATE** defining **dynamic RESOURCE** is descr
 The [Command Line Interface Usage](cli.html) page provides information about **K2HR3 Command Line Interface(CLI)** that every **USER** can define and use **ROLE**, **POLICY-RULE**, **RESOURCE** and **SERVICE**.  
 See the [Command Line Interface Usage](clii.html) page for details.
 
+# Helm Chart Usage
+You can build up a K2HR3 system using **Helm Chart**.  
+[K2HR3 Helm Chart](helm_chart.html) is a **Helm Chart** for building a K2HR3 system using [Helm(The package manager for Kubernetes)](https://helm.sh/) in a [kubernetes](https://kubernetes.io/) environment.  
+
+## RANCHER
+[K2HR3 Helm Chart](rancher_helm_chart.html) can also be used as **RANCHER Helm Chart** and can be registered in the [RANCHER](https://rancher.com/) repository.  
+You can easily build up a K2HR3 system using [RANCHER](https://rancher.com/) to [K2HR3 Helm Chart](rancher_helm_chart.html).  
+
 # Other Usage
 See the [other usage](usage_other.html) page for the other use cases.
 

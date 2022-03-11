@@ -258,6 +258,10 @@ K2HR3 Command Line Interface(CLI)のソースコードは、[k2hr3_cli Githubリ
 kubernetes環境に[K2HDKC DBaaS](https://dbaas.k2hdkc.antpick.ax/indexja.html) を構築をする [K2HDKC Helm Chart](https://dbaas.k2hdkc.antpick.ax/usage_helm_chartja.html)を使う前に、K2HR3システムを構築するために使用できます。  
 K2HR3 Helm Chartのソースコードは、[k2hr3_helm_chart Githubリポジトリ](https://github.com/yahoojapan/k2hr3_helm_chart)にあり、[Artifact Hub](https://artifacthub.io/packages/helm/k2hr3/k2hr3)でHelmリポジトリが公開されています。  
 
+### RANCHERへの対応
+[K2HR3 Helm Chart](https://k2hr3.antpick.ax/helm_chartja.html)は、[RANCHER](https://www.rancher.co.jp/)に対応しています。  
+[RANCHER](https://www.rancher.co.jp/) に [K2HR3 Helm Chart](https://k2hr3.antpick.ax/helm_chartja.html) を リポジトリとして登録することで、[RANCHER](https://www.rancher.co.jp/)から利用できます。  
+
 # 詳細（その他）
 上述以外のK2HR3システムの共通の仕様、その他の詳細について、[詳細（その他）](detail_variousja.html)で説明します。
 
