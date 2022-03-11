@@ -19,6 +19,6 @@
 [submodule "k2hr3_cli"]
 	path = k2hr3_cli
 	url = https://github.com/yahoojapan/k2hr3_cli.git
-[submodule "k2hdkc_helm_chart"]
-	path = k2hdkc_helm_chart
-	url = https://github.com/yahoojapan/k2hdkc_helm_chart.git
+[submodule "k2hr3_helm_chart"]
+	path = k2hr3_helm_chart
+	url = https://github.com/yahoojapan/k2hr3_helm_chart.git
