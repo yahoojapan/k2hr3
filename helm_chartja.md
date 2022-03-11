@@ -9,8 +9,8 @@ prev_url: clija.html
 prev_string: Command Line Interface
 top_url: usageja.html
 top_string: Usage
-next_url: usage_otherja.html
-next_string: Usage Other
+next_url: rancher_helm_chartja.html
+next_string: RANCHER Helm Chart
 ---
 
 # Helm Chart
@@ -25,6 +25,11 @@ K2HR3 Helm Chartは、[kubernetes](https://kubernetes.io/ja/)環境に [Helm](ht
 `Helmコマンド` を使って、[Artifact Hub](https://artifacthub.io/packages/helm/k2hr3/k2hr3) で公開されている **K2HR3 Helm Chart**をリポジトリとしてロードし、簡単にK2HR3システムの構築ができます。  
 
 K2HR3 Helm Chartのソースコードは、[k2hr3_helm_chart - Github](https://github.com/yahoojapan/k2hr3_helm_chart)で公開されています。
+
+### RANCHER対応
+**K2HR3 Helm Chart**は、**RANCHER Helm Chart** として利用できます。  
+[RANCHER](https://www.rancher.co.jp/)のリポジトリに登録し、K2HR3システムを簡単に構築できます。  
+[RANCHER](https://www.rancher.co.jp/)からの利用方法は、[こちら](rancher_helm_chartja.html)を参照してください。  
 
 ## Helmについて
 K2HR3 Helm Chartは、[Helm](https://helm.sh/ja/)（Kubernetes用パッケージマネージャー）が利用する **Helm Chart** です。  

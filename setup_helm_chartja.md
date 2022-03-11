@@ -203,4 +203,4 @@ $ kubectl get pods
 ## 完了
 以上の手順で、**K2HR3 Helm Chart**により、K2HR3システムの構築ができます。  
 
-構築したK2HR3システムの使い方については、[K2HR3 Web Application の使い方](https://k2hr3.antpick.ax/usage_appja.html) や [K2HR3 REST API の使い方](https://k2hr3.antpick.ax/apija.html) を参照してください。  
+構築したK2HR3システムの使い方については、[K2HR3 Web Application の使い方](https://k2hr3.antpick.ax/usage_appja.html) や [K2HR3 REST API の使い方](https://k2hr3.antpick.ax/apija.html) を参照してください。

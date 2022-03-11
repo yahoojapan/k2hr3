@@ -52,6 +52,7 @@ You can experience the operation of **K2HR3 Web Application**.
 - [K2HR3 Template](usage_template.html)
 - [Command Line Interface(CLI) Usage](cli.html)
 - [Use Helm Chart](helm_chart.html)
+- [Use as RANCHER Helm Chart](rancher_helm_chart.html)
 - [Other Usage](usage_other.html)
 
 ## {{ page.arrow_link_setup }}

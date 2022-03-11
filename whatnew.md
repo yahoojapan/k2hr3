@@ -14,6 +14,10 @@ next_string: Detail
 ---
 
 # What's new
+## [11 Mar 2022] K2HR3 Helm Chart updated
+The source code of K2HR3 Helm Chart (Version 1.0.1) has been released on Github.com.  
+This version of the K2HR3 Helm Chart provides **RANCHER Helm Chart** functionality for [RANCHER](https://rancher.com/).  
+
 ## [9 Feb 2022] K2HR3 Helm Chart released
 The source code of K2HR3 Helm Chart (Version 1.0.0) has been released on Github.com.  
 [k2hr3_helm_chart](https://github.com/yahoojapan/k2hr3_helm_chart) has been added and the source code has been released on Github.com.  
