@@ -14,6 +14,9 @@ next_string: Detail
 ---
 
 # What's new
+## 2022年6月13日
+K2HR3 API (Version 1.0.10)、K2HR3 APP (Version 1.0.6) をリリースし、Github.comで公開しました。  
+
 ## 2022年3月11日
 K2HR3 Helm Chart (Version 1.0.1) のソースコードをGithub.comで、Helm ChartをArtifact Hubで公開しました。  
 このバージョンのK2HR3 Helm Chartは、[RANCHER](https://www.rancher.co.jp/) に対応した **RANCHER Helm Chart** の機能を提供します。  

@@ -168,6 +168,8 @@ One request body includes only one host.
         cuk:             <container unique key: reserved>
         extra:           <extra string data>
         tag:             <tag string data>
+        inboundip:       <ip address>
+        outboundip:      <ip address>
     }
     clear_hostname:      <true/false>
     clear_ips:           <true/false>
@@ -184,6 +186,9 @@ One request body includes multiple hosts.
             port:        <port number>
             cuk:         <container unique key: reserved>
             extra:       <extra string data>
+            tag:         <tag string data>
+            inboundip:   <ip address>
+            outboundip:  <ip address>
         },
         ...
     ]
@@ -199,6 +204,9 @@ One request body includes multiple hosts.
         port:            <port number>
         cuk:             <container unique key: reserved>
         extra:           <extra string data>
+        tag:             <tag string data>
+        inboundip:       <ip address>
+        outboundip:      <ip address>
     }
 }
 ```
@@ -223,6 +231,15 @@ One request body includes multiple hosts.
   - undefined or null value is acceptable.
 - tag  
   - tag is an arbitrary character string and can be omitted.
+  - Otherwise, specify unspecified or null.
+- inboundip  
+  - If a different IP address exists to access the host, set that IP address to this variable.
+  - It can be set when a bridge or proxy is used and a different IP address exists to access the host from the outside.
+  - Otherwise, specify unspecified or null.
+- outboundip  
+  - If a different IP address from the host when accessing the outside from the registered host, set that IP address in this variable.
+  - It can be set when a bridge or proxy is used and a different IP address exists for external access from the host.
+  - Otherwise, specify unspecified or null.
 - clear_hostname  
   - True if delete all hostnames.
 - clear_ips  
@@ -298,6 +315,15 @@ x-auth-token: R=<Role Token>
   - undefined or null value is acceptable.
 - tag  
   - tag is an arbitrary character string and can be omitted.
+  - Otherwise, specify unspecified or null.
+- inboundip  
+  - If a different IP address exists to access the host, set that IP address to this variable.
+  - It can be set when a bridge or proxy is used and a different IP address exists to access the host from the outside.
+  - Otherwise, specify unspecified or null.
+- outboundip  
+  - If a different IP address from the host when accessing the outside from the registered host, set that IP address in this variable.
+  - It can be set when a bridge or proxy is used and a different IP address exists for external access from the host.
+  - Otherwise, specify unspecified or null.
 
 #### Role Token
 
@@ -316,6 +342,15 @@ x-auth-token: R=<Role Token>
   - undefined or null value is acceptable.
 - tag  
   - tag is an arbitrary character string and can be omitted.
+  - Otherwise, specify unspecified or null.
+- inboundip  
+  - If a different IP address exists to access the host, set that IP address to this variable.
+  - It can be set when a bridge or proxy is used and a different IP address exists to access the host from the outside.
+  - Otherwise, specify unspecified or null.
+- outboundip  
+  - If a different IP address from the host when accessing the outside from the registered host, set that IP address in this variable.
+  - It can be set when a bridge or proxy is used and a different IP address exists for external access from the host.
+  - Otherwise, specify unspecified or null.
 
 ### Note
 
@@ -372,11 +407,11 @@ x-auth-token: U=<Scoped User Token>
         aliases:    array
         hosts: {
             hostnames: [
-                "<hostname> <port> <cuk>",
+                "<hostname> <port> <cuk> <extra> <tag> <inboundip> <outboundip>",
                 ...
             ],
             ips: [
-                "<ip address> <port> <cuk>",
+                "<ip address> <port> <cuk> <extra> <tag> <inboundip> <outboundip>",
                 ...
             ]
         }
@@ -392,7 +427,10 @@ An array of policy objects.
 - role:aliases  
 An array of alias objects if the 'expand' request parameter is false
 - role:hosts  
-An array of hostname and IP address objects if the 'expand' request parameter is false.
+An array of hostname and IP address objects if the 'expand' request parameter is false.  
+The value in each array is `<ip address> <port> <cuk> <extra> <tag> <inboundip> <outboundip>`, but returns only existing values.  
+Each value is separated by a space character, and non-existent values are empty.  
+Also, the space character at the end of the value is stripped.
 
 ## GET(Create ROLE Token)
 
