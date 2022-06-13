@@ -160,6 +160,8 @@ x-auth-token: R=<Role Token>
         cuk:             <container unique key: reserved>
         extra:           <extra string data>
         tag:             <tag string data>
+        inboundip:       <ip address>
+        outboundip:      <ip address>
     }
     clear_hostname:      <true/false>
     clear_ips:           <true/false>
@@ -174,6 +176,9 @@ x-auth-token: R=<Role Token>
             port:        <port number>
             cuk:         <container unique key: reserved>
             extra:       <extra string data>
+            tag:         <tag string data>
+            inboundip:   <ip address>
+            outboundip:  <ip address>
         },
         ...
     ]
@@ -188,6 +193,9 @@ x-auth-token: R=<Role Token>
         port:            <port number>
         cuk:             <container unique key: reserved>
         extra:           <extra string data>
+        tag:             <tag string data>
+        inboundip:       <ip address>
+        outboundip:      <ip address>
     }
 }
 ```
@@ -210,6 +218,15 @@ OpenStackのVirtualMachineの登録の場合には、**openstack-auto-v1**を指
 kubernetesのPodからの登録の場合には、**k8s-auto-v1**を指定します。それ以外の場合には未指定もしくはnullを指定します。
 - tag  
 任意の文字列を設定できます。  
+設定しない場合は、未指定もしくはnullを指定します。
+- inboundip  
+登録するホストへアクセスするために異なるIPアドレスが存在する場合、この変数へそのIPアドレスを設定します。  
+ブリッジやプロキシーなどが利用されており、ホストに外部からアクセスするために異なるIPアドレスが存在する場合に設定できます。  
+設定しない場合は、未指定もしくはnullを指定します。
+- outboundip  
+登録するホストから外部にアクセスするとき、ホストとは異なるIPアドレスを使う場合、この変数へそのIPアドレスを設定します。  
+ブリッジやプロキシーなどが利用されており、ホストから外部からアクセスするために異なるIPアドレスが存在する場合に設定できます。  
+設定しない場合は、未指定もしくはnullを指定します。
 - clear_hostname  
 既存hostnameの情報をすべてクリアすることを指示します。
 - clear_ips  
@@ -281,6 +298,15 @@ OpenStackのVirtualMachineの登録の場合には、**openstack-auto-v1**を指
 kubernetesのPodからの登録の場合には、**k8s-auto-v1**を指定します。それ以外の場合には未指定もしくはnullを指定します。
 - tag  
 任意の文字列を設定できます。  
+設定しない場合は、未指定もしくはnullを指定します。
+- inboundip  
+登録するホストへアクセスするために異なるIPアドレスが存在する場合、この変数へそのIPアドレスを設定します。  
+ブリッジやプロキシーなどが利用されており、ホストに外部からアクセスするために異なるIPアドレスが存在する場合に設定できます。  
+設定しない場合は、未指定もしくはnullを指定します。
+- outboundip  
+登録するホストから外部にアクセスするとき、ホストとは異なるIPアドレスを使う場合、この変数へそのIPアドレスを設定します。  
+ブリッジやプロキシーなどが利用されており、ホストから外部からアクセスするために異なるIPアドレスが存在する場合に設定できます。  
+設定しない場合は、未指定もしくはnullを指定します。
 
 #### Role Token
 - port=_port number_  
@@ -296,6 +322,15 @@ OpenStackのVirtualMachineの登録の場合には、**openstack-auto-v1**を指
 kubernetesのPodからの登録の場合には、**k8s-auto-v1**を指定します。それ以外の場合には未指定もしくはnullを指定します。
 - tag  
 任意の文字列を設定できます。  
+設定しない場合は、未指定もしくはnullを指定します。
+- inboundip  
+登録するホストへアクセスするために異なるIPアドレスが存在する場合、この変数へそのIPアドレスを設定します。  
+ブリッジやプロキシーなどが利用されており、ホストに外部からアクセスするために異なるIPアドレスが存在する場合に設定できます。  
+設定しない場合は、未指定もしくはnullを指定します。
+- outboundip  
+登録するホストから外部にアクセスするとき、ホストとは異なるIPアドレスを使う場合、この変数へそのIPアドレスを設定します。  
+ブリッジやプロキシーなどが利用されており、ホストから外部からアクセスするために異なるIPアドレスが存在する場合に設定できます。  
+設定しない場合は、未指定もしくはnullを指定します。
 
 ### 注意
 すでに存在しているhostname/IPアドレスと同じホスト（HOST）を異なるポートで指定した場合には、以下の動作に注意してください。
@@ -353,11 +388,11 @@ x-auth-token: U=<Scoped User Token>
         aliases:    array
         hosts: {
             hostnames: [
-                "<hostname> <port> <cuk>",
+                "<hostname> <port> <cuk> <extra> <tag> <inboundip> <outboundip>",
                 ...
             ],
             ips: [
-                "<ip address> <port> <cuk>",
+                "<ip address> <port> <cuk> <extra> <tag> <inboundip> <outboundip>",
                 ...
             ]
         }
@@ -373,7 +408,10 @@ APIの処理結果をtrue/falseで返します。
 - role:aliases  
 ロール（ROLE）に設定されているエリアスがあれば、配列として返します。（expand=falseの場合のみ）
 - role:hosts  
-ロール（ROLE）に設定されているホスト（HOST）のIP情報を返します。詳細は上記の例を参照してください。（expand=falseの場合のみ）
+ロール（ROLE）に設定されているホスト（HOST）のIP情報を返します。詳細は上記の例を参照してください。（expand=falseの場合のみ）  
+各配列の値は、`<ip address> <port> <cuk> <extra> <tag> <inboundip> <outboundip>`ですが、存在する値のみを返します。  
+各値は、スペース文字で区切られ、存在しない値は空となります。  
+また、値の終端のスペース文字は取り除かれます。
 
 ## GET（Role Token）
 Role Tokenを取得するためのAPIです。取得には3つの手段が準備されています。  
