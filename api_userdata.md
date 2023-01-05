@@ -95,7 +95,7 @@ Content-Disposition: attachment; filename="k2hr3-cloud-config.txt"
 #
 # K2HR3
 #
-# Copyright 2018 Yahoo! JAPAN corporation.
+# Copyright 2018 Yahoo Japan Corporation.
 #
 # K2HR3 is K2hdkc based Resource and Roles and policy Rules, gathers
 # common management information for the cloud.
@@ -114,9 +114,12 @@ packages:
   - curl
 
 #
-# VIM modelines
-#
-# vim:set ts=4 fenc=utf-8:
+# Local variables:
+# tab-width: 4
+# c-basic-offset: 4
+# End:
+# vim600: noexpandtab sw=4 ts=4 fdm=marker
+# vim<600: noexpandtab sw=4 ts=4
 #
 
 --================K2HR3INIT1539142345745==
@@ -129,7 +132,7 @@ Content-Disposition: attachment; filename="k2hr3-init.sh"
 #
 # K2HR3
 #
-# Copyright 2018 Yahoo! JAPAN corporation.
+# Copyright 2018 Yahoo Japan Corporation.
 #
 # K2HR3 is K2hdkc based Resource and Roles and policy Rules, gathers
 # common management information for the cloud.
@@ -199,9 +202,12 @@ echo "`date "+%Y-%m-%d %H:%M:%S,%3N"` - ${SCRIPTNAME}[INFO]: initialize host inf
 exit 0
 
 #
-# VIM modelines
-#
-# vim:set ts=4 fenc=utf-8:
+# Local variables:
+# tab-width: 4
+# c-basic-offset: 4
+# End:
+# vim600: noexpandtab sw=4 ts=4 fdm=marker
+# vim<600: noexpandtab sw=4 ts=4
 #
 --================K2HR3INIT1539142345745==--
 <<<
@@ -229,7 +235,7 @@ Content-Disposition: attachment; filename="k2hr3-init-error.sh"
 #
 # K2HR3
 #
-# Copyright 2018 Yahoo! JAPAN corporation.
+# Copyright 2018 Yahoo Japan Corporation.
 #
 # K2HR3 is K2hdkc based Resource and Roles and policy Rules, gathers
 # common management information for the cloud.
@@ -252,9 +258,12 @@ echo "`date "+%Y-%m-%d %H:%M:%S,%3N"` - ${SCRIPTNAME}[ERROR]: Invalid userdata f
 exit 1
 
 #
-# VIM modelines
-#
-# vim:set ts=4 fenc=utf-8:
+# Local variables:
+# tab-width: 4
+# c-basic-offset: 4
+# End:
+# vim600: noexpandtab sw=4 ts=4 fdm=marker
+# vim<600: noexpandtab sw=4 ts=4
 #
 
 --================K2HR3INIT1539138817839==--
