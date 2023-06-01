@@ -107,6 +107,7 @@ In this step, set the following items:
 - K2HR3 Web Application(subsystem)
 - K2HR3 REST API(subsystem)
 - Backend K2HDKC Cluster(backend system)
+- PROXY Environments
 
 Each setting items is explained below.
 
@@ -140,6 +141,11 @@ The `K2HR3 Web Application` is configured as a `NodePort` kubernetes service.
 Therefore, set this value to one of the `Worker nodes` that make up the RANCHER cluster(`mycluster`) that builds the K2HR3 system.  
 Alternatively, set the `Hostname` that can reach this `NodePort` service according to the environment.  
 
+`K2HR3 Helm Chart` uses the latest `Docker image` for `K2HR3 Web Application` at the time of release.  
+By default, the image `antpickax/k2hr3-app:X.Y.Z` is used.  
+This page allows you to change this `Docker image` to any image.  
+When changing images, you can set the organization name, image name, and image tag all at once, or specify them individually.  
+
 After entering the required items, the setting of this `K2HR3 Web Application` item is completed.  
 
 #### K2HR3 REST API
@@ -156,6 +162,11 @@ The `K2HR3 REST API` is configured as a `NodePort` kubernetes service.
 Therefore, set this value to one of the `Worker nodes` that make up the RANCHER cluster(`mycluster`) that builds the K2HR3 system.  
 Alternatively, set the `Hostname` that can reach this `NodePort` service according to the environment.  
 
+`K2HR3 Helm Chart` uses the latest `Docker image` for `K2HR3 REST API` at the time of release.  
+By default, the image `antpickax/k2hr3-api:X.Y.Z` is used.  
+This page allows you to change this `Docker image` to any image.  
+When changing images, you can set the organization name, image name, and image tag all at once, or specify them individually.  
+
 After entering the required items, the setting of this `K2HR3 REST API` item is completed.  
 
 #### Backend K2HDKC Cluster
@@ -166,10 +177,26 @@ On the `Install: Step 2` page, select `Edit Option` and then `Backend K2HDKC Clu
 In this setting, enter the information for `K2HDKC Cluster` which is back-end system of the K2HR3 subsystem.  
 There are no required fields in this setting.  
 This setting allows you to specify the `K2HDKC` and` CHMPX` images used by the K2HR3 system.  
+You can also specify the `Init Container` image for initialization used in the entire K2HR3 system.  
 Normally, you can leave these values unset and use the default values.  
+
+`K2HR3 Helm Chart` uses the latest `Docker image` for `K2HDKC` and `CHMPX` and OS Image for `Init Container` at the time of release.  
+By default, each image `antpickax/k2hdkc:X.Y.Z` and `antpickax/chmpx:X.Y.Z` and `alpine:X.Y.Z` is used.  
+This page allows you to change this `Docker image` to any image.  
+When changing images, you can set the organization name, image name, and image tag all at once, or specify them individually.  
 
 After entering the required items, the setting of this `Backend K2HDKC Cluster` item is completed.  
 
+#### PROXY Environments
+On the `Install: Step 2` page, select `Edit Option` and then `PROXY Environments` from the list.  
+
+![RANCHER - Chart install step2-5](images/rancher_chart_install_step2-5.png)  
+
+In this setting, enter the `PROXY` environments for All `K2HR3 System`.  
+By default, the `RPOXY` environment variables are not set.
+If `PROXY` setting is required in the network where K2HR3 system is built, please specify `HTTP_PROXY`, `HTTPS_PROXY` and `NO_PROXY` environment variables.
+
+After entering the required items, the setting of this `PROXY` environments are completed.  
 
 After completing the above `Install: Step 2` settings, click the **Install** button at the bottom right.  
 
