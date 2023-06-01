@@ -108,6 +108,7 @@ RANCHERのクラスター（`mycluster`）を選択し、クラスターの設�
 - K2HR3 Web Application（サブシステム）の設定
 - K2HR3 REST API（サブシステム）の設定
 - K2HDKCクラスター（バックエンドシステム）の設定
+- PROXY環境変数の設定
 
 それぞれの設定について、説明します。
 
@@ -141,6 +142,11 @@ RANCHERのクラスター（`mycluster`）を選択し、クラスターの設�
 よって、この値には K2HR3システムを構築する RANCHERクラスター（`mycluster`）を構成する `Workerノード`のいずれかを設定してください。  
 もしくは、環境に応じてこの`NodePort`サービスへ到達することができる`Hostname`等を設定してください。  
 
+`K2HR3 Helm Chart`はリリースされた時点の最新の `K2HR3 Web Application` 用の `Dockerイメージ` を使用します。  
+デフォルトでは、`antpickax/k2hr3-app:X.Y.Z`のイメージが使用されます。  
+このページは、この`Dockerイメージ` を任意のイメージに変更できます。  
+イメージを変更する場合は、オーガナイゼーション名、イメージ名、イメージタグを一括で設定するか、個別に指定できます。  
+
 これら必須項目を入力したら、`K2HR3 Web Application`設定の入力は完了です。  
 
 #### K2HR3 REST API（サブシステム）の設定
@@ -157,6 +163,11 @@ RANCHERのクラスター（`mycluster`）を選択し、クラスターの設�
 よって、この値には K2HR3システムを構築する RANCHERクラスター（`mycluster`）を構成する `Workerノード`のいずれかを設定してください。  
 もしくは、環境に応じてこの`NodePort`サービスへ到達することができる`Hostname`等を設定してください。  
 
+`K2HR3 Helm Chart`はリリースされた時点の最新の `K2HR3 REST API` 用の `Dockerイメージ` を使用します。  
+デフォルトでは、`antpickax/k2hr3-api:X.Y.Z`のイメージが使用されます。  
+このページは、この`Dockerイメージ` を任意のイメージに変更できます。  
+イメージを変更する場合は、オーガナイゼーション名、イメージ名、イメージタグを一括で設定するか、個別に指定できます。  
+
 これら必須項目を入力したら、`K2HR3 REST API`設定の入力は完了です。  
 
 #### K2HDKCクラスター（バックエンドシステム）の設定
@@ -167,10 +178,26 @@ RANCHERのクラスター（`mycluster`）を選択し、クラスターの設�
 この設定では、K2HR3バックエンドシステムである `K2HDKC Cluster` の情報を入力します。  
 この設定では、必須項目はありません。  
 この設定では、K2HR3システムで利用する `K2HDKC`および`CHMPX`のイメージを指定することができます。  
+また、K2HR3システム全体で利用する 初期化用の`Init Container`のイメージを指定することができます。  
 通常、これらの値は未設定のままとして、デフォルトの値を利用できます。  
+
+`K2HR3 Helm Chart`はリリースされた時点の最新の `K2HDKC`、`CHMPX`、および `Init Container` 用の `Dockerイメージ` を使用します。  
+デフォルトでは、それぞれ `antpickax/k2hdkc:X.Y.Z`、`antpickax/chmpx:X.Y.Z` および `alpine:X.Y.Z` のイメージが使用されます。  
+このページは、これら`Dockerイメージ` を任意のイメージに変更できます。  
+イメージを変更する場合は、オーガナイゼーション名、イメージ名、イメージタグを一括で設定するか、個別に指定できます。  
 
 以上で、`Backend K2HDKC Cluster`設定の入力は完了です。  
 
+#### PROXY環境変数の設定
+`Install: Step 2` ページ で、`Edit Option`を選択し、リストから `PROXY Environments` を選択します。  
+
+![RANCHER - Chart install step2-5](images/rancher_chart_install_step2-5.png)  
+
+この設定では、K2HR3システム全体で利用する `PROXY`環境変数を設定できます。  
+デフォルトでは、`RPOXY`環境変数は設定されません。
+K2HR3システムを構築するネットワーク環境において `PROXY` 設定が必要な場合、`HTTP_PROXY`、`HTTPS_PROXY` および `NO_PROXY`環境変数を指定してください。  
+
+以上で、`PROXY` 環境変数の入力は完了です。  
 
 以上の `Install: Step 2` の各設定が終わったら、右下の **Install** ボタンをクリックします。
 

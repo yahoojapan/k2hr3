@@ -69,6 +69,29 @@ K2HR3 Helm Chart を [Helm](https://helm.sh/ja/)（Kubernetes用パッケージ�
 | `k2hr3.app.count`            |          | 2                                                      |
 | `k2hr3.app.extHostname`      |          | ""                                                     |
 | `k2hr3.app.extPort`          |          | 0                                                      |
+| `k2hr3.env.httpProxy`        |          | ""                                                     |
+| `k2hr3.env.httpsProxy`       |          | ""                                                     |
+| `k2hr3.env.noProxy`          |          | ""                                                     |
+| `images.app.fullImageName`   |          | ""                                                     |
+| `images.app.organization`    |          | ""                                                     |
+| `images.app.imageName`       |          | ""                                                     |
+| `images.app.version`         |          | ""                                                     |
+| `images.api.fullImageName`   |          | ""                                                     |
+| `images.api.organization`    |          | ""                                                     |
+| `images.api.imageName`       |          | ""                                                     |
+| `images.api.version`         |          | ""                                                     |
+| `images.dkc.fullImageName`   |          | ""                                                     |
+| `images.dkc.organization`    |          | ""                                                     |
+| `images.dkc.imageName`       |          | ""                                                     |
+| `images.dkc.version`         |          | ""                                                     |
+| `images.chmpx.fullImageName` |          | ""                                                     |
+| `images.chmpx.organization`  |          | ""                                                     |
+| `images.chmpx.imageName`     |          | ""                                                     |
+| `images.chmpx.version`       |          | ""                                                     |
+| `images.init.fullImageName`  |          | ""                                                     |
+| `images.init.organization`   |          | ""                                                     |
+| `images.init.imageName`      |          | ""                                                     |
+| `images.init.version`        |          | ""                                                     |
 | `mountPoint.configMap`       |          | "/configmap"                                           |
 | `mountPoint.ca`              |          | "/secret-ca"                                           |
 | `k8s.namespace`              |          | ""                                                     |
@@ -175,6 +198,118 @@ K2HR3システムのWeb Applicationサーバーのkubernetesクラスター外�
 ### k2hr3.app.extPort
 K2HR3システムのWeb Applicationサーバーのkubernetesクラスター外部からのアクセスするためのポート番号を指定します。  
 本オプションを省略した場合、未指定（`0`）となり、`32443` ポートが使用されます。  
+
+### k2hr3.env.httpProxy
+K2HR3システムの各K2HR3システムコンポーネント（K2HR3 Web Appilcation / K2HR3 REST API / K2HDKCクラスター）にPROXY設定として`HTTP_PROXY`環境変数を設定します。  
+本オプションを省略した場合、未指定（空文字列）となり、 `HTTP_PROXY` 環境変数は設定されません。  
+
+### k2hr3.env.httpsProxy
+K2HR3システムの各K2HR3システムコンポーネント（K2HR3 Web Appilcation / K2HR3 REST API / K2HDKCクラスター）にPROXY設定として`HTTPS_PROXY`環境変数を設定します。  
+本オプションを省略した場合、未指定（空文字列）となり、 `HTTPS_PROXY` 環境変数は設定されません。  
+
+### k2hr3.env.noProxy
+K2HR3システムの各K2HR3システムコンポーネント（K2HR3 Web Appilcation / K2HR3 REST API / K2HDKCクラスター）にPROXY設定として`NO_PROXY`環境変数を設定します。  
+本オプションを省略した場合、未指定（空文字列）となり、 `NO_PROXY` 環境変数は設定されません。  
+
+### images.app.fullImageName
+K2HR3システムのWeb Appilcationサーバーに使用される `Dockerイメージ名`（オーガナイゼーション名/イメージ名:タグ名）を指定します。   
+本オプションを省略した場合、未指定（空文字列）となり、 本Helm Chartがリリースされた時点での最新の `Dockerイメージ` (例：`antpickax/k2hr3-app:1.0.17` )が使用されます。  
+本オプションを指定した場合は、`images.app.organization`、`images.app.imageName` および `images.app.version` を指定できません。  
+
+### images.app.organization
+K2HR3システムのWeb Appilcationサーバーに使用される `Dockerイメージ` のオーガナイゼーション名を指定します。   
+本オプションを省略した場合、未指定（空文字列）となり、 `antpickax` が使用されます。  
+本オプションを指定した場合は、`images.app.fullImageName` を指定できません。  
+
+### images.app.imageName
+K2HR3システムのWeb Appilcationサーバーに使用される `Dockerイメージ` のイメージ名を指定します。   
+本オプションを省略した場合、未指定（空文字列）となり、 `k2hr3-app` が使用されます。  
+本オプションを指定した場合は、`images.app.fullImageName` を指定できません。  
+
+### images.app.version
+K2HR3システムのWeb Appilcationサーバーに使用される `Dockerイメージ` のタグ名を指定します。   
+本オプションを省略した場合、未指定（空文字列）となり、 本Helm Chartがリリースされた時点での最新の `antpickax/k2hr3-app` イメージの最新タグ名 (例：`1.0.17` )が使用されます。  
+本オプションを指定した場合は、`images.app.fullImageName` を指定できません。  
+
+### images.api.fullImageName
+K2HR3システムのREST APIサーバーに使用される `Dockerイメージ名`（オーガナイゼーション名/イメージ名:タグ名）を指定します。   
+本オプションを省略した場合、未指定（空文字列）となり、 本Helm Chartがリリースされた時点での最新の `Dockerイメージ` (例：`antpickax/k2hr3-api:1.0.21` )が使用されます。  
+本オプションを指定した場合は、`images.api.organization`、`images.api.imageName` および `images.api.version` を指定できません。  
+
+### images.api.organization
+K2HR3システムのREST APIサーバーに使用される `Dockerイメージ` のオーガナイゼーション名を指定します。   
+本オプションを省略した場合、未指定（空文字列）となり、 `antpickax` が使用されます。  
+本オプションを指定した場合は、`images.api.fullImageName` を指定できません。  
+
+### images.api.imageName
+K2HR3システムのREST APIサーバーに使用される `Dockerイメージ` のイメージ名を指定します。   
+本オプションを省略した場合、未指定（空文字列）となり、 `k2hr3-api` が使用されます。  
+本オプションを指定した場合は、`images.api.fullImageName` を指定できません。  
+
+### images.api.version
+K2HR3システムのREST APIサーバーに使用される `Dockerイメージ` のタグ名を指定します。   
+本オプションを省略した場合、未指定（空文字列）となり、 本Helm Chartがリリースされた時点での最新の `antpickax/k2hr3-api` イメージの最新タグ名 (例：`1.0.21` )が使用されます。  
+本オプションを指定した場合は、`images.api.fullImageName` を指定できません。  
+
+### images.dkc.fullImageName
+K2HR3システムのK2HDKCクラスターに使用される `Dockerイメージ名`（オーガナイゼーション名/イメージ名:タグ名）を指定します。   
+本オプションを省略した場合、未指定（空文字列）となり、 本Helm Chartがリリースされた時点での最新の `Dockerイメージ` (例：`antpickax/k2hdkc:1.0.6` )が使用されます。  
+本オプションを指定した場合は、`images.dkc.organization`、`images.dkc.imageName` および `images.dkc.version` を指定できません。  
+
+### images.dkc.organization
+K2HR3システムのK2HDKCクラスターに使用される `Dockerイメージ` のオーガナイゼーション名を指定します。   
+本オプションを省略した場合、未指定（空文字列）となり、 `antpickax` が使用されます。  
+本オプションを指定した場合は、`images.dkc.fullImageName` を指定できません。  
+
+### images.dkc.imageName
+K2HR3システムのK2HDKCクラスターに使用される `Dockerイメージ` のイメージ名を指定します。   
+本オプションを省略した場合、未指定（空文字列）となり、 `k2hdkc` が使用されます。  
+本オプションを指定した場合は、`images.dkc.fullImageName` を指定できません。  
+
+### images.dkc.version
+K2HR3システムのK2HDKCクラスターに使用される `Dockerイメージ` のタグ名を指定します。   
+本オプションを省略した場合、未指定（空文字列）となり、 本Helm Chartがリリースされた時点での最新の `antpickax/k2hdkc` イメージの最新タグ名 (例：`1.0.6` )が使用されます。  
+本オプションを指定した場合は、`images.dkc.fullImageName` を指定できません。  
+
+### images.chmpx.fullImageName
+K2HR3システムのK2HDKCクラスターおよびREST APIサーバーが利用するCHMPXプロセスに使用される `Dockerイメージ名`（オーガナイゼーション名/イメージ名:タグ名）を指定します。   
+本オプションを省略した場合、未指定（空文字列）となり、 本Helm Chartがリリースされた時点での最新の `Dockerイメージ` (例：`antpickax/chmpx:1.0.99` )が使用されます。  
+本オプションを指定した場合は、`images.chmpx.organization`、`images.chmpx.imageName` および `images.chmpx.version` を指定できません。  
+
+### images.chmpx.organization
+K2HR3システムのK2HDKCクラスターおよびREST APIサーバーが利用するCHMPXプロセスに使用される `Dockerイメージ` のオーガナイゼーション名を指定します。   
+本オプションを省略した場合、未指定（空文字列）となり、 `antpickax` が使用されます。  
+本オプションを指定した場合は、`images.chmpx.fullImageName` を指定できません。  
+
+### images.chmpx.imageName
+K2HR3システムのK2HDKCクラスターおよびREST APIサーバーが利用するCHMPXプロセスに使用される `Dockerイメージ` のイメージ名を指定します。   
+本オプションを省略した場合、未指定（空文字列）となり、 `chmpx` が使用されます。  
+本オプションを指定した場合は、`images.chmpx.fullImageName` を指定できません。  
+
+### images.chmpx.version
+K2HR3システムのK2HDKCクラスターおよびREST APIサーバーが利用するCHMPXプロセスに使用される `Dockerイメージ` のタグ名を指定します。   
+本オプションを省略した場合、未指定（空文字列）となり、 本Helm Chartがリリースされた時点での最新の `antpickax/chmpx` イメージの最新タグ名 (例：`1.0.99` )が使用されます。  
+本オプションを指定した場合は、`images.chmpx.fullImageName` を指定できません。  
+
+### images.init.fullImageName
+K2HR3システムの各K2HR3システムコンポーネント（K2HR3 Web Appilcation / K2HR3 REST API / K2HDKCクラスター）の初期化用コンテナーで使用される `Dockerイメージ名`（オーガナイゼーション名/イメージ名:タグ名）を指定します。   
+本オプションを省略した場合、未指定（空文字列）となり、 本Helm Chartがリリースされた時点での最新の `Dockerイメージ` (例：`alpine:3.17.3` )が使用されます。  
+本オプションを指定した場合は、`images.init.organization`、`images.init.imageName` および `images.init.version` を指定できません。  
+
+### images.init.organization
+K2HR3システムの各K2HR3システムコンポーネント（K2HR3 Web Appilcation / K2HR3 REST API / K2HDKCクラスター）の初期化用コンテナーで使用される `Dockerイメージ` のオーガナイゼーション名を指定します。   
+本オプションを省略した場合、未指定（空文字列）となり、 未設定となります。  
+本オプションを指定した場合は、`images.init.fullImageName` を指定できません。  
+
+### images.init.imageName
+K2HR3システムの各K2HR3システムコンポーネント（K2HR3 Web Appilcation / K2HR3 REST API / K2HDKCクラスター）の初期化用コンテナーで使用される `Dockerイメージ` のイメージ名を指定します。   
+本オプションを省略した場合、未指定（空文字列）となり、 `alpine` が使用されます。  
+本オプションを指定した場合は、`images.init.fullImageName` を指定できません。  
+
+### images.init.version
+K2HR3システムの各K2HR3システムコンポーネント（K2HR3 Web Appilcation / K2HR3 REST API / K2HDKCクラスター）の初期化用コンテナーで使用される `Dockerイメージ` のタグ名を指定します。   
+本オプションを省略した場合、未指定（空文字列）となり、 本Helm Chartがリリースされた時点での最新の `alpine` イメージの最新タグ名 (例：`3.17.3` )が使用されます。  
+本オプションを指定した場合は、`images.init.fullImageName` を指定できません。  
 
 ### mountPoint.configMap
 構築するK2HR3システムの各コンテナーが利用する `configMap`をマウントするディレクトリパスを指定します。  

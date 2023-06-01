@@ -68,6 +68,29 @@ Below is a list of the options offered by the **K2HR3 Helm Chart**.
 | `k2hr3.app.count`            |              | 2                                                      |
 | `k2hr3.app.extHostname`      |              | ""                                                     |
 | `k2hr3.app.extPort`          |              | 0                                                      |
+| `k2hr3.env.httpProxy`        |              | ""                                                     |
+| `k2hr3.env.httpsProxy`       |              | ""                                                     |
+| `k2hr3.env.noProxy`          |              | ""                                                     |
+| `images.app.fullImageName`   |              | ""                                                     |
+| `images.app.organization`    |              | ""                                                     |
+| `images.app.imageName`       |              | ""                                                     |
+| `images.app.version`         |              | ""                                                     |
+| `images.api.fullImageName`   |              | ""                                                     |
+| `images.api.organization`    |              | ""                                                     |
+| `images.api.imageName`       |              | ""                                                     |
+| `images.api.version`         |              | ""                                                     |
+| `images.dkc.fullImageName`   |              | ""                                                     |
+| `images.dkc.organization`    |              | ""                                                     |
+| `images.dkc.imageName`       |              | ""                                                     |
+| `images.dkc.version`         |              | ""                                                     |
+| `images.chmpx.fullImageName` |              | ""                                                     |
+| `images.chmpx.organization`  |              | ""                                                     |
+| `images.chmpx.imageName`     |              | ""                                                     |
+| `images.chmpx.version`       |              | ""                                                     |
+| `images.init.fullImageName`  |              | ""                                                     |
+| `images.init.organization`   |              | ""                                                     |
+| `images.init.imageName`      |              | ""                                                     |
+| `images.init.version`        |              | ""                                                     |
 | `mountPoint.configMap`       |              | "/configmap"                                           |
 | `mountPoint.ca`              |              | "/secret-ca"                                           |
 | `k8s.namespace`              |              | ""                                                     |
@@ -175,6 +198,118 @@ If you are using `minikube`, be sure to specify the host name that run `minikube
 ### k2hr3.app.extPort
 Specifies the port number for access from outside the kubernetes cluster to the Web Application server on the K2HR3 system.  
 If this option is omitted, it will be used `0` and the `32443` port will be used.  
+
+### k2hr3.env.httpProxy
+Specifies `HTTP_PROXY` environment in each K2HR3 system component(K2HR3 Web Appilcation / K2HR3 REST API / K2HDKC cluster) when building the K2HR3 system.  
+If this option is omitted, the number of servers will not set `HTTP_PROXY` environment.  
+
+### k2hr3.env.httpsProxy
+Specifies `HTTPS_PROXY` environment in each K2HR3 system component(K2HR3 Web Appilcation / K2HR3 REST API / K2HDKC cluster) when building the K2HR3 system.  
+If this option is omitted, the number of servers will not set `HTTPS_PROXY` environment.  
+
+### k2hr3.env.noProxy
+Specifies `NO_PROXY` environment in each K2HR3 system component(K2HR3 Web Appilcation / K2HR3 REST API / K2HDKC cluster) when building the K2HR3 system.  
+If this option is omitted, the number of servers will not set `NO_PROXY` environment.  
+
+### images.app.fullImageName
+Specifies `Docker Image` ( Organization / Image name / Image Tag ) for K2HR3 Web Appilcation.  
+If this option is omitted, it will be used the latest ( `antpickax/k2hr3-app:1.0.17` ) when this K2HR3 Helm Chart was released.  
+If you specify this option, you cannot specify `images.app.organization`, `images.app.imageName` and `images.app.version`.  
+
+### images.app.organization
+Specifies `Organization Name` of `Docker Image` for K2HR3 Web Appilcation.  
+If this option is omitted, it will be used `antpickax`.  
+If you specify this option, you cannot specify `images.app.fullImageName`.  
+
+### images.app.imageName
+Specifies `Image Name` of `Docker Image` for K2HR3 Web Appilcation.  
+If this option is omitted, it will be used `k2hr3-app`.  
+If you specify this option, you cannot specify `images.app.fullImageName`.  
+
+### images.app.version
+Specifies `Tag(version) Name` of `Docker Image` for K2HR3 Web Appilcation.  
+If this option is omitted, it will be used the latest Tag version( `1.0.17`, not `latest` tag ) when this K2HR3 Helm Chart was released.  
+If you specify this option, you cannot specify `images.app.fullImageName`.  
+
+### images.api.fullImageName
+Specifies `Docker Image` ( Organization / Image name / Image Tag ) for K2HR3 REST API.  
+If this option is omitted, it will be used the latest ( `antpickax/k2hr3-api:1.0.21` ) when this K2HR3 Helm Chart was released.  
+If you specify this option, you cannot specify `images.api.organization`, `images.api.imageName` and `images.api.version`.  
+
+### images.api.organization
+Specifies `Organization Name` of `Docker Image` for K2HR3 REST API.  
+If this option is omitted, it will be used `antpickax`.  
+If you specify this option, you cannot specify `images.api.fullImageName`.  
+
+### images.api.imageName
+Specifies `Image Name` of `Docker Image` for K2HR3 REST API.  
+If this option is omitted, it will be used `k2hr3-api`.  
+If you specify this option, you cannot specify `images.api.fullImageName`.  
+
+### images.api.version
+Specifies `Tag(version) Name` of `Docker Image` for K2HR3 REST API.  
+If this option is omitted, it will be used the latest Tag version( `1.0.21`, not `latest` tag ) when this K2HR3 Helm Chart was released.  
+If you specify this option, you cannot specify `images.api.fullImageName`.  
+
+### images.dkc.fullImageName
+Specifies `Docker Image` ( Organization / Image name / Image Tag ) for K2DKC cluster.  
+If this option is omitted, it will be used the latest ( `antpickax/k2hdkc:1.0.6` ) when this K2HR3 Helm Chart was released.  
+If you specify this option, you cannot specify `images.dkc.organization`, `images.dkc.imageName` and `images.dkc.version`.  
+
+### images.dkc.organization
+Specifies `Organization Name` of `Docker Image` for K2DKC cluster.  
+If this option is omitted, it will be used `antpickax`.  
+If you specify this option, you cannot specify `images.dkc.fullImageName`.  
+
+### images.dkc.imageName
+Specifies `Image Name` of `Docker Image` for K2DKC cluster.  
+If this option is omitted, it will be used `k2hdkc`.  
+If you specify this option, you cannot specify `images.dkc.fullImageName`.  
+
+### images.dkc.version
+Specifies `Tag(version) Name` of `Docker Image` for K2DKC cluster.  
+If this option is omitted, it will be used the latest Tag version( `1.0.6`, not `latest` tag ) when this K2HR3 Helm Chart was released.  
+If you specify this option, you cannot specify `images.dkc.fullImageName`.  
+
+### images.chmpx.fullImageName
+Specifies `Tag(version) Name` of `Docker Image` for CHMPX process used by K2HDKC cluster and REST API server.  
+If this option is omitted, it will be used the latest ( `antpickax/chmpx:1.0.99` ) when this K2HR3 Helm Chart was released.  
+If you specify this option, you cannot specify `images.chmpx.organization`, `images.chmpx.imageName` and `images.chmpx.version`.  
+
+### images.chmpx.organization
+Specifies `Organization Name` of `Docker Image` for CHMPX process used by K2HDKC cluster and REST API server.  
+If this option is omitted, it will be used `antpickax`.  
+If you specify this option, you cannot specify `images.chmpx.fullImageName`.  
+
+### images.chmpx.imageName
+Specifies `Image Name` of `Docker Image` for CHMPX process used by K2HDKC cluster and REST API server.  
+If this option is omitted, it will be used `chmpx`.  
+If you specify this option, you cannot specify `images.chmpx.fullImageName`.  
+
+### images.chmpx.version
+Specifies `Tag(version) Name` of `Docker Image` for CHMPX process used by K2HDKC cluster and REST API server.  
+If this option is omitted, it will be used the latest Tag version( `1.0.99`, not `latest` tag ) when this K2HR3 Helm Chart was released.  
+If you specify this option, you cannot specify `images.chmpx.fullImageName`.  
+
+### images.init.fullImageName
+Specifies `Tag(version) Name` of `Docker Image` for Initialization container for each K2HR3 system component (K2HR3 Web Appilcation / K2HR3 REST API / K2HDKC cluster).  
+If this option is omitted, it will be used the latest ( `alpine:3.17.3` ) when this K2HR3 Helm Chart was released.  
+If you specify this option, you cannot specify `images.init.organization`, `images.init.imageName` and `images.init.version`.  
+
+### images.init.organization
+Specifies `Organization Name` of `Docker Image` for Initialization container for each K2HR3 system component (K2HR3 Web Appilcation / K2HR3 REST API / K2HDKC cluster).  
+If this option is omitted, it will be used empty string.  
+If you specify this option, you cannot specify `images.init.fullImageName`.  
+
+### images.init.imageName
+Specifies `Image Name` of `Docker Image` for Initialization container for each K2HR3 system component (K2HR3 Web Appilcation / K2HR3 REST API / K2HDKC cluster).  
+If this option is omitted, it will be used `alpine`.  
+If you specify this option, you cannot specify `images.init.fullImageName`.  
+
+### images.init.version
+Specifies `Tag(version) Name` of `Docker Image` for Initialization container for each K2HR3 system component (K2HR3 Web Appilcation / K2HR3 REST API / K2HDKC cluster).  
+If this option is omitted, it will be used the latest Tag version( `3.17.3`, not `latest` tag ) when this K2HR3 Helm Chart was released.  
+If you specify this option, you cannot specify `images.init.fullImageName`.  
 
 ### mountPoint.configMap
 Specifies the directory path to mount the `configMap` used by each container on the K2HR3 system you are installing.  
