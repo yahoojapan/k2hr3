@@ -64,10 +64,12 @@ Below is a list of the options offered by the **K2HR3 Helm Chart**.
 | `k2hr3.api.count`            |              | 2                                                      |
 | `k2hr3.api.extHostname`      |              | ""                                                     |
 | `k2hr3.api.extPort`          |              | 0                                                      |
+| `k2hr3.api.customConf`       |              | ""                                                     |
 | `k2hr3.app.baseName`         |              | ""                                                     |
 | `k2hr3.app.count`            |              | 2                                                      |
 | `k2hr3.app.extHostname`      |              | ""                                                     |
 | `k2hr3.app.extPort`          |              | 0                                                      |
+| `k2hr3.app.customConf`       |              | ""                                                     |
 | `k2hr3.env.httpProxy`        |              | ""                                                     |
 | `k2hr3.env.httpsProxy`       |              | ""                                                     |
 | `k2hr3.env.noProxy`          |              | ""                                                     |
@@ -181,6 +183,11 @@ If you are using `minikube`, be sure to specify the host name that run `minikube
 Specifies the port number for access from outside the kubernetes cluster to the REST API server on the K2HR3 system.  
 If this option is omitted, it will be used `0` and the `31443` port will be used.  
 
+### k2hr3.api.customConf
+Specify the contents of the `local.json` file, which is one of the configuration files for the REST API server of the K2HR3 system, and overwrite the default configuration values.  
+Specify the value in `JSON String` format.  
+If this option is omitted, the `local.json` file will not be used.  
+
 ### k2hr3.app.baseName
 Specifies the base name of the Web Application server for the K2HR3 system.  
 If this option is omitted, it will be used empty string and `r3app` will be used.  
@@ -198,6 +205,11 @@ If you are using `minikube`, be sure to specify the host name that run `minikube
 ### k2hr3.app.extPort
 Specifies the port number for access from outside the kubernetes cluster to the Web Application server on the K2HR3 system.  
 If this option is omitted, it will be used `0` and the `32443` port will be used.  
+
+### k2hr3.app.customConf
+Specify the contents of the `local.json` file, which is one of the configuration files for the Web Application server of the K2HR3 system, and overwrite the default configuration values.  
+Specify the value in `JSON String` format.  
+If this option is omitted, the `local.json` file will not be used.  
 
 ### k2hr3.env.httpProxy
 Specifies `HTTP_PROXY` environment in each K2HR3 system component(K2HR3 Web Appilcation / K2HR3 REST API / K2HDKC cluster) when building the K2HR3 system.  

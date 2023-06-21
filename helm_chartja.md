@@ -65,10 +65,12 @@ K2HR3 Helm Chart を [Helm](https://helm.sh/ja/)（Kubernetes用パッケージ�
 | `k2hr3.api.count`            |          | 2                                                      |
 | `k2hr3.api.extHostname`      |          | ""                                                     |
 | `k2hr3.api.extPort`          |          | 0                                                      |
+| `k2hr3.api.customConf`       |          | ""                                                     |
 | `k2hr3.app.baseName`         |          | ""                                                     |
 | `k2hr3.app.count`            |          | 2                                                      |
 | `k2hr3.app.extHostname`      |          | ""                                                     |
 | `k2hr3.app.extPort`          |          | 0                                                      |
+| `k2hr3.app.customConf`       |          | ""                                                     |
 | `k2hr3.env.httpProxy`        |          | ""                                                     |
 | `k2hr3.env.httpsProxy`       |          | ""                                                     |
 | `k2hr3.env.noProxy`          |          | ""                                                     |
@@ -181,6 +183,11 @@ K2HR3システムのREST APIサーバーのkubernetesクラスター外部から
 K2HR3システムのREST APIサーバーのkubernetesクラスター外部からのアクセスするためのポート番号を指定します。  
 本オプションを省略した場合、未指定（`0`）となり、`31443` ポートが使用されます。  
 
+### k2hr3.api.customConf
+K2HR3システムのREST APIサーバーの設定ファイルの一つである `local.json` ファイルの中身を指定でき、デフォルトの設定値を上書きすることができます。  
+値は、`JSON String` 形式で指定します。  
+本オプションを省略した場合、`local.json` ファイルは未設定となります。  
+
 ### k2hr3.app.baseName
 K2HR3システムのWeb Applicationサーバーのベース名を指定します。  
 本オプションを省略した場合、未指定（空文字列）となり、 `r3app` が使用されます。  
@@ -198,6 +205,11 @@ K2HR3システムのWeb Applicationサーバーのkubernetesクラスター外�
 ### k2hr3.app.extPort
 K2HR3システムのWeb Applicationサーバーのkubernetesクラスター外部からのアクセスするためのポート番号を指定します。  
 本オプションを省略した場合、未指定（`0`）となり、`32443` ポートが使用されます。  
+
+### k2hr3.app.customConf
+K2HR3システムのWeb Applicationサーバーの設定ファイルの一つである `local.json` ファイルの中身を指定でき、デフォルトの設定値を上書きすることができます。  
+値は、`JSON String` 形式で指定します。  
+本オプションを省略した場合、`local.json` ファイルは未設定となります。  
 
 ### k2hr3.env.httpProxy
 K2HR3システムの各K2HR3システムコンポーネント（K2HR3 Web Appilcation / K2HR3 REST API / K2HDKCクラスター）にPROXY設定として`HTTP_PROXY`環境変数を設定します。  

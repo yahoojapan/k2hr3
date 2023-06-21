@@ -146,6 +146,9 @@ By default, the image `antpickax/k2hr3-app:X.Y.Z` is used.
 This page allows you to change this `Docker image` to any image.  
 When changing images, you can set the organization name, image name, and image tag all at once, or specify them individually.  
 
+If you want to change the default settings of `K2HR3 Web Application`, you can specify `Custom Configuration` field as `local.json` to overwrite default configuration.  
+This value is specified by `JSON String`.  
+
 After entering the required items, the setting of this `K2HR3 Web Application` item is completed.  
 
 #### K2HR3 REST API
@@ -166,6 +169,9 @@ Alternatively, set the `Hostname` that can reach this `NodePort` service accordi
 By default, the image `antpickax/k2hr3-api:X.Y.Z` is used.  
 This page allows you to change this `Docker image` to any image.  
 When changing images, you can set the organization name, image name, and image tag all at once, or specify them individually.  
+
+If you want to change the default settings of `K2HR3 REST API`, you can specify `Custom Configuration` field as `local.json` to overwrite default configuration.  
+This value is specified by `JSON String`.  
 
 After entering the required items, the setting of this `K2HR3 REST API` item is completed.  
 
