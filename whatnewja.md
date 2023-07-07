@@ -14,6 +14,9 @@ next_string: Detail
 ---
 
 # What's new
+## 2023年7月7日
+K2HR3 API (Version 1.0.25) をリリースし、Github.comで公開しました。  
+
 ## 2023年6月21日
 K2HR3 API (Version 1.0.24)、K2HR3 APP (Version 1.0.20)、K2HR3 Helm Chart (Version 1.0.9) をリリースし、Github.comで公開しました。  
 

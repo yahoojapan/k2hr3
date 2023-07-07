@@ -5,8 +5,8 @@ title: SERVICE API
 short_desc: K2Hdkc based Resource and Roles and policy Rules
 lang_opp_file: api_service.html
 lang_opp_word: To English
-prev_url: api_policyja.html
-prev_string: POLICY API
+prev_url: api_tenantja.html
+prev_string: TENANT API
 top_url: apija.html
 top_string: REST API
 next_url: api_acrja.html
