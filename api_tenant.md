@@ -65,7 +65,7 @@ It is necessary to specify the USER name registered in the K2HR3 system, and if 
 And the USER name can not set as [YRN](detail_variousen.html) full path.  
 
 ### Response status
-201¿40x
+201, 40x
 
 ### Response Body(JSON)
 ```
@@ -87,7 +87,7 @@ All TENANT APIs require an Unscoped User Token or a Scoped User Token.
 If a Scoped User Token is specified, the tenant indicated by that token will be ignored and only the USER information will be used as with the Unscoped User Token.  
 
 ### Endpoint(URL)
-http(s)://_API SERVER:PORT_/v1/tenant{?name=...}
+http(s)://_API SERVER:PORT_/v1/tenant?name=_tenant name_&...
 
 ### Header
 ```
@@ -112,7 +112,7 @@ It is necessary to specify the USER name registered in the K2HR3 system, and if 
 And the USER name can not set as [YRN](detail_variousen.html) full path.  
 
 ### Response status
-201¿40x
+201, 40x
 
 ### Response Body(JSON)
 ```
@@ -174,7 +174,7 @@ It is necessary to specify the USER name registered in the K2HR3 system, and if 
 And the USER name can not set as [YRN](detail_variousen.html) full path.  
 
 ### Response status
-201¿40x
+201, 40x
 
 ### Response Body(JSON)
 ```
@@ -196,7 +196,7 @@ All TENANT APIs require an Unscoped User Token or a Scoped User Token.
 If a Scoped User Token is specified, the tenant indicated by that token will be ignored and only the USER information will be used as with the Unscoped User Token.  
 
 ### Endpoint(URL)
-http(s)://_API SERVER:PORT_/v1/tenant/_tenant name_{?id=...}
+http(s)://_API SERVER:PORT_/v1/tenant/_tenant name_?id=_tenant id_
 
 - tenant name  
 Specify the K2HR3 cluster Local Tenant(TENANT) name.  
@@ -226,7 +226,7 @@ It is necessary to specify the USER name registered in the K2HR3 system, and if 
 And the USER name can not set as [YRN](detail_variousen.html) full path.  
 
 ### Response status
-201¿40x
+201, 40x
 
 ### Response Body(JSON)
 ```
@@ -249,7 +249,7 @@ All TENANT APIs require an Unscoped User Token or a Scoped User Token.
 If a Scoped User Token is specified, the tenant indicated by that token will be ignored and only the USER information will be used as with the Unscoped User Token.  
 
 ### Endpoint(URL)
-http(s)://_API SERVER:PORT_/v1/tenant{?expand=true/false}
+http(s)://_API SERVER:PORT_/v1/tenant?expand=_true or false_
 
 ### Header
 ```
@@ -264,10 +264,10 @@ Specify _true_ as this value to expand.
 When specify _true_, it contains all information for each TENANT.  
 
 ### Response status
-200¿40x
+200, 40x
 
 ### Response Body(JSON) 
-- Expanding¿expand=true¿  
+- Expanding (expand=true)  
 ```
 {
     result:           <true/false>
@@ -284,7 +284,7 @@ When specify _true_, it contains all information for each TENANT.
     ]
 }
 ```
-- Not expanding¿expand=false¿  
+- Not expanding(expand=false)  
 ```
 {
     result:   <true/false>
@@ -334,7 +334,7 @@ x-auth-token: U=<Scoped User Token>
 ```
 
 ### Response status
-200¿40x
+200, 40x
 
 ### Response Body(JSON) 
 ```
@@ -388,7 +388,7 @@ x-auth-token: U=<Scoped User Token>
 ```
 
 ### Response status
-204¿40x
+204, 40x
 
 ### Response Body(JSON)
 Empty
@@ -403,7 +403,7 @@ All TENANT APIs require an Unscoped User Token or a Scoped User Token.
 If a Scoped User Token is specified, the tenant indicated by that token will be ignored and only the USER information will be used as with the Unscoped User Token.  
 
 ### Endpoint(URL)
-http(s)://_API SERVER:PORT_/v1/tenant/_tenant name_{?id=<tenant id>}
+http(s)://_API SERVER:PORT_/v1/tenant/_tenant name_?id=_tenant id_
 
 - tenant name  
 Specify the K2HR3 cluster Local Tenant(TENANT) name.  
@@ -422,7 +422,7 @@ Specify the _ID_ of the K2HR3 cluster Local Tenant(TENANT).
 If the K2HR3 Cluster Local Tenant(TENANT) name and this _ID_ value do not match, it will be failure.  
 
 ### Response status
-204¿40x
+204, 40x
 
 ### Response Body(JSON)
 Empty

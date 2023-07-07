@@ -15,19 +15,19 @@ next_string: SERVICE API
 
 # TENANT API
 
-K2HR3 REST API¿K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿API¿¿¿¿  
+K2HR3 REST APIã®K2HR3ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼ãƒ­ãƒ¼ã‚«ãƒ«ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã«é–¢é€£ã™ã‚‹APIç¾¤ã§ã™ã€‚  
 
-### ¿¿
-K2HR3 ¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿OpenStack¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿ Kubernetes ¿ Namespace ¿¿¿¿¿¿  
-K2HR3 REST API¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿`localtenants=true`¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿  
-TENANT API¿¿K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿API¿¿¿
+### è£œè¶³
+K2HR3 ã‚·ã‚¹ãƒ†ãƒ ã®ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã¯ã€é€£æºã™ã‚‹OpenStackã®ãƒ†ãƒŠãƒ³ãƒˆï¼ˆã¾ãŸã¯ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆï¼‰ã€ã‚‚ã—ãã¯ Kubernetes ã® Namespace ã‚’ä½¿ã„ã¾ã™ã€‚  
+K2HR3 REST APIã®è¨­å®šï¼ˆã‚³ãƒ³ãƒ•ã‚£ã‚°ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ï¼‰ã§ã€K2HR3ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼ãƒ­ãƒ¼ã‚«ãƒ«ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰æ©Ÿèƒ½ã‚’æœ‰åŠ¹ï¼ˆ`localtenants=true`ï¼‰ã¨ã—ãŸå ´åˆã€ç‹¬è‡ªã®ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã‚’ä½œæˆãƒ»ç·¨é›†ãƒ»å‰Šé™¤ã™ã‚‹ã“ã¨ãŒã§ãã¾ã™ã€‚  
+TENANT APIã¯ã€K2HR3ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼ãƒ­ãƒ¼ã‚«ãƒ«ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã‚’æ“ä½œã™ã‚‹APIã§ã™ã€‚
 
-## POST¿¿¿¿¿¿
-Unscoped User Token¿¿¿¿¿Scoped User Token¿¿¿¿¿¿K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿  
+## POSTï¼ˆæ–°è¦ä½œæˆï¼‰
+Unscoped User Tokenã‚‚ã—ãã¯ã€Scoped User Tokenã‚’æŒ‡å®šã—ã¦ã€K2HR3ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼ãƒ­ãƒ¼ã‚«ãƒ«ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã‚’æ–°è¦ä½œæˆã—ã¾ã™ã€‚  
 
-#### ¿¿
-¿¿¿¿TENANT API¿¿¿Unscoped User Token¿¿¿¿¿Scoped User Token¿¿¿¿¿¿  
-Scoped User Token¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿Unscoped User Token¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿  
+#### æ³¨æ„
+ã™ã¹ã¦ã®TENANT APIã«ã¯ã€Unscoped User Tokenã‚‚ã—ãã¯ã€Scoped User TokenãŒå¿…è¦ã§ã™ã€‚  
+Scoped User TokenãŒæŒ‡å®šã•ã‚ŒãŸå ´åˆã€ãã®ãƒˆãƒ¼ã‚¯ãƒ³ãŒç¤ºã™ãƒ†ãƒŠãƒ³ãƒˆã¯ç„¡è¦–ã•ã‚Œã€Unscoped User Tokenã¨åŒæ§˜ã«ãƒ¦ãƒ¼ã‚¶æƒ…å ±ã®ã¿ã‚’ä½¿ç”¨ã—ã¾ã™ã€‚  
 
 ### Endpoint(URL)
 http(s)://_API SERVER:PORT_/v1/tenant
@@ -50,22 +50,22 @@ x-auth-token: U=<Unscoped User Token> or <Scoped User Token>
 }
 ```
 - name  
-K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿  
-¿¿¿¿ `local@` ¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿ `local@` ¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿  
+K2HR3ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼ãƒ­ãƒ¼ã‚«ãƒ«ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰åã‚’æŒ‡å®šã—ã¾ã™ã€‚  
+ã“ã®å€¤ã« `local@` ãƒ—ãƒ¬ãƒ•ã‚£ãƒƒã‚¯ã‚¹ãŒä»˜ä¸Žã•ã‚Œã¦ã„ãªã„å ´åˆã€è‡ªå‹•çš„ã« `local@` ãƒ—ãƒ¬ãƒ•ã‚£ãƒƒã‚¯ã‚¹ãŒä»˜ä¸Žã•ã‚ŒãŸãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰åã«å¤‰æ›´ã•ã‚Œã¾ã™ã€‚  
 - desc  
-K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿¿  
-¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿  
+K2HR3ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼ãƒ­ãƒ¼ã‚«ãƒ«ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã®èª¬æ˜Žæ–‡ã‚’è¨˜è¿°ã—ã¾ã™ã€‚  
+ã“ã®å€¤ã¯çœç•¥å¯èƒ½ã§ã‚ã‚Šã€çœç•¥ã•ã‚ŒãŸå ´åˆã¯ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®èª¬æ˜Žæ–‡ãŒè¨­å®šã•ã‚Œã¾ã™ã€‚  
 - display  
-K2HR3 Web Application¿ ¿¿K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿  
-¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿  
+K2HR3 Web Applicationã§ ã“ã®K2HR3ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼ãƒ­ãƒ¼ã‚«ãƒ«ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã‚’è¡¨ç¤ºã—ãŸæ™‚ã®è¡¨ç¤ºåã‚’æŒ‡å®šã—ã¾ã™ã€‚  
+ã“ã®å€¤ã¯çœç•¥å¯èƒ½ã§ã‚ã‚Šã€çœç•¥ã•ã‚ŒãŸå ´åˆã¯ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰åãŒè¨­å®šã•ã‚Œã¾ã™ã€‚  
 - users  
-¿¿¿¿ K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿USER¿¿¿¿¿¿¿¿¿¿¿¿¿¿  
-¿¿¿¿¿¿¿¿¿¿¿¿ (Un)Scoped User Token¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿  
-K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿USER¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿[YRN](detail_variousja.html)¿¿¿¿¿¿¿¿¿¿¿¿¿  
-¿¿¿¿USER¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿  
+ä½œæˆã™ã‚‹ K2HR3ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼ãƒ­ãƒ¼ã‚«ãƒ«ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã‚’åˆ©ç”¨ã§ãã‚‹ãƒ¦ãƒ¼ã‚¶ï¼ˆUSERï¼‰åã‚’é…åˆ—ã¨ã—ã¦è¨­å®šã—ã¾ã™ã€‚  
+ã“ã®ãƒªã‚¯ã‚¨ã‚¹ãƒˆã‚’é€ä¿¡ã™ã‚‹ (Un)Scoped User Tokenã§ç¤ºã•ã‚Œã‚‹ãƒ¦ãƒ¼ã‚¶ã¯ã€çœç•¥ã§ãã¾ã™ã€‚  
+K2HR3ã‚·ã‚¹ãƒ†ãƒ ã«ç™»éŒ²ã•ã‚Œã¦ã„ã‚‹ãƒ¦ãƒ¼ã‚¶ï¼ˆUSERï¼‰åã‚’æŒ‡å®šã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ã€‚ï¼ˆ[YRN](detail_variousja.html)ãƒ•ãƒ«ãƒ‘ã‚¹ã§ã¯ã‚ã‚Šã¾ã›ã‚“ã€‚ï¼‰  
+ãƒ¦ãƒ¼ã‚¶ï¼ˆUSERï¼‰ãŒå­˜åœ¨ã—ãªã„å ´åˆã«ã¯ã€ç„¡è¦–ã•ã‚Œã¾ã™ã€‚  
 
 ### Response status
-201¿40x
+201ã€40x
 
 ### Response Body(JSON)
 ```
@@ -75,19 +75,19 @@ K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿USER¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿[YRN](detail_variousja.html)¿¿¿¿¿¿¿¿¿¿¿
 }
 ```
 - result  
-API¿¿¿¿¿¿true/false¿¿¿¿¿¿
+APIã®å‡¦ç†çµæžœã‚’true/falseã§è¿”ã—ã¾ã™ã€‚
 - message  
-¿¿¿¿¿false¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿
+å‡¦ç†çµæžœãŒfalseï¼ˆå¤±æ•—ï¼‰ã®ã¨ãã«ã€ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãŒæ ¼ç´ã•ã‚Œã¾ã™ã€‚
 
-## PUT¿¿¿¿¿¿
-Unscoped User Token¿¿¿¿¿Scoped User Token¿¿¿¿¿¿K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿  
+## PUTï¼ˆæ–°è¦ä½œæˆï¼‰
+Unscoped User Tokenã‚‚ã—ãã¯ã€Scoped User Tokenã‚’æŒ‡å®šã—ã¦ã€K2HR3ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼ãƒ­ãƒ¼ã‚«ãƒ«ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã‚’æ–°è¦ä½œæˆã—ã¾ã™ã€‚  
 
-#### ¿¿
-¿¿¿¿TENANT API¿¿¿Unscoped User Token¿¿¿¿¿Scoped User Token¿¿¿¿¿¿  
-Scoped User Token¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿Unscoped User Token¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿  
+#### æ³¨æ„
+ã™ã¹ã¦ã®TENANT APIã«ã¯ã€Unscoped User Tokenã‚‚ã—ãã¯ã€Scoped User TokenãŒå¿…è¦ã§ã™ã€‚  
+Scoped User TokenãŒæŒ‡å®šã•ã‚ŒãŸå ´åˆã€ãã®ãƒˆãƒ¼ã‚¯ãƒ³ãŒç¤ºã™ãƒ†ãƒŠãƒ³ãƒˆã¯ç„¡è¦–ã•ã‚Œã€Unscoped User Tokenã¨åŒæ§˜ã«ãƒ¦ãƒ¼ã‚¶æƒ…å ±ã®ã¿ã‚’ä½¿ç”¨ã—ã¾ã™ã€‚  
 
 ### Endpoint(URL)
-http(s)://_API SERVER:PORT_/v1/tenant{?name=...}
+http(s)://_API SERVER:PORT_/v1/tenant?name=_tenant name_&...
 
 ### Header
 ```
@@ -97,23 +97,23 @@ x-auth-token: U=<Unscoped User Token> or <Scoped User Token>
 
 ### URL Arguments
 - name  
-K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿  
-¿¿¿¿ `local@` ¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿ `local@` ¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿  
+K2HR3ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼ãƒ­ãƒ¼ã‚«ãƒ«ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰åã‚’æŒ‡å®šã—ã¾ã™ã€‚  
+ã“ã®å€¤ã« `local@` ãƒ—ãƒ¬ãƒ•ã‚£ãƒƒã‚¯ã‚¹ãŒä»˜ä¸Žã•ã‚Œã¦ã„ãªã„å ´åˆã€è‡ªå‹•çš„ã« `local@` ãƒ—ãƒ¬ãƒ•ã‚£ãƒƒã‚¯ã‚¹ãŒä»˜ä¸Žã•ã‚ŒãŸãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰åã«å¤‰æ›´ã•ã‚Œã¾ã™ã€‚  
 - desc  
-K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿¿  
-¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿  
+K2HR3ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼ãƒ­ãƒ¼ã‚«ãƒ«ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã®èª¬æ˜Žæ–‡ã‚’è¨˜è¿°ã—ã¾ã™ã€‚  
+ã“ã®å€¤ã¯çœç•¥å¯èƒ½ã§ã‚ã‚Šã€çœç•¥ã•ã‚ŒãŸå ´åˆã¯ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®èª¬æ˜Žæ–‡ãŒè¨­å®šã•ã‚Œã¾ã™ã€‚  
 - display  
-K2HR3 Web Application¿ ¿¿K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿  
-¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿  
+K2HR3 Web Applicationã§ ã“ã®K2HR3ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼ãƒ­ãƒ¼ã‚«ãƒ«ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã‚’è¡¨ç¤ºã—ãŸæ™‚ã®è¡¨ç¤ºåã‚’æŒ‡å®šã—ã¾ã™ã€‚  
+ã“ã®å€¤ã¯çœç•¥å¯èƒ½ã§ã‚ã‚Šã€çœç•¥ã•ã‚ŒãŸå ´åˆã¯ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰åãŒè¨­å®šã•ã‚Œã¾ã™ã€‚  
 - users  
-¿¿¿¿ K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿USER¿¿¿¿¿¿¿¿¿¿¿¿¿¿  
-¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿  
-¿¿¿¿¿¿¿¿¿¿¿¿ (Un)Scoped User Token¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿  
-K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿USER¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿[YRN](detail_variousja.html)¿¿¿¿¿¿¿¿¿¿¿¿¿  
-¿¿¿¿USER¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿  
+ä½œæˆã™ã‚‹ K2HR3ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼ãƒ­ãƒ¼ã‚«ãƒ«ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã‚’åˆ©ç”¨ã§ãã‚‹ãƒ¦ãƒ¼ã‚¶ï¼ˆUSERï¼‰åã‚’é…åˆ—ã¨ã—ã¦è¨­å®šã—ã¾ã™ã€‚  
+è¤‡æ•°æŒ‡å®šã™ã‚‹å ´åˆã«ã¯ã€é…åˆ—ã¨ã—ã¦æŒ‡å®šã—ã¾ã™ã€‚  
+ã“ã®ãƒªã‚¯ã‚¨ã‚¹ãƒˆã‚’é€ä¿¡ã™ã‚‹ (Un)Scoped User Tokenã§ç¤ºã•ã‚Œã‚‹ãƒ¦ãƒ¼ã‚¶ã¯ã€çœç•¥ã§ãã¾ã™ã€‚  
+K2HR3ã‚·ã‚¹ãƒ†ãƒ ã«ç™»éŒ²ã•ã‚Œã¦ã„ã‚‹ãƒ¦ãƒ¼ã‚¶ï¼ˆUSERï¼‰åã‚’æŒ‡å®šã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ã€‚ï¼ˆ[YRN](detail_variousja.html)ãƒ•ãƒ«ãƒ‘ã‚¹ã§ã¯ã‚ã‚Šã¾ã›ã‚“ã€‚ï¼‰  
+ãƒ¦ãƒ¼ã‚¶ï¼ˆUSERï¼‰ãŒå­˜åœ¨ã—ãªã„å ´åˆã«ã¯ã€ç„¡è¦–ã•ã‚Œã¾ã™ã€‚  
 
 ### Response status
-201¿40x
+201ã€40x
 
 ### Response Body(JSON)
 ```
@@ -123,24 +123,24 @@ K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿USER¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿[YRN](detail_variousja.html)¿¿¿¿¿¿¿¿¿¿¿
 }
 ```
 - result  
-API¿¿¿¿¿¿true/false¿¿¿¿¿¿
+APIã®å‡¦ç†çµæžœã‚’true/falseã§è¿”ã—ã¾ã™ã€‚
 - message  
-¿¿¿¿¿false¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿
+å‡¦ç†çµæžœãŒfalseï¼ˆå¤±æ•—ï¼‰ã®ã¨ãã«ã€ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãŒæ ¼ç´ã•ã‚Œã¾ã™ã€‚
 
-## POST¿¿¿¿
-Unscoped User Token¿¿¿¿¿Scoped User Token¿¿¿¿¿¿K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿  
+## POSTï¼ˆæ›´æ–°ï¼‰
+Unscoped User Tokenã‚‚ã—ãã¯ã€Scoped User Tokenã‚’æŒ‡å®šã—ã¦ã€K2HR3ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼ãƒ­ãƒ¼ã‚«ãƒ«ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã‚’æ›´æ–°ã—ã¾ã™ã€‚  
 
-#### ¿¿
-¿¿¿¿TENANT API¿¿¿Unscoped User Token¿¿¿¿¿Scoped User Token¿¿¿¿¿¿  
-Scoped User Token¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿Unscoped User Token¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿  
+#### æ³¨æ„
+ã™ã¹ã¦ã®TENANT APIã«ã¯ã€Unscoped User Tokenã‚‚ã—ãã¯ã€Scoped User TokenãŒå¿…è¦ã§ã™ã€‚  
+Scoped User TokenãŒæŒ‡å®šã•ã‚ŒãŸå ´åˆã€ãã®ãƒˆãƒ¼ã‚¯ãƒ³ãŒç¤ºã™ãƒ†ãƒŠãƒ³ãƒˆã¯ç„¡è¦–ã•ã‚Œã€Unscoped User Tokenã¨åŒæ§˜ã«ãƒ¦ãƒ¼ã‚¶æƒ…å ±ã®ã¿ã‚’ä½¿ç”¨ã—ã¾ã™ã€‚  
 
 ### Endpoint(URL)
 http(s)://_API SERVER:PORT_/v1/tenant/_tenant name_
 
 - tenant name  
-K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿  
-¿¿¿¿ `local@` ¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿ `local@` ¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿  
-¿¿¿¿K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿  
+K2HR3ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼ãƒ­ãƒ¼ã‚«ãƒ«ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰åã‚’æŒ‡å®šã—ã¾ã™ã€‚  
+ã“ã®å€¤ã« `local@` ãƒ—ãƒ¬ãƒ•ã‚£ãƒƒã‚¯ã‚¹ãŒä»˜ä¸Žã•ã‚Œã¦ã„ãªã„å ´åˆã€è‡ªå‹•çš„ã« `local@` ãƒ—ãƒ¬ãƒ•ã‚£ãƒƒã‚¯ã‚¹ãŒä»˜ä¸Žã•ã‚ŒãŸãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰åã«å¤‰æ›´ã•ã‚Œã¾ã™ã€‚  
+æŒ‡å®šã—ãŸK2HR3ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼ãƒ­ãƒ¼ã‚«ãƒ«ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ãŒå­˜åœ¨ã—ãªã„å ´åˆã¯å¤±æ•—ã—ã¾ã™ã€‚  
 
 ### Header
 ```
@@ -160,22 +160,22 @@ x-auth-token: U=<Unscoped User Token> or <Scoped User Token>
 }
 ```
 - id  
-K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿ _ID_ ¿¿¿¿¿¿¿  
-K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿_ID_¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿
+K2HR3ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼ãƒ­ãƒ¼ã‚«ãƒ«ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã® _ID_ ã‚’æŒ‡å®šã—ã¾ã™ã€‚  
+K2HR3ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼ãƒ­ãƒ¼ã‚«ãƒ«ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰åã¨ã“ã®_ID_ãŒä¸€è‡´ã—ãªã„å ´åˆã€å¤±æ•—ã—ã¾ã™ã€‚
 - desc  
-K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿¿  
-¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿  
+K2HR3ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼ãƒ­ãƒ¼ã‚«ãƒ«ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã®èª¬æ˜Žæ–‡ã‚’è¨˜è¿°ã—ã¾ã™ã€‚  
+ã“ã®å€¤ã¯çœç•¥å¯èƒ½ã§ã‚ã‚Šã€çœç•¥ã•ã‚ŒãŸå ´åˆã¯ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®èª¬æ˜Žæ–‡ãŒè¨­å®šã•ã‚Œã¾ã™ã€‚  
 - display  
-K2HR3 Web Application¿ ¿¿K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿  
-¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿  
+K2HR3 Web Applicationã§ ã“ã®K2HR3ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼ãƒ­ãƒ¼ã‚«ãƒ«ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã‚’è¡¨ç¤ºã—ãŸæ™‚ã®è¡¨ç¤ºåã‚’æŒ‡å®šã—ã¾ã™ã€‚  
+ã“ã®å€¤ã¯çœç•¥å¯èƒ½ã§ã‚ã‚Šã€çœç•¥ã•ã‚ŒãŸå ´åˆã¯ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰åãŒè¨­å®šã•ã‚Œã¾ã™ã€‚  
 - users  
-¿¿¿¿ K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿USER¿¿¿¿¿¿¿¿¿¿¿¿¿¿  
-¿¿¿¿¿¿¿¿¿¿¿¿ (Un)Scoped User Token¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿  
-K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿USER¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿[YRN](detail_variousja.html)¿¿¿¿¿¿¿¿¿¿¿¿¿  
-¿¿¿¿USER¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿  
+ä½œæˆã™ã‚‹ K2HR3ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼ãƒ­ãƒ¼ã‚«ãƒ«ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã‚’åˆ©ç”¨ã§ãã‚‹ãƒ¦ãƒ¼ã‚¶ï¼ˆUSERï¼‰åã‚’é…åˆ—ã¨ã—ã¦è¨­å®šã—ã¾ã™ã€‚  
+ã“ã®ãƒªã‚¯ã‚¨ã‚¹ãƒˆã‚’é€ä¿¡ã™ã‚‹ (Un)Scoped User Tokenã§ç¤ºã•ã‚Œã‚‹ãƒ¦ãƒ¼ã‚¶ã¯ã€çœç•¥ã§ãã¾ã™ã€‚  
+K2HR3ã‚·ã‚¹ãƒ†ãƒ ã«ç™»éŒ²ã•ã‚Œã¦ã„ã‚‹ãƒ¦ãƒ¼ã‚¶ï¼ˆUSERï¼‰åã‚’æŒ‡å®šã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ã€‚ï¼ˆ[YRN](detail_variousja.html)ãƒ•ãƒ«ãƒ‘ã‚¹ã§ã¯ã‚ã‚Šã¾ã›ã‚“ã€‚ï¼‰  
+ãƒ¦ãƒ¼ã‚¶ï¼ˆUSERï¼‰ãŒå­˜åœ¨ã—ãªã„å ´åˆã«ã¯ã€ç„¡è¦–ã•ã‚Œã¾ã™ã€‚  
 
 ### Response status
-201¿40x
+201ã€40x
 
 ### Response Body(JSON)
 ```
@@ -185,24 +185,24 @@ K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿USER¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿[YRN](detail_variousja.html)¿¿¿¿¿¿¿¿¿¿¿
 }
 ```
 - result  
-API¿¿¿¿¿¿true/false¿¿¿¿¿¿
+APIã®å‡¦ç†çµæžœã‚’true/falseã§è¿”ã—ã¾ã™ã€‚
 - message  
-¿¿¿¿¿false¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿
+å‡¦ç†çµæžœãŒfalseï¼ˆå¤±æ•—ï¼‰ã®ã¨ãã«ã€ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãŒæ ¼ç´ã•ã‚Œã¾ã™ã€‚
 
-## PUT¿¿¿¿
-Unscoped User Token¿¿¿¿¿Scoped User Token¿¿¿¿¿¿K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿  
+## PUTï¼ˆæ›´æ–°ï¼‰
+Unscoped User Tokenã‚‚ã—ãã¯ã€Scoped User Tokenã‚’æŒ‡å®šã—ã¦ã€K2HR3ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼ãƒ­ãƒ¼ã‚«ãƒ«ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã‚’æ›´æ–°ã—ã¾ã™ã€‚  
 
-#### ¿¿
-¿¿¿¿TENANT API¿¿¿Unscoped User Token¿¿¿¿¿Scoped User Token¿¿¿¿¿¿  
-Scoped User Token¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿Unscoped User Token¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿  
+#### æ³¨æ„
+ã™ã¹ã¦ã®TENANT APIã«ã¯ã€Unscoped User Tokenã‚‚ã—ãã¯ã€Scoped User TokenãŒå¿…è¦ã§ã™ã€‚  
+Scoped User TokenãŒæŒ‡å®šã•ã‚ŒãŸå ´åˆã€ãã®ãƒˆãƒ¼ã‚¯ãƒ³ãŒç¤ºã™ãƒ†ãƒŠãƒ³ãƒˆã¯ç„¡è¦–ã•ã‚Œã€Unscoped User Tokenã¨åŒæ§˜ã«ãƒ¦ãƒ¼ã‚¶æƒ…å ±ã®ã¿ã‚’ä½¿ç”¨ã—ã¾ã™ã€‚  
 
 ### Endpoint(URL)
-http(s)://_API SERVER:PORT_/v1/tenant/_tenant name_{?id=...}
+http(s)://_API SERVER:PORT_/v1/tenant/_tenant name_?id=_tenant id_
 
 - tenant name  
-K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿  
-¿¿¿¿ `local@` ¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿ `local@` ¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿  
-¿¿¿¿K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿  
+K2HR3ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼ãƒ­ãƒ¼ã‚«ãƒ«ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰åã‚’æŒ‡å®šã—ã¾ã™ã€‚  
+ã“ã®å€¤ã« `local@` ãƒ—ãƒ¬ãƒ•ã‚£ãƒƒã‚¯ã‚¹ãŒä»˜ä¸Žã•ã‚Œã¦ã„ãªã„å ´åˆã€è‡ªå‹•çš„ã« `local@` ãƒ—ãƒ¬ãƒ•ã‚£ãƒƒã‚¯ã‚¹ãŒä»˜ä¸Žã•ã‚ŒãŸãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰åã«å¤‰æ›´ã•ã‚Œã¾ã™ã€‚  
+æŒ‡å®šã—ãŸK2HR3ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼ãƒ­ãƒ¼ã‚«ãƒ«ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ãŒå­˜åœ¨ã—ãªã„å ´åˆã¯å¤±æ•—ã—ã¾ã™ã€‚  
 
 ### Header
 ```
@@ -212,23 +212,23 @@ x-auth-token: U=<Unscoped User Token> or <Scoped User Token>
 
 ### URL Arguments
 - id  
-K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿ _ID_ ¿¿¿¿¿¿¿  
-K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿_ID_¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿
+K2HR3ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼ãƒ­ãƒ¼ã‚«ãƒ«ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã® _ID_ ã‚’æŒ‡å®šã—ã¾ã™ã€‚  
+K2HR3ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼ãƒ­ãƒ¼ã‚«ãƒ«ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰åã¨ã“ã®_ID_ãŒä¸€è‡´ã—ãªã„å ´åˆã€å¤±æ•—ã—ã¾ã™ã€‚
 - desc  
-K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿¿  
-¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿  
+K2HR3ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼ãƒ­ãƒ¼ã‚«ãƒ«ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã®èª¬æ˜Žæ–‡ã‚’è¨˜è¿°ã—ã¾ã™ã€‚  
+ã“ã®å€¤ã¯çœç•¥å¯èƒ½ã§ã‚ã‚Šã€çœç•¥ã•ã‚ŒãŸå ´åˆã¯ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®èª¬æ˜Žæ–‡ãŒè¨­å®šã•ã‚Œã¾ã™ã€‚  
 - display  
-K2HR3 Web Application¿ ¿¿K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿  
-¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿  
+K2HR3 Web Applicationã§ ã“ã®K2HR3ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼ãƒ­ãƒ¼ã‚«ãƒ«ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã‚’è¡¨ç¤ºã—ãŸæ™‚ã®è¡¨ç¤ºåã‚’æŒ‡å®šã—ã¾ã™ã€‚  
+ã“ã®å€¤ã¯çœç•¥å¯èƒ½ã§ã‚ã‚Šã€çœç•¥ã•ã‚ŒãŸå ´åˆã¯ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰åãŒè¨­å®šã•ã‚Œã¾ã™ã€‚  
 - users  
-¿¿¿¿ K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿USER¿¿¿¿¿¿¿¿¿¿¿¿¿¿  
-¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿  
-¿¿¿¿¿¿¿¿¿¿¿¿ (Un)Scoped User Token¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿  
-K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿USER¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿[YRN](detail_variousja.html)¿¿¿¿¿¿¿¿¿¿¿¿¿  
-¿¿¿¿USER¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿  
+ä½œæˆã™ã‚‹ K2HR3ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼ãƒ­ãƒ¼ã‚«ãƒ«ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã‚’åˆ©ç”¨ã§ãã‚‹ãƒ¦ãƒ¼ã‚¶ï¼ˆUSERï¼‰åã‚’é…åˆ—ã¨ã—ã¦è¨­å®šã—ã¾ã™ã€‚  
+è¤‡æ•°æŒ‡å®šã™ã‚‹å ´åˆã«ã¯ã€é…åˆ—ã¨ã—ã¦æŒ‡å®šã—ã¾ã™ã€‚  
+ã“ã®ãƒªã‚¯ã‚¨ã‚¹ãƒˆã‚’é€ä¿¡ã™ã‚‹ (Un)Scoped User Tokenã§ç¤ºã•ã‚Œã‚‹ãƒ¦ãƒ¼ã‚¶ã¯ã€çœç•¥ã§ãã¾ã™ã€‚  
+K2HR3ã‚·ã‚¹ãƒ†ãƒ ã«ç™»éŒ²ã•ã‚Œã¦ã„ã‚‹ãƒ¦ãƒ¼ã‚¶ï¼ˆUSERï¼‰åã‚’æŒ‡å®šã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ã€‚ï¼ˆ[YRN](detail_variousja.html)ãƒ•ãƒ«ãƒ‘ã‚¹ã§ã¯ã‚ã‚Šã¾ã›ã‚“ã€‚ï¼‰  
+ãƒ¦ãƒ¼ã‚¶ï¼ˆUSERï¼‰ãŒå­˜åœ¨ã—ãªã„å ´åˆã«ã¯ã€ç„¡è¦–ã•ã‚Œã¾ã™ã€‚  
 
 ### Response status
-201¿40x
+201ã€40x
 
 ### Response Body(JSON)
 ```
@@ -238,20 +238,20 @@ K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿USER¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿[YRN](detail_variousja.html)¿¿¿¿¿¿¿¿¿¿¿
 }
 ```
 - result  
-API¿¿¿¿¿¿true/false¿¿¿¿¿¿
+APIã®å‡¦ç†çµæžœã‚’true/falseã§è¿”ã—ã¾ã™ã€‚
 - message  
-¿¿¿¿¿false¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿
+å‡¦ç†çµæžœãŒfalseï¼ˆå¤±æ•—ï¼‰ã®ã¨ãã«ã€ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãŒæ ¼ç´ã•ã‚Œã¾ã™ã€‚
 
-## GET¿¿¿¿¿
-Unscoped User Token¿¿¿¿¿Scoped User Token¿¿¿¿¿¿K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿¿  
-¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿USER¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿  
+## GETï¼ˆãƒªã‚¹ãƒˆï¼‰
+Unscoped User Tokenã‚‚ã—ãã¯ã€Scoped User Tokenã‚’æŒ‡å®šã—ã¦ã€K2HR3ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼ãƒ­ãƒ¼ã‚«ãƒ«ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã®ãƒªã‚¹ãƒˆã‚’å–å¾—ã—ã¾ã™ã€‚  
+å–å¾—ã™ã‚‹ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã®ãƒªã‚¹ãƒˆã¯ã€ãƒ¦ãƒ¼ã‚¶ï¼ˆUSERï¼‰ãŒåˆ©ç”¨ã‚’è¨±å¯ã•ã‚Œã¦ã„ã‚‹ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã®ã¿ã§ã™ã€‚  
 
-#### ¿¿
-¿¿¿¿TENANT API¿¿¿Unscoped User Token¿¿¿¿¿Scoped User Token¿¿¿¿¿¿  
-Scoped User Token¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿Unscoped User Token¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿  
+#### æ³¨æ„
+ã™ã¹ã¦ã®TENANT APIã«ã¯ã€Unscoped User Tokenã‚‚ã—ãã¯ã€Scoped User TokenãŒå¿…è¦ã§ã™ã€‚  
+Scoped User TokenãŒæŒ‡å®šã•ã‚ŒãŸå ´åˆã€ãã®ãƒˆãƒ¼ã‚¯ãƒ³ãŒç¤ºã™ãƒ†ãƒŠãƒ³ãƒˆã¯ç„¡è¦–ã•ã‚Œã€Unscoped User Tokenã¨åŒæ§˜ã«ãƒ¦ãƒ¼ã‚¶æƒ…å ±ã®ã¿ã‚’ä½¿ç”¨ã—ã¾ã™ã€‚  
 
 ### Endpoint(URL)
-http(s)://_API SERVER:PORT_/v1/tenant{?expand=true/false}
+http(s)://_API SERVER:PORT_/v1/tenant?expand=_true or false_
 
 ### Header
 ```
@@ -261,14 +261,14 @@ x-auth-token: U=<Scoped User Token>
 
 ### URL argument
 - expand=_true or false_
-¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿  
-¿¿¿¿¿¿¿¿_true_¿¿¿¿¿¿¿  
+å–å¾—ã™ã‚‹ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã®ãƒªã‚¹ãƒˆã‚’å±•é–‹ã™ã‚‹ã‹å¦ã‹ã‚’æŒ‡å®šã—ã¾ã™ã€‚  
+å±•é–‹ã™ã‚‹å ´åˆã¯ã€_true_ã‚’æŒ‡å®šã—ã¾ã™ã€‚  
 
 ### Response status
-200¿40x
+200ã€40x
 
 ### Response Body(JSON) 
-- ¿¿¿¿¿¿¿expand=true¿  
+- å±•é–‹ã™ã‚‹å ´åˆï¼ˆexpand=trueï¼‰  
 ```
 {
     result:           <true/false>
@@ -285,7 +285,7 @@ x-auth-token: U=<Scoped User Token>
     ]
 }
 ```
-- ¿¿¿¿¿¿¿¿expand=false¿  
+- å±•é–‹ã—ãªã„å ´åˆï¼ˆexpand=falseï¼‰  
 ```
 {
     result:   <true/false>
@@ -295,39 +295,39 @@ x-auth-token: U=<Scoped User Token>
 ```
 
 - result  
-API¿¿¿¿¿¿true/false¿¿¿¿¿¿
+APIã®å‡¦ç†çµæžœã‚’true/falseã§è¿”ã—ã¾ã™ã€‚
 - message  
-¿¿¿¿¿false¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿
+å‡¦ç†çµæžœãŒfalseï¼ˆå¤±æ•—ï¼‰ã®ã¨ãã«ã€ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãŒæ ¼ç´ã•ã‚Œã¾ã™ã€‚
 - tenants  
-K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿  
-¿¿¿¿¿¿¿`expand=true`¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿¿¿  
-¿¿¿¿¿¿¿¿`expand=false`¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿  
+K2HR3ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼ãƒ­ãƒ¼ã‚«ãƒ«ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã®é…åˆ—ã§ã™ã€‚  
+å±•é–‹ã™ã‚‹å ´åˆï¼ˆ`expand=true`ï¼‰ã¯ã€ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã®æƒ…å ±ã‚’é…åˆ—ã§è¿”ã—ã¾ã™ã€‚  
+å±•é–‹ã—ãªã„å ´åˆï¼ˆ`expand=false`ï¼‰ã¯ã€ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰åã‚’é…åˆ—ã§è¿”ã—ã¾ã™ã€‚  
 - tenants[*]:name  
-¿¿¿¿¿¿¿expand=true¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿
+å±•é–‹ã™ã‚‹å ´åˆï¼ˆexpand=trueï¼‰ã«è¿”ã•ã‚Œã‚‹ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰æƒ…å ±ã«å«ã¾ã‚Œã‚‹è¦ç´ ã§ã€ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰åãŒè¨­å®šã•ã‚Œã¾ã™ã€‚
 - tenants[*]:id  
-¿¿¿¿¿¿¿expand=true¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿_ID_¿¿¿¿¿¿¿¿
+å±•é–‹ã™ã‚‹å ´åˆï¼ˆexpand=trueï¼‰ã«è¿”ã•ã‚Œã‚‹ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰æƒ…å ±ã«å«ã¾ã‚Œã‚‹è¦ç´ ã§ã€ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã®_ID_ãŒè¨­å®šã•ã‚Œã¾ã™ã€‚
 - tenants[*]:desc  
-¿¿¿¿¿¿¿expand=true¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿¿¿
+å±•é–‹ã™ã‚‹å ´åˆï¼ˆexpand=trueï¼‰ã«è¿”ã•ã‚Œã‚‹ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰æƒ…å ±ã«å«ã¾ã‚Œã‚‹è¦ç´ ã§ã€ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã®èª¬æ˜Žæ–‡ãŒè¨­å®šã•ã‚Œã¾ã™ã€‚
 - tenants[*]:display  
-¿¿¿¿¿¿¿expand=true¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿¿¿
+å±•é–‹ã™ã‚‹å ´åˆï¼ˆexpand=trueï¼‰ã«è¿”ã•ã‚Œã‚‹ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰æƒ…å ±ã«å«ã¾ã‚Œã‚‹è¦ç´ ã§ã€ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã®è¡¨ç¤ºåãŒè¨­å®šã•ã‚Œã¾ã™ã€‚
 - tenants[*]:user  
-¿¿¿¿¿¿¿expand=true¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿USER¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿
+å±•é–‹ã™ã‚‹å ´åˆï¼ˆexpand=trueï¼‰ã«è¿”ã•ã‚Œã‚‹ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰æƒ…å ±ã«å«ã¾ã‚Œã‚‹è¦ç´ ã§ã€ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã®åˆ©ç”¨ãŒè¨±å¯ã•ã‚Œã¦ã„ã‚‹ãƒ¦ãƒ¼ã‚¶ï¼ˆUSERï¼‰åã®ãƒªã‚¹ãƒˆã‚’é…åˆ—ã§è¿”ã—ã¾ã™ã€‚
 
-## GET¿¿¿¿¿¿¿¿
-Unscoped User Token¿¿¿¿¿Scoped User Token¿¿¿¿¿K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿  
-¿¿¿¿USER¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿  
+## GETï¼ˆãƒ†ãƒŠãƒ³ãƒˆæŒ‡å®šï¼‰
+Unscoped User Tokenã‚‚ã—ãã¯ã€Scoped User Tokenã‚’æŒ‡å®šã—ã€K2HR3ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼ãƒ­ãƒ¼ã‚«ãƒ«ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã®æƒ…å ±ã‚’å–å¾—ã—ã¾ã™ã€‚  
+ãƒ¦ãƒ¼ã‚¶ï¼ˆUSERï¼‰ãŒåˆ©ç”¨ã‚’è¨±å¯ã•ã‚Œã¦ã„ãªã„ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã‚’æŒ‡å®šã—ãŸå ´åˆã€å¤±æ•—ã—ã¾ã™ã€‚  
 
-#### ¿¿
-¿¿¿¿TENANT API¿¿¿Unscoped User Token¿¿¿¿¿Scoped User Token¿¿¿¿¿¿  
-Scoped User Token¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿Unscoped User Token¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿  
+#### æ³¨æ„
+ã™ã¹ã¦ã®TENANT APIã«ã¯ã€Unscoped User Tokenã‚‚ã—ãã¯ã€Scoped User TokenãŒå¿…è¦ã§ã™ã€‚  
+Scoped User TokenãŒæŒ‡å®šã•ã‚ŒãŸå ´åˆã€ãã®ãƒˆãƒ¼ã‚¯ãƒ³ãŒç¤ºã™ãƒ†ãƒŠãƒ³ãƒˆã¯ç„¡è¦–ã•ã‚Œã€Unscoped User Tokenã¨åŒæ§˜ã«ãƒ¦ãƒ¼ã‚¶æƒ…å ±ã®ã¿ã‚’ä½¿ç”¨ã—ã¾ã™ã€‚  
 
 ### Endpoint(URL)
 http(s)://_API SERVER:PORT_/v1/tenant/_tenant name_
 
 - tenant name  
-K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿  
-¿¿¿¿ `local@` ¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿ `local@` ¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿  
-¿¿¿¿K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿  
+K2HR3ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼ãƒ­ãƒ¼ã‚«ãƒ«ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰åã‚’æŒ‡å®šã—ã¾ã™ã€‚  
+ã“ã®å€¤ã« `local@` ãƒ—ãƒ¬ãƒ•ã‚£ãƒƒã‚¯ã‚¹ãŒä»˜ä¸Žã•ã‚Œã¦ã„ãªã„å ´åˆã€è‡ªå‹•çš„ã« `local@` ãƒ—ãƒ¬ãƒ•ã‚£ãƒƒã‚¯ã‚¹ãŒä»˜ä¸Žã•ã‚ŒãŸãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰åã«å¤‰æ›´ã•ã‚Œã¾ã™ã€‚  
+æŒ‡å®šã—ãŸK2HR3ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼ãƒ­ãƒ¼ã‚«ãƒ«ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ãŒå­˜åœ¨ã—ãªã„å ´åˆã¯å¤±æ•—ã—ã¾ã™ã€‚  
 
 ### Header
 ```
@@ -336,7 +336,7 @@ x-auth-token: U=<Scoped User Token>
 ```
 
 ### Response status
-200¿40x
+200ã€40x
 
 ### Response Body(JSON) 
 ```
@@ -353,35 +353,35 @@ x-auth-token: U=<Scoped User Token>
 }
 ```
 - result  
-API¿¿¿¿¿¿true/false¿¿¿¿¿¿
+APIã®å‡¦ç†çµæžœã‚’true/falseã§è¿”ã—ã¾ã™ã€‚
 - message  
-¿¿¿¿¿false¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿
+å‡¦ç†çµæžœãŒfalseï¼ˆå¤±æ•—ï¼‰ã®ã¨ãã«ã€ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãŒæ ¼ç´ã•ã‚Œã¾ã™ã€‚
 - tenant:name  
-¿¿¿¿¿¿¿expand=true¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿
+å±•é–‹ã™ã‚‹å ´åˆï¼ˆexpand=trueï¼‰ã«è¿”ã•ã‚Œã‚‹ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰æƒ…å ±ã«å«ã¾ã‚Œã‚‹è¦ç´ ã§ã€ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰åãŒè¨­å®šã•ã‚Œã¾ã™ã€‚
 - tenant:id  
-¿¿¿¿¿¿¿expand=true¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿_ID_¿¿¿¿¿¿¿¿
+å±•é–‹ã™ã‚‹å ´åˆï¼ˆexpand=trueï¼‰ã«è¿”ã•ã‚Œã‚‹ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰æƒ…å ±ã«å«ã¾ã‚Œã‚‹è¦ç´ ã§ã€ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã®_ID_ãŒè¨­å®šã•ã‚Œã¾ã™ã€‚
 - tenant:desc  
-¿¿¿¿¿¿¿expand=true¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿¿¿
+å±•é–‹ã™ã‚‹å ´åˆï¼ˆexpand=trueï¼‰ã«è¿”ã•ã‚Œã‚‹ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰æƒ…å ±ã«å«ã¾ã‚Œã‚‹è¦ç´ ã§ã€ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã®èª¬æ˜Žæ–‡ãŒè¨­å®šã•ã‚Œã¾ã™ã€‚
 - tenant:display  
-¿¿¿¿¿¿¿expand=true¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿¿¿
+å±•é–‹ã™ã‚‹å ´åˆï¼ˆexpand=trueï¼‰ã«è¿”ã•ã‚Œã‚‹ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰æƒ…å ±ã«å«ã¾ã‚Œã‚‹è¦ç´ ã§ã€ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã®è¡¨ç¤ºåãŒè¨­å®šã•ã‚Œã¾ã™ã€‚
 - tenant:user  
-¿¿¿¿¿¿¿expand=true¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿USER¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿
+å±•é–‹ã™ã‚‹å ´åˆï¼ˆexpand=trueï¼‰ã«è¿”ã•ã‚Œã‚‹ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰æƒ…å ±ã«å«ã¾ã‚Œã‚‹è¦ç´ ã§ã€ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã®åˆ©ç”¨ãŒè¨±å¯ã•ã‚Œã¦ã„ã‚‹ãƒ¦ãƒ¼ã‚¶ï¼ˆUSERï¼‰åã®ãƒªã‚¹ãƒˆã‚’é…åˆ—ã§è¿”ã—ã¾ã™ã€‚
 
 ## HEAD
-Unscoped User Token¿¿¿¿¿Scoped User Token¿¿¿¿¿K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿  
-¿¿¿¿USER¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿  
+Unscoped User Tokenã‚‚ã—ãã¯ã€Scoped User Tokenã‚’æŒ‡å®šã—ã€K2HR3ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼ãƒ­ãƒ¼ã‚«ãƒ«ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã®å­˜åœ¨ã‚’ç¢ºèªã—ã¾ã™ã€‚  
+ãƒ¦ãƒ¼ã‚¶ï¼ˆUSERï¼‰ãŒåˆ©ç”¨ã‚’è¨±å¯ã•ã‚Œã¦ã„ãªã„ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã‚’æŒ‡å®šã—ãŸå ´åˆã€å¤±æ•—ã—ã¾ã™ã€‚  
 
-#### ¿¿
-¿¿¿¿TENANT API¿¿¿Unscoped User Token¿¿¿¿¿Scoped User Token¿¿¿¿¿¿  
-Scoped User Token¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿Unscoped User Token¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿  
+#### æ³¨æ„
+ã™ã¹ã¦ã®TENANT APIã«ã¯ã€Unscoped User Tokenã‚‚ã—ãã¯ã€Scoped User TokenãŒå¿…è¦ã§ã™ã€‚  
+Scoped User TokenãŒæŒ‡å®šã•ã‚ŒãŸå ´åˆã€ãã®ãƒˆãƒ¼ã‚¯ãƒ³ãŒç¤ºã™ãƒ†ãƒŠãƒ³ãƒˆã¯ç„¡è¦–ã•ã‚Œã€Unscoped User Tokenã¨åŒæ§˜ã«ãƒ¦ãƒ¼ã‚¶æƒ…å ±ã®ã¿ã‚’ä½¿ç”¨ã—ã¾ã™ã€‚  
 
 ### Endpoint(URL)
 http(s)://_API SERVER:PORT_/v1/tenant/_tenant name_
 
 - tenant name  
-K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿  
-¿¿¿¿ `local@` ¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿ `local@` ¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿  
-¿¿¿¿K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿  
+K2HR3ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼ãƒ­ãƒ¼ã‚«ãƒ«ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰åã‚’æŒ‡å®šã—ã¾ã™ã€‚  
+ã“ã®å€¤ã« `local@` ãƒ—ãƒ¬ãƒ•ã‚£ãƒƒã‚¯ã‚¹ãŒä»˜ä¸Žã•ã‚Œã¦ã„ãªã„å ´åˆã€è‡ªå‹•çš„ã« `local@` ãƒ—ãƒ¬ãƒ•ã‚£ãƒƒã‚¯ã‚¹ãŒä»˜ä¸Žã•ã‚ŒãŸãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰åã«å¤‰æ›´ã•ã‚Œã¾ã™ã€‚  
+æŒ‡å®šã—ãŸK2HR3ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼ãƒ­ãƒ¼ã‚«ãƒ«ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ãŒå­˜åœ¨ã—ãªã„å ´åˆã¯å¤±æ•—ã—ã¾ã™ã€‚  
 
 ### Header
 ```
@@ -390,27 +390,27 @@ x-auth-token: U=<Scoped User Token>
 ```
 
 ### Response status
-204¿40x
+204ã€40x
 
 ### Response Body(JSON)
-¿¿
+ãªã—
 
 ## DELETE
-Unscoped User Token¿¿¿¿¿Scoped User Token¿¿¿¿¿¿¿¿¿USER¿¿ K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿  
-¿¿¿¿¿¿¿¿¿¿¿K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿USER¿¿¿¿¿¿¿¿¿¿¿K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿  
-¿¿¿¿USER¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿  
+Unscoped User Tokenã‚‚ã—ãã¯ã€Scoped User Tokenã‚’æŒ‡å®šã—ã€ãƒ¦ãƒ¼ã‚¶ï¼ˆUSERï¼‰ã‚’ K2HR3ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼ãƒ­ãƒ¼ã‚«ãƒ«ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã®åˆ©ç”¨ä¸å¯ã«ã—ã¾ã™ã€‚  
+ã“ã®å‡¦ç†ã‚’è¡Œã£ãŸçµæžœã€K2HR3ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼ãƒ­ãƒ¼ã‚«ãƒ«ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã®åˆ©ç”¨ã§ãã‚‹ãƒ¦ãƒ¼ã‚¶ï¼ˆUSERï¼‰ãŒã„ãªããªã£ãŸå ´åˆã€K2HR3ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼ãƒ­ãƒ¼ã‚«ãƒ«ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã¯å‰Šé™¤ã•ã‚Œã¾ã™ã€‚  
+ãƒ¦ãƒ¼ã‚¶ï¼ˆUSERï¼‰ãŒåˆ©ç”¨ã‚’è¨±å¯ã•ã‚Œã¦ã„ãªã„ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã‚’æŒ‡å®šã—ãŸå ´åˆã€å¤±æ•—ã—ã¾ã™ã€‚  
 
-#### ¿¿
-¿¿¿¿TENANT API¿¿¿Unscoped User Token¿¿¿¿¿Scoped User Token¿¿¿¿¿¿  
-Scoped User Token¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿Unscoped User Token¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿  
+#### æ³¨æ„
+ã™ã¹ã¦ã®TENANT APIã«ã¯ã€Unscoped User Tokenã‚‚ã—ãã¯ã€Scoped User TokenãŒå¿…è¦ã§ã™ã€‚  
+Scoped User TokenãŒæŒ‡å®šã•ã‚ŒãŸå ´åˆã€ãã®ãƒˆãƒ¼ã‚¯ãƒ³ãŒç¤ºã™ãƒ†ãƒŠãƒ³ãƒˆã¯ç„¡è¦–ã•ã‚Œã€Unscoped User Tokenã¨åŒæ§˜ã«ãƒ¦ãƒ¼ã‚¶æƒ…å ±ã®ã¿ã‚’ä½¿ç”¨ã—ã¾ã™ã€‚  
 
 ### Endpoint(URL)
-http(s)://_API SERVER:PORT_/v1/tenant/_tenant name_{?id=<tenant id>}
+http(s)://_API SERVER:PORT_/v1/tenant/_tenant name_?id=_tenant id_
 
 - tenant name  
-K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿  
-¿¿¿¿ `local@` ¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿ `local@` ¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿  
-¿¿¿¿K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿  
+K2HR3ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼ãƒ­ãƒ¼ã‚«ãƒ«ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰åã‚’æŒ‡å®šã—ã¾ã™ã€‚  
+ã“ã®å€¤ã« `local@` ãƒ—ãƒ¬ãƒ•ã‚£ãƒƒã‚¯ã‚¹ãŒä»˜ä¸Žã•ã‚Œã¦ã„ãªã„å ´åˆã€è‡ªå‹•çš„ã« `local@` ãƒ—ãƒ¬ãƒ•ã‚£ãƒƒã‚¯ã‚¹ãŒä»˜ä¸Žã•ã‚ŒãŸãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰åã«å¤‰æ›´ã•ã‚Œã¾ã™ã€‚  
+æŒ‡å®šã—ãŸK2HR3ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼ãƒ­ãƒ¼ã‚«ãƒ«ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ãŒå­˜åœ¨ã—ãªã„å ´åˆã¯å¤±æ•—ã—ã¾ã™ã€‚  
 
 ### Header
 ```
@@ -420,11 +420,11 @@ x-auth-token: U=<Scoped User Token>
 
 ### URL argument
 - id  
-K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿_ID_¿¿¿¿¿¿¿  
-K2HR3¿¿¿¿¿¿¿¿¿¿¿¿¿¿TENANT¿¿¿¿¿_ID_¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿
+K2HR3ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼ãƒ­ãƒ¼ã‚«ãƒ«ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰ã®_ID_ã‚’æŒ‡å®šã—ã¾ã™ã€‚  
+K2HR3ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼ãƒ­ãƒ¼ã‚«ãƒ«ãƒ†ãƒŠãƒ³ãƒˆï¼ˆTENANTï¼‰åã¨ã“ã®_ID_ãŒä¸€è‡´ã—ãªã„å ´åˆã€å¤±æ•—ã—ã¾ã™ã€‚
 
 ### Response status
-204¿40x
+204ã€40x
 
 ### Response Body(JSON)
-¿¿
+ãªã—

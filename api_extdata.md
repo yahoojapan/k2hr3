@@ -13,7 +13,7 @@ next_url:
 next_string: 
 ---
 
-# EXTDATA API
+# USERDATA API
 This page describes K2HR3 EXTRA DATA API.  
 
 This API is an API that expands the template defined by the user and returns the expanded data.  
@@ -88,6 +88,7 @@ The template expanded data will be returned. Note that the URL path must contain
 
 ##### Example: template
 ```
+{% raw %}
 #/bin/sh
 
 ROLE_NAME={{= %K2HR3_ROLE_NAME% }}
@@ -103,6 +104,7 @@ echo "K2HR3_API_HOST: ${K2HR3_API_HOST}"
 echo "ERROR_MSG:      ${ERROR_MSG}"
 
 exit 0
+{% endraw %}
 ```
 
 ##### Example: response
