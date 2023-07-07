@@ -15,19 +15,19 @@ next_string: SERVICE API
 
 # TENANT API
 
-K2HR3 REST APIのK2HR3クラスターローカルテナント（TENANT）に関連するAPI群です。  
+K2HR3 REST APIｿK2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿAPIｿｿｿｿ  
 
-### 補足
-K2HR3 システムのテナント（TENANT）は、連携するOpenStackのテナント（またはプロジェクト）、もしくは Kubernetes の Namespace を使います。  
-K2HR3 REST APIの設定（コンフィグレーション）で、K2HR3クラスターローカルテナント（TENANT）機能を有効（`localtenants=true`）とした場合、独自のテナント（TENANT）を作成・編集・削除することができます。  
-TENANT APIは、K2HR3クラスターローカルテナント（TENANT）を操作するAPIです。
+### ｿｿ
+K2HR3 ｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿOpenStackｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ Kubernetes ｿ Namespace ｿｿｿｿｿｿ  
+K2HR3 REST APIｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿK2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿ`localtenants=true`ｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ  
+TENANT APIｿｿK2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿAPIｿｿｿ
 
-## POST（新規作成）
-Unscoped User Tokenもしくは、Scoped User Tokenを指定して、K2HR3クラスターローカルテナント（TENANT）を新規作成します。  
+## POSTｿｿｿｿｿｿ
+Unscoped User TokenｿｿｿｿｿScoped User TokenｿｿｿｿｿｿK2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿ  
 
-#### 注意
-すべてのTENANT APIには、Unscoped User Tokenもしくは、Scoped User Tokenが必要です。  
-Scoped User Tokenが指定された場合、そのトークンが示すテナントは無視され、Unscoped User Tokenと同様にユーザ情報のみを使用します。  
+#### ｿｿ
+ｿｿｿｿTENANT APIｿｿｿUnscoped User TokenｿｿｿｿｿScoped User Tokenｿｿｿｿｿｿ  
+Scoped User TokenｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿUnscoped User Tokenｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ  
 
 ### Endpoint(URL)
 http(s)://_API SERVER:PORT_/v1/tenant
@@ -50,22 +50,22 @@ x-auth-token: U=<Unscoped User Token> or <Scoped User Token>
 }
 ```
 - name  
-K2HR3クラスターローカルテナント（TENANT）名を指定します。  
-この値に `local@` プレフィックスが付与されていない場合、自動的に `local@` プレフィックスが付与されたテナント（TENANT）名に変更されます。  
+K2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿ  
+ｿｿｿｿ `local@` ｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ `local@` ｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿ  
 - desc  
-K2HR3クラスターローカルテナント（TENANT）の説明文を記述します。  
-この値は省略可能であり、省略された場合はデフォルトの説明文が設定されます。  
+K2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿｿ  
+ｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ  
 - display  
-K2HR3 Web Applicationで このK2HR3クラスターローカルテナント（TENANT）を表示した時の表示名を指定します。  
-この値は省略可能であり、省略された場合はテナント（TENANT）名が設定されます。  
+K2HR3 Web Applicationｿ ｿｿK2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ  
+ｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿ  
 - users  
-作成する K2HR3クラスターローカルテナント（TENANT）を利用できるユーザ（USER）名を配列として設定します。  
-このリクエストを送信する (Un)Scoped User Tokenで示されるユーザは、省略できます。  
-K2HR3システムに登録されているユーザ（USER）名を指定する必要があります。（[YRN](detail_variousja.html)フルパスではありません。）  
-ユーザ（USER）が存在しない場合には、無視されます。  
+ｿｿｿｿ K2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿUSERｿｿｿｿｿｿｿｿｿｿｿｿｿｿ  
+ｿｿｿｿｿｿｿｿｿｿｿｿ (Un)Scoped User Tokenｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ  
+K2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿUSERｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ[YRN](detail_variousja.html)ｿｿｿｿｿｿｿｿｿｿｿｿｿ  
+ｿｿｿｿUSERｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ  
 
 ### Response status
-201、40x
+201ｿ40x
 
 ### Response Body(JSON)
 ```
@@ -75,20 +75,16 @@ K2HR3システムに登録されているユーザ（USER）名を指定する必要があります。（[YRN](d
 }
 ```
 - result  
-APIの処理結果をtrue/falseで返します。
+APIｿｿｿｿｿｿtrue/falseｿｿｿｿｿｿ
 - message  
-処理結果がfalse（失敗）のときに、エラーメッセージが格納されます。
+ｿｿｿｿｿfalseｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ
 
+## PUTｿｿｿｿｿｿ
+Unscoped User TokenｿｿｿｿｿScoped User TokenｿｿｿｿｿｿK2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿ  
 
-
-
-
-## PUT（新規作成）
-Unscoped User Tokenもしくは、Scoped User Tokenを指定して、K2HR3クラスターローカルテナント（TENANT）を新規作成します。  
-
-#### 注意
-すべてのTENANT APIには、Unscoped User Tokenもしくは、Scoped User Tokenが必要です。  
-Scoped User Tokenが指定された場合、そのトークンが示すテナントは無視され、Unscoped User Tokenと同様にユーザ情報のみを使用します。  
+#### ｿｿ
+ｿｿｿｿTENANT APIｿｿｿUnscoped User TokenｿｿｿｿｿScoped User Tokenｿｿｿｿｿｿ  
+Scoped User TokenｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿUnscoped User Tokenｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ  
 
 ### Endpoint(URL)
 http(s)://_API SERVER:PORT_/v1/tenant{?name=...}
@@ -101,23 +97,23 @@ x-auth-token: U=<Unscoped User Token> or <Scoped User Token>
 
 ### URL Arguments
 - name  
-K2HR3クラスターローカルテナント（TENANT）名を指定します。  
-この値に `local@` プレフィックスが付与されていない場合、自動的に `local@` プレフィックスが付与されたテナント（TENANT）名に変更されます。  
+K2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿ  
+ｿｿｿｿ `local@` ｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ `local@` ｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿ  
 - desc  
-K2HR3クラスターローカルテナント（TENANT）の説明文を記述します。  
-この値は省略可能であり、省略された場合はデフォルトの説明文が設定されます。  
+K2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿｿ  
+ｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ  
 - display  
-K2HR3 Web Applicationで このK2HR3クラスターローカルテナント（TENANT）を表示した時の表示名を指定します。  
-この値は省略可能であり、省略された場合はテナント（TENANT）名が設定されます。  
+K2HR3 Web Applicationｿ ｿｿK2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ  
+ｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿ  
 - users  
-作成する K2HR3クラスターローカルテナント（TENANT）を利用できるユーザ（USER）名を配列として設定します。  
-複数指定する場合には、配列として指定します。  
-このリクエストを送信する (Un)Scoped User Tokenで示されるユーザは、省略できます。  
-K2HR3システムに登録されているユーザ（USER）名を指定する必要があります。（[YRN](detail_variousja.html)フルパスではありません。）  
-ユーザ（USER）が存在しない場合には、無視されます。  
+ｿｿｿｿ K2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿUSERｿｿｿｿｿｿｿｿｿｿｿｿｿｿ  
+ｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ  
+ｿｿｿｿｿｿｿｿｿｿｿｿ (Un)Scoped User Tokenｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ  
+K2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿUSERｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ[YRN](detail_variousja.html)ｿｿｿｿｿｿｿｿｿｿｿｿｿ  
+ｿｿｿｿUSERｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ  
 
 ### Response status
-201、40x
+201ｿ40x
 
 ### Response Body(JSON)
 ```
@@ -127,28 +123,24 @@ K2HR3システムに登録されているユーザ（USER）名を指定する必要があります。（[YRN](d
 }
 ```
 - result  
-APIの処理結果をtrue/falseで返します。
+APIｿｿｿｿｿｿtrue/falseｿｿｿｿｿｿ
 - message  
-処理結果がfalse（失敗）のときに、エラーメッセージが格納されます。
+ｿｿｿｿｿfalseｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ
 
+## POSTｿｿｿｿ
+Unscoped User TokenｿｿｿｿｿScoped User TokenｿｿｿｿｿｿK2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿ  
 
-
-
-
-## POST（更新）
-Unscoped User Tokenもしくは、Scoped User Tokenを指定して、K2HR3クラスターローカルテナント（TENANT）を更新します。  
-
-#### 注意
-すべてのTENANT APIには、Unscoped User Tokenもしくは、Scoped User Tokenが必要です。  
-Scoped User Tokenが指定された場合、そのトークンが示すテナントは無視され、Unscoped User Tokenと同様にユーザ情報のみを使用します。  
+#### ｿｿ
+ｿｿｿｿTENANT APIｿｿｿUnscoped User TokenｿｿｿｿｿScoped User Tokenｿｿｿｿｿｿ  
+Scoped User TokenｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿUnscoped User Tokenｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ  
 
 ### Endpoint(URL)
 http(s)://_API SERVER:PORT_/v1/tenant/_tenant name_
 
 - tenant name  
-K2HR3クラスターローカルテナント（TENANT）名を指定します。  
-この値に `local@` プレフィックスが付与されていない場合、自動的に `local@` プレフィックスが付与されたテナント（TENANT）名に変更されます。  
-指定したK2HR3クラスターローカルテナント（TENANT）が存在しない場合は失敗します。  
+K2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿ  
+ｿｿｿｿ `local@` ｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ `local@` ｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿ  
+ｿｿｿｿK2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ  
 
 ### Header
 ```
@@ -168,22 +160,22 @@ x-auth-token: U=<Unscoped User Token> or <Scoped User Token>
 }
 ```
 - id  
-K2HR3クラスターローカルテナント（TENANT）の _ID_ を指定します。  
-K2HR3クラスターローカルテナント（TENANT）名とこの_ID_が一致しない場合、失敗します。
+K2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿ _ID_ ｿｿｿｿｿｿｿ  
+K2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿ_ID_ｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ
 - desc  
-K2HR3クラスターローカルテナント（TENANT）の説明文を記述します。  
-この値は省略可能であり、省略された場合はデフォルトの説明文が設定されます。  
+K2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿｿ  
+ｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ  
 - display  
-K2HR3 Web Applicationで このK2HR3クラスターローカルテナント（TENANT）を表示した時の表示名を指定します。  
-この値は省略可能であり、省略された場合はテナント（TENANT）名が設定されます。  
+K2HR3 Web Applicationｿ ｿｿK2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ  
+ｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿ  
 - users  
-作成する K2HR3クラスターローカルテナント（TENANT）を利用できるユーザ（USER）名を配列として設定します。  
-このリクエストを送信する (Un)Scoped User Tokenで示されるユーザは、省略できます。  
-K2HR3システムに登録されているユーザ（USER）名を指定する必要があります。（[YRN](detail_variousja.html)フルパスではありません。）  
-ユーザ（USER）が存在しない場合には、無視されます。  
+ｿｿｿｿ K2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿUSERｿｿｿｿｿｿｿｿｿｿｿｿｿｿ  
+ｿｿｿｿｿｿｿｿｿｿｿｿ (Un)Scoped User Tokenｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ  
+K2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿUSERｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ[YRN](detail_variousja.html)ｿｿｿｿｿｿｿｿｿｿｿｿｿ  
+ｿｿｿｿUSERｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ  
 
 ### Response status
-201、40x
+201ｿ40x
 
 ### Response Body(JSON)
 ```
@@ -193,28 +185,24 @@ K2HR3システムに登録されているユーザ（USER）名を指定する必要があります。（[YRN](d
 }
 ```
 - result  
-APIの処理結果をtrue/falseで返します。
+APIｿｿｿｿｿｿtrue/falseｿｿｿｿｿｿ
 - message  
-処理結果がfalse（失敗）のときに、エラーメッセージが格納されます。
+ｿｿｿｿｿfalseｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ
 
+## PUTｿｿｿｿ
+Unscoped User TokenｿｿｿｿｿScoped User TokenｿｿｿｿｿｿK2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿ  
 
-
-
-
-## PUT（更新）
-Unscoped User Tokenもしくは、Scoped User Tokenを指定して、K2HR3クラスターローカルテナント（TENANT）を更新します。  
-
-#### 注意
-すべてのTENANT APIには、Unscoped User Tokenもしくは、Scoped User Tokenが必要です。  
-Scoped User Tokenが指定された場合、そのトークンが示すテナントは無視され、Unscoped User Tokenと同様にユーザ情報のみを使用します。  
+#### ｿｿ
+ｿｿｿｿTENANT APIｿｿｿUnscoped User TokenｿｿｿｿｿScoped User Tokenｿｿｿｿｿｿ  
+Scoped User TokenｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿUnscoped User Tokenｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ  
 
 ### Endpoint(URL)
 http(s)://_API SERVER:PORT_/v1/tenant/_tenant name_{?id=...}
 
 - tenant name  
-K2HR3クラスターローカルテナント（TENANT）名を指定します。  
-この値に `local@` プレフィックスが付与されていない場合、自動的に `local@` プレフィックスが付与されたテナント（TENANT）名に変更されます。  
-指定したK2HR3クラスターローカルテナント（TENANT）が存在しない場合は失敗します。  
+K2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿ  
+ｿｿｿｿ `local@` ｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ `local@` ｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿ  
+ｿｿｿｿK2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ  
 
 ### Header
 ```
@@ -224,23 +212,23 @@ x-auth-token: U=<Unscoped User Token> or <Scoped User Token>
 
 ### URL Arguments
 - id  
-K2HR3クラスターローカルテナント（TENANT）の _ID_ を指定します。  
-K2HR3クラスターローカルテナント（TENANT）名とこの_ID_が一致しない場合、失敗します。
+K2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿ _ID_ ｿｿｿｿｿｿｿ  
+K2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿ_ID_ｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ
 - desc  
-K2HR3クラスターローカルテナント（TENANT）の説明文を記述します。  
-この値は省略可能であり、省略された場合はデフォルトの説明文が設定されます。  
+K2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿｿ  
+ｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ  
 - display  
-K2HR3 Web Applicationで このK2HR3クラスターローカルテナント（TENANT）を表示した時の表示名を指定します。  
-この値は省略可能であり、省略された場合はテナント（TENANT）名が設定されます。  
+K2HR3 Web Applicationｿ ｿｿK2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ  
+ｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿ  
 - users  
-作成する K2HR3クラスターローカルテナント（TENANT）を利用できるユーザ（USER）名を配列として設定します。  
-複数指定する場合には、配列として指定します。  
-このリクエストを送信する (Un)Scoped User Tokenで示されるユーザは、省略できます。  
-K2HR3システムに登録されているユーザ（USER）名を指定する必要があります。（[YRN](detail_variousja.html)フルパスではありません。）  
-ユーザ（USER）が存在しない場合には、無視されます。  
+ｿｿｿｿ K2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿUSERｿｿｿｿｿｿｿｿｿｿｿｿｿｿ  
+ｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ  
+ｿｿｿｿｿｿｿｿｿｿｿｿ (Un)Scoped User Tokenｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ  
+K2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿUSERｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ[YRN](detail_variousja.html)ｿｿｿｿｿｿｿｿｿｿｿｿｿ  
+ｿｿｿｿUSERｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ  
 
 ### Response status
-201、40x
+201ｿ40x
 
 ### Response Body(JSON)
 ```
@@ -250,20 +238,17 @@ K2HR3システムに登録されているユーザ（USER）名を指定する必要があります。（[YRN](d
 }
 ```
 - result  
-APIの処理結果をtrue/falseで返します。
+APIｿｿｿｿｿｿtrue/falseｿｿｿｿｿｿ
 - message  
-処理結果がfalse（失敗）のときに、エラーメッセージが格納されます。
+ｿｿｿｿｿfalseｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ
 
+## GETｿｿｿｿｿ
+Unscoped User TokenｿｿｿｿｿScoped User TokenｿｿｿｿｿｿK2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿｿ  
+ｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿUSERｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿ  
 
-
-
-## GET（リスト）
-Unscoped User Tokenもしくは、Scoped User Tokenを指定して、K2HR3クラスターローカルテナント（TENANT）のリストを取得します。  
-取得するテナント（TENANT）のリストは、ユーザ（USER）が利用を許可されているテナント（TENANT）のみです。  
-
-#### 注意
-すべてのTENANT APIには、Unscoped User Tokenもしくは、Scoped User Tokenが必要です。  
-Scoped User Tokenが指定された場合、そのトークンが示すテナントは無視され、Unscoped User Tokenと同様にユーザ情報のみを使用します。  
+#### ｿｿ
+ｿｿｿｿTENANT APIｿｿｿUnscoped User TokenｿｿｿｿｿScoped User Tokenｿｿｿｿｿｿ  
+Scoped User TokenｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿUnscoped User Tokenｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ  
 
 ### Endpoint(URL)
 http(s)://_API SERVER:PORT_/v1/tenant{?expand=true/false}
@@ -276,14 +261,14 @@ x-auth-token: U=<Scoped User Token>
 
 ### URL argument
 - expand=_true or false_
-取得するテナント（TENANT）のリストを展開するか否かを指定します。  
-展開する場合は、_true_を指定します。  
+ｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ  
+ｿｿｿｿｿｿｿｿ_true_ｿｿｿｿｿｿｿ  
 
 ### Response status
-200、40x
+200ｿ40x
 
 ### Response Body(JSON) 
-- 展開する場合（expand=true）  
+- ｿｿｿｿｿｿｿexpand=trueｿ  
 ```
 {
     result:           <true/false>
@@ -300,7 +285,7 @@ x-auth-token: U=<Scoped User Token>
     ]
 }
 ```
-- 展開しない場合（expand=false）  
+- ｿｿｿｿｿｿｿｿexpand=falseｿ  
 ```
 {
     result:   <true/false>
@@ -310,43 +295,39 @@ x-auth-token: U=<Scoped User Token>
 ```
 
 - result  
-APIの処理結果をtrue/falseで返します。
+APIｿｿｿｿｿｿtrue/falseｿｿｿｿｿｿ
 - message  
-処理結果がfalse（失敗）のときに、エラーメッセージが格納されます。
+ｿｿｿｿｿfalseｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ
 - tenants  
-K2HR3クラスターローカルテナント（TENANT）の配列です。  
-展開する場合（`expand=true`）は、テナント（TENANT）の情報を配列で返します。  
-展開しない場合（`expand=false`）は、テナント（TENANT）名を配列で返します。  
+K2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿ  
+ｿｿｿｿｿｿｿ`expand=true`ｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿｿｿ  
+ｿｿｿｿｿｿｿｿ`expand=false`ｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿ  
 - tenants[*]:name  
-展開する場合（expand=true）に返されるテナント（TENANT）情報に含まれる要素で、テナント（TENANT）名が設定されます。
+ｿｿｿｿｿｿｿexpand=trueｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿ
 - tenants[*]:id  
-展開する場合（expand=true）に返されるテナント（TENANT）情報に含まれる要素で、テナント（TENANT）の_ID_が設定されます。
+ｿｿｿｿｿｿｿexpand=trueｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿ_ID_ｿｿｿｿｿｿｿｿ
 - tenants[*]:desc  
-展開する場合（expand=true）に返されるテナント（TENANT）情報に含まれる要素で、テナント（TENANT）の説明文が設定されます。
+ｿｿｿｿｿｿｿexpand=trueｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿｿｿ
 - tenants[*]:display  
-展開する場合（expand=true）に返されるテナント（TENANT）情報に含まれる要素で、テナント（TENANT）の表示名が設定されます。
+ｿｿｿｿｿｿｿexpand=trueｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿｿｿ
 - tenants[*]:user  
-展開する場合（expand=true）に返されるテナント（TENANT）情報に含まれる要素で、テナント（TENANT）の利用が許可されているユーザ（USER）名のリストを配列で返します。
+ｿｿｿｿｿｿｿexpand=trueｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿUSERｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ
 
+## GETｿｿｿｿｿｿｿｿ
+Unscoped User TokenｿｿｿｿｿScoped User TokenｿｿｿｿｿK2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿ  
+ｿｿｿｿUSERｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ  
 
-
-
-
-## GET（テナント指定）
-Unscoped User Tokenもしくは、Scoped User Tokenを指定し、K2HR3クラスターローカルテナント（TENANT）の情報を取得します。  
-ユーザ（USER）が利用を許可されていないテナント（TENANT）を指定した場合、失敗します。  
-
-#### 注意
-すべてのTENANT APIには、Unscoped User Tokenもしくは、Scoped User Tokenが必要です。  
-Scoped User Tokenが指定された場合、そのトークンが示すテナントは無視され、Unscoped User Tokenと同様にユーザ情報のみを使用します。  
+#### ｿｿ
+ｿｿｿｿTENANT APIｿｿｿUnscoped User TokenｿｿｿｿｿScoped User Tokenｿｿｿｿｿｿ  
+Scoped User TokenｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿUnscoped User Tokenｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ  
 
 ### Endpoint(URL)
 http(s)://_API SERVER:PORT_/v1/tenant/_tenant name_
 
 - tenant name  
-K2HR3クラスターローカルテナント（TENANT）名を指定します。  
-この値に `local@` プレフィックスが付与されていない場合、自動的に `local@` プレフィックスが付与されたテナント（TENANT）名に変更されます。  
-指定したK2HR3クラスターローカルテナント（TENANT）が存在しない場合は失敗します。  
+K2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿ  
+ｿｿｿｿ `local@` ｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ `local@` ｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿ  
+ｿｿｿｿK2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ  
 
 ### Header
 ```
@@ -355,7 +336,7 @@ x-auth-token: U=<Scoped User Token>
 ```
 
 ### Response status
-200、40x
+200ｿ40x
 
 ### Response Body(JSON) 
 ```
@@ -372,37 +353,35 @@ x-auth-token: U=<Scoped User Token>
 }
 ```
 - result  
-APIの処理結果をtrue/falseで返します。
+APIｿｿｿｿｿｿtrue/falseｿｿｿｿｿｿ
 - message  
-処理結果がfalse（失敗）のときに、エラーメッセージが格納されます。
+ｿｿｿｿｿfalseｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ
 - tenant:name  
-展開する場合（expand=true）に返されるテナント（TENANT）情報に含まれる要素で、テナント（TENANT）名が設定されます。
+ｿｿｿｿｿｿｿexpand=trueｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿ
 - tenant:id  
-展開する場合（expand=true）に返されるテナント（TENANT）情報に含まれる要素で、テナント（TENANT）の_ID_が設定されます。
+ｿｿｿｿｿｿｿexpand=trueｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿ_ID_ｿｿｿｿｿｿｿｿ
 - tenant:desc  
-展開する場合（expand=true）に返されるテナント（TENANT）情報に含まれる要素で、テナント（TENANT）の説明文が設定されます。
+ｿｿｿｿｿｿｿexpand=trueｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿｿｿ
 - tenant:display  
-展開する場合（expand=true）に返されるテナント（TENANT）情報に含まれる要素で、テナント（TENANT）の表示名が設定されます。
+ｿｿｿｿｿｿｿexpand=trueｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿｿｿ
 - tenant:user  
-展開する場合（expand=true）に返されるテナント（TENANT）情報に含まれる要素で、テナント（TENANT）の利用が許可されているユーザ（USER）名のリストを配列で返します。
-
-
+ｿｿｿｿｿｿｿexpand=trueｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿUSERｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ
 
 ## HEAD
-Unscoped User Tokenもしくは、Scoped User Tokenを指定し、K2HR3クラスターローカルテナント（TENANT）の存在を確認します。  
-ユーザ（USER）が利用を許可されていないテナント（TENANT）を指定した場合、失敗します。  
+Unscoped User TokenｿｿｿｿｿScoped User TokenｿｿｿｿｿK2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿ  
+ｿｿｿｿUSERｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ  
 
-#### 注意
-すべてのTENANT APIには、Unscoped User Tokenもしくは、Scoped User Tokenが必要です。  
-Scoped User Tokenが指定された場合、そのトークンが示すテナントは無視され、Unscoped User Tokenと同様にユーザ情報のみを使用します。  
+#### ｿｿ
+ｿｿｿｿTENANT APIｿｿｿUnscoped User TokenｿｿｿｿｿScoped User Tokenｿｿｿｿｿｿ  
+Scoped User TokenｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿUnscoped User Tokenｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ  
 
 ### Endpoint(URL)
 http(s)://_API SERVER:PORT_/v1/tenant/_tenant name_
 
 - tenant name  
-K2HR3クラスターローカルテナント（TENANT）名を指定します。  
-この値に `local@` プレフィックスが付与されていない場合、自動的に `local@` プレフィックスが付与されたテナント（TENANT）名に変更されます。  
-指定したK2HR3クラスターローカルテナント（TENANT）が存在しない場合は失敗します。  
+K2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿ  
+ｿｿｿｿ `local@` ｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ `local@` ｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿ  
+ｿｿｿｿK2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ  
 
 ### Header
 ```
@@ -411,29 +390,27 @@ x-auth-token: U=<Scoped User Token>
 ```
 
 ### Response status
-204、40x
+204ｿ40x
 
 ### Response Body(JSON)
-なし
-
-
+ｿｿ
 
 ## DELETE
-Unscoped User Tokenもしくは、Scoped User Tokenを指定し、ユーザ（USER）を K2HR3クラスターローカルテナント（TENANT）の利用不可にします。  
-この処理を行った結果、K2HR3クラスターローカルテナント（TENANT）の利用できるユーザ（USER）がいなくなった場合、K2HR3クラスターローカルテナント（TENANT）は削除されます。  
-ユーザ（USER）が利用を許可されていないテナント（TENANT）を指定した場合、失敗します。  
+Unscoped User TokenｿｿｿｿｿScoped User TokenｿｿｿｿｿｿｿｿｿUSERｿｿ K2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿ  
+ｿｿｿｿｿｿｿｿｿｿｿK2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿUSERｿｿｿｿｿｿｿｿｿｿｿK2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿ  
+ｿｿｿｿUSERｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ  
 
-#### 注意
-すべてのTENANT APIには、Unscoped User Tokenもしくは、Scoped User Tokenが必要です。  
-Scoped User Tokenが指定された場合、そのトークンが示すテナントは無視され、Unscoped User Tokenと同様にユーザ情報のみを使用します。  
+#### ｿｿ
+ｿｿｿｿTENANT APIｿｿｿUnscoped User TokenｿｿｿｿｿScoped User Tokenｿｿｿｿｿｿ  
+Scoped User TokenｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿUnscoped User Tokenｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ  
 
 ### Endpoint(URL)
 http(s)://_API SERVER:PORT_/v1/tenant/_tenant name_{?id=<tenant id>}
 
 - tenant name  
-K2HR3クラスターローカルテナント（TENANT）名を指定します。  
-この値に `local@` プレフィックスが付与されていない場合、自動的に `local@` プレフィックスが付与されたテナント（TENANT）名に変更されます。  
-指定したK2HR3クラスターローカルテナント（TENANT）が存在しない場合は失敗します。  
+K2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿ  
+ｿｿｿｿ `local@` ｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ `local@` ｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿ  
+ｿｿｿｿK2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ  
 
 ### Header
 ```
@@ -443,11 +420,11 @@ x-auth-token: U=<Scoped User Token>
 
 ### URL argument
 - id  
-K2HR3クラスターローカルテナント（TENANT）の_ID_を指定します。  
-K2HR3クラスターローカルテナント（TENANT）名とこの_ID_が一致しない場合、失敗します。
+K2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿ_ID_ｿｿｿｿｿｿｿ  
+K2HR3ｿｿｿｿｿｿｿｿｿｿｿｿｿｿTENANTｿｿｿｿｿ_ID_ｿｿｿｿｿｿｿｿｿｿｿｿｿｿｿ
 
 ### Response status
-204、40x
+204ｿ40x
 
 ### Response Body(JSON)
-なし
+ｿｿ
