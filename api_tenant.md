@@ -65,7 +65,7 @@ It is necessary to specify the USER name registered in the K2HR3 system, and if 
 And the USER name can not set as [YRN](detail_variousen.html) full path.  
 
 ### Response status
-201、40x
+201ｿ40x
 
 ### Response Body(JSON)
 ```
@@ -112,7 +112,7 @@ It is necessary to specify the USER name registered in the K2HR3 system, and if 
 And the USER name can not set as [YRN](detail_variousen.html) full path.  
 
 ### Response status
-201、40x
+201ｿ40x
 
 ### Response Body(JSON)
 ```
@@ -174,7 +174,7 @@ It is necessary to specify the USER name registered in the K2HR3 system, and if 
 And the USER name can not set as [YRN](detail_variousen.html) full path.  
 
 ### Response status
-201、40x
+201ｿ40x
 
 ### Response Body(JSON)
 ```
@@ -226,7 +226,7 @@ It is necessary to specify the USER name registered in the K2HR3 system, and if 
 And the USER name can not set as [YRN](detail_variousen.html) full path.  
 
 ### Response status
-201、40x
+201ｿ40x
 
 ### Response Body(JSON)
 ```
@@ -264,10 +264,10 @@ Specify _true_ as this value to expand.
 When specify _true_, it contains all information for each TENANT.  
 
 ### Response status
-200、40x
+200ｿ40x
 
 ### Response Body(JSON) 
-- 展開する場合（expand=true）  
+- Expandingｿexpand=trueｿ  
 ```
 {
     result:           <true/false>
@@ -284,7 +284,7 @@ When specify _true_, it contains all information for each TENANT.
     ]
 }
 ```
-- 展開しない場合（expand=false）  
+- Not expandingｿexpand=falseｿ  
 ```
 {
     result:   <true/false>
@@ -334,7 +334,7 @@ x-auth-token: U=<Scoped User Token>
 ```
 
 ### Response status
-200、40x
+200ｿ40x
 
 ### Response Body(JSON) 
 ```
@@ -388,7 +388,7 @@ x-auth-token: U=<Scoped User Token>
 ```
 
 ### Response status
-204、40x
+204ｿ40x
 
 ### Response Body(JSON)
 Empty
@@ -422,7 +422,7 @@ Specify the _ID_ of the K2HR3 cluster Local Tenant(TENANT).
 If the K2HR3 Cluster Local Tenant(TENANT) name and this _ID_ value do not match, it will be failure.  
 
 ### Response status
-204、40x
+204ｿ40x
 
 ### Response Body(JSON)
 Empty
