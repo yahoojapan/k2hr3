@@ -91,6 +91,7 @@ Gzip圧縮された場合とTextの場合は共に内容は同じです。（Gzi
 
 ##### 例：テンプレート
 ```
+{% raw %}
 #/bin/sh
 
 ROLE_NAME={{= %K2HR3_ROLE_NAME% }}
@@ -106,6 +107,7 @@ echo "K2HR3_API_HOST: ${K2HR3_API_HOST}"
 echo "ERROR_MSG:      ${ERROR_MSG}"
 
 exit 0
+{% endraw %}
 ```
 
 ##### 例：レスポンス
