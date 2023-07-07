@@ -441,6 +441,7 @@ $ sudo systemctl restart k2hr3-api.service
 
 以下は、設定項目のサンプルとその説明です。
 ```
+{% raw %}
 {
     "scheme": "http",                               // Webサーバープロトコル(http/https)
     "port": 3000,                                   // Webサーバーポート
@@ -483,6 +484,7 @@ $ sudo systemctl restart k2hr3-api.service
         }
     }
 }
+{% endraw %}
 ```
 
 ### 補足：サービスマネージャ(systemd)の設定

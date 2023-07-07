@@ -472,6 +472,7 @@ This section describes settings for HTTP Server.
 Here are the default configuration values and the descriptions.
 
 ```
+{% raw %}
 {
     "scheme": "http",                               // HTTP Protocol(http or https)
     "port": 3000,                                   // HTTP server port to be listened by Node.js
@@ -514,6 +515,7 @@ Here are the default configuration values and the descriptions.
         }
     }
 }
+{% endraw %}
 ```
 
 ### Tips: Controls processes by using systemd
