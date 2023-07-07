@@ -70,6 +70,9 @@ K2HR3 REST APIのリソース（RESOURCE）に関連するAPI群です。
 ### [POLICY API](api_policyja.html)
 K2HR3 REST APIのポリシー/ルール（POLICY）に関連するAPI群です。
 
+### [TENANT API](api_tenantja.html)
+K2HR3 REST APIのK2HR3クラスターローカルテナント（TENANT）に関連するAPI群です。
+
 ### [SERVICE API](api_serviceja.html)
 K2HR3 REST APIのサービス（SERVICE）に関連するAPI群です。
 
@@ -81,4 +84,3 @@ K2HR3 REST APIのUSER DATA SCRIPTに関連するAPI群です。
 
 ### [EXTDATA API](api_extdataja.html)
 K2HR3 REST APIのEXT(RA) DATA SCRIPTに関連するAPI群です。
-

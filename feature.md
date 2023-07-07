@@ -29,6 +29,10 @@ K2HR3 system can work together IaaS like [OpenStack](https://www.openstack.org/)
 If you use [OpenStack](https://www.openstack.org/), K2HR3's **TENANT** matches OpenStack tenant(or project).  
 In the case of [kubernetes](https://kubernetes.io/), it is necessary to link with the user management system used in the kubernetes system.  
 
+You can can also create your own TENANT that is not affected by IaaS one.  
+This is called a K2HR3 Cluster Local Tenant within a K2HR3 cluster and works similarly to an IaaS based TENANT.  
+Thus you can create and manage your own TENANT independently of the TENANT based IaaS.  
+
 The **ROLE**, **RESOURCE**, **POLICY-RULE**, and **SERVICE** described below are data belonging to the **TENANT**.  
 A user of K2HR3 system belongs to some TENANT and can edit the data of those TENANT.  
 

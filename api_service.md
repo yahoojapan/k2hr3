@@ -5,8 +5,8 @@ title: SERVICE API
 short_desc: K2Hdkc based Resource and Roles and policy Rules
 lang_opp_file: api_serviceja.html
 lang_opp_word: To Japanese
-prev_url: api_policy.html
-prev_string: POLICY API
+prev_url: api_tenant.html
+prev_string: TENANT API
 top_url: api.html
 top_string: REST API
 next_url: api_acr.html

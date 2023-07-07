@@ -329,6 +329,7 @@ Here are the default configuration values and the descriptions.
         "tenant": "admintenant",                               // Tenant(or Project) name of K2HR3 administrator
         "delhostrole": "delhostrole"                           // A role name of Admin Tenant that can delete hosts from K2HDKC
     },
+    "localtenants": true,                                      // True to enable K2HR3 cluster local tenancy
     "confirmtenant": false,                                    // False if only existent Tenants(or Projects) can be added to Services
     "chkipconfig": {                                           // Settings for Watcher
         "type": "Listener"                                     // The way how Watcher works(see below for details)

@@ -27,6 +27,10 @@ K2HR3システムは、[OpenStack](https://www.openstack.org/)や[kubernetes](ht
 [OpenStack](https://www.openstack.org/)を使用する場合、K2HR3の**テナント**（TENANT）はOpenStackテナント（またはプロジェクト）と一致します。  
 [kubernetes](https://kubernetes.io/ja/)の場合、kubernetesシステムで使用されているユーザー管理システムとリンクする必要があります。  
 
+これらのIaaSと連携しない場合、およびIaaSに影響されない独自のテナント（TENANT）を作成することもできます。  
+これは、K2HR3クラスターローカルテナントと呼ばれ、K2HR3クラスター内でIaaSに連動したテナント（TENANT）と同様に機能します。  
+これにより、IaaSと連携するテナント（TENANT）とは独立して独自のテナント（TENANT）を作成・管理できます。  
+
 以下で説明するロール（ROLE）、リソース（RESOURCE）、ポリシー/ルール（POLICY）、サービス（SERVICE）のすべては、**テナント**（TENANT）に属するデータです。  
 K2HR3のユーザは、いずれかの**テナント**（TENANT）に属する前提であり、属した**テナント**（TENANT）のデータを編集できます。
 

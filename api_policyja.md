@@ -9,8 +9,8 @@ prev_url: api_resourceja.html
 prev_string: RESOURCE API
 top_url: apija.html
 top_string: REST API
-next_url: api_serviceja.html
-next_string: SERVICE API
+next_url: api_tenantja.html
+next_string: TENANT API
 ---
 
 # POLICY API
@@ -227,4 +227,3 @@ x-auth-token: U=<Scoped User Token>
 
 ### Response Body(JSON)
 なし
-

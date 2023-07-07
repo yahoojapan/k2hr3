@@ -81,6 +81,9 @@ The purpose of the RESOURCE API is to create and update and get and delete a K2H
 
 The purpose of the POLICY API is to define and list ACLs associated with K2HR3 RESOURCES. ACLs determine K2HR3 RESOURCE usage. Each ACL consists of a group of actions(READ, WRITE and EXECUTE) over a K2HR3 RESOURCE and a permission(ALLOW or DENY) to the group of actions. See the [Basic usage](usage_base.html) page about how to apply K2HR3 POLICIes to K2HR3 ROLE's members.
 
+### [TENANT API](api_tenant.html)
+The purpose of the TENANT API is to manipulate local TENANTs that work within the K2HR3 cluster. See the [Feature](feature.html) about the TENANT.
+
 ### [SERVICE API](api_service.html)
 
 The purpose of the SERVICE API is for a K2HR3 TENANT(as same as OpenStack tenant(or project) when cooperated with OpenStack) to create, show details, update, and delete a information of the K2HR3 SERVICEs of the K2HR3 TENANT. Therefore, each method requires a token scoped to a K2HR3 TENANT scoped token. See the [+SERVICE Usage](usage_service.html) page for the K2HR3 SERVICE details.

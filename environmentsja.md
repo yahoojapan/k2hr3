@@ -303,6 +303,7 @@ REST APIサーバーの設定ファイルの項目を説明します。REST API�
         "tenant": "admintenant",                               // テナント(プロジェクト)名
         "delhostrole": "delhostrole"                           // ホスト削除用サーバ用のロール名
     },
+    "localtenants": true,                                      // K2HR3クラスターのローカルテナントを有効・無効（TENANT APIの有効・無効）
     "confirmtenant": false,                                    // 未登録のテナント(プロジェクト)のサービスへの追加確認の有無
     "chkipconfig": {                                           // IPアドレス死活監視
         "type": "Listener"                                     // IPアドレス死活監視の方式名(後述)

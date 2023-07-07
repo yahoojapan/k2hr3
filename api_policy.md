@@ -9,8 +9,8 @@ prev_url: api_resource.html
 prev_string: RESOURCE API
 top_url: api.html
 top_string: REST API
-next_url: api_service.html
-next_string: SERVICE API
+next_url: api_tenant.html
+next_string: TENANT API
 ---
 
 # POLICY API
@@ -226,5 +226,4 @@ x-auth-token: U=<Scoped User Token>
 204、40x
 
 ### Response Body(JSON)
-
-
+Empty
