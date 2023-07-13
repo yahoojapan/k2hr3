@@ -203,8 +203,10 @@ x-auth-token: U=<Unscoped User Token or Scoped User Token>
     user:       <user name>
     tenants:    [
         {
-            name:       <tenant name>
-            display:    <display tenant name>
+            name:        <tenant name>
+            display:     <display tenant name>
+            id:          <tenant id>
+            description: <description for tenant>
         },
         ...
     ]
@@ -219,7 +221,8 @@ APIの処理結果をtrue/falseで返します。
 - user  
 指定されたUser Tokenのユーザ（USER）名を返します。
 - tenants  
-指定されたUser Tokenで利用できるテナント（TENANT）名（とその表示名）を配列で返します。  
+指定されたUser Tokenで利用できるテナントを配列で返します。  
+各々のテナント情報には、テナント名（`name`）、テナントの表示名（`display`）、テナントID（`id`）、テナント詳細説明（`description`）が含まれます。  
 Scoped User Tokenの場合には返されるテナント（TENANT）は、Scopeされているテナント（TENANT）1つのみとなります。
 
 
@@ -240,4 +243,3 @@ x-auth-token: U=<Unscoped User Token or Scoped User Token>
 
 ### Response Body(JSON)
 なし
-

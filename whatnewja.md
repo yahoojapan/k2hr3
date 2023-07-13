@@ -14,6 +14,9 @@ next_string: Detail
 ---
 
 # What's new
+## 2023年7月13日
+K2HR3 API (Version 1.0.26) をリリースし、Github.comで公開しました。  
+
 ## 2023年7月7日
 K2HR3 API (Version 1.0.25) をリリースし、Github.comで公開しました。  
 
