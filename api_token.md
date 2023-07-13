@@ -207,6 +207,8 @@ x-auth-token: U=<Unscoped User Token or Scoped User Token>
         {
             name:       <tenant name>
             display:    <display tenant name>
+            id:          <tenant id>
+            description: <description for tenant>
         },
         ...
     ]
@@ -221,7 +223,8 @@ True if a token with an explicit scope. False otherwise
 - user  
 The user who owns the parameter token
 - tenants  
-An array of tenants with display names, which is available from the user identified by the token in request parameters
+Returns an `tenants` which is array that can be used with the specified User Token.  
+Each tenant information includes tenant name(`name`), tenant display name(`display`), tenant ID(`id`), and tenant detailed description(`description`).  
 A tenant if the request token is a scoped user token.
 
 ## HEAD
@@ -240,5 +243,4 @@ x-auth-token: U=<Unscoped User Token or Scoped User Token>
 204、40x
 
 ### Response Body(JSON)
-
-
+Empty
