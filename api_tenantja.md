@@ -348,7 +348,7 @@ x-auth-token: U=<Scoped User Token>
         id:        <tenant id>,
         desc:      <description for tenant>,
         display:   <display name for tenant>,
-        user:      [user, ...]
+        users:     [user, ...]
     }
 }
 ```
@@ -364,7 +364,7 @@ APIの処理結果をtrue/falseで返します。
 展開する場合（expand=true）に返されるテナント（TENANT）情報に含まれる要素で、テナント（TENANT）の説明文が設定されます。
 - tenant:display  
 展開する場合（expand=true）に返されるテナント（TENANT）情報に含まれる要素で、テナント（TENANT）の表示名が設定されます。
-- tenant:user  
+- tenant:users  
 展開する場合（expand=true）に返されるテナント（TENANT）情報に含まれる要素で、テナント（TENANT）の利用が許可されているユーザ（USER）名のリストを配列で返します。
 
 ## HEAD

@@ -346,7 +346,7 @@ x-auth-token: U=<Scoped User Token>
         id:        <tenant id>,
         desc:      <description for tenant>,
         display:   <display name for tenant>,
-        user:      [user, ...]
+        users:      [user, ...]
     }
 }
 ```
@@ -362,7 +362,7 @@ The TENANT _ID_ is set.
 The description of TENANT is set.  
 - tenant:display  
 The display name of TENANT is set.  
-- tenant:user  
+- tenant:users  
 Set the array of USER names who are permitted to use the TENANT.  
 
 ## HEAD
