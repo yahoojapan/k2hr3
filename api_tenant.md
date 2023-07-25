@@ -393,10 +393,42 @@ x-auth-token: U=<Scoped User Token>
 ### Response Body(JSON)
 Empty
 
-## DELETE
+## DELETE (Tenant)
+Specify Unscoped User Token or Scoped User Token and completely delete the Local Tenant(TENANT).  
+If the User(USER) specifies a Local Tenant(TENANT) that is not permitted to use, it will fail.  
+
+#### Note
+All TENANT APIs require an Unscoped User Token or a Scoped User Token.  
+If a Scoped User Token is specified, the tenant indicated by that token will be ignored and only the USER information will be used as with the Unscoped User Token.  
+
+### Endpoint(URL)
+http(s)://_API SERVER:PORT_/v1/tenant?tenant=_tenant name_?id=_tenant id_
+
+### Header
+```
+Content-Type: application/json
+x-auth-token: U=<Scoped User Token>
+```
+
+### URL argument
+- tenant name  
+Specify the K2HR3 cluster Local Tenant(TENANT) name.  
+It is an error if this value is not prefixed with the `local@` prefix.  
+If the specified the K2HR3 cluster Local Tenant(TENANT) does not exist, it is failure.  
+- id  
+Specify the _ID_ of the K2HR3 cluster Local Tenant(TENANT).  
+If the K2HR3 Cluster Local Tenant(TENANT) name and this _ID_ value do not match, it will be failure.  
+
+### Response status
+204, 40x
+
+### Response Body(JSON)
+Empty
+
+## DELETE (User)
 Specify Unscoped User Token or Scoped User Token and make the USER unavailable to the K2HR3 cluster Local Tenant(TENANT).  
 As a result of this process, if there are no more USER that can use the K2HR3 cluster Local Tenant(TENANT), the TENANT will be deleted.  
-The list of TENANTs that can be obtained is limited to the TENANT that the USER is permitted to use.  
+If the User(USER) specifies a Local Tenant(TENANT) that is not permitted to use, it will fail.  
 
 #### Note
 All TENANT APIs require an Unscoped User Token or a Scoped User Token.  
@@ -407,7 +439,7 @@ http(s)://_API SERVER:PORT_/v1/tenant/_tenant name_?id=_tenant id_
 
 - tenant name  
 Specify the K2HR3 cluster Local Tenant(TENANT) name.  
-If this value does not have the `local@` prefix, it will automatically be changed to the TENANT name with the `local@` prefix.  
+It is an error if this value is not prefixed with the `local@` prefix.  
 If the specified the K2HR3 cluster Local Tenant(TENANT) does not exist, it is failure.  
 
 ### Header

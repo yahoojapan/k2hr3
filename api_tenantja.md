@@ -395,7 +395,39 @@ x-auth-token: U=<Scoped User Token>
 ### Response Body(JSON)
 なし
 
-## DELETE
+## DELETE（テナント）
+Unscoped User Tokenもしくは、Scoped User Tokenを指定し、ローカルテナント（TENANT）を完全に削除します。  
+ユーザ（USER）が利用を許可されていないテナント（TENANT）を指定した場合、失敗します。  
+
+#### 注意
+すべてのTENANT APIには、Unscoped User Tokenもしくは、Scoped User Tokenが必要です。  
+Scoped User Tokenが指定された場合、そのトークンが示すテナントは無視され、Unscoped User Tokenと同様にユーザ情報のみを使用します。  
+
+### Endpoint(URL)
+http(s)://_API SERVER:PORT_/v1/tenant?tenant=_tenant name_?id=_tenant id_
+
+### Header
+```
+Content-Type: application/json
+x-auth-token: U=<Scoped User Token>
+```
+
+### URL argument
+- tenant name  
+K2HR3クラスターローカルテナント（TENANT）名を指定します。  
+この値に `local@` プレフィックスが付与されていない場合、エラーになります。  
+指定したK2HR3クラスターローカルテナント（TENANT）が存在しない場合は失敗します。  
+- id  
+K2HR3クラスターローカルテナント（TENANT）の_ID_を指定します。  
+K2HR3クラスターローカルテナント（TENANT）名とこの_ID_が一致しない場合、失敗します。
+
+### Response status
+204、40x
+
+### Response Body(JSON)
+なし
+
+## DELETE（ユーザ）
 Unscoped User Tokenもしくは、Scoped User Tokenを指定し、ユーザ（USER）を K2HR3クラスターローカルテナント（TENANT）の利用不可にします。  
 この処理を行った結果、K2HR3クラスターローカルテナント（TENANT）の利用できるユーザ（USER）がいなくなった場合、K2HR3クラスターローカルテナント（TENANT）は削除されます。  
 ユーザ（USER）が利用を許可されていないテナント（TENANT）を指定した場合、失敗します。  
@@ -409,7 +441,7 @@ http(s)://_API SERVER:PORT_/v1/tenant/_tenant name_?id=_tenant id_
 
 - tenant name  
 K2HR3クラスターローカルテナント（TENANT）名を指定します。  
-この値に `local@` プレフィックスが付与されていない場合、自動的に `local@` プレフィックスが付与されたテナント（TENANT）名に変更されます。  
+この値に `local@` プレフィックスが付与されていない場合、エラーになります。  
 指定したK2HR3クラスターローカルテナント（TENANT）が存在しない場合は失敗します。  
 
 ### Header
