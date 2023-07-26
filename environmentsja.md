@@ -451,6 +451,7 @@ $ sudo systemctl restart k2hr3-api.service
     "cert": "config/cert.pem",                      // サーバ証明書ファイル名
     "ca": "/etc/pki/tls/certs/ca-bundle.crt",       // ルート認証局証明書ファイル名
     "validator": "userValidateCredential",          // ユーザトークン検査用JavaScriptモジュール名
+	"uselocaltenant": true,                         // ローカルテナント利用可否
     "lang": "en",                                   // 言語ロケール
 
     "logdir": "log",                                // ログディレクトリ名

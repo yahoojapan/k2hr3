@@ -14,6 +14,9 @@ next_string: Detail
 ---
 
 # What's new
+## [26 Jul 2023] K2HR3 API updated
+The source code of K2HR3 APP (Version 1.0.21) has been released on Github.com.  
+
 ## [25 Jul 2023] K2HR3 API updated
 The source code of K2HR3 API (Version 1.0.27) has been released on Github.com.  
 
