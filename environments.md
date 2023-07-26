@@ -482,6 +482,7 @@ Here are the default configuration values and the descriptions.
     "cert": "config/cert.pem",                      // The file path to the SSL Server Certificate
     "ca": "/etc/pki/tls/certs/ca-bundle.crt",       // Bundled certificates of root certificate authorities
     "validator": "userValidateCredential",          // JavaScript module name for validating user token
+	"uselocaltenant": true,                         // True if using Local Tenant
     "lang": "en",                                   // locale
 
     "logdir": "log",                                // Log directory
