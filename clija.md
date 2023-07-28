@@ -129,6 +129,10 @@ K2HR3のリソース（RESOURCE）を操作するサブコマンドです。
 [SERVICE API](api_serviceja.html)に対応したサブコマンドです。  
 K2HR3のサービス（SERVICE）を操作するサブコマンドです。  
 
+#### [tenant](cli_tenantja.html)
+[TENANT API](api_tenantja.html)に対応したサブコマンドです。  
+K2HR3のローカルテナント（TENANT）を操作するサブコマンドです。  
+
 #### [acr](cli_acrja.html)
 [ACR(ACCESS CROSS ROLE) API](api_acrja.html)に対応したサブコマンドです。  
 K2HR3の+サービス（+SERVICE）機能で利用するACR(ACCESS CROSS ROLE)を操作するサブコマンドです。  
