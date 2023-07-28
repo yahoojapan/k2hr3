@@ -120,6 +120,10 @@ This is a subcommand that operates the RESOURCE of K2HR3.
 This is a subcommand corresponding to [SERVICE API](api_service.html).  
 This is a subcommand that operates the SERVICE of K2HR3.  
 
+#### [tenant](cli_tenant.html)
+This is a subcommand corresponding to [TENANT API](api_service.html).  
+This is a subcommand that operates the LOCAL TENANT of K2HR3.  
+
 #### [acr](cli_acr.html)
 This is a subcommand corresponding to [ACR (ACCESS CROSS ROLE) API](api_acr.html).  
 This is a subcommand to operate ACR(ACCESS CROSS ROLE) used by the +SERVICE function of K2HR3.  

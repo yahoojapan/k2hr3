@@ -5,8 +5,8 @@ title: CLI acr
 short_desc: K2Hdkc based Resource and Roles and policy Rules
 lang_opp_file: cli_acr.html
 lang_opp_word: To English
-prev_url: cli_serviceja.html
-prev_string: CLI service
+prev_url: cli_tenantja.html
+prev_string: CLI tenant
 top_url: clija.html
 top_string: Command Line Interface
 next_url: cli_userdataja.html

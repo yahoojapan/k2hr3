@@ -9,8 +9,8 @@ prev_url: cli_resource.html
 prev_string: CLI resource
 top_url: cli.html
 top_string: Command Line Interface
-next_url: cli_acr.html
-next_string: CLI acr
+next_url: cli_tenant.html
+next_string: CLI tenant
 ---
 
 # Service Subcommand

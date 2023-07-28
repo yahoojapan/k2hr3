@@ -9,8 +9,8 @@ prev_url: cli_resourceja.html
 prev_string: CLI resource
 top_url: clija.html
 top_string: Command Line Interface
-next_url: cli_acrja.html
-next_string: CLI acr
+next_url: cli_tenantja.html
+next_string: CLI tenant
 ---
 
 # Service Subcommand
