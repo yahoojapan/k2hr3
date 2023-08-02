@@ -65,11 +65,13 @@ Below is a list of the options offered by the **K2HR3 Helm Chart**.
 | `k2hr3.api.extHostname`      |              | ""                                                     |
 | `k2hr3.api.extPort`          |              | 0                                                      |
 | `k2hr3.api.customConf`       |              | ""                                                     |
+| `k2hr3.api.localTenant`      |              | true                                                   |
 | `k2hr3.app.baseName`         |              | ""                                                     |
 | `k2hr3.app.count`            |              | 2                                                      |
 | `k2hr3.app.extHostname`      |              | ""                                                     |
 | `k2hr3.app.extPort`          |              | 0                                                      |
 | `k2hr3.app.customConf`       |              | ""                                                     |
+| `k2hr3.app.localTenant`      |              | true                                                   |
 | `k2hr3.env.httpProxy`        |              | ""                                                     |
 | `k2hr3.env.httpsProxy`       |              | ""                                                     |
 | `k2hr3.env.noProxy`          |              | ""                                                     |
@@ -188,6 +190,9 @@ Specify the contents of the `local.json` file, which is one of the configuration
 Specify the value in `JSON String` format.  
 If this option is omitted, the `local.json` file will not be used.  
 
+### k2hr3.api.localTenant
+Specify whether the REST API server of the K2HR3 system supports `LOCAL TENANT`.  
+
 ### k2hr3.app.baseName
 Specifies the base name of the Web Application server for the K2HR3 system.  
 If this option is omitted, it will be used empty string and `r3app` will be used.  
@@ -210,6 +215,9 @@ If this option is omitted, it will be used `0` and the `32443` port will be used
 Specify the contents of the `local.json` file, which is one of the configuration files for the Web Application server of the K2HR3 system, and overwrite the default configuration values.  
 Specify the value in `JSON String` format.  
 If this option is omitted, the `local.json` file will not be used.  
+
+### k2hr3.app.localTenant
+Specify whether the Web Application server for the K2HR3 system supports `LOCAL TENANT`.  
 
 ### k2hr3.env.httpProxy
 Specifies `HTTP_PROXY` environment in each K2HR3 system component(K2HR3 Web Appilcation / K2HR3 REST API / K2HDKC cluster) when building the K2HR3 system.  

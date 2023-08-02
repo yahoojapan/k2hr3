@@ -149,6 +149,9 @@ When changing images, you can set the organization name, image name, and image t
 If you want to change the default settings of `K2HR3 Web Application`, you can specify `Custom Configuration` field as `local.json` to overwrite default configuration.  
 This value is specified by `JSON String`.  
 
+You can specify whether `K2HR3 Web Application` supports `LOCAL TENANT`.  
+If you don't support it, uncheck the `Local Tenant` checkbox.  
+
 After entering the required items, the setting of this `K2HR3 Web Application` item is completed.  
 
 #### K2HR3 REST API
@@ -172,6 +175,13 @@ When changing images, you can set the organization name, image name, and image t
 
 If you want to change the default settings of `K2HR3 REST API`, you can specify `Custom Configuration` field as `local.json` to overwrite default configuration.  
 This value is specified by `JSON String`.  
+
+You can specify whether `K2HR3 REST API` supports `LOCAL TENANT`.  
+If you don't support it, uncheck the `Local Tenant` checkbox.  
+
+In `K2HR3 Helm Chart`, `K2HR3 system` cooperates with `Kubernetes` and its `Namespace` is used as a tenant.  
+Create a `Service Account` as you will need permission to access this `Namespace` as default.  
+If you do not need this `Service Account`, uncheck the `Create Service Account` checkbox.  
 
 After entering the required items, the setting of this `K2HR3 REST API` item is completed.  
 

@@ -14,6 +14,9 @@ next_string: Detail
 ---
 
 # What's new
+## [2 Aug 2023] K2HR3 APP/Helm Chart updated
+The source code of K2HR3 APP (Version 1.0.23) and K2HR3 Helm Chart (Version 1.0.11) has been released on Github.com.  
+
 ## [26 Jul 2023] K2HR3 API updated
 The source code of K2HR3 CLI (Version 1.0.9) has been released on Github.com.  
 

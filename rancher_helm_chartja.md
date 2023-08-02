@@ -150,6 +150,9 @@ RANCHERのクラスター（`mycluster`）を選択し、クラスターの設�
 `K2HR3 Web Application`のデフォルトの設定を変更したい場合は、`Custom Configuration`に設定を上書きするための `local.json` を指定できます。  
 この値は、`JSON String`で入力してください。  
 
+`K2HR3 Web Application`が、`LOCAL TENANT`をサポートするか否かを指定できます。  
+サポートをしない場合は、`Local Tenant`チェックボックスのチェックを外してください。  
+
 これら必須項目を入力したら、`K2HR3 Web Application`設定の入力は完了です。  
 
 #### K2HR3 REST API（サブシステム）の設定
@@ -173,6 +176,13 @@ RANCHERのクラスター（`mycluster`）を選択し、クラスターの設�
 
 `K2HR3 REST API`のデフォルトの設定を変更したい場合は、`Custom Configuration`に設定を上書きするための `local.json` を指定できます。  
 この値は、`JSON String`で入力してください。  
+
+`K2HR3 REST API`が、`LOCAL TENANT`をサポートするか否かを指定できます。  
+サポートをしない場合は、`Local Tenant`チェックボックスのチェックを外してください。  
+
+`K2HR3 Helm Chart`は、`K2HR3システム`が`Kubernetes`と連携し、その`Namespace`をテナントとして利用します。  
+この`Namespace`へアクセスする権限が必要となるため、`Service Account`を作成します。  
+この`Service Account`が不要な場合は、`Create Service Account`チェックボックスのチェックを外してください。  
 
 これら必須項目を入力したら、`K2HR3 REST API`設定の入力は完了です。  
 
