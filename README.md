@@ -130,8 +130,11 @@ This can be used to build a K2HR3 system before using the [K2HDKC Helm Chart](ht
 [k2hr3-cli(packages)](https://packagecloud.io/app/antpickax/stable/search?q=k2hr3-cli)  
 [k2hr3 helm chart(artifact hub)](https://artifacthub.io/packages/helm/k2hr3/k2hr3)
 [k2hr3-osnl(python packages)](https://pypi.org/project/k2hr3-osnl/)  
-[k2hr3.sidecar(dockerhub)](https://hub.docker.com/r/antpickax/k2hr3.sidecar)  
 [k2hr3-get-resource(packages)](https://packagecloud.io/app/antpickax/stable/search?q=k2hr3-get-resource)  
+
+[k2hr3-app (dockerhub)](https://hub.docker.com/r/antpickax/k2hr3-app)  
+[k2hr3-api (dockerhub)](https://hub.docker.com/r/antpickax/k2hr3-api)  
+[k2hr3.sidecar(dockerhub)](https://hub.docker.com/r/antpickax/k2hr3.sidecar)  
 
 ### License
 This software is released under the MIT License, see the license file.
