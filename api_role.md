@@ -714,11 +714,11 @@ Content-Type: application/json
 ```
 
 ### URL Arguments
--cuk = _custom unique key_  
+- cuk = _custom unique key_  
 When registering an OpenStack VirtualMachine, specify its **Instance ID**.  
 When registering from a pod of kubernetes, specify the CUK string calculated for registration (automatically calculated by Sidecar provided by the K2HR3 system).  
 The IP address associated with this value will be deleted.
--host  
+- host  
 This parameter specifies the IP address to be deleted.  
 Of the IP addresses associated with **CUK**, only the IP address specified by this parameter is subject to deletion.  
 When specifying multiple IP addresses, specify them as a string array in the JSON object.  
@@ -749,7 +749,7 @@ x-auth-token: R=<Role Token>
 ```
 
 ### URL Arguments
--port = _port number_  
+- port = _port number_  
 Specify the port number required to delete the host (IP address) that sent this request from the role.  
 If no identification is required, it is unspecified or 0.
 

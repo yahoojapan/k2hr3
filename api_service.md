@@ -93,7 +93,7 @@ http(s)://_API SERVER:PORT_/v1/service?_name=service name_&_verify=verify url_
 #### Add MEMBER to SERVICE 
 http(s)://_API SERVER:PORT_/v1/service/_service name_?_tenant=tenant name_
 #### Modify VERIFY URL
-http(s)://_API SERVER:PORT_/v1/service/_service name_?_verify=verify url
+http(s)://_API SERVER:PORT_/v1/service/_service name_?_verify=verify url_
 
 ### Header
 Requires a user token scoped to a tenant who owns the service.
@@ -226,4 +226,3 @@ A tenant as a service member. Deleting the member(or tenant) who owns the servic
 
 ### Response Body(JSON)
 Empty
-
