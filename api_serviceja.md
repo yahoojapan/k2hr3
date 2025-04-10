@@ -86,7 +86,7 @@ http(s)://_API SERVER:PORT_/v1/service?_name=service name_&_verify=verify url_
 #### 利用側（MEMBER）のテナント（TENANT）追加時
 http(s)://_API SERVER:PORT_/v1/service/_service name_?_tenant=tenant name_
 #### VERIFY URL更新時
-http(s)://_API SERVER:PORT_/v1/service/_service name_?_verify=verify url
+http(s)://_API SERVER:PORT_/v1/service/_service name_?_verify=verify url_
 
 ### Header
 ```
@@ -218,4 +218,3 @@ x-auth-token: U=<Scoped User Token>
 
 ### Response Body(JSON)
 なし
-
